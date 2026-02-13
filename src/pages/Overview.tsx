@@ -19,49 +19,57 @@ const Overview: React.FC = () => {
       </header>
 
       <section className="system-health-section">
-        <h2 className="section-title">System Health</h2>
+        <h2 className="section-title">Cost Optimization</h2>
         <div className="stats-grid">
           <div className="stat-card card">
             <div className="stat-header">
-              <span className="stat-label">CPU Usage</span>
+              <span className="stat-label">💰 Monthly Savings</span>
             </div>
-            <div className="stat-value">23%</div>
-            <div className="stat-progress">
-              <div className="progress-bar" style={{ width: '23%' }}></div>
-            </div>
-            <div className="stat-status excellent">Excellent</div>
+            <div className="stat-value" style={{ color: '#34d399' }}>$729.50</div>
+            <div className="stat-secondary">Total optimizations</div>
+            <div className="stat-status excellent">53% Reduction</div>
           </div>
 
           <div className="stat-card card">
             <div className="stat-header">
-              <span className="stat-label">Memory</span>
+              <span className="stat-label">⚡ Session Optimization</span>
             </div>
-            <div className="stat-value">8.2 GB</div>
-            <div className="stat-secondary">of 16 GB</div>
-            <div className="stat-progress">
-              <div className="progress-bar" style={{ width: '51%' }}></div>
-            </div>
-            <div className="stat-status normal">Normal</div>
+            <div className="stat-value" style={{ color: '#818cf8' }}>$112.50</div>
+            <div className="stat-secondary">per month</div>
+            <div className="stat-trend positive">▼ 33% cost reduction</div>
           </div>
 
           <div className="stat-card card">
             <div className="stat-header">
-              <span className="stat-label">Network I/O</span>
+              <span className="stat-label">⏰ Cron Optimization</span>
             </div>
-            <div className="stat-value">
-              <div>▲ 142 Mb/s</div>
-              <div>▼ 68 Mb/s</div>
-            </div>
-            <div className="stat-status normal">High Activity</div>
+            <div className="stat-value" style={{ color: '#14b8a6' }}>$617.00</div>
+            <div className="stat-secondary">per month</div>
+            <div className="stat-trend positive">▼ 36% cost reduction</div>
           </div>
 
           <div className="stat-card card">
             <div className="stat-header">
-              <span className="stat-label">Active Requests</span>
+              <span className="stat-label">📈 Annual Projection</span>
             </div>
-            <div className="stat-value">1,247</div>
-            <div className="stat-secondary">per minute</div>
-            <div className="stat-trend positive">▲ 12% trend</div>
+            <div className="stat-value" style={{ color: '#fbbf24' }}>$8,754</div>
+            <div className="stat-secondary">yearly savings</div>
+            <div className="stat-status excellent">Optimized</div>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(16, 185, 129, 0.1)', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+            <span style={{ fontSize: '1.25rem' }}>✨</span>
+            <span style={{ fontWeight: 600, color: '#34d399' }}>Key Optimizations Applied</span>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem', fontSize: '0.875rem', color: '#d1d5db' }}>
+            <div>• Morning briefing → Haiku (-82%)</div>
+            <div>• Memory flush → Haiku (-85%)</div>
+            <div>• Security scans fixed (-88%)</div>
+            <div>• Auto-Assign: 30min → 45min</div>
+            <div>• Ralph Loop: 30min → 60min</div>
+            <div>• Simple checks → Haiku (-83%)</div>
           </div>
         </div>
       </section>
@@ -288,6 +296,54 @@ const Overview: React.FC = () => {
 
           <div className="activity-footer">
             <a href="#" className="link-primary">View All Activity →</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="system-health-section">
+        <h2 className="section-title">System Health</h2>
+        <div className="stats-grid">
+          <div className="stat-card card">
+            <div className="stat-header">
+              <span className="stat-label">CPU Usage</span>
+            </div>
+            <div className="stat-value">23%</div>
+            <div className="stat-progress">
+              <div className="progress-bar" style={{ width: '23%' }}></div>
+            </div>
+            <div className="stat-status excellent">Excellent</div>
+          </div>
+
+          <div className="stat-card card">
+            <div className="stat-header">
+              <span className="stat-label">Memory</span>
+            </div>
+            <div className="stat-value">8.2 GB</div>
+            <div className="stat-secondary">of 16 GB</div>
+            <div className="stat-progress">
+              <div className="progress-bar" style={{ width: '51%' }}></div>
+            </div>
+            <div className="stat-status normal">Normal</div>
+          </div>
+
+          <div className="stat-card card">
+            <div className="stat-header">
+              <span className="stat-label">Network I/O</span>
+            </div>
+            <div className="stat-value">
+              <div>▲ 142 Mb/s</div>
+              <div>▼ 68 Mb/s</div>
+            </div>
+            <div className="stat-status normal">High Activity</div>
+          </div>
+
+          <div className="stat-card card">
+            <div className="stat-header">
+              <span className="stat-label">Active Requests</span>
+            </div>
+            <div className="stat-value">1,247</div>
+            <div className="stat-secondary">per minute</div>
+            <div className="stat-trend positive">▲ 12% trend</div>
           </div>
         </div>
       </section>
