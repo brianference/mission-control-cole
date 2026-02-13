@@ -37,7 +37,7 @@
 }
 
 .mobile-menu-button:hover {
-  background: rgba(139, 155, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--accent-primary);
 }
 
@@ -84,7 +84,7 @@
 }
 
 .topbar-icon-btn:hover {
-  background: rgba(139, 155, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--text-primary);
   transform: scale(1.05);
 }
@@ -127,7 +127,7 @@
 }
 
 .user-menu-button:hover {
-  background: rgba(139, 155, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .user-avatar {
@@ -192,13 +192,13 @@
 }
 
 .menu-item:hover {
-  background: rgba(139, 155, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--text-primary);
 }
 
 .menu-divider {
   height: 1px;
-  background: rgba(139, 155, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   margin: var(--spacing-2) 0;
 }
 
