@@ -61,6 +61,13 @@ export const navigationItems: NavItem[] = [
     badge: { count: 3, text: 'Today' },
   },
   {
+    id: 'costs',
+    label: 'Cost Tracking',
+    icon: '💰',
+    url: '/costs',
+    badge: { text: '$981', status: 'warning' },
+  },
+  {
     id: 'memory',
     label: 'Memory',
     icon: '🧠',

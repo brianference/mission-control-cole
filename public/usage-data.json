@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "weekTotal": 982.3908265499985,
+    "monthTotal": 982.3908265499985,
+    "totalSessions": 109,
+    "totalRequests": 16773
+  },
+  "daily": [
+    {
+      "date": "2026-02-05",
+      "cost": 41.361547249999965,
+      "tokens": 38066422,
+      "requests": 546
+    },
+    {
+      "date": "2026-02-06",
+      "cost": 110.20442790000016,
+      "tokens": 135745510,
+      "requests": 1537
+    },
+    {
+      "date": "2026-02-07",
+      "cost": 114.31411304999999,
+      "tokens": 184711317,
+      "requests": 1766
+    },
+    {
+      "date": "2026-02-08",
+      "cost": 182.9990641500002,
+      "tokens": 295324454,
+      "requests": 2963
+    },
+    {
+      "date": "2026-02-09",
+      "cost": 130.82215389999988,
+      "tokens": 214137263,
+      "requests": 2051
+    },
+    {
+      "date": "2026-02-10",
+      "cost": 127.74408049999977,
+      "tokens": 221435092,
+      "requests": 2479
+    },
+    {
+      "date": "2026-02-11",
+      "cost": 66.12738365000011,
+      "tokens": 109422010,
+      "requests": 1258
+    },
+    {
+      "date": "2026-02-12",
+      "cost": 171.33720005000032,
+      "tokens": 292050363,
+      "requests": 3500
+    },
+    {
+      "date": "2026-02-13",
+      "cost": 37.48085609999996,
+      "tokens": 50348457,
+      "requests": 673
+    }
+  ],
+  "providers": [
+    {
+      "name": "Anthropic",
+      "cost": 981.2161250499983,
+      "tokens": 1538443020,
+      "requests": 15617
+    },
+    {
+      "name": "OpenAI",
+      "cost": 1.1747015,
+      "tokens": 2797868,
+      "requests": 38
+    },
+    {
+      "name": "Other",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 1118
+    }
+  ],
+  "models": [
+    {
+      "name": "Claude Sonnet 4.5",
+      "cost": 881.3077390500002,
+      "tokens": 1399392335,
+      "requests": 13892
+    },
+    {
+      "name": "claude-opus-4-5",
+      "cost": 60.24044699999995,
+      "tokens": 58692795,
+      "requests": 785
+    },
+    {
+      "name": "claude-haiku-4-5",
+      "cost": 39.667938999999954,
+      "tokens": 80357890,
+      "requests": 940
+    },
+    {
+      "name": "gpt-5.2",
+      "cost": 1.1747015,
+      "tokens": 2797868,
+      "requests": 38
+    },
+    {
+      "name": "delivery-mirror",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 1070
+    },
+    {
+      "name": "gemini-flash-2.0",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 39
+    },
+    {
+      "name": "gemini-flash-1.5",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 9
+    }
+  ],
+  "taskTypes": [
+    {
+      "name": "general",
+      "cost": 973.7768900999994,
+      "tokens": 1529440516,
+      "requests": 16522
+    },
+    {
+      "name": "coding",
+      "cost": 6.762965400000001,
+      "tokens": 8203730,
+      "requests": 178
+    },
+    {
+      "name": "planning",
+      "cost": 1.8509710499999994,
+      "tokens": 3596642,
+      "requests": 73
+    }
+  ],
+  "lastUpdated": "2026-02-13T02:59:58.789Z"
+}

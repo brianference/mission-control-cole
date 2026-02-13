@@ -9,6 +9,7 @@ import Overview from './pages/Overview';
 import Ideas from './pages/Ideas';
 import Content from './pages/Content';
 import Calendar from './pages/Calendar';
+import CostTracking from './pages/CostTracking';
 import Docs from './pages/Docs';
 import Settings from './pages/Settings';
 import Profile from './pages/Profile';
@@ -38,6 +39,7 @@ function App() {
             <Route path="/content" element={<Content />} />
             <Route path="/content/:section" element={<Content />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/costs" element={<CostTracking />} />
             <Route path="/docs" element={<Docs />} />
             <Route path="/docs/:section" element={<Docs />} />
             <Route path="/settings" element={<Settings />} />
