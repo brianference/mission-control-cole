@@ -47,6 +47,28 @@
   gap: var(--spacing-3);
 }
 
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  text-decoration: none;
+  cursor: pointer;
+  padding: var(--spacing-2);
+  margin: calc(-1 * var(--spacing-2));
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.brand-link:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.brand-link:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 .brand-icon {
   font-size: var(--text-2xl);
   line-height: 1;

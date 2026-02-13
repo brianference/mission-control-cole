@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopBar.css';
 
 interface TopBarProps {
@@ -23,8 +24,10 @@ const TopBar: React.FC<TopBarProps> = ({ onMenuClick }) => {
           ☰
         </button>
         <div className="topbar-brand">
-          <span className="brand-icon" aria-hidden="true">🚀</span>
-          <h1 className="brand-title">Mission Control</h1>
+          <Link to="/" className="brand-link">
+            <span className="brand-icon" aria-hidden="true">🚀</span>
+            <h1 className="brand-title">Mission Control</h1>
+          </Link>
         </div>
       </div>
 
