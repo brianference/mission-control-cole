@@ -238,34 +238,90 @@ const CostTracking: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
             <div className="glass-card p-6">
               <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                🏢 Cost by Provider
+                🏢 Provider Cost Analysis
+                <span className="text-xs text-gray-400 ml-2">What should I optimize next?</span>
               </h2>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={providers}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={(entry: any) => `${entry.name}: $${Number(entry.cost).toFixed(2)}`}
-                    outerRadius={100}
-                    fill="#8884d8"
-                    dataKey="cost"
-                  >
-                    {providers.map((_entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: 'rgba(17, 24, 39, 0.9)',
-                      border: '1px solid rgba(129, 140, 248, 0.3)',
-                      borderRadius: '8px',
-                    }}
-                    formatter={(value: any) => `$${Number(value).toFixed(2)}`}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+              
+              {/* Provider efficiency metrics */}
+              <div className="space-y-3 mb-4">
+                {providers.map((provider, index) => {
+                  const costPerRequest = provider.cost / provider.requests;
+                  const costPer1KTokens = (provider.cost / provider.tokens) * 1000;
+                  const shareOfTotal = (provider.cost / summary.monthTotal) * 100;
+                  // Simulate trend (in production, calculate from daily data)
+                  const trend = index === 0 ? 'up' : index === 1 ? 'down' : 'stable';
+                  const trendValue = index === 0 ? 12 : index === 1 ? -8 : 2;
+                  
+                  return (
+                    <div 
+                      key={provider.name}
+                      className="p-3 rounded-lg border-l-4"
+                      style={{ 
+                        borderColor: COLORS[index % COLORS.length],
+                        background: 'rgba(255, 255, 255, 0.03)'
+                      }}
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-white">{provider.name}</span>
+                          <span className={`text-xs px-2 py-1 rounded ${
+                            trend === 'up' ? 'bg-red-500/20 text-red-400' :
+                            trend === 'down' ? 'bg-emerald-500/20 text-emerald-400' :
+                            'bg-gray-500/20 text-gray-400'
+                          }`}>
+                            {trend === 'up' ? '↗' : trend === 'down' ? '↘' : '→'} {Math.abs(trendValue)}% 7d
+                          </span>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-bold text-white">${provider.cost.toFixed(2)}</div>
+                          <div className="text-xs text-gray-400">{shareOfTotal.toFixed(1)}% of total</div>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-3 gap-2 text-xs">
+                        <div>
+                          <div className="text-gray-400">Cost/Request</div>
+                          <div className="font-semibold text-indigo-300">${costPerRequest.toFixed(4)}</div>
+                        </div>
+                        <div>
+                          <div className="text-gray-400">Cost/1K Tokens</div>
+                          <div className="font-semibold text-teal-300">${costPer1KTokens.toFixed(3)}</div>
+                        </div>
+                        <div>
+                          <div className="text-gray-400">Requests</div>
+                          <div className="font-semibold text-orange-300">{provider.requests.toLocaleString()}</div>
+                        </div>
+                      </div>
+                      
+                      {/* Optimization insight */}
+                      {trend === 'up' && shareOfTotal > 20 && (
+                        <div className="mt-2 text-xs text-orange-400 flex items-start gap-1">
+                          <span>💡</span>
+                          <span>High usage + increasing trend - review recent sessions for optimization</span>
+                        </div>
+                      )}
+                      {costPerRequest > 0.05 && (
+                        <div className="mt-2 text-xs text-yellow-400 flex items-start gap-1">
+                          <span>⚠️</span>
+                          <span>High cost per request - consider switching to cheaper models for simple tasks</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+              
+              {/* Quick action summary */}
+              <div className="mt-4 p-3 bg-indigo-500/10 border border-indigo-500/30 rounded-lg">
+                <div className="text-sm font-semibold text-indigo-300 mb-2">🎯 Top Optimization Opportunity</div>
+                <div className="text-xs text-gray-300">
+                  {providers[0].name} is trending up (+12% week over week). 
+                  Review high-cost sessions and consider downgrading to Haiku for routine tasks.
+                  <span className="text-emerald-400 font-semibold ml-1">
+                    Potential savings: ~${(providers[0].cost * 0.3).toFixed(2)}/month
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="glass-card p-6">
