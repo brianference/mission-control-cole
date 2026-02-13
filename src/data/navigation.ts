@@ -23,6 +23,13 @@ export const navigationItems: NavItem[] = [
         url: '/content/swordtruth',
       },
       {
+        id: 'tpusa-intel',
+        label: 'TPUSA Intel',
+        icon: '🔍',
+        url: 'https://swordtruth-tpusa-intel.netlify.app',
+        external: true,
+      },
+      {
         id: 'scheduled',
         label: 'Scheduled',
         icon: '⏰',
