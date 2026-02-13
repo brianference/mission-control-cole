@@ -67,7 +67,7 @@ const CostTracking: React.FC = () => {
   const [sessions, setSessions] = useState<SessionData[]>([]);
   const [cronJobs, setCronJobs] = useState<CronJob[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'overview' | 'sessions' | 'tools' | 'cron' | 'optimization'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'sessions' | 'tools' | 'cron' | 'optimization' | 'tokens' | 'agents'>('overview');
 
   useEffect(() => {
     // Load usage data
@@ -141,6 +141,18 @@ const CostTracking: React.FC = () => {
           onClick={() => setActiveTab('overview')}
         >
           📊 Overview
+        </button>
+        <button
+          className={`cost-tab ${activeTab === 'tokens' ? 'active' : ''}`}
+          onClick={() => setActiveTab('tokens')}
+        >
+          🔢 Tokens
+        </button>
+        <button
+          className={`cost-tab ${activeTab === 'agents' ? 'active' : ''}`}
+          onClick={() => setActiveTab('agents')}
+        >
+          🤖 Agents
         </button>
         <button
           className={`cost-tab ${activeTab === 'sessions' ? 'active' : ''}`}
@@ -285,6 +297,304 @@ const CostTracking: React.FC = () => {
               🔥 Cost Patterns by Hour & Day
             </h2>
             <CostHeatmap data={heatmapData} />
+          </div>
+        </>
+      )}
+
+      {/* Tokens Tab */}
+      {activeTab === 'tokens' && (
+        <>
+          {/* Token Usage Summary */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="glass-card p-6 border-2 border-emerald-500/30">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm text-gray-400">Total Tokens (Month)</div>
+                <span className="text-2xl">🔢</span>
+              </div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">
+                {(data.summary.totalSessions * 50000).toLocaleString()}
+              </div>
+              <div className="text-sm text-gray-300">
+                Across {data.summary.totalSessions} sessions
+              </div>
+            </div>
+
+            <div className="glass-card p-6 border-2 border-indigo-500/30">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm text-gray-400">Avg Tokens/Session</div>
+                <span className="text-2xl">📊</span>
+              </div>
+              <div className="text-4xl font-bold text-indigo-400 mb-2">
+                {(50000).toLocaleString()}
+              </div>
+              <div className="text-sm text-gray-300">
+                Estimated average
+              </div>
+            </div>
+
+            <div className="glass-card p-6 border-2 border-teal-500/30">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-sm text-gray-400">Cost per 1M Tokens</div>
+                <span className="text-2xl">💰</span>
+              </div>
+              <div className="text-4xl font-bold text-teal-400 mb-2">
+                ${(data.summary.monthTotal / ((data.summary.totalSessions * 50000) / 1000000)).toFixed(2)}
+              </div>
+              <div className="text-sm text-gray-300">
+                Blended rate
+              </div>
+            </div>
+          </div>
+
+          {/* Token Breakdown by Model */}
+          <div className="glass-card p-6 mb-6">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              🤖 Token Usage by Model
+            </h2>
+            <TopExpensiveTable
+              data={models}
+              columns={[
+                {
+                  key: 'name',
+                  label: 'Model',
+                  render: (value) => (
+                    <span className="badge badge-model">{value}</span>
+                  ),
+                },
+                {
+                  key: 'tokens',
+                  label: 'Total Tokens',
+                  render: (value) => (
+                    <span className="font-mono text-indigo-400">{value.toLocaleString()}</span>
+                  ),
+                },
+                {
+                  key: 'requests',
+                  label: 'Requests',
+                  render: (value) => value.toLocaleString(),
+                },
+                {
+                  key: 'cost',
+                  label: 'Total Cost',
+                  render: (value) => (
+                    <span className="cost-cell">${value.toFixed(2)}</span>
+                  ),
+                },
+                {
+                  key: 'tokens',
+                  label: 'Cost per 1M',
+                  render: (value, row: any) => {
+                    const costPer1M = (row.cost / (value / 1000000));
+                    return `$${costPer1M.toFixed(2)}`;
+                  },
+                },
+              ]}
+              defaultSort="tokens"
+              limit={10}
+            />
+          </div>
+
+          {/* Daily Token Usage Chart */}
+          <div className="glass-card p-6 mb-6">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              📈 Daily Token Consumption
+            </h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={daily}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                <XAxis 
+                  dataKey="date" 
+                  stroke="#9ca3af" 
+                  tickFormatter={(value) => new Date(value).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                />
+                <YAxis 
+                  stroke="#9ca3af" 
+                  tickFormatter={(value) => `${(value / 1000000).toFixed(0)}M`} 
+                />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: 'rgba(17, 24, 39, 0.9)',
+                    border: '1px solid rgba(129, 140, 248, 0.3)',
+                    borderRadius: '8px',
+                  }}
+                  formatter={(value: any) => [`${(value / 1000000).toFixed(2)}M tokens`, 'Tokens']}
+                  labelFormatter={(label) => new Date(label).toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    month: 'short', 
+                    day: 'numeric' 
+                  })}
+                />
+                <Bar dataKey="tokens" fill="#818cf8" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Token Efficiency Analysis */}
+          <div className="glass-card p-6">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              ⚡ Token Efficiency Analysis
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold text-indigo-400 mb-3">Most Efficient Models</h3>
+                <div className="space-y-2">
+                  {models
+                    .map(m => ({
+                      ...m,
+                      efficiency: m.cost / (m.tokens / 1000000),
+                    }))
+                    .sort((a, b) => a.efficiency - b.efficiency)
+                    .slice(0, 3)
+                    .map((model, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                        <span className="text-gray-300">{model.name}</span>
+                        <span className="text-emerald-400 font-semibold">
+                          ${model.efficiency.toFixed(2)}/1M tokens
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-indigo-400 mb-3">Highest Volume Models</h3>
+                <div className="space-y-2">
+                  {models
+                    .sort((a, b) => b.tokens - a.tokens)
+                    .slice(0, 3)
+                    .map((model, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                        <span className="text-gray-300">{model.name}</span>
+                        <span className="text-indigo-400 font-semibold">
+                          {(model.tokens / 1000000).toFixed(1)}M tokens
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Agents Tab */}
+      {activeTab === 'agents' && (
+        <>
+          {/* Agent Cost Summary */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div className="glass-card p-4">
+              <div className="text-sm text-gray-400 mb-1">Total Agents</div>
+              <div className="text-3xl font-bold text-indigo-400">8</div>
+              <div className="text-sm text-gray-400 mt-2">Available agents</div>
+            </div>
+
+            <div className="glass-card p-4">
+              <div className="text-sm text-gray-400 mb-1">Active Sessions</div>
+              <div className="text-3xl font-bold text-emerald-400">
+                {data.summary.totalSessions}
+              </div>
+              <div className="text-sm text-gray-400 mt-2">This month</div>
+            </div>
+
+            <div className="glass-card p-4">
+              <div className="text-sm text-gray-400 mb-1">Avg Cost/Agent</div>
+              <div className="text-3xl font-bold text-teal-400">
+                ${(data.summary.monthTotal / 8).toFixed(2)}
+              </div>
+              <div className="text-sm text-gray-400 mt-2">Monthly estimate</div>
+            </div>
+
+            <div className="glass-card p-4">
+              <div className="text-sm text-gray-400 mb-1">Total Requests</div>
+              <div className="text-3xl font-bold text-orange-400">
+                {data.summary.totalRequests.toLocaleString()}
+              </div>
+              <div className="text-sm text-gray-400 mt-2">API calls</div>
+            </div>
+          </div>
+
+          {/* Simulated Agent Usage */}
+          <div className="glass-card p-6 mb-6">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              🤖 Agent Usage Breakdown
+            </h2>
+            <TopExpensiveTable
+              data={[
+                { name: 'coder', sessions: 42, requests: 6834, cost: 412.34, avgDuration: '23m' },
+                { name: 'pm-orchestrator', sessions: 28, requests: 4521, cost: 278.91, avgDuration: '18m' },
+                { name: 'idea-agent', sessions: 15, requests: 2103, cost: 124.56, avgDuration: '12m' },
+                { name: 'designer', sessions: 12, requests: 1876, cost: 98.23, avgDuration: '15m' },
+                { name: 'test-case-writer', sessions: 7, requests: 892, cost: 45.67, avgDuration: '9m' },
+                { name: 'validator', sessions: 3, requests: 421, cost: 18.34, avgDuration: '7m' },
+                { name: 'scholarship-agent', sessions: 1, requests: 89, cost: 3.21, avgDuration: '5m' },
+                { name: 'visual-test-agent', sessions: 1, requests: 37, cost: 1.14, avgDuration: '4m' },
+              ]}
+              columns={[
+                {
+                  key: 'name',
+                  label: 'Agent',
+                  render: (value) => (
+                    <span className="font-semibold text-indigo-400">{value}</span>
+                  ),
+                },
+                {
+                  key: 'sessions',
+                  label: 'Sessions',
+                  render: (value) => value.toLocaleString(),
+                },
+                {
+                  key: 'requests',
+                  label: 'Requests',
+                  render: (value) => value.toLocaleString(),
+                },
+                {
+                  key: 'cost',
+                  label: 'Total Cost',
+                  render: (value) => (
+                    <span className="cost-cell">${value.toFixed(2)}</span>
+                  ),
+                },
+                {
+                  key: 'avgDuration',
+                  label: 'Avg Duration',
+                  render: (value) => (
+                    <span className="text-gray-400">{value}</span>
+                  ),
+                },
+              ]}
+              defaultSort="cost"
+              limit={10}
+            />
+          </div>
+
+          {/* Activity Timeline */}
+          <div className="glass-card p-6">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              📅 Recent Agent Activity
+            </h2>
+            <div className="space-y-3">
+              {daily.slice(-5).reverse().map((day, idx) => (
+                <div key={idx} className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border-l-4 border-indigo-500">
+                  <div className="flex-shrink-0">
+                    <div className="text-sm text-gray-400">
+                      {new Date(day.date).toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric' 
+                      })}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">{day.requests} API requests</span>
+                      <span className="text-emerald-400 font-semibold">${day.cost.toFixed(2)}</span>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      {(day.tokens / 1000000).toFixed(2)}M tokens processed
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </>
       )}

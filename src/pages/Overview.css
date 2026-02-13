@@ -351,7 +351,34 @@
   text-align: center;
 }
 
+/* ===== NEW: Activity Stream Grid ===== */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-12);
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.activity-section,
+.agents-section,
+.token-usage-section {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   .stats-grid {
     grid-template-columns: 1fr;
@@ -363,6 +390,10 @@
 
   .page-title {
     font-size: var(--text-3xl);
+  }
+  
+  .grid-2col {
+    grid-template-columns: 1fr;
   }
 }
 

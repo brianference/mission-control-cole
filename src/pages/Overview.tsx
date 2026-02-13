@@ -1,4 +1,7 @@
 import React from 'react';
+import ActivityStream from '../components/overview/ActivityStream';
+import ActiveAgents from '../components/overview/ActiveAgents';
+import TokenUsage from '../components/overview/TokenUsage';
 import './Overview.css';
 
 const Overview: React.FC = () => {
@@ -249,56 +252,34 @@ const Overview: React.FC = () => {
         </div>
       </section>
 
-      <section className="activity-section">
-        <h2 className="section-title">Recent Activity</h2>
-        <div className="activity-feed card">
-          <div className="activity-item">
-            <span className="activity-icon">🔧</span>
-            <div className="activity-content">
-              <div className="activity-title">OpenClaw deployed v2.1.3</div>
-              <div className="activity-description">Status: Success</div>
-            </div>
-            <div className="activity-time">2m</div>
+      <div className="grid-2col">
+        {/* Activity Stream */}
+        <section className="activity-section">
+          <h2 className="section-title">📡 Live Activity Stream</h2>
+          <div className="card">
+            <ActivityStream maxItems={8} autoRefresh={true} />
           </div>
-          
-          <div className="activity-divider"></div>
-          
-          <div className="activity-item">
-            <span className="activity-icon">📱</span>
-            <div className="activity-content">
-              <div className="activity-title">MobileClaw update</div>
-              <div className="activity-description">3 new users</div>
-            </div>
-            <div className="activity-time">15m</div>
-          </div>
-          
-          <div className="activity-divider"></div>
-          
-          <div className="activity-item">
-            <span className="activity-icon">🔐</span>
-            <div className="activity-content">
-              <div className="activity-title">Secret Vault backup completed</div>
-              <div className="activity-description">847 entries backed up</div>
-            </div>
-            <div className="activity-time">1h</div>
-          </div>
-          
-          <div className="activity-divider"></div>
-          
-          <div className="activity-item">
-            <span className="activity-icon">🖥️</span>
-            <div className="activity-content">
-              <div className="activity-title">Server health check</div>
-              <div className="activity-description">All systems OK</div>
-            </div>
-            <div className="activity-time">3h</div>
-          </div>
+        </section>
 
-          <div className="activity-footer">
-            <a href="#" className="link-primary">View All Activity →</a>
-          </div>
+        {/* Right Column: Agents & Token Usage */}
+        <div className="right-column">
+          {/* Active Agents */}
+          <section className="agents-section">
+            <h2 className="section-title">🤖 Active Agents</h2>
+            <div className="card">
+              <ActiveAgents maxAgents={3} autoRefresh={true} />
+            </div>
+          </section>
+
+          {/* Token Usage */}
+          <section className="token-usage-section">
+            <h2 className="section-title">🔢 Token Usage</h2>
+            <div className="card">
+              <TokenUsage autoRefresh={true} />
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <section className="system-health-section">
         <h2 className="section-title">System Health</h2>
