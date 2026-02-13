@@ -1,0 +1,147 @@
+/* Docs Tabs */
+.docs-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid rgba(129, 140, 248, 0.2);
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.docs-tab {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.docs-tab:hover {
+  background: rgba(129, 140, 248, 0.1);
+  color: #c7d2fe;
+}
+
+.docs-tab.active {
+  background: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.docs-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #818cf8;
+}
+
+/* File Preview Modal */
+.file-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.file-preview-content {
+  background: #1a1f2e;
+  border: 1px solid rgba(129, 140, 248, 0.3);
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.file-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(129, 140, 248, 0.2);
+  background: rgba(129, 140, 248, 0.05);
+}
+
+.file-preview-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 4px;
+}
+
+.file-preview-path {
+  font-size: 0.8125rem;
+  color: #9ca3af;
+  font-family: 'Courier New', monospace;
+}
+
+.close-btn {
+  background: rgba(248, 113, 113, 0.2);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+
+.close-btn:hover {
+  background: rgba(248, 113, 113, 0.3);
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.file-preview-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.file-preview-body pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .file-preview-modal {
+    padding: 10px;
+  }
+  
+  .file-preview-content {
+    max-height: 90vh;
+  }
+  
+  .file-preview-header {
+    padding: 16px;
+  }
+  
+  .file-preview-body {
+    padding: 16px;
+  }
+}

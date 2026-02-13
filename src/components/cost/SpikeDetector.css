@@ -1,0 +1,63 @@
+.spike-detector {
+  width: 100%;
+}
+
+.spike-alerts {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: 8px;
+}
+
+.spike-alerts-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f87171;
+  margin-bottom: 12px;
+}
+
+.spike-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spike-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.spike-date {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.spike-cost {
+  color: #f87171;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.spike-multiplier {
+  color: #fb923c;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .spike-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .spike-cost {
+    font-size: 1.25rem;
+  }
+}

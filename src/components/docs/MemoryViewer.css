@@ -1,0 +1,165 @@
+.memory-viewer {
+  width: 100%;
+}
+
+.memory-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.memory-search {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.memory-search:focus {
+  outline: none;
+  border-color: rgba(129, 140, 248, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.memory-search::placeholder {
+  color: #6b7280;
+}
+
+.memory-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #e5e7eb;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: rgba(129, 140, 248, 0.5);
+}
+
+.memory-count {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.memory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.no-memories {
+  text-align: center;
+  padding: 48px 16px;
+  color: #6b7280;
+}
+
+.no-memories .text-2xl {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.memory-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.memory-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.memory-source-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.memory-source-badge[data-source="mem0"] {
+  background: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.memory-source-badge[data-source="supermemory"] {
+  background: rgba(192, 132, 252, 0.2);
+  color: #c084fc;
+}
+
+.memory-content {
+  color: #e5e7eb;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 0.9375rem;
+}
+
+.memory-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.memory-tag {
+  padding: 4px 8px;
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.memory-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.8125rem;
+  color: #9ca3af;
+}
+
+.memory-project {
+  font-weight: 500;
+  color: #fb923c;
+}
+
+.memory-timestamp {
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .memory-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

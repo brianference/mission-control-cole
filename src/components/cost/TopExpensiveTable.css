@@ -1,0 +1,105 @@
+.top-expensive-table {
+  overflow-x: auto;
+}
+
+.top-expensive-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.top-expensive-table thead {
+  background: rgba(129, 140, 248, 0.1);
+  border-bottom: 2px solid rgba(129, 140, 248, 0.3);
+}
+
+.top-expensive-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #c7d2fe;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.top-expensive-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.top-expensive-table th.sortable:hover {
+  background: rgba(129, 140, 248, 0.2);
+}
+
+.top-expensive-table th.rank-column {
+  width: 50px;
+  text-align: center;
+}
+
+.top-expensive-table .sort-indicator {
+  color: #818cf8;
+  margin-left: 4px;
+}
+
+.top-expensive-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s;
+}
+
+.top-expensive-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.top-expensive-table td {
+  padding: 12px 16px;
+  color: #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.top-expensive-table td.rank-column {
+  text-align: center;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.top-expensive-table .cost-cell {
+  font-weight: 600;
+  color: #818cf8;
+}
+
+.top-expensive-table .cost-high {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.top-expensive-table .cost-medium {
+  color: #fb923c;
+  font-weight: 600;
+}
+
+.top-expensive-table .badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.top-expensive-table .badge-provider {
+  background: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.top-expensive-table .badge-model {
+  background: rgba(192, 132, 252, 0.2);
+  color: #c084fc;
+}
+
+@media (max-width: 768px) {
+  .top-expensive-table th,
+  .top-expensive-table td {
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+  }
+}
