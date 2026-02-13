@@ -72,70 +72,68 @@ const Overview: React.FC = () => {
           <div className="app-card card">
             <div className="app-header">
               <div className="app-title-group">
-                <span className="app-icon">🔧</span>
-                <h3 className="app-name">OpenClaw</h3>
+                <span className="app-icon">📋</span>
+                <h3 className="app-name">Python Kanban</h3>
               </div>
               <span className="status-dot online" title="Operational"></span>
             </div>
             
             <div className="app-metric">
-              <div className="metric-value">1,247</div>
-              <div className="metric-label">Active Sessions</div>
+              <div className="metric-value">121</div>
+              <div className="metric-label">Total Tasks</div>
             </div>
 
             <div className="quick-stats">
               <div className="quick-stat">
-                <div className="quick-stat-value">142</div>
-                <div className="quick-stat-label">Agents</div>
+                <div className="quick-stat-value">69</div>
+                <div className="quick-stat-label">Backlog</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">98.7%</div>
-                <div className="quick-stat-label">Uptime</div>
+                <div className="quick-stat-value">17</div>
+                <div className="quick-stat-label">In Progress</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">12.4K</div>
-                <div className="quick-stat-label">Messages</div>
+                <div className="quick-stat-value">8</div>
+                <div className="quick-stat-label">Done</div>
               </div>
             </div>
 
             <div className="app-footer">
-              <button className="btn-primary">Deploy</button>
-              <a href="#" className="link-secondary">View Details →</a>
+              <a href="https://python-kanban.pages.dev" target="_blank" rel="noopener noreferrer" className="btn-primary">Open Board</a>
             </div>
           </div>
 
           <div className="app-card card">
             <div className="app-header">
               <div className="app-title-group">
-                <span className="app-icon">📱</span>
-                <h3 className="app-name">MobileClaw</h3>
+                <span className="app-icon">🧠</span>
+                <h3 className="app-name">Second Brain</h3>
               </div>
               <span className="status-dot online" title="Operational"></span>
             </div>
             
             <div className="app-metric">
-              <div className="metric-value">3,421</div>
-              <div className="metric-label">Total Users</div>
+              <div className="metric-value">Memory</div>
+              <div className="metric-label">Knowledge Base</div>
             </div>
 
             <div className="quick-stats">
               <div className="quick-stat">
-                <div className="quick-stat-value">142</div>
-                <div className="quick-stat-label">Active</div>
+                <div className="quick-stat-value">∞</div>
+                <div className="quick-stat-label">Entries</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">87%</div>
-                <div className="quick-stat-label">Retention</div>
+                <div className="quick-stat-value">24/7</div>
+                <div className="quick-stat-label">Available</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">24K</div>
-                <div className="quick-stat-label">Sessions</div>
+                <div className="quick-stat-value">AI</div>
+                <div className="quick-stat-label">Powered</div>
               </div>
             </div>
 
             <div className="app-footer">
-              <button className="btn-primary">Update</button>
-              <a href="#" className="link-secondary">View Details →</a>
+              <a href="https://second-brain-cole.pages.dev" target="_blank" rel="noopener noreferrer" className="btn-primary">Open Brain</a>
             </div>
           </div>
 
@@ -149,28 +147,95 @@ const Overview: React.FC = () => {
             </div>
             
             <div className="app-metric">
-              <div className="metric-value">847</div>
-              <div className="metric-label">Vault Entries</div>
+              <div className="metric-value">Secure</div>
+              <div className="metric-label">Password Manager</div>
             </div>
 
             <div className="quick-stats">
               <div className="quick-stat">
-                <div className="quick-stat-value">98%</div>
+                <div className="quick-stat-value">🔒</div>
                 <div className="quick-stat-label">Encrypted</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">2.1 MB</div>
-                <div className="quick-stat-label">Size</div>
+                <div className="quick-stat-value">Safe</div>
+                <div className="quick-stat-label">Protected</div>
               </div>
               <div className="quick-stat">
-                <div className="quick-stat-value">14d</div>
-                <div className="quick-stat-label">Last Backup</div>
+                <div className="quick-stat-value">24/7</div>
+                <div className="quick-stat-label">Access</div>
               </div>
             </div>
 
             <div className="app-footer">
-              <button className="btn-primary">Backup</button>
-              <a href="#" className="link-secondary">View Details →</a>
+              <a href="https://secret-vault-9r3.pages.dev" target="_blank" rel="noopener noreferrer" className="btn-primary">Open Vault</a>
+            </div>
+          </div>
+
+          <div className="app-card card">
+            <div className="app-header">
+              <div className="app-title-group">
+                <span className="app-icon">🗾</span>
+                <h3 className="app-name">Tokyo Trip</h3>
+              </div>
+              <span className="status-dot online" title="Operational"></span>
+            </div>
+            
+            <div className="app-metric">
+              <div className="metric-value">2026</div>
+              <div className="metric-label">Tokyo & Osaka</div>
+            </div>
+
+            <div className="quick-stats">
+              <div className="quick-stat">
+                <div className="quick-stat-value">149</div>
+                <div className="quick-stat-label">Locations</div>
+              </div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">📍</div>
+                <div className="quick-stat-label">Interactive Map</div>
+              </div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">🗓️</div>
+                <div className="quick-stat-label">Timeline</div>
+              </div>
+            </div>
+
+            <div className="app-footer">
+              <a href="https://tokyo-osaka-trip-2026.netlify.app" target="_blank" rel="noopener noreferrer" className="btn-primary">View Itinerary</a>
+            </div>
+          </div>
+
+          <div className="app-card card">
+            <div className="app-header">
+              <div className="app-title-group">
+                <span className="app-icon">🎯</span>
+                <h3 className="app-name">Mission Control</h3>
+              </div>
+              <span className="status-dot online" title="Operational"></span>
+            </div>
+            
+            <div className="app-metric">
+              <div className="metric-value">Central</div>
+              <div className="metric-label">Command Hub</div>
+            </div>
+
+            <div className="quick-stats">
+              <div className="quick-stat">
+                <div className="quick-stat-value">5</div>
+                <div className="quick-stat-label">Apps</div>
+              </div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">Live</div>
+                <div className="quick-stat-label">Status</div>
+              </div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">📊</div>
+                <div className="quick-stat-label">Dashboard</div>
+              </div>
+            </div>
+
+            <div className="app-footer">
+              <a href="https://mission-control-cole.pages.dev" target="_blank" rel="noopener noreferrer" className="btn-primary">Open Dashboard</a>
             </div>
           </div>
         </div>
