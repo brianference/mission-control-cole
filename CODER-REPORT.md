@@ -66,6 +66,7 @@ To satisfy AC, take a production screenshot from https://mission-control-cole.pa
 
 Commit created in the `mission-control-dashboard` repo.
 
+- **Hash:** `7819f14`
 - **Type:** `fix:`
 - **Summary:** Wire TopBar notification/settings icons to open panels
 
