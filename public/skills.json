@@ -1,0 +1,482 @@
+[
+  {
+    "name": "accessibility-toolkit",
+    "description": "Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.",
+    "type": "skill"
+  },
+  {
+    "name": "agent-orchestrator",
+    "description": "|",
+    "type": "skill"
+  },
+  {
+    "name": "agent-task-chunking",
+    "description": "Skill: agent-task-chunking",
+    "type": "skill"
+  },
+  {
+    "name": "ai-automation-workflows",
+    "description": "|",
+    "type": "skill"
+  },
+  {
+    "name": "airbnb-search",
+    "description": "Search Airbnb listings with prices, ratings, and direct links. No API key required.",
+    "type": "skill"
+  },
+  {
+    "name": "analytics-tracking",
+    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event trackin",
+    "type": "skill"
+  },
+  {
+    "name": "android-adb",
+    "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screensh",
+    "type": "skill"
+  },
+  {
+    "name": "atl-mobile",
+    "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
+    "type": "skill"
+  },
+  {
+    "name": "autonomous-work",
+    "description": "Autonomous overnight work system using Ralph Loop + exec/process tools. Enables true autonomous coding work while you sleep - tasks are picked from ACTIVE queue, executed using Claude Code in Ralph Lo",
+    "type": "skill"
+  },
+  {
+    "name": "bird",
+    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "type": "skill"
+  },
+  {
+    "name": "calendar",
+    "description": "Calendar management and scheduling. Create events, manage meetings, and sync across calendar providers.",
+    "type": "skill"
+  },
+  {
+    "name": "chirp",
+    "description": "\"X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI fo",
+    "type": "skill"
+  },
+  {
+    "name": "claude-agent-sdk",
+    "description": "|",
+    "type": "skill"
+  },
+  {
+    "name": "claude-code-autonomous-build",
+    "description": ">",
+    "type": "skill"
+  },
+  {
+    "name": "claude-code-comms",
+    "description": "Skill: claude-code-comms",
+    "type": "skill"
+  },
+  {
+    "name": "claude-code-supervisor",
+    "description": ">",
+    "type": "skill"
+  },
+  {
+    "name": "claude-team",
+    "description": "Orchestrate multiple Claude Code workers via iTerm2 using the claude-team MCP server. Spawn workers with git worktrees, assign beads issues, monitor progress, and coordinate parallel development work.",
+    "type": "skill"
+  },
+  {
+    "name": "clawdex",
+    "description": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.",
+    "type": "skill"
+  },
+  {
+    "name": "clawflows",
+    "description": "Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.",
+    "type": "skill"
+  },
+  {
+    "name": "clawhub-security",
+    "description": "Skill: clawhub-security",
+    "type": "skill"
+  },
+  {
+    "name": "clean-blue-design",
+    "description": "Skill: clean-blue-design",
+    "type": "skill"
+  },
+  {
+    "name": "clips-machine",
+    "description": "Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts.",
+    "type": "skill"
+  },
+  {
+    "name": "cole-claudecode-comms",
+    "description": "Communication protocol and quality enforcement between Cole (OpenClaw) and Claude Code",
+    "type": "skill"
+  },
+  {
+    "name": "cron-mastery",
+    "description": "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron vs Heartbeat for time-sensitive tasks.",
+    "type": "skill"
+  },
+  {
+    "name": "database",
+    "description": "Database management and queries. Connect to SQL and NoSQL databases, run queries, and manage schemas.",
+    "type": "skill"
+  },
+  {
+    "name": "deploy-agent",
+    "description": "Multi-step deployment agent for full-stack apps. Build → Test → GitHub → Cloudflare Pages with human approval at each step.",
+    "type": "skill"
+  },
+  {
+    "name": "desktop-control",
+    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
+    "type": "skill"
+  },
+  {
+    "name": "email-daily-summary",
+    "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or creat",
+    "type": "skill"
+  },
+  {
+    "name": "expo-mobile-app",
+    "description": "Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.",
+    "type": "skill"
+  },
+  {
+    "name": "flight-search",
+    "description": "Search Google Flights for prices, times, and airlines. No API key required.",
+    "type": "skill"
+  },
+  {
+    "name": "google-analytics",
+    "description": "|",
+    "type": "skill"
+  },
+  {
+    "name": "goplaces",
+    "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.",
+    "type": "skill"
+  },
+  {
+    "name": "hostile-audit",
+    "description": "Skill: hostile-audit",
+    "type": "skill"
+  },
+  {
+    "name": "humanizer",
+    "description": "|",
+    "type": "skill"
+  },
+  {
+    "name": "image-cog",
+    "description": "AI image generation powered by CellCog. Create images, edit photos, consistent characters, product photography, reference-based images, sets of images, style transfer. Professional image creation with",
+    "type": "skill"
+  },
+  {
+    "name": "implementation-patterns",
+    "description": "**",
+    "type": "skill"
+  },
+  {
+    "name": "last30days",
+    "description": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.",
+    "type": "skill"
+  },
+  {
+    "name": "linkedin",
+    "description": "LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.",
+    "type": "skill"
+  },
+  {
+    "name": "location-places",
+    "description": "Skill: location-places",
+    "type": "skill"
+  },
+  {
+    "name": "mailgun",
+    "description": "Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requires MAILGUN_API_KEY and MAILGUN_DOMAIN envi",
+    "type": "skill"
+  },
+  {
+    "name": "markdown-optimization",
+    "description": "Skill: markdown-optimization",
+    "type": "skill"
+  },
+  {
+    "name": "memory-management",
+    "description": "Skill: memory-management",
+    "type": "skill"
+  },
+  {
+    "name": "memory-optimization",
+    "description": "Skill: memory-optimization",
+    "type": "skill"
+  },
+  {
+    "name": "metricool",
+    "description": "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.",
+    "type": "skill"
+  },
+  {
+    "name": "modern-design",
+    "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
+    "type": "skill"
+  },
+  {
+    "name": "netlify-deploy",
+    "description": "Skill: netlify-deploy",
+    "type": "skill"
+  },
+  {
+    "name": "no-bs-debugging",
+    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. The",
+    "type": "skill"
+  },
+  {
+    "name": "openclaw-auto-updater",
+    "description": "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update r",
+    "type": "skill"
+  },
+  {
+    "name": "openclaw-release-monitor",
+    "description": "Skill: openclaw-release-monitor",
+    "type": "skill"
+  },
+  {
+    "name": "openclaw-sec",
+    "description": "AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violations",
+    "type": "skill"
+  },
+  {
+    "name": "openclaw-social-scheduler",
+    "description": "Schedule posts to multiple social media platforms:",
+    "type": "skill"
+  },
+  {
+    "name": "pentest",
+    "description": "Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.",
+    "type": "skill"
+  },
+  {
+    "name": "percy-visual-testing",
+    "description": "Skill: percy-visual-testing",
+    "type": "skill"
+  },
+  {
+    "name": "places-api-recommendations",
+    "description": ">",
+    "type": "skill"
+  },
+  {
+    "name": "places-search",
+    "description": "Skill: places-search",
+    "type": "skill"
+  },
+  {
+    "name": "playwright-screenshots",
+    "description": "Skill: playwright-screenshots",
+    "type": "skill"
+  },
+  {
+    "name": "postgres",
+    "description": "PostgreSQL database management. Run queries, manage schemas, and monitor performance.",
+    "type": "skill"
+  },
+  {
+    "name": "postiz",
+    "description": "Postiz is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Google My Business, TikTok, Pinterest, Dribbble",
+    "type": "skill"
+  },
+  {
+    "name": "ralph-loop-agent",
+    "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using exec and process tools. Agent orchestrates coding agents (Codex, Claude Code, OpenCode, Goose) with proper TTY support via pty:true. Plans/bui",
+    "type": "skill"
+  },
+  {
+    "name": "ralph-loop-patterns",
+    "description": "**",
+    "type": "skill"
+  },
+  {
+    "name": "react-expert",
+    "description": "Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 fe",
+    "type": "skill"
+  },
+  {
+    "name": "safe-diagnostics",
+    "description": "Skill: safe-diagnostics",
+    "type": "skill"
+  },
+  {
+    "name": "scholarship-browser-agent",
+    "description": "** Finding scholarships for Lena (ASU accounting/finance). Verifies \"no fee\" claims and extracts precise requirements directly from source.",
+    "type": "skill"
+  },
+  {
+    "name": "scholarship-research",
+    "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholar",
+    "type": "skill"
+  },
+  {
+    "name": "screenshot-delivery",
+    "description": "Skill: screenshot-delivery",
+    "type": "skill"
+  },
+  {
+    "name": "screenshot-proof-workflow",
+    "description": ">",
+    "type": "skill"
+  },
+  {
+    "name": "second-brain",
+    "description": "Skill: second-brain",
+    "type": "skill"
+  },
+  {
+    "name": "secret-vault",
+    "description": "Skill: secret-vault",
+    "type": "skill"
+  },
+  {
+    "name": "security-audit",
+    "description": "**",
+    "type": "skill"
+  },
+  {
+    "name": "security-auditor",
+    "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection preventi",
+    "type": "skill"
+  },
+  {
+    "name": "security-monitor",
+    "description": "Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.",
+    "type": "skill"
+  },
+  {
+    "name": "security-sentinel",
+    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
+    "type": "skill"
+  },
+  {
+    "name": "senior-devops",
+    "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
+    "type": "skill"
+  },
+  {
+    "name": "seo-competitor-analysis",
+    "description": "Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website's competitors or improve their own SEO r",
+    "type": "skill"
+  },
+  {
+    "name": "spots",
+    "description": "Exhaustive Google Places search using grid-based scanning. Finds ALL places, not just what Google surfaces.",
+    "type": "skill"
+  },
+  {
+    "name": "standard-features",
+    "description": "Skill: standard-features",
+    "type": "skill"
+  },
+  {
+    "name": "supermemory-integration",
+    "description": "Skill: supermemory-integration",
+    "type": "skill"
+  },
+  {
+    "name": "telegram-screenshot-delivery",
+    "description": "Skill: telegram-screenshot-delivery",
+    "type": "skill"
+  },
+  {
+    "name": "telegram-screenshots",
+    "description": "Skill: telegram-screenshots",
+    "type": "skill"
+  },
+  {
+    "name": "tiktok-browser-scanner",
+    "description": "** Brian needs to find recent TikTok videos criticizing TPUSA figures (Erica Kirk, Tyler Bowyer, Charlie Kirk, etc.) to repost on @swordtruth.",
+    "type": "skill"
+  },
+  {
+    "name": "tiktok-teneo",
+    "description": "The agent gives you the ability to extract data from tiktok through different commands.",
+    "type": "skill"
+  },
+  {
+    "name": "travel-concierge",
+    "description": "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)",
+    "type": "skill"
+  },
+  {
+    "name": "travel-restaurants",
+    "description": "Skill: travel-restaurants",
+    "type": "skill"
+  },
+  {
+    "name": "twitter",
+    "description": "Twitter/X platform integration. Post tweets, read timeline, manage followers, and analyze engagement.",
+    "type": "skill"
+  },
+  {
+    "name": "uptime-monitor",
+    "description": "24/7 OpenClaw uptime monitor. Every 5min cron ping → writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracki",
+    "type": "skill"
+  },
+  {
+    "name": "vercel-deploy",
+    "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports produc",
+    "type": "skill"
+  },
+  {
+    "name": "vibe-coding-patterns",
+    "description": "Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Trigg",
+    "type": "skill"
+  },
+  {
+    "name": "video-agent",
+    "description": "Generate AI avatar videos with HeyGen's Video Agent API. One-shot prompt to video generation.",
+    "type": "skill"
+  },
+  {
+    "name": "x-api",
+    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches lik",
+    "type": "skill"
+  },
+  {
+    "name": "x-browser-monitor",
+    "description": "** Brian needs to check X notifications, find TikTok links to repost, or verify engagement on monetized content.",
+    "type": "skill"
+  },
+  {
+    "name": "x-post-automation",
+    "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation",
+    "type": "skill"
+  },
+  {
+    "name": "x-publisher",
+    "description": "Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X AP",
+    "type": "skill"
+  },
+  {
+    "name": "youtube-downloader-clipper",
+    "description": "Skill: youtube-downloader-clipper",
+    "type": "skill"
+  },
+  {
+    "name": "youtube-transcript",
+    "description": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's",
+    "type": "skill"
+  },
+  {
+    "name": "yt-dlp-downloader-skill",
+    "description": "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or",
+    "type": "skill"
+  },
+  {
+    "name": "zero-trust",
+    "description": "Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Trigger",
+    "type": "skill"
+  }
+]

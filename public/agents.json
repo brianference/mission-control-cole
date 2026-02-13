@@ -1,0 +1,42 @@
+[
+  {
+    "name": "coder",
+    "description": "Agent: coder",
+    "type": "agent"
+  },
+  {
+    "name": "designer",
+    "description": "Agent: designer",
+    "type": "agent"
+  },
+  {
+    "name": "idea-agent",
+    "description": "Agent: idea-agent",
+    "type": "agent"
+  },
+  {
+    "name": "pm-orchestrator",
+    "description": "Agent: pm-orchestrator",
+    "type": "agent"
+  },
+  {
+    "name": "scholarship-agent",
+    "description": "Agent: scholarship-agent",
+    "type": "agent"
+  },
+  {
+    "name": "test-case-writer",
+    "description": "Agent: test-case-writer",
+    "type": "agent"
+  },
+  {
+    "name": "validator",
+    "description": "Agent: validator",
+    "type": "agent"
+  },
+  {
+    "name": "visual-test-agent",
+    "description": "Agent: visual-test-agent",
+    "type": "agent"
+  }
+]
