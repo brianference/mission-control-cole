@@ -10,40 +10,10 @@ export const navigationItems: NavItem[] = [
     badge: { count: 12 },
   },
   {
-    id: 'content',
-    label: 'Content',
-    icon: '📝',
-    url: '/content',
-    badge: { count: 7, status: 'warning' },
-    subItems: [
-      {
-        id: 'swordtruth',
-        label: '@swordtruth',
-        icon: '🗣️',
-        url: '/content/swordtruth',
-      },
-      {
-        id: 'tpusa-intel',
-        label: 'TPUSA Intel',
-        icon: '🔍',
-        url: 'https://swordtruth-tpusa-intel.netlify.app',
-        external: true,
-      },
-      {
-        id: 'scheduled',
-        label: 'Scheduled',
-        icon: '⏰',
-        url: '/content/scheduled',
-      },
-    ],
-  },
-  {
     id: 'tasks',
     label: 'Tasks',
     icon: '✅',
-    url: 'https://python-kanban.pages.dev',
-    external: true,
-    badge: { count: 17, status: 'info' },
+    url: '/tasks',
     subItems: [
       {
         id: 'kanban',
@@ -52,13 +22,21 @@ export const navigationItems: NavItem[] = [
         url: 'https://python-kanban.pages.dev',
         external: true,
       },
-      {
-        id: 'my-tasks',
-        label: 'My Tasks',
-        icon: '👤',
-        url: '/tasks/mine',
-      },
     ],
+  },
+  {
+    id: 'secret-vault',
+    label: 'Secret Vault',
+    icon: '🔐',
+    url: 'https://secret-vault-9r3.pages.dev',
+    external: true,
+  },
+  {
+    id: 'itinerary',
+    label: 'Itinerary',
+    icon: '🗾',
+    url: 'https://tokyo-osaka-trip-2026.netlify.app',
+    external: true,
   },
   {
     id: 'calendar',
@@ -69,7 +47,7 @@ export const navigationItems: NavItem[] = [
   },
   {
     id: 'costs',
-    label: 'Cost Tracking',
+    label: 'Costs',
     icon: '💰',
     url: '/costs',
     badge: { text: '$981', status: 'warning' },
@@ -123,6 +101,13 @@ export const navigationItems: NavItem[] = [
         label: 'Projects',
         icon: '🚀',
         url: '/docs/projects',
+      },
+      {
+        id: 'content',
+        label: 'Content',
+        icon: '📝',
+        url: '/content',
+        badge: { count: 7, status: 'warning' },
       },
     ],
   },
