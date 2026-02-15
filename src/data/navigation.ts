@@ -90,6 +90,18 @@ export const navigationItems: NavItem[] = [
     badge: { count: 8, status: 'success' },
   },
   {
+    id: 'apps',
+    label: 'Apps',
+    icon: '🚀',
+    url: '/apps',
+  },
+  {
+    id: 'logs',
+    label: 'Logs',
+    icon: '📜',
+    url: '/logs',
+  },
+  {
     id: 'docs',
     label: 'Docs',
     icon: '📄',

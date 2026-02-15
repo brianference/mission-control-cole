@@ -16,6 +16,8 @@ import Profile from './pages/Profile';
 import Skills from './pages/Skills';
 import Agents from './pages/Agents';
 import Tasks from './pages/Tasks';
+import Apps from './pages/Apps';
+import Logs from './pages/Logs';
 
 import './styles/globals.css';
 
@@ -48,6 +50,8 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/agents" element={<Agents />} />
             <Route path="/tasks" element={<Tasks />} />
+            <Route path="/apps" element={<Apps />} />
+            <Route path="/logs" element={<Logs />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>

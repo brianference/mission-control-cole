@@ -1,0 +1,81 @@
+
+.logs-page {
+  padding: 24px;
+}
+
+.logs-toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  align-items: center;
+}
+
+.logs-toolbar .search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--indigo-glass-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  flex-grow: 1;
+}
+
+.logs-toolbar .search-box input {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  width: 100%;
+}
+
+.logs-toolbar select, .logs-toolbar button {
+  background-color: var(--indigo-glass-light);
+  border: 1px solid var(--indigo-glass-light);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logs-toolbar button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logs-container {
+  height: 600px;
+  overflow-y: scroll;
+  padding: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  background-color: #0a0a1a;
+}
+
+.log-entry {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+}
+
+.log-timestamp {
+  color: #888;
+}
+
+.log-level {
+  font-weight: bold;
+}
+
+.log-level.info { color: var(--accent-blue); }
+.log-level.warn { color: var(--accent-orange); }
+.log-level.error { color: var(--accent-red); }
+.log-level.debug { color: #aaa; }
+
+.log-app {
+  color: var(--accent-green);
+}
+
+.log-message {
+  color: #ddd;
+}

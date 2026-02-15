@@ -1,0 +1,115 @@
+
+.apps-page {
+  padding: 24px;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-secondary);
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.app-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background-color: var(--accent-green);
+}
+
+.status-dot.offline {
+  background-color: var(--accent-red);
+}
+
+.app-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.app-link {
+  color: var(--text-color-secondary);
+  transition: color 0.2s ease;
+}
+
+.app-link:hover {
+  color: var(--accent-blue);
+}
+
+.app-body {
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+
+.app-metric, .app-last-deploy {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--text-color-secondary);
+}
+
+.app-metric span:last-child, .app-last-deploy span:last-child {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.app-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--indigo-glass-light);
+  padding-top: 16px;
+}
+
+.quick-action-btn {
+  background: none;
+  border: 1px solid var(--indigo-glass-light);
+  color: var(--text-color-secondary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+  background-color: var(--indigo-glass-light);
+  color: var(--text-color);
+}

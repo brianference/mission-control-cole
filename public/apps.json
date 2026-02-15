@@ -1,0 +1,43 @@
+
+[
+  {
+    "name": "Python Kanban",
+    "status": "online",
+    "lastDeploy": "2026-02-12T21:45:00",
+    "url": "https://python-kanban.pages.dev",
+    "metrics": {
+      "cpu": "5%",
+      "memory": "128MB"
+    }
+  },
+  {
+    "name": "Second Brain",
+    "status": "online",
+    "lastDeploy": "2026-02-11T14:30:00",
+    "url": "https://second-brain-cole.pages.dev",
+    "metrics": {
+      "cpu": "3%",
+      "memory": "96MB"
+    }
+  },
+  {
+    "name": "Secret Vault",
+    "status": "offline",
+    "lastDeploy": "2026-02-10T09:00:00",
+    "url": "https://secret-vault-9r3.pages.dev",
+    "metrics": {
+      "cpu": "0%",
+      "memory": "0MB"
+    }
+  },
+  {
+    "name": "Tokyo Trip",
+    "status": "online",
+    "lastDeploy": "2026-02-12T18:00:00",
+    "url": "https://tokyo-osaka-trip-2026.netlify.app",
+    "metrics": {
+      "cpu": "8%",
+      "memory": "256MB"
+    }
+  }
+]
