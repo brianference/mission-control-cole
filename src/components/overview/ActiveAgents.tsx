@@ -28,23 +28,23 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
 
   const fetchAgents = async () => {
     try {
-      // Fetch agents list
-      const response = await fetch('/agents.json');
-      const agentList = await response.json();
+      // Fetch real agent data from OpenClaw sessions
+      const response = await fetch('/active-agents.json');
+      const agentData = await response.json();
       
-      // Simulate active agents (in production, fetch from real API)
-      const activeAgents: Agent[] = agentList
-        .slice(0, 3)
-        .map((agent: any, idx: number) => ({
-          id: agent.name,
-          name: agent.name,
-          task: getSimulatedTask(agent.name),
-          status: idx === 0 ? 'running' : idx === 1 ? 'idle' : 'waiting',
-          progress: idx === 0 ? Math.floor(Math.random() * 100) : undefined,
-          startedAt: idx === 0 ? new Date(Date.now() - Math.random() * 3600000) : undefined,
-          model: 'Claude Sonnet 4.5',
-          tokensUsed: idx === 0 ? Math.floor(Math.random() * 100000) : undefined,
-        }));
+      // Map to Agent format
+      const activeAgents: Agent[] = agentData.map((agent: any) => ({
+        id: agent.id,
+        name: agent.name,
+        task: agent.sessionCount > 0 
+          ? `Active sessions: ${agent.sessionCount}` 
+          : 'Idle',
+        status: agent.status as Agent['status'],
+        progress: agent.status === 'running' ? undefined : undefined,
+        startedAt: agent.lastActivity ? new Date(agent.lastActivity) : undefined,
+        model: agent.model || 'unknown',
+        tokensUsed: agent.totalTokens || undefined,
+      }));
       
       setAgents(activeAgents.slice(0, maxAgents));
       setLoading(false);
@@ -52,35 +52,6 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
       console.error('Failed to fetch agents:', error);
       setLoading(false);
     }
-  };
-
-  const getSimulatedTask = (agentName: string): string => {
-    const tasks: Record<string, string[]> = {
-      'coder': [
-        'Implementing dashboard widgets',
-        'Refactoring API endpoints',
-        'Writing unit tests',
-        'Reviewing code changes',
-      ],
-      'designer': [
-        'Creating UI mockups',
-        'Designing component library',
-        'Optimizing visual hierarchy',
-      ],
-      'pm-orchestrator': [
-        'Coordinating team tasks',
-        'Planning sprint activities',
-        'Reviewing project timeline',
-      ],
-      'idea-agent': [
-        'Brainstorming features',
-        'Analyzing user feedback',
-        'Generating content ideas',
-      ],
-    };
-    
-    const agentTasks = tasks[agentName] || ['Processing tasks'];
-    return agentTasks[Math.floor(Math.random() * agentTasks.length)];
   };
 
   useEffect(() => {

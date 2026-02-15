@@ -32,83 +32,22 @@ const ActivityStream: React.FC<ActivityStreamProps> = ({
 
   const fetchActivities = async () => {
     try {
-      // In production, this would fetch from real API
-      // For now, generate mock real-time data based on usage-data.json
-      const response = await fetch('/usage-data.json');
-      const usageData = await response.json();
+      // Fetch real activity data from OpenClaw sessions
+      const response = await fetch('/activity-stream.json');
+      const activityData = await response.json();
       
-      // Transform usage data into activities
-      const recentActivities: Activity[] = [];
+      // Transform to Activity format if needed
+      const mappedActivities: Activity[] = activityData.map((activity: any) => ({
+        id: activity.id,
+        type: activity.type as Activity['type'],
+        icon: activity.icon,
+        title: activity.title,
+        description: activity.description,
+        timestamp: new Date(activity.timestamp),
+        metadata: activity.metadata,
+      }));
       
-      // Add recent daily activities
-      if (usageData.daily && usageData.daily.length > 0) {
-        const latestDay = usageData.daily[usageData.daily.length - 1];
-        
-        // System activity
-        recentActivities.push({
-          id: `sys-${Date.now()}`,
-          type: 'system',
-          icon: '🖥️',
-          title: 'Daily usage processed',
-          description: `${latestDay.requests.toLocaleString()} API requests`,
-          timestamp: new Date(latestDay.date),
-          metadata: {
-            cost: latestDay.cost,
-            status: 'success',
-          },
-        });
-      }
-      
-      // Add agent activities from models
-      if (usageData.models && usageData.models.length > 0) {
-        usageData.models.slice(0, 3).forEach((model: any, idx: number) => {
-          recentActivities.push({
-            id: `agent-${idx}`,
-            type: 'agent',
-            icon: '🤖',
-            title: `${model.name} completed tasks`,
-            description: `${model.requests.toLocaleString()} requests processed`,
-            timestamp: new Date(Date.now() - idx * 3600000), // Stagger by hours
-            metadata: {
-              agent: model.name,
-              cost: model.cost,
-              status: 'success',
-            },
-          });
-        });
-      }
-      
-      // Add deployment activity
-      recentActivities.push({
-        id: 'deploy-1',
-        type: 'deployment',
-        icon: '🚀',
-        title: 'Mission Control deployed',
-        description: 'Status: Success',
-        timestamp: new Date(Date.now() - 7200000), // 2 hours ago
-        metadata: {
-          status: 'success',
-        },
-      });
-      
-      // Add cron job activity
-      recentActivities.push({
-        id: 'cron-1',
-        type: 'cron',
-        icon: '⏰',
-        title: 'Auto-Assign completed',
-        description: 'Processed Kanban tasks',
-        timestamp: new Date(Date.now() - 1800000), // 30 min ago
-        metadata: {
-          status: 'success',
-          duration: 2345,
-        },
-      });
-      
-      // Sort by timestamp (newest first)
-      recentActivities.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
-      
-      setActivities(recentActivities.slice(0, maxItems));
+      setActivities(mappedActivities.slice(0, maxItems));
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch activities:', error);

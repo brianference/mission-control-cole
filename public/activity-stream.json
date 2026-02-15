@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cost-94a07882-73a0-4134-aaf3-42ccdd007018",
+    "type": "error",
+    "icon": "💰",
+    "title": "High cost session",
+    "description": "$6.13 - Review optimization opportunities",
+    "timestamp": "2026-02-15T21:49:16.517Z",
+    "metadata": {
+      "cost": 6.130302,
+      "status": "warning"
+    }
+  }
+]

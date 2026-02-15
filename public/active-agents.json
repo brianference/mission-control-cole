@@ -1,0 +1,35 @@
+[
+  {
+    "id": "coder",
+    "name": "coder",
+    "status": "running",
+    "sessionCount": 1,
+    "totalCost": 0.93228195,
+    "totalTokens": 13012,
+    "toolCalls": 0,
+    "model": "claude-sonnet-4-5",
+    "lastActivity": "2026-02-15T21:44:31.550Z"
+  },
+  {
+    "id": "idea-agent",
+    "name": "idea-agent",
+    "status": "running",
+    "sessionCount": 1,
+    "totalCost": 0.39213135000000005,
+    "totalTokens": 5536,
+    "toolCalls": 0,
+    "model": "claude-sonnet-4-5",
+    "lastActivity": "2026-02-15T20:55:51.997Z"
+  },
+  {
+    "id": "pm-orchestrator",
+    "name": "pm-orchestrator",
+    "status": "running",
+    "sessionCount": 10,
+    "totalCost": 18.888832149284184,
+    "totalTokens": 1078360,
+    "toolCalls": 0,
+    "model": "minimax/minimax-m2.1",
+    "lastActivity": "2026-02-15T21:39:35.454Z"
+  }
+]
