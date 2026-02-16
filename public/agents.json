@@ -5,7 +5,16 @@
     "description": "Project management and agent coordination. Spawns sub-agents for complex tasks.",
     "model": "anthropic-opus46/claude-opus-4-6",
     "type": "orchestrator",
-    "canSpawn": ["designer", "coder", "test-case-writer", "visual-test-agent", "validator", "scholarship-agent", "idea-agent", "candi"]
+    "canSpawn": [
+      "designer",
+      "coder",
+      "test-case-writer",
+      "visual-test-agent",
+      "validator",
+      "scholarship-agent",
+      "idea-agent",
+      "candi"
+    ]
   },
   {
     "id": "designer",

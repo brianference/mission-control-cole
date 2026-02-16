@@ -1,15 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T04:30:00.000Z",
-  "sessions": [
-    {
-      "agentId": "pm-orchestrator",
-      "sessionKey": "agent:pm-orchestrator:telegram:group:-1003679370804",
-      "displayName": "Mission Control",
-      "model": "claude-opus-4-6",
-      "totalTokens": 134550,
-      "updatedAt": 1771216995011,
-      "status": "active"
-    }
-  ],
-  "_note": "This file is updated by cron jobs with real session data"
+  "lastUpdated": "2026-02-16T04:48:53Z",
+  "sessions": [],
+  "_note": "Session data is populated at runtime via cron job or API"
 }
