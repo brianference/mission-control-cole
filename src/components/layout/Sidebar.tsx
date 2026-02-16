@@ -106,10 +106,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
       aria-label="Main Navigation"
     >
       <div className="sidebar-header">
-        <div className="sidebar-brand">
+        <NavLink to="/" className="sidebar-brand" aria-label="Go to Dashboard">
           <span className="brand-icon" role="img" aria-label="Mission Control">🚀</span>
           <span className="brand-text">Mission Control</span>
-        </div>
+        </NavLink>
         {onClose && (
           <button
             className="sidebar-close"
