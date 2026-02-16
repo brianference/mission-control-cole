@@ -35,7 +35,7 @@ export const navigationItems: NavItem[] = [
     id: 'itinerary',
     label: 'Itinerary',
     icon: '🗾',
-    url: 'https://tokyo-osaka-trip-2026.netlify.app',
+    url: 'https://tokyo-itinerary.pages.dev',
     external: true,
   },
   {
