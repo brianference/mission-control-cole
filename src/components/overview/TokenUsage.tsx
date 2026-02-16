@@ -38,16 +38,21 @@ const TokenUsage: React.FC<TokenUsageProps> = ({
       const response = await fetch('/usage-data.json');
       const data = await response.json();
       
-      // Calculate current usage from data
+      // Calculate current usage from REAL data
       const latestDay = data.daily[data.daily.length - 1];
       const monthlyTotal = data.summary.monthTotal;
-      const monthlyTokens = data.summary.totalSessions * 50000; // Estimate
+      const totalTokens = data.summary.totalTokens || data.summary.totalSessions * 50000;
+      
+      // Session tokens from latest day's average per session
+      const latestDaySessions = latestDay.sessions || 1;
+      const sessionTokens = Math.round((latestDay.tokens || 0) / latestDaySessions);
+      const sessionCost = latestDay.cost / latestDaySessions;
       
       const tokenUsage: TokenUsageData = {
         session: {
-          used: 25000, // Simulated current session
+          used: sessionTokens,
           limit: 100000,
-          cost: 0.05,
+          cost: parseFloat(sessionCost.toFixed(4)),
         },
         daily: {
           used: latestDay.tokens,
@@ -55,7 +60,7 @@ const TokenUsage: React.FC<TokenUsageProps> = ({
           cost: latestDay.cost,
         },
         monthly: {
-          used: monthlyTokens,
+          used: totalTokens,
           limit: 10000000000, // 10B tokens/month limit
           cost: monthlyTotal,
         },

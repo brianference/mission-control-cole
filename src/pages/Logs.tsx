@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, Search } from 'lucide-react';
+import { Play, Pause, Search, RefreshCw } from 'lucide-react';
 import './Logs.css';
 
 type LogLevel = 'info' | 'warn' | 'error' | 'debug';
@@ -12,62 +11,108 @@ interface LogEntry {
   message: string;
 }
 
-const generateMockLog = (): LogEntry => {
-    const levels: LogLevel[] = ['info', 'warn', 'error', 'debug'];
-    const apps = ['auth-service', 'api-gateway', 'frontend', 'data-pipeline'];
-    const messages = [
-      'User logged in successfully',
-      'Failed to connect to database',
-      'API endpoint /users returned 200',
-      'High memory usage detected',
-      'Starting background job',
-      'Invalid token received'
-    ];
-    return {
-      timestamp: new Date().toISOString(),
-      level: levels[Math.floor(Math.random() * levels.length)],
-      app: apps[Math.floor(Math.random() * apps.length)],
-      message: messages[Math.floor(Math.random() * messages.length)],
-    };
-  };
-
 const Logs: React.FC = () => {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [isPaused, setIsPaused] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [levelFilter, setLevelFilter] = useState<LogLevel | 'all'>('all');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const logContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isPaused) {
-        setLogs(prevLogs => [...prevLogs, generateMockLog()]);
+  const fetchLogs = async () => {
+    try {
+      const response = await fetch('/logs.json');
+      if (response.ok) {
+        const data = await response.json();
+        setLogs(data);
+        setError(null);
+      } else {
+        // No logs.json yet - show empty state
+        setLogs([]);
+        setError('No logs available. Generate logs with generate-real-data.sh');
       }
-    }, 1000);
+    } catch (err) {
+      setLogs([]);
+      setError('Failed to load logs');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLogs();
+  }, []);
+
+  // Auto-refresh every 30 seconds if not paused
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(fetchLogs, 30000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
   useEffect(() => {
-    if (!isPaused && logContainerRef.current) {
+    if (logContainerRef.current && !isPaused) {
       logContainerRef.current.scrollTop = logContainerRef.current.scrollHeight;
     }
   }, [logs, isPaused]);
-  
+
   const filteredLogs = logs.filter(log => {
-    const levelMatch = levelFilter === 'all' || log.level === levelFilter;
-    const searchMatch = log.message.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                        log.app.toLowerCase().includes(searchTerm.toLowerCase());
-    return levelMatch && searchMatch;
+    const matchesSearch = log.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         log.app.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLevel = levelFilter === 'all' || log.level === levelFilter;
+    return matchesSearch && matchesLevel;
   });
 
+  const getLevelColor = (level: LogLevel) => {
+    switch (level) {
+      case 'error': return '#ef4444';
+      case 'warn': return '#f59e0b';
+      case 'info': return '#3b82f6';
+      case 'debug': return '#6b7280';
+      default: return '#9ca3af';
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="page">
+        <div className="loading-state">
+          <RefreshCw className="spin" size={24} />
+          <span>Loading logs...</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="logs-page">
+    <div className="page">
       <header className="page-header">
-        <h1 className="page-title gradient-text">Real-Time Logs</h1>
+        <div>
+          <h1 className="page-title">
+            <span className="page-icon">📋</span>
+            System Logs
+          </h1>
+          <p className="page-subtitle">Real-time gateway and session logs</p>
+        </div>
+        <div className="header-actions">
+          <button 
+            className={`btn-secondary ${isPaused ? 'paused' : ''}`}
+            onClick={() => setIsPaused(!isPaused)}
+          >
+            {isPaused ? <Play size={16} /> : <Pause size={16} />}
+            {isPaused ? 'Resume' : 'Pause'}
+          </button>
+          <button className="btn-secondary" onClick={fetchLogs}>
+            <RefreshCw size={16} />
+            Refresh
+          </button>
+        </div>
       </header>
-      <div className="logs-toolbar card">
+
+      <div className="logs-controls card">
         <div className="search-box">
-          <Search size={18} />
+          <Search size={16} />
           <input
             type="text"
             placeholder="Search logs..."
@@ -75,27 +120,56 @@ const Logs: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <select value={levelFilter} onChange={(e) => setLevelFilter(e.target.value as any)}>
-            <option value="all">All Levels</option>
-            <option value="info">Info</option>
-            <option value="warn">Warn</option>
-            <option value="error">Error</option>
-            <option value="debug">Debug</option>
-        </select>
-        <button onClick={() => setIsPaused(!isPaused)}>
-          {isPaused ? <Play size={18} /> : <Pause size={18} />}
-          {isPaused ? 'Resume' : 'Pause'}
-        </button>
+        <div className="level-filters">
+          {(['all', 'info', 'warn', 'error', 'debug'] as const).map(level => (
+            <button
+              key={level}
+              className={`level-btn ${levelFilter === level ? 'active' : ''}`}
+              onClick={() => setLevelFilter(level)}
+              style={level !== 'all' ? { borderColor: getLevelColor(level as LogLevel) } : {}}
+            >
+              {level.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </div>
+
       <div className="logs-container card" ref={logContainerRef}>
+        {error && (
+          <div className="logs-empty">
+            <span className="empty-icon">📭</span>
+            <p>{error}</p>
+            <code>./generate-real-data.sh</code>
+          </div>
+        )}
+        {!error && filteredLogs.length === 0 && (
+          <div className="logs-empty">
+            <span className="empty-icon">🔍</span>
+            <p>No logs match your filters</p>
+          </div>
+        )}
         {filteredLogs.map((log, index) => (
-          <div key={index} className={`log-entry ${log.level}`}>
-            <span className="log-timestamp">{log.timestamp}</span>
-            <span className={`log-level ${log.level}`}>{log.level.toUpperCase()}</span>
-            <span className="log-app">[{log.app}]</span>
+          <div key={index} className="log-entry">
+            <span className="log-timestamp">
+              {new Date(log.timestamp).toLocaleTimeString()}
+            </span>
+            <span 
+              className="log-level"
+              style={{ color: getLevelColor(log.level) }}
+            >
+              [{log.level.toUpperCase()}]
+            </span>
+            <span className="log-app">{log.app}</span>
             <span className="log-message">{log.message}</span>
           </div>
         ))}
+      </div>
+
+      <div className="logs-footer">
+        <span>{filteredLogs.length} log entries</span>
+        <span className="status-indicator">
+          {isPaused ? '⏸️ Paused' : '🔄 Auto-refresh: 30s'}
+        </span>
       </div>
     </div>
   );

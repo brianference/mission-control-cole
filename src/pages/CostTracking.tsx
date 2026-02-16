@@ -32,12 +32,16 @@ interface UsageData {
     monthTotal: number;
     totalSessions: number;
     totalRequests: number;
+    totalTokens?: number;
   };
   daily: Array<{
     date: string;
     cost: number;
     tokens: number;
     requests: number;
+    sessions?: number;
+    byModel?: Record<string, { cost: number; requests: number }>;
+    byProvider?: Record<string, { cost: number; requests: number }>;
   }>;
   providers: Array<{
     name: string;
@@ -56,6 +60,14 @@ interface UsageData {
     cost: number;
     tokens: number;
     requests: number;
+  }>;
+  sessions: Array<{
+    id: string;
+    agent?: string;
+    totalCost?: number;
+    duration?: number;
+    events?: number;
+    messageCount?: number;
   }>;
   lastUpdated: string;
 }
@@ -98,6 +110,50 @@ const calculateSummaryForRange = (filteredDaily: UsageData['daily']) => {
     avgCostPerDay: totalCost / days,
     days
   };
+};
+
+// Aggregate sessions by agent - REAL DATA
+interface AgentUsage {
+  name: string;
+  sessions: number;
+  requests: number;
+  cost: number;
+  avgDuration: string;
+}
+
+const aggregateByAgent = (sessions: any[]): AgentUsage[] => {
+  const agentMap = new Map<string, { sessions: number; requests: number; cost: number; totalDuration: number }>();
+  
+  for (const session of sessions) {
+    const agent = session.agent || 'unknown';
+    const existing = agentMap.get(agent) || { sessions: 0, requests: 0, cost: 0, totalDuration: 0 };
+    
+    agentMap.set(agent, {
+      sessions: existing.sessions + 1,
+      requests: existing.requests + (session.events || session.messageCount || 0),
+      cost: existing.cost + (session.totalCost || 0),
+      totalDuration: existing.totalDuration + (session.duration || 0),
+    });
+  }
+  
+  return Array.from(agentMap.entries())
+    .map(([name, data]) => ({
+      name,
+      sessions: data.sessions,
+      requests: data.requests,
+      cost: parseFloat(data.cost.toFixed(2)),
+      avgDuration: formatDuration(data.totalDuration / data.sessions),
+    }))
+    .sort((a, b) => b.cost - a.cost);
+};
+
+const formatDuration = (ms: number): string => {
+  const minutes = Math.round(ms / 60000);
+  if (minutes < 1) return '<1m';
+  if (minutes < 60) return `${minutes}m`;
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  return `${hours}h ${mins}m`;
 };
 
 const CostTracking: React.FC = () => {
@@ -666,22 +722,13 @@ const CostTracking: React.FC = () => {
             </div>
           </div>
 
-          {/* Simulated Agent Usage */}
+          {/* Agent Usage - REAL DATA from sessions */}
           <div className="glass-card p-6 mb-6">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
               🤖 Agent Usage Breakdown
             </h2>
             <TopExpensiveTable
-              data={[
-                { name: 'coder', sessions: 42, requests: 6834, cost: 412.34, avgDuration: '23m' },
-                { name: 'pm-orchestrator', sessions: 28, requests: 4521, cost: 278.91, avgDuration: '18m' },
-                { name: 'idea-agent', sessions: 15, requests: 2103, cost: 124.56, avgDuration: '12m' },
-                { name: 'designer', sessions: 12, requests: 1876, cost: 98.23, avgDuration: '15m' },
-                { name: 'test-case-writer', sessions: 7, requests: 892, cost: 45.67, avgDuration: '9m' },
-                { name: 'validator', sessions: 3, requests: 421, cost: 18.34, avgDuration: '7m' },
-                { name: 'scholarship-agent', sessions: 1, requests: 89, cost: 3.21, avgDuration: '5m' },
-                { name: 'visual-test-agent', sessions: 1, requests: 37, cost: 1.14, avgDuration: '4m' },
-              ]}
+              data={aggregateByAgent(data.sessions || [])}
               columns={[
                 {
                   key: 'name',

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { RefreshCw } from 'lucide-react';
 import './WorkspaceActivity.css';
 
 interface ActivityDay {
@@ -13,68 +14,66 @@ interface ActivityDay {
 
 const WorkspaceActivity: React.FC = () => {
   const [view, setView] = useState<'daily' | 'weekly'>('daily');
+  const [weekData, setWeekData] = useState<ActivityDay[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // In production, fetch from /workspace-activity.json
-  const weekData: ActivityDay[] = [
-    {
-      date: '2026-02-15',
-      label: 'Today',
-      commits: 3,
-      files: 25,
-      skills: ['cloudflare-pages-deploy', 'memory-optimization', 'phone-calls-bland'],
-      projects: ['mission-control', 'lena-scholarships'],
-      highlight: 'Cloudflare deploy fix'
-    },
-    {
-      date: '2026-02-14',
-      label: 'Sat',
-      commits: 2,
-      files: 8,
-      skills: ['emergency-rate-limit'],
-      projects: ['tokyo-trip'],
-    },
-    {
-      date: '2026-02-13',
-      label: 'Fri',
-      commits: 1,
-      files: 2,
-      skills: [],
-      projects: [],
-    },
-    {
-      date: '2026-02-12',
-      label: 'Thu',
-      commits: 42,
-      files: 30,
-      skills: ['humanizer', 'last30days', 'markdown-optimization'],
-      projects: ['mission-control', 'tokyo-trip'],
-      highlight: 'Heavy dev day'
-    },
-    {
-      date: '2026-02-11',
-      label: 'Wed',
-      commits: 5,
-      files: 6,
-      skills: ['supermemory-integration'],
-      projects: [],
-    },
-    {
-      date: '2026-02-10',
-      label: 'Tue',
-      commits: 4,
-      files: 6,
-      skills: ['percy-visual-testing', 'agent-task-chunking'],
-      projects: [],
-    },
-    {
-      date: '2026-02-09',
-      label: 'Mon',
-      commits: 3,
-      files: 5,
-      skills: ['no-bs-debugging', 'screenshot-proof-workflow'],
-      projects: [],
-    },
-  ];
+  useEffect(() => {
+    const fetchActivity = async () => {
+      try {
+        const response = await fetch('/workspace-activity.json');
+        if (response.ok) {
+          const data = await response.json();
+          setWeekData(data);
+          setError(null);
+        } else {
+          setWeekData([]);
+          setError('No activity data. Run generate-real-data.sh');
+        }
+      } catch {
+        setWeekData([]);
+        setError('Failed to load activity data');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchActivity();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="workspace-activity">
+        <div className="wa-header">
+          <div className="wa-title">
+            <span className="wa-icon">📊</span>
+            <span>Workspace Activity</span>
+          </div>
+        </div>
+        <div className="wa-loading">
+          <RefreshCw className="spin" size={20} />
+          <span>Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || weekData.length === 0) {
+    return (
+      <div className="workspace-activity">
+        <div className="wa-header">
+          <div className="wa-title">
+            <span className="wa-icon">📊</span>
+            <span>Workspace Activity</span>
+          </div>
+        </div>
+        <div className="wa-empty">
+          <span>📭</span>
+          <p>{error || 'No activity data'}</p>
+          <code>./generate-real-data.sh</code>
+        </div>
+      </div>
+    );
+  }
 
   const weekSummary = {
     totalCommits: weekData.reduce((s, d) => s + d.commits, 0),
@@ -178,7 +177,7 @@ const WorkspaceActivity: React.FC = () => {
                 <div 
                   className="wa-bar" 
                   style={{ 
-                    height: `${Math.min(100, (day.commits / weekSummary.heaviestDay.commits) * 100)}%`,
+                    height: `${Math.min(100, (day.commits / (weekSummary.heaviestDay.commits || 1)) * 100)}%`,
                     background: day.date === weekSummary.heaviestDay.date 
                       ? 'linear-gradient(180deg, #818cf8, #6366f1)' 
                       : 'linear-gradient(180deg, #14b8a6, #0d9488)'
@@ -190,9 +189,11 @@ const WorkspaceActivity: React.FC = () => {
             ))}
           </div>
 
-          <div className="wa-highlight">
-            🔥 Peak: {weekSummary.heaviestDay.label} ({weekSummary.heaviestDay.commits} commits)
-          </div>
+          {weekSummary.heaviestDay.commits > 0 && (
+            <div className="wa-highlight">
+              🔥 Peak: {weekSummary.heaviestDay.label} ({weekSummary.heaviestDay.commits} commits)
+            </div>
+          )}
         </div>
       )}
     </div>
