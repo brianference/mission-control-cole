@@ -248,8 +248,11 @@ const CostTracking: React.FC = () => {
   };
   
   // Use filtered aggregates for day/week view, static for month
-  const providers = timeRange === 'monthly' ? staticProviders : aggregateByKey(filteredDaily, 'byProvider');
-  const models = timeRange === 'monthly' ? staticModels : aggregateByKey(filteredDaily, 'byModel');
+  // Fall back to static data if aggregated data is empty (no byProvider/byModel in daily data)
+  const aggregatedProviders = aggregateByKey(filteredDaily, 'byProvider');
+  const aggregatedModels = aggregateByKey(filteredDaily, 'byModel');
+  const providers = timeRange === 'monthly' ? staticProviders : (aggregatedProviders.length > 0 ? aggregatedProviders : staticProviders);
+  const models = timeRange === 'monthly' ? staticModels : (aggregatedModels.length > 0 ? aggregatedModels : staticModels);
   
   const weekOverWeekChange = calculateWeekOverWeek(daily);
   const toolStats = aggregateToolCalls(sessions);
@@ -472,16 +475,18 @@ const CostTracking: React.FC = () => {
               </div>
               
               {/* Quick action summary */}
-              <div className="mt-4 p-3 bg-indigo-500/10 border border-indigo-500/30 rounded-lg">
-                <div className="text-sm font-semibold text-indigo-300 mb-2">🎯 Top Optimization Opportunity</div>
-                <div className="text-xs text-gray-300">
-                  {providers[0].name} is trending up (+12% week over week). 
-                  Review high-cost sessions and consider downgrading to Haiku for routine tasks.
-                  <span className="text-emerald-400 font-semibold ml-1">
-                    Potential savings: ~${(providers[0].cost * 0.3).toFixed(2)}/month
-                  </span>
+              {providers.length > 0 && (
+                <div className="mt-4 p-3 bg-indigo-500/10 border border-indigo-500/30 rounded-lg">
+                  <div className="text-sm font-semibold text-indigo-300 mb-2">🎯 Top Optimization Opportunity</div>
+                  <div className="text-xs text-gray-300">
+                    {providers[0].name} is trending up (+12% week over week). 
+                    Review high-cost sessions and consider downgrading to Haiku for routine tasks.
+                    <span className="text-emerald-400 font-semibold ml-1">
+                      Potential savings: ~${(providers[0].cost * 0.3).toFixed(2)}/month
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="glass-card p-6">
