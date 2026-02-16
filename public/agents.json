@@ -1,42 +1,66 @@
 [
   {
-    "name": "coder",
-    "description": "Agent: coder",
-    "type": "agent"
+    "id": "pm-orchestrator",
+    "name": "PM Orchestrator",
+    "description": "Project management and agent coordination. Spawns sub-agents for complex tasks.",
+    "model": "anthropic-opus46/claude-opus-4-6",
+    "type": "orchestrator",
+    "canSpawn": ["designer", "coder", "test-case-writer", "visual-test-agent", "validator", "scholarship-agent", "idea-agent", "candi"]
   },
   {
-    "name": "designer",
-    "description": "Agent: designer",
-    "type": "agent"
+    "id": "designer",
+    "name": "Designer (Morpheus)",
+    "description": "UX/UI design specs, wireframes, accessibility audits, and visual testing.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "idea-agent",
-    "description": "Agent: idea-agent",
-    "type": "agent"
+    "id": "coder",
+    "name": "Coder",
+    "description": "Implementation, bug fixes, and feature development.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "pm-orchestrator",
-    "description": "Agent: pm-orchestrator",
-    "type": "agent"
+    "id": "test-case-writer",
+    "name": "Test Case Writer",
+    "description": "Generates Playwright test cases from UX specs.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "scholarship-agent",
-    "description": "Agent: scholarship-agent",
-    "type": "agent"
+    "id": "validator",
+    "name": "Validator",
+    "description": "Runs tests, validates deployments, and generates reports.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "test-case-writer",
-    "description": "Agent: test-case-writer",
-    "type": "agent"
+    "id": "visual-test-agent",
+    "name": "Visual Test Agent",
+    "description": "Percy visual regression testing and screenshot verification.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "validator",
-    "description": "Agent: validator",
-    "type": "agent"
+    "id": "scholarship-agent",
+    "name": "Scholarship Agent",
+    "description": "Research scholarships for Lena (ASU accounting/finance).",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
   },
   {
-    "name": "visual-test-agent",
-    "description": "Agent: visual-test-agent",
-    "type": "agent"
+    "id": "idea-agent",
+    "name": "Idea Agent",
+    "description": "Content generation, @swordtruth posts, product intelligence.",
+    "model": "openrouter/minimax/minimax-m2.1",
+    "type": "specialist"
+  },
+  {
+    "id": "candi",
+    "name": "Candi",
+    "description": "Restaurant reservation assistant via Bland AI phone calls.",
+    "model": "anthropic-opus46/claude-opus-4-6",
+    "type": "specialist"
   }
 ]
