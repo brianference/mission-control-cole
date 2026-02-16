@@ -53,16 +53,15 @@ const CostHeatmap: React.FC<CostHeatmapProps> = ({ data }) => {
   const handleCellClick = (day: string, hour: string, cost: number) => {
     if (cost === 0) return;
     
-    // Simulated detailed data - in production, fetch from API
-    const mockDetails: CellDetail = {
+    // Real data would include detailed session info from API
+    // For now, show actual cost with placeholder for detailed metrics
+    const cellDetails: CellDetail = {
       day,
       hour,
-      cost,
-      sessions: Math.floor(cost / 2.5) + 1,
-      topModel: cost > 10 ? 'Claude Sonnet 4.5' : 'claude-haiku-4-5',
-      topTask: cost > 15 ? 'Coding' : cost > 8 ? 'Chat' : 'Memory ops'
+      cost
+      // sessions, topModel, topTask would come from real API call
     };
-    setSelectedCell(mockDetails);
+    setSelectedCell(cellDetails);
   };
 
   // Find active days (days with any activity)
@@ -138,15 +137,15 @@ const CostHeatmap: React.FC<CostHeatmapProps> = ({ data }) => {
               </div>
               <div className="detail-row">
                 <span className="detail-label">Sessions</span>
-                <span className="detail-value">{selectedCell.sessions}</span>
+                <span className="detail-value">{selectedCell.sessions ?? 'N/A'}</span>
               </div>
               <div className="detail-row">
                 <span className="detail-label">Top Model</span>
-                <span className="detail-value model">{selectedCell.topModel}</span>
+                <span className="detail-value model">{selectedCell.topModel ?? 'N/A'}</span>
               </div>
               <div className="detail-row">
                 <span className="detail-label">Primary Task</span>
-                <span className="detail-value">{selectedCell.topTask}</span>
+                <span className="detail-value">{selectedCell.topTask ?? 'N/A'}</span>
               </div>
             </div>
           </div>

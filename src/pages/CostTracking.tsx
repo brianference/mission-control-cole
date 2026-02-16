@@ -21,8 +21,8 @@ import {
   calculateWeekOverWeek,
   generateHourOfDayHeatmap,
   aggregateToolCalls,
-} from '../utils/mockSessionData';
-import type { SessionData, CronJob } from '../utils/mockSessionData';
+} from '../utils/costAnalysis';
+import type { SessionData, CronJob } from '../utils/costAnalysis';
 import './CommonPages.css';
 import './CostTracking.css';
 

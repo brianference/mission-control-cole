@@ -1,5 +1,5 @@
-// Mock session data generator for development
-// In production, this would parse real JSONL files
+// Cost analysis utility functions for REAL OpenClaw data
+// NO MOCK DATA - all functions process real session/usage data
 
 export interface SessionData {
   id: string;
@@ -31,72 +31,11 @@ export interface CronJob {
   optimization: string;
 }
 
-// Generate mock session data based on usage-data.json patterns
-export function generateMockSessions(count: number = 100): SessionData[] {
-  const sessions: SessionData[] = [];
-  const models = [
-    { name: 'Claude Sonnet 4.5', weight: 70 },
-    { name: 'claude-opus-4-5', weight: 15 },
-    { name: 'claude-haiku-4-5', weight: 15 },
-  ];
-  
-  const tools = ['exec', 'read', 'write', 'browser', 'web_search', 'memory_store', 'nodes'];
-  
-  for (let i = 0; i < count; i++) {
-    const date = new Date();
-    date.setDate(date.getDate() - Math.floor(Math.random() * 30));
-    date.setHours(Math.floor(Math.random() * 24));
-    
-    const model = weightedRandom(models);
-    const baseCost = model.name.includes('Sonnet') ? Math.random() * 20 
-      : model.name.includes('Opus') ? Math.random() * 50
-      : Math.random() * 2;
-    
-    const totalCost = baseCost + Math.random() * 30;
-    const tokens = Math.floor(totalCost * 10000);
-    
-    // Generate tool calls
-    const numTools = Math.floor(Math.random() * 8) + 2;
-    const toolCalls: ToolCall[] = [];
-    for (let j = 0; j < numTools; j++) {
-      const tool = tools[Math.floor(Math.random() * tools.length)];
-      toolCalls.push({
-        tool,
-        count: Math.floor(Math.random() * 20) + 1,
-        cost: Math.random() * 5,
-        avgDuration: Math.random() * 2000 + 100,
-      });
-    }
-    
-    sessions.push({
-      id: `session-${i}-${Math.random().toString(36).slice(2, 11)}`,
-      timestamp: date.toISOString(),
-      totalCost,
-      tokens,
-      model: model.name,
-      provider: model.name.includes('Claude') ? 'Anthropic' : 'OpenAI',
-      toolCalls,
-      hourOfDay: date.getHours(),
-      cacheHitRate: Math.random() * 0.95,
-      tokenEfficiency: (totalCost / tokens) * 1000,
-    });
-  }
-  
-  return sessions.sort((a, b) => 
-    new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-  );
-}
-
-function weightedRandom(items: { name: string; weight: number }[]) {
-  const total = items.reduce((sum, item) => sum + item.weight, 0);
-  let random = Math.random() * total;
-  
-  for (const item of items) {
-    random -= item.weight;
-    if (random <= 0) return item;
-  }
-  
-  return items[0];
+export interface CostSpike {
+  date: string;
+  cost: number;
+  avgCost: number;
+  multiplier: number;
 }
 
 // Parse cron cost summary from markdown
@@ -139,18 +78,13 @@ export function parseCronCosts(markdown: string): CronJob[] {
   return jobs;
 }
 
-// Calculate cost spikes (>2x average)
-export interface CostSpike {
-  date: string;
-  cost: number;
-  avgCost: number;
-  multiplier: number;
-}
-
+// Calculate cost spikes (>threshold x average)
 export function detectCostSpikes(
   daily: Array<{ date: string; cost: number }>,
   threshold: number = 2
 ): CostSpike[] {
+  if (daily.length === 0) return [];
+  
   const avgCost = daily.reduce((sum, d) => sum + d.cost, 0) / daily.length;
   
   return daily
@@ -164,7 +98,7 @@ export function detectCostSpikes(
     .sort((a, b) => b.multiplier - a.multiplier);
 }
 
-// Calculate week-over-week change
+// Calculate week-over-week change percentage
 export function calculateWeekOverWeek(
   daily: Array<{ date: string; cost: number }>
 ): number {
@@ -173,13 +107,16 @@ export function calculateWeekOverWeek(
   const thisWeek = daily.slice(0, 7).reduce((sum, d) => sum + d.cost, 0);
   const lastWeek = daily.slice(7, 14).reduce((sum, d) => sum + d.cost, 0);
   
+  if (lastWeek === 0) return 0;
+  
   return ((thisWeek - lastWeek) / lastWeek) * 100;
 }
 
-// Generate hour-of-day heatmap data
+// Generate hour-of-day heatmap data from REAL sessions
 export function generateHourOfDayHeatmap(sessions: SessionData[]) {
   const heatmap: { [hour: number]: { [day: number]: number } } = {};
   
+  // Initialize heatmap
   for (let hour = 0; hour < 24; hour++) {
     heatmap[hour] = {};
     for (let day = 0; day < 7; day++) {
@@ -187,6 +124,7 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
     }
   }
   
+  // Aggregate real session data
   sessions.forEach(session => {
     const date = new Date(session.timestamp);
     const hour = date.getHours();
@@ -210,18 +148,19 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
   return data;
 }
 
-// Aggregate tool call statistics
+// Aggregate tool call statistics from REAL sessions
 export function aggregateToolCalls(sessions: SessionData[]) {
-  const toolStats: { [tool: string]: { count: number; cost: number; avgDuration: number } } = {};
+  const toolStats: { [tool: string]: { count: number; cost: number; totalDuration: number; calls: number } } = {};
   
   sessions.forEach(session => {
     session.toolCalls.forEach(tc => {
       if (!toolStats[tc.tool]) {
-        toolStats[tc.tool] = { count: 0, cost: 0, avgDuration: 0 };
+        toolStats[tc.tool] = { count: 0, cost: 0, totalDuration: 0, calls: 0 };
       }
       toolStats[tc.tool].count += tc.count;
       toolStats[tc.tool].cost += tc.cost;
-      toolStats[tc.tool].avgDuration += tc.avgDuration;
+      toolStats[tc.tool].totalDuration += tc.avgDuration * tc.count;
+      toolStats[tc.tool].calls += tc.count;
     });
   });
   
@@ -230,7 +169,7 @@ export function aggregateToolCalls(sessions: SessionData[]) {
       tool,
       count: stats.count,
       cost: stats.cost,
-      avgDuration: stats.avgDuration / sessions.length,
+      avgDuration: stats.calls > 0 ? stats.totalDuration / stats.calls : 0,
       efficiency: stats.count > 0 ? stats.cost / stats.count : 0,
     }))
     .sort((a, b) => b.cost - a.cost);
