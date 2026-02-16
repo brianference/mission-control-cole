@@ -1,0 +1,23 @@
+# Cache headers for Cloudflare Pages
+# Commandment: Always no-cache HTML for instant updates
+
+/
+  Cache-Control: no-cache, must-revalidate
+
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=3600
+
+/*.css
+  Cache-Control: public, max-age=3600
+
+/*.png
+  Cache-Control: public, max-age=86400
+
+/*.jpg
+  Cache-Control: public, max-age=86400
+
+/*.svg
+  Cache-Control: public, max-age=86400

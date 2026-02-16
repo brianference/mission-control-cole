@@ -1,35 +1,44 @@
-[
-  {
-    "id": "coder",
-    "name": "coder",
-    "status": "running",
-    "sessionCount": 1,
-    "totalCost": 0.93228195,
-    "totalTokens": 13012,
-    "toolCalls": 0,
-    "model": "claude-sonnet-4-5",
-    "lastActivity": "2026-02-15T21:44:31.550Z"
-  },
-  {
-    "id": "idea-agent",
-    "name": "idea-agent",
-    "status": "running",
-    "sessionCount": 1,
-    "totalCost": 0.39213135000000005,
-    "totalTokens": 5536,
-    "toolCalls": 0,
-    "model": "claude-sonnet-4-5",
-    "lastActivity": "2026-02-15T20:55:51.997Z"
-  },
-  {
-    "id": "pm-orchestrator",
-    "name": "pm-orchestrator",
-    "status": "running",
-    "sessionCount": 10,
-    "totalCost": 18.888832149284184,
-    "totalTokens": 1078360,
-    "toolCalls": 0,
-    "model": "minimax/minimax-m2.1",
-    "lastActivity": "2026-02-15T21:39:35.454Z"
+{
+  "lastUpdated": "2026-02-15T22:08:00.000Z",
+  "agents": [
+    {
+      "id": "pm-orchestrator",
+      "name": "pm-orchestrator",
+      "status": "running",
+      "task": "Mission Control Real Data Sprint",
+      "model": "claude-opus-4-5",
+      "tokensUsed": 187035,
+      "sessionKey": "agent:pm-orchestrator:telegram:group:-1003679370804",
+      "startedAt": "2026-02-15T21:31:17.499Z",
+      "lastActivity": "2026-02-15T22:05:00.000Z"
+    },
+    {
+      "id": "coder",
+      "name": "coder",
+      "status": "completed",
+      "task": "Mission Control Real Data Sprint - ActivityStream, ActiveAgents, CostTracking",
+      "model": "claude-sonnet-4-5",
+      "tokensUsed": 94143,
+      "sessionKey": "agent:coder:subagent:66d9bbc4-e763-4f1c-8ebc-90c8d0a96e4f",
+      "startedAt": "2026-02-15T19:55:30.598Z",
+      "lastActivity": "2026-02-15T21:28:50.598Z"
+    },
+    {
+      "id": "idea-agent",
+      "name": "idea-agent",
+      "status": "idle",
+      "task": "Backlog triage for kanban",
+      "model": "minimax/minimax-m2.1",
+      "tokensUsed": 40575,
+      "sessionKey": "agent:pm-orchestrator:cron:f824c8a7-b7b5-4021-8c4c-2d5b91f3c5be",
+      "startedAt": "2026-02-15T14:58:00.000Z",
+      "lastActivity": "2026-02-15T14:59:45.818Z"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "running": 1,
+    "idle": 5,
+    "completed": 2
   }
-]
+}

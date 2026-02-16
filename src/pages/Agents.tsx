@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WorkspaceActivity from '../components/WorkspaceActivity';
 import './Agents.css';
 
 interface Agent {
@@ -100,6 +101,9 @@ const Agents: React.FC = () => {
           Showing {filteredAgents.length} of {agents.length} agents
         </div>
       </div>
+
+      {/* Workspace Activity Summary */}
+      <WorkspaceActivity />
 
       <section className="agents-grid-section">
         <div className="agents-grid">

@@ -105,19 +105,90 @@
   margin-bottom: 12px;
 }
 
+.notification-empty-hint {
+  font-size: 12px;
+  color: var(--text-muted, #6c7086);
+  margin-top: 8px;
+}
+
+.notification-empty.notification-error {
+  color: #ef4444;
+}
+
+.notification-empty button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: var(--accent-color, #8b9bff);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.notification-empty button:hover {
+  opacity: 0.9;
+}
+
 .notification-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   padding: 12px;
+  padding-right: 32px;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
   margin-bottom: 4px;
+  position: relative;
 }
 
 .notification-item:hover {
   background: var(--bg-hover, #313244);
+}
+
+.notification-item.clickable {
+  cursor: pointer;
+}
+
+.notification-item.clickable:hover {
+  background: var(--bg-hover, #3b3b4f);
+}
+
+.notification-arrow {
+  color: var(--text-muted, #6c7086);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.notification-item.clickable:hover .notification-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.notification-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #6c7086);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+
+.notification-item:hover .notification-delete {
+  opacity: 1;
+}
+
+.notification-delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
 }
 
 .notification-item.unread {

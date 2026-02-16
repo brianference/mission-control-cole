@@ -1,14 +1,101 @@
-[
-  {
-    "id": "cost-94a07882-73a0-4134-aaf3-42ccdd007018",
-    "type": "error",
-    "icon": "💰",
-    "title": "High cost session",
-    "description": "$6.13 - Review optimization opportunities",
-    "timestamp": "2026-02-15T21:49:16.517Z",
-    "metadata": {
-      "cost": 6.130302,
-      "status": "warning"
+{
+  "lastUpdated": "2026-02-15T22:08:00.000Z",
+  "activities": [
+    {
+      "id": "act-1",
+      "type": "agent",
+      "icon": "🤖",
+      "title": "Mission Control Real Data Sprint completed",
+      "description": "Replaced mock data with real OpenClaw data in ActivityStream, ActiveAgents, CostTracking",
+      "timestamp": "2026-02-15T21:28:50.598Z",
+      "metadata": {
+        "agent": "coder",
+        "cost": 0.043730,
+        "status": "success"
+      }
+    },
+    {
+      "id": "act-2",
+      "type": "cron",
+      "icon": "⏰",
+      "title": "Kanban Project Standup",
+      "description": "158 tasks total - 17 in progress, 40 done, 4 next-up",
+      "timestamp": "2026-02-15T21:59:45.818Z",
+      "metadata": {
+        "status": "success",
+        "duration": 59558
+      }
+    },
+    {
+      "id": "act-3",
+      "type": "cron",
+      "icon": "⏰",
+      "title": "Auto-Assign Agents completed",
+      "description": "All in-progress tasks fully staffed - 3 agents assigned",
+      "timestamp": "2026-02-15T21:39:34.661Z",
+      "metadata": {
+        "status": "success",
+        "duration": 36257
+      }
+    },
+    {
+      "id": "act-4",
+      "type": "system",
+      "icon": "🔒",
+      "title": "Security Sentinel Scan",
+      "description": "551 warnings detected (mostly false positives) - workspace secure",
+      "timestamp": "2026-02-15T21:00:01.605Z",
+      "metadata": {
+        "status": "success",
+        "cost": 0.002661
+      }
+    },
+    {
+      "id": "act-5",
+      "type": "agent",
+      "icon": "📱",
+      "title": "MobileClaw lessons saved",
+      "description": "Kanban deployment workflow documented across all memory systems",
+      "timestamp": "2026-02-15T20:27:37.855Z",
+      "metadata": {
+        "agent": "pm-orchestrator",
+        "cost": 0.492337,
+        "status": "success"
+      }
+    },
+    {
+      "id": "act-6",
+      "type": "system",
+      "icon": "🌅",
+      "title": "Morning Briefing delivered",
+      "description": "73°F sunny - MobileClaw 88% complete, dashboards deployed",
+      "timestamp": "2026-02-15T15:05:25.417Z",
+      "metadata": {
+        "status": "success",
+        "cost": 0.001444
+      }
+    },
+    {
+      "id": "act-7",
+      "type": "deployment",
+      "icon": "🚀",
+      "title": "Mission Control deployed",
+      "description": "Cloudflare Pages - Cost tracking dashboard live",
+      "timestamp": "2026-02-15T13:00:00.000Z",
+      "metadata": {
+        "status": "success"
+      }
+    },
+    {
+      "id": "act-8",
+      "type": "error",
+      "icon": "⚠️",
+      "title": "Context limit reached",
+      "description": "pm-orchestrator:main session - 202550 tokens > 200000 maximum",
+      "timestamp": "2026-02-15T22:05:12.277Z",
+      "metadata": {
+        "status": "error"
+      }
     }
-  }
-]
+  ]
+}

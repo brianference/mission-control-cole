@@ -15,8 +15,8 @@ import {
 import TopExpensiveTable from '../components/cost/TopExpensiveTable';
 import SpikeDetector from '../components/cost/SpikeDetector';
 import CostHeatmap from '../components/cost/CostHeatmap';
+import TopRecommendations from '../components/cost/TopRecommendations';
 import {
-  generateMockSessions,
   parseCronCosts,
   calculateWeekOverWeek,
   generateHourOfDayHeatmap,
@@ -62,23 +62,63 @@ interface UsageData {
 
 const COLORS = ['#818cf8', '#14b8a6', '#fb923c', '#34d399', '#fbbf24', '#f87171'];
 
+type TimeRange = 'daily' | 'weekly' | 'monthly';
+
+const filterDataByTimeRange = (daily: UsageData['daily'], range: TimeRange) => {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  
+  let cutoffDate: Date;
+  switch (range) {
+    case 'daily':
+      cutoffDate = today;
+      break;
+    case 'weekly':
+      cutoffDate = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+      break;
+    case 'monthly':
+    default:
+      cutoffDate = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+      break;
+  }
+  
+  return daily.filter(d => new Date(d.date) >= cutoffDate);
+};
+
+const calculateSummaryForRange = (filteredDaily: UsageData['daily']) => {
+  const totalCost = filteredDaily.reduce((sum, d) => sum + d.cost, 0);
+  const totalTokens = filteredDaily.reduce((sum, d) => sum + d.tokens, 0);
+  const totalRequests = filteredDaily.reduce((sum, d) => sum + d.requests, 0);
+  const days = filteredDaily.length || 1;
+  
+  return {
+    totalCost,
+    totalTokens,
+    totalRequests,
+    avgCostPerDay: totalCost / days,
+    days
+  };
+};
+
 const CostTracking: React.FC = () => {
   const [data, setData] = useState<UsageData | null>(null);
   const [sessions, setSessions] = useState<SessionData[]>([]);
   const [cronJobs, setCronJobs] = useState<CronJob[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'overview' | 'sessions' | 'tools' | 'cron' | 'optimization' | 'tokens' | 'agents'>('overview');
+  const [timeRange, setTimeRange] = useState<TimeRange>('monthly');
 
   useEffect(() => {
-    // Load usage data
-    fetch('/usage-data.json')
-      .then(res => res.json())
-      .then(usageData => {
+    // Load usage data and real sessions
+    Promise.all([
+      fetch('/usage-data.json').then(res => res.json()),
+      fetch('/sessions.json').then(res => res.json())
+    ])
+      .then(([usageData, sessionsData]) => {
         setData(usageData);
         
-        // Generate mock session data (in production, parse real JSONL files)
-        const mockSessions = generateMockSessions(100);
-        setSessions(mockSessions);
+        // Use real session data from OpenClaw
+        setSessions(sessionsData.sessions);
         
         // Load cron cost data
         fetch('/cron-cost-summary.md')
@@ -92,7 +132,7 @@ const CostTracking: React.FC = () => {
         setLoading(false);
       })
       .catch(err => {
-        console.error('Failed to load usage data:', err);
+        console.error('Failed to load data:', err);
         setLoading(false);
       });
   }, []);
@@ -119,11 +159,52 @@ const CostTracking: React.FC = () => {
     );
   }
 
-  const { summary, daily, providers, models, taskTypes } = data;
+  const { summary, daily, providers: staticProviders, models: staticModels, taskTypes } = data;
+  
+  // Filter data by selected time range
+  const filteredDaily = filterDataByTimeRange(daily, timeRange);
+  const rangeSummary = calculateSummaryForRange(filteredDaily);
+  
+  // Aggregate providers and models from filtered daily data
+  const aggregateByKey = (
+    data: typeof filteredDaily, 
+    key: 'byProvider' | 'byModel'
+  ): Array<{ name: string; cost: number; tokens: number; requests: number }> => {
+    const aggregated: Record<string, { cost: number; tokens: number; requests: number }> = {};
+    
+    data.forEach(day => {
+      const breakdown = (day as any)[key];
+      if (breakdown) {
+        Object.entries(breakdown).forEach(([name, stats]: [string, any]) => {
+          if (!aggregated[name]) {
+            aggregated[name] = { cost: 0, tokens: 0, requests: 0 };
+          }
+          aggregated[name].cost += stats.cost || 0;
+          aggregated[name].tokens += stats.tokens || 0;
+          aggregated[name].requests += stats.requests || 0;
+        });
+      }
+    });
+    
+    return Object.entries(aggregated)
+      .map(([name, stats]) => ({ name, ...stats }))
+      .sort((a, b) => b.cost - a.cost);
+  };
+  
+  // Use filtered aggregates for day/week view, static for month
+  const providers = timeRange === 'monthly' ? staticProviders : aggregateByKey(filteredDaily, 'byProvider');
+  const models = timeRange === 'monthly' ? staticModels : aggregateByKey(filteredDaily, 'byModel');
+  
   const weekOverWeekChange = calculateWeekOverWeek(daily);
   const toolStats = aggregateToolCalls(sessions);
   const heatmapData = generateHourOfDayHeatmap(sessions);
-  const expensiveSessions = sessions.filter(s => s.totalCost > 50);
+  // const expensiveSessions = sessions.filter(s => s.totalCost > 50);
+  
+  const timeRangeLabels: Record<TimeRange, string> = {
+    daily: 'Today',
+    weekly: 'This Week',
+    monthly: 'This Month'
+  };
 
   return (
     <div className="page-container">
@@ -132,6 +213,38 @@ const CostTracking: React.FC = () => {
         <p className="page-subtitle">
           Deep insights into OpenClaw AI spending and optimization opportunities
         </p>
+      </div>
+
+      {/* Time Range Selector */}
+      <div className="time-range-selector mb-4">
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-gray-400">View:</span>
+          <div className="time-range-buttons">
+            <button
+              className={`time-range-btn ${timeRange === 'daily' ? 'active' : ''}`}
+              onClick={() => setTimeRange('daily')}
+            >
+              📅 Daily
+            </button>
+            <button
+              className={`time-range-btn ${timeRange === 'weekly' ? 'active' : ''}`}
+              onClick={() => setTimeRange('weekly')}
+            >
+              📆 Weekly
+            </button>
+            <button
+              className={`time-range-btn ${timeRange === 'monthly' ? 'active' : ''}`}
+              onClick={() => setTimeRange('monthly')}
+            >
+              🗓️ Monthly
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Top Optimization Recommendations */}
+      <div className="top-recs-container">
+        <TopRecommendations timeRange={timeRange === 'monthly' ? 'weekly' : timeRange} />
       </div>
 
       {/* Tab Navigation */}
@@ -183,55 +296,46 @@ const CostTracking: React.FC = () => {
       {/* Overview Tab */}
       {activeTab === 'overview' && (
         <>
-          {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            <div className="glass-card p-4">
-              <div className="text-sm text-gray-400 mb-1">This Week</div>
-              <div className="text-3xl font-bold text-indigo-400">
-                ${summary.weekTotal.toFixed(2)}
-              </div>
-              <div className={`text-sm mt-2 ${weekOverWeekChange >= 0 ? 'text-red-400' : 'text-emerald-400'}`}>
-                {weekOverWeekChange >= 0 ? '↑' : '↓'} {Math.abs(weekOverWeekChange).toFixed(1)}% vs last week
-              </div>
-            </div>
-
-            <div className="glass-card p-4">
-              <div className="text-sm text-gray-400 mb-1">This Month</div>
-              <div className="text-3xl font-bold text-teal-400">
-                ${summary.monthTotal.toFixed(2)}
-              </div>
-              <div className="text-sm text-gray-400 mt-2">
-                {summary.totalSessions} sessions
+          {/* Compact Summary Row */}
+          <div className="overview-summary">
+            <div className="summary-main">
+              <div className="summary-total">
+                <span className="summary-label">{timeRangeLabels[timeRange]}</span>
+                <span className="summary-value">${rangeSummary.totalCost.toFixed(2)}</span>
+                <span className={`summary-change ${weekOverWeekChange >= 0 ? 'up' : 'down'}`}>
+                  {weekOverWeekChange >= 0 ? '↑' : '↓'} {Math.abs(weekOverWeekChange).toFixed(1)}%
+                </span>
               </div>
             </div>
-
-            <div className="glass-card p-4">
-              <div className="text-sm text-gray-400 mb-1">Avg Cost/Session</div>
-              <div className="text-3xl font-bold text-emerald-400">
-                ${(summary.monthTotal / summary.totalSessions).toFixed(2)}
+            <div className="summary-stats">
+              <div className="stat-item">
+                <span className="stat-value">${rangeSummary.avgCostPerDay.toFixed(2)}</span>
+                <span className="stat-label">/day avg</span>
               </div>
-              <div className="text-sm text-gray-400 mt-2">
-                {summary.totalRequests.toLocaleString()} requests
+              <div className="stat-item">
+                <span className="stat-value">{rangeSummary.totalRequests.toLocaleString()}</span>
+                <span className="stat-label">requests</span>
               </div>
-            </div>
-
-            <div className="glass-card p-4">
-              <div className="text-sm text-gray-400 mb-1">Expensive Sessions</div>
-              <div className="text-3xl font-bold text-orange-400">
-                {expensiveSessions.length}
-              </div>
-              <div className="text-sm text-red-400 mt-2">
-                Sessions &gt; $50
+              <div className="stat-item">
+                <span className="stat-value">{(rangeSummary.totalTokens / 1000000).toFixed(1)}M</span>
+                <span className="stat-label">tokens</span>
               </div>
             </div>
           </div>
 
-          {/* Cost Trends & Spikes */}
-          <div className="glass-card p-6 mb-6">
-            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              📈 Cost Trends & Spike Detection
-            </h2>
-            <SpikeDetector data={daily} threshold={2} />
+          {/* Two-column layout */}
+          <div className="overview-grid">
+            {/* Left: Trend Chart */}
+            <div className="glass-card p-4">
+              <h3 className="section-title">📈 Cost Trend</h3>
+              <SpikeDetector data={filteredDaily} threshold={2} />
+            </div>
+
+            {/* Right: Activity Heatmap */}
+            <div className="glass-card p-4">
+              <h3 className="section-title">🔥 Activity by Hour</h3>
+              <CostHeatmap data={heatmapData} />
+            </div>
           </div>
 
           {/* Provider & Model Breakdown */}
@@ -347,13 +451,6 @@ const CostTracking: React.FC = () => {
             </div>
           </div>
 
-          {/* Hour of Day Heatmap */}
-          <div className="glass-card p-6 mb-6">
-            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              🔥 Cost Patterns by Hour & Day
-            </h2>
-            <CostHeatmap data={heatmapData} />
-          </div>
         </>
       )}
 

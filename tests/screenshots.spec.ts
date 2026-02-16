@@ -1,16 +1,17 @@
 import { test, expect } from '@playwright/test';
 
-async function snap(page: any, name: string) {
+async function snap(page: any, name: string, projectName: string) {
   await page.waitForTimeout(500);
-  await page.screenshot({ path: `screenshots/${name}.png`, fullPage: false });
+  await page.screenshot({ path: `screenshots/${projectName}-${name}.png`, fullPage: false });
 }
 
 test.describe('Mission Control - production verification screenshots', () => {
-  test('Overview + key pages render and navigation works', async ({ page }) => {
+  test('Overview + key pages render and navigation works', async ({ page }, testInfo) => {
+    const projectName = testInfo.project.name;
     // Overview
     await page.goto('/');
     await expect(page.getByRole('link', { name: 'Mission Control' })).toBeVisible();
-    await snap(page, '01-overview-top');
+    await snap(page, '01-overview-top', projectName);
 
     // Costs (direct nav)
     await page.goto('/costs');
