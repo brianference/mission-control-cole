@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import FileExplorer from '../components/docs/FileExplorer';
 import MemoryViewer from '../components/docs/MemoryViewer';
+// FileExplorer replaced with inline grid for real data
 import './CommonPages.css';
 import './Docs.css';
 
