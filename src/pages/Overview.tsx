@@ -1,10 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ActivityStream from '../components/overview/ActivityStream';
 import ActiveAgents from '../components/overview/ActiveAgents';
 import TokenUsage from '../components/overview/TokenUsage';
+import BudgetMeter from '../components/overview/BudgetMeter';
+import BudgetSettings from '../components/settings/BudgetSettings';
 import './Overview.css';
 
 const Overview: React.FC = () => {
+  const [showBudgetSettings, setShowBudgetSettings] = useState(false);
+  const [currentSpend, setCurrentSpend] = useState({ daily: 0, weekly: 0, monthly: 0 });
+
+  useEffect(() => {
+    // Load current spending from usage data
+    fetch('/usage-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const today = new Date();
+        const todayStr = today.toISOString().split('T')[0];
+        
+        // Calculate daily (today's spend)
+        const todayData = data.daily?.find((d: any) => d.date === todayStr);
+        const dailySpend = todayData?.cost || 0;
+        
+        // Calculate weekly (last 7 days)
+        const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const weeklySpend = data.daily
+          ?.filter((d: any) => new Date(d.date) >= weekAgo)
+          .reduce((sum: number, d: any) => sum + d.cost, 0) || 0;
+        
+        // Monthly from summary
+        const monthlySpend = data.summary?.monthTotal || 0;
+        
+        setCurrentSpend({
+          daily: dailySpend,
+          weekly: weeklySpend,
+          monthly: monthlySpend
+        });
+      })
+      .catch(err => console.error('Failed to load usage data:', err));
+  }, []);
+
+  const handleBudgetSave = (config: any) => {
+    console.log('Budget config saved:', config);
+    // Config is saved to localStorage in the BudgetSettings component
+  };
+
   return (
     <div className="overview-page">
       <header className="page-header">
@@ -20,6 +60,19 @@ const Overview: React.FC = () => {
           </p>
         </div>
       </header>
+
+      {/* Budget Meter - Top of page */}
+      <BudgetMeter 
+        currentSpend={currentSpend}
+        onSettingsClick={() => setShowBudgetSettings(true)}
+      />
+
+      {/* Budget Settings Modal */}
+      <BudgetSettings
+        isOpen={showBudgetSettings}
+        onClose={() => setShowBudgetSettings(false)}
+        onSave={handleBudgetSave}
+      />
 
       <section className="system-health-section">
         <h2 className="section-title">Cost Optimization</h2>

@@ -1,0 +1,18 @@
+{
+  "limits": {
+    "daily": 100,
+    "weekly": 500,
+    "monthly": 1500
+  },
+  "alerts": {
+    "thresholds": [0.7, 0.9, 1.0],
+    "enabled": true,
+    "channel": "telegram"
+  },
+  "lastAlert": {
+    "daily": null,
+    "weekly": null,
+    "monthly": null
+  },
+  "updatedAt": "2026-02-16T00:00:00.000Z"
+}
