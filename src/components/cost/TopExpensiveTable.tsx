@@ -35,6 +35,15 @@ const TopExpensiveTable: React.FC<TopExpensiveTableProps> = ({
     }
   };
 
+  // Safety check - ensure data is an array
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return (
+      <div className="top-expensive-table">
+        <p className="text-gray-400 text-center py-4">No data available</p>
+      </div>
+    );
+  }
+
   const sortedData = [...data].sort((a, b) => {
     const aVal = a[sortKey];
     const bVal = b[sortKey];
