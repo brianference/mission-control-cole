@@ -1,527 +1,1874 @@
 {
   "summary": {
-    "weekTotal": 1435.96,
-    "monthTotal": 1435.96,
-    "totalSessions": 12,
-    "totalRequests": 27309
+    "totalSessions": 354,
+    "totalCost": 833.0858871559336,
+    "totalTokens": 55363479,
+    "totalRequests": 0,
+    "weekTotal": 719.4539449559337,
+    "monthTotal": 833.0858871559336
   },
   "daily": [
     {
       "date": "2026-02-05",
-      "cost": 41.36,
-      "tokens": 209253,
-      "requests": 538,
-      "byProvider": {
-        "anthropic": {
-          "cost": 41.36,
-          "tokens": 209253,
-          "requests": 538
-        }
-      },
-      "byModel": {
-        "claude-opus-4-5": {
-          "cost": 41.36,
-          "tokens": 209253,
-          "requests": 538
-        }
-      }
+      "cost": 46.354001000000004,
+      "tokens": 234412,
+      "requests": 0,
+      "sessions": 3
     },
     {
       "date": "2026-02-06",
-      "cost": 110.2,
-      "tokens": 583409,
-      "requests": 1487,
-      "byProvider": {
-        "anthropic": {
-          "cost": 110.2,
-          "tokens": 583409,
-          "requests": 1487
-        }
-      },
-      "byModel": {
-        "claude-opus-4-5": {
-          "cost": 18.63,
-          "tokens": 62174,
-          "requests": 242
-        },
-        "claude-sonnet-4-5": {
-          "cost": 91.57,
-          "tokens": 521235,
-          "requests": 1245
-        }
-      }
+      "cost": 67.20031065000002,
+      "tokens": 303217,
+      "requests": 0,
+      "sessions": 7
     },
     {
       "date": "2026-02-07",
-      "cost": 114.31,
-      "tokens": 961156,
-      "requests": 1715,
-      "byProvider": {
-        "anthropic": {
-          "cost": 114.31,
-          "tokens": 961156,
-          "requests": 1715
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 114.31,
-          "tokens": 961156,
-          "requests": 1715
-        }
-      }
-    },
-    {
-      "date": "2026-02-08",
-      "cost": 183,
-      "tokens": 1147763,
-      "requests": 2638,
-      "byProvider": {
-        "anthropic": {
-          "cost": 183,
-          "tokens": 1147763,
-          "requests": 2638
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 183,
-          "tokens": 1147763,
-          "requests": 2638
-        }
-      }
+      "cost": 0.07763055,
+      "tokens": 1353,
+      "requests": 0,
+      "sessions": 1
     },
     {
       "date": "2026-02-09",
-      "cost": 130.82,
-      "tokens": 535175,
-      "requests": 1909,
-      "byProvider": {
-        "anthropic": {
-          "cost": 130.82,
-          "tokens": 535175,
-          "requests": 1909
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 130.57,
-          "tokens": 535002,
-          "requests": 1908
-        },
-        "claude-opus-4-5": {
-          "cost": 0.25,
-          "tokens": 173,
-          "requests": 1
-        }
-      }
+      "cost": 33.78228090000001,
+      "tokens": 162062,
+      "requests": 0,
+      "sessions": 4
     },
     {
       "date": "2026-02-10",
-      "cost": 127.74,
-      "tokens": 864497,
-      "requests": 2240,
-      "byProvider": {
-        "anthropic": {
-          "cost": 127.74,
-          "tokens": 864497,
-          "requests": 2240
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 117.51,
-          "tokens": 812038,
-          "requests": 2036
-        },
-        "claude-haiku-4-5": {
-          "cost": 10.23,
-          "tokens": 52459,
-          "requests": 204
-        }
-      }
+      "cost": 105.32078629999995,
+      "tokens": 641513,
+      "requests": 0,
+      "sessions": 7
     },
     {
       "date": "2026-02-11",
-      "cost": 66.13,
-      "tokens": 376812,
-      "requests": 1180,
-      "byProvider": {
-        "anthropic": {
-          "cost": 66.13,
-          "tokens": 376812,
-          "requests": 1180
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 55.62,
-          "tokens": 329956,
-          "requests": 989
-        },
-        "claude-haiku-4-5": {
-          "cost": 10.51,
-          "tokens": 46856,
-          "requests": 191
-        }
-      }
+      "cost": 68.7351399,
+      "tokens": 392901,
+      "requests": 0,
+      "sessions": 13
     },
     {
       "date": "2026-02-12",
-      "cost": 169.49,
-      "tokens": 1424422,
-      "requests": 3216,
-      "byProvider": {
-        "anthropic": {
-          "cost": 168.31,
-          "tokens": 1035514,
-          "requests": 3179
-        },
-        "openai": {
-          "cost": 1.17,
-          "tokens": 388908,
-          "requests": 37
-        }
-      },
-      "byModel": {
-        "claude-sonnet-4-5": {
-          "cost": 152.04,
-          "tokens": 947576,
-          "requests": 2699
-        },
-        "claude-haiku-4-5": {
-          "cost": 16.27,
-          "tokens": 87938,
-          "requests": 480
-        },
-        "gpt-5.2": {
-          "cost": 1.17,
-          "tokens": 388908,
-          "requests": 37
-        }
-      }
+      "cost": 146.49307775,
+      "tokens": 1317562,
+      "requests": 0,
+      "sessions": 48
     },
     {
       "date": "2026-02-13",
-      "cost": 137.97,
-      "tokens": 22516474,
-      "requests": 2083,
-      "byProvider": {
-        "openai": {
-          "cost": 49.12,
-          "tokens": 21941470,
-          "requests": 921
-        },
-        "ollama": {
-          "cost": 0,
-          "tokens": 109991,
-          "requests": 26
-        },
-        "anthropic": {
-          "cost": 88.85,
-          "tokens": 465013,
-          "requests": 1136
-        }
-      },
-      "byModel": {
-        "gpt-5.2": {
-          "cost": 49.12,
-          "tokens": 21941470,
-          "requests": 921
-        },
-        "qwen2.5-coder:7b": {
-          "cost": 0,
-          "tokens": 86626,
-          "requests": 21
-        },
-        "claude-sonnet-4-5": {
-          "cost": 79.04,
-          "tokens": 424932,
-          "requests": 975
-        },
-        "claude-haiku-4-5": {
-          "cost": 9.81,
-          "tokens": 40081,
-          "requests": 161
-        },
-        "phi4-mini:latest": {
-          "cost": 0,
-          "tokens": 23365,
-          "requests": 5
-        }
-      }
+      "cost": 119.85911119999999,
+      "tokens": 22581497,
+      "requests": 0,
+      "sessions": 86
     },
     {
       "date": "2026-02-14",
-      "cost": 29.91,
-      "tokens": 9133405,
-      "requests": 462,
-      "byProvider": {
-        "google": {
-          "cost": 16.64,
-          "tokens": 7219477,
-          "requests": 121
-        },
-        "openrouter": {
-          "cost": 0.7,
-          "tokens": 1670591,
-          "requests": 163
-        },
-        "ollama": {
-          "cost": 0,
-          "tokens": 203102,
-          "requests": 49
-        },
-        "anthropic": {
-          "cost": 12.57,
-          "tokens": 40235,
-          "requests": 129
-        }
-      },
-      "byModel": {
-        "gemini-3-pro-preview": {
-          "cost": 16.63,
-          "tokens": 7193490,
-          "requests": 120
-        },
-        "minimax/minimax-m2.1": {
-          "cost": 0.7,
-          "tokens": 1670591,
-          "requests": 163
-        },
-        "qwen2.5-coder:7b": {
-          "cost": 0,
-          "tokens": 203102,
-          "requests": 49
-        },
-        "claude-haiku-4-5": {
-          "cost": 0.67,
-          "tokens": 8114,
-          "requests": 22
-        },
-        "claude-opus-4-5": {
-          "cost": 11.91,
-          "tokens": 32121,
-          "requests": 107
-        },
-        "gemini-2.5-flash": {
-          "cost": 0.01,
-          "tokens": 25987,
-          "requests": 1
-        }
-      }
+      "cost": 77.86358151204335,
+      "tokens": 12617754,
+      "requests": 0,
+      "sessions": 79
     },
     {
       "date": "2026-02-15",
-      "cost": 145.41,
-      "tokens": 37981028,
-      "requests": 7400,
-      "byProvider": {
-        "openrouter": {
-          "cost": 29.32,
-          "tokens": 35435646,
-          "requests": 6161
-        },
-        "anthropic": {
-          "cost": 114.36,
-          "tokens": 389720,
-          "requests": 1205
-        },
-        "google": {
-          "cost": 1.49,
-          "tokens": 2065480,
-          "requests": 25
-        },
-        "openai": {
-          "cost": 0.25,
-          "tokens": 90182,
-          "requests": 9
-        }
-      },
-      "byModel": {
-        "minimax/minimax-m2.1": {
-          "cost": 29.32,
-          "tokens": 35435646,
-          "requests": 6161
-        },
-        "claude-opus-4-5": {
-          "cost": 110.37,
-          "tokens": 374442,
-          "requests": 1144
-        },
-        "gemini-3-pro-preview": {
-          "cost": 0.91,
-          "tokens": 409685,
-          "requests": 12
-        },
-        "gemini-2.5-flash": {
-          "cost": 0.58,
-          "tokens": 1655795,
-          "requests": 13
-        },
-        "claude-sonnet-4-5": {
-          "cost": 3.99,
-          "tokens": 15278,
-          "requests": 61
-        },
-        "gpt-5.2": {
-          "cost": 0.25,
-          "tokens": 90182,
-          "requests": 9
-        }
-      }
+      "cost": 110.49739958561364,
+      "tokens": 14452273,
+      "requests": 0,
+      "sessions": 82
     },
     {
       "date": "2026-02-16",
-      "cost": 179.62,
-      "tokens": 19214432,
-      "requests": 2441,
-      "byProvider": {
-        "openrouter": {
-          "cost": 1.07,
-          "tokens": 3166440,
-          "requests": 133
-        },
-        "anthropic": {
-          "cost": 150.99,
-          "tokens": 275703,
-          "requests": 1822
-        },
-        "openai": {
-          "cost": 25.15,
-          "tokens": 8816702,
-          "requests": 447
-        },
-        "google": {
-          "cost": 2.42,
-          "tokens": 6955587,
-          "requests": 39
-        }
-      },
-      "byModel": {
-        "minimax/minimax-m2.1": {
-          "cost": 1.07,
-          "tokens": 3166440,
-          "requests": 133
-        },
-        "claude-opus-4-5": {
-          "cost": 150.4,
-          "tokens": 275564,
-          "requests": 1810
-        },
-        "gpt-5.2": {
-          "cost": 25.15,
-          "tokens": 8816702,
-          "requests": 447
-        },
-        "gemini-2.5-flash": {
-          "cost": 2.42,
-          "tokens": 6955587,
-          "requests": 39
-        },
-        "claude-opus-4-6": {
-          "cost": 0.59,
-          "tokens": 139,
-          "requests": 12
-        }
-      }
+      "cost": 56.90256780827684,
+      "tokens": 2658935,
+      "requests": 0,
+      "sessions": 24
     }
   ],
   "providers": [
     {
+      "name": "unknown",
+      "cost": 448.45107530890937,
+      "tokens": 14232405,
+      "requests": 0
+    },
+    {
       "name": "anthropic",
-      "cost": 1308.65,
-      "tokens": 6884250,
-      "requests": 19178
-    },
-    {
-      "name": "openai",
-      "cost": 75.69,
-      "tokens": 31237262,
-      "requests": 1414
-    },
-    {
-      "name": "openrouter",
-      "cost": 31.09,
-      "tokens": 40272677,
-      "requests": 6457
+      "cost": 265.55615880000005,
+      "tokens": 14101164,
+      "requests": 0
     },
     {
       "name": "google",
-      "cost": 20.54,
-      "tokens": 16240544,
-      "requests": 185
+      "cost": 73.96161442424965,
+      "tokens": 9558075,
+      "requests": 0
     },
     {
-      "name": "ollama",
-      "cost": 0,
-      "tokens": 313093,
-      "requests": 75
+      "name": "openrouter",
+      "cost": 35.71327152277484,
+      "tokens": 13709684,
+      "requests": 0
+    },
+    {
+      "name": "openai",
+      "cost": 9.4037671,
+      "tokens": 3762151,
+      "requests": 0
     }
   ],
   "models": [
     {
+      "name": "unknown",
+      "cost": 448.45107530890937,
+      "tokens": 14232405,
+      "requests": 0
+    },
+    {
       "name": "claude-sonnet-4-5",
-      "cost": 927.66,
-      "tokens": 5694936,
-      "requests": 14266
+      "cost": 151.32872915000004,
+      "tokens": 10909292,
+      "requests": 0
     },
     {
       "name": "claude-opus-4-5",
-      "cost": 332.91,
-      "tokens": 953727,
-      "requests": 3842
-    },
-    {
-      "name": "gpt-5.2",
-      "cost": 75.69,
-      "tokens": 31237262,
-      "requests": 1414
-    },
-    {
-      "name": "claude-haiku-4-5",
-      "cost": 47.49,
-      "tokens": 235448,
-      "requests": 1058
-    },
-    {
-      "name": "minimax/minimax-m2.1",
-      "cost": 31.09,
-      "tokens": 40272677,
-      "requests": 6457
+      "cost": 93.09204194999998,
+      "tokens": 3073449,
+      "requests": 0
     },
     {
       "name": "gemini-3-pro-preview",
-      "cost": 17.53,
-      "tokens": 7603175,
-      "requests": 132
+      "cost": 73.82595747424965,
+      "tokens": 9531961,
+      "requests": 0
+    },
+    {
+      "name": "minimax/minimax-m2.1",
+      "cost": 35.71327152277484,
+      "tokens": 13709684,
+      "requests": 0
+    },
+    {
+      "name": "claude-haiku-4-5",
+      "cost": 21.135387699999992,
+      "tokens": 118423,
+      "requests": 0
+    },
+    {
+      "name": "gpt-5.2",
+      "cost": 9.4037671,
+      "tokens": 3762151,
+      "requests": 0
     },
     {
       "name": "gemini-2.5-flash",
-      "cost": 3.01,
-      "tokens": 8637369,
-      "requests": 53
-    },
-    {
-      "name": "claude-opus-4-6",
-      "cost": 0.59,
-      "tokens": 139,
-      "requests": 12
-    },
-    {
-      "name": "qwen2.5-coder:7b",
-      "cost": 0,
-      "tokens": 289728,
-      "requests": 70
-    },
-    {
-      "name": "phi4-mini:latest",
-      "cost": 0,
-      "tokens": 23365,
-      "requests": 5
+      "cost": 0.13565695,
+      "tokens": 26114,
+      "requests": 0
     }
   ],
-  "taskTypes": [],
-  "lastUpdated": "2026-02-16T03:45:07.075Z",
-  "_note": "REAL DATA from OpenClaw session files - NO MOCK DATA"
+  "sessions": [
+    {
+      "id": "569c9701-6b67-453b-91a8-0134e802e5f3",
+      "startTime": "2026-02-14T22:06:30.742Z",
+      "endTime": "2026-02-14T22:08:07.402Z",
+      "duration": 96660,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 49510,
+      "outputTokens": 8964,
+      "totalTokens": 58474,
+      "totalCost": 0.026739059951444398,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 16,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "56feb612-6b8a-4abb-8f72-a7d0b2121e8e",
+      "startTime": "2026-02-15T17:58:50.114Z",
+      "endTime": "2026-02-15T17:59:47.306Z",
+      "duration": 57192,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 42259,
+      "outputTokens": 3958,
+      "totalTokens": 46217,
+      "totalCost": 0.021870229932998,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 21,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "57644499-15c0-4115-9754-1c0e7c8694fe",
+      "startTime": "2026-02-14T23:54:34.223Z",
+      "endTime": "2026-02-14T23:55:42.737Z",
+      "duration": 68514,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 83575,
+      "outputTokens": 4938,
+      "totalTokens": 88513,
+      "totalCost": 0.036974249902821,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 29,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "58e1c623-ebff-4d6b-bdbf-fe50ac032ad2",
+      "startTime": "2026-02-15T04:05:29.262Z",
+      "endTime": "2026-02-15T04:09:25.482Z",
+      "duration": 236220,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 65241,
+      "outputTokens": 6666,
+      "totalTokens": 71907,
+      "totalCost": 0.06490739959040373,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 70,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "5fa696f0-6214-408b-8e8f-6906a8d9162e",
+      "startTime": "2026-02-14T21:59:38.062Z",
+      "endTime": "2026-02-14T22:01:08.181Z",
+      "duration": 90119,
+      "model": "gemini-2.5-flash",
+      "provider": "google",
+      "inputTokens": 24934,
+      "outputTokens": 1180,
+      "totalTokens": 26114,
+      "totalCost": 0.13565695,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 20,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "61915452-7bf3-4b07-8806-d0638882f260",
+      "startTime": "2026-02-14T17:02:54.279Z",
+      "endTime": "2026-02-14T17:03:34.768Z",
+      "duration": 40489,
+      "model": "gemini-3-pro-preview",
+      "provider": "google",
+      "inputTokens": 140768,
+      "outputTokens": 1972,
+      "totalTokens": 142740,
+      "totalCost": 0.32893359999999994,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 17,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "66ee7040-9875-4c65-8a57-d269d927c4e2",
+      "startTime": "2026-02-15T04:04:09.806Z",
+      "endTime": "2026-02-15T04:04:59.171Z",
+      "duration": 49365,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 68551,
+      "outputTokens": 1671,
+      "totalTokens": 70222,
+      "totalCost": 0.021560549985356697,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 20,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "67144768-64fe-4d88-a669-9588636a724d",
+      "startTime": "2026-02-15T21:00:19.215Z",
+      "endTime": "2026-02-15T21:02:58.054Z",
+      "duration": 158839,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 130493,
+      "outputTokens": 4139,
+      "totalTokens": 134632,
+      "totalCost": 0.057066669820984905,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 40,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "69ed10f9-31fd-40f2-8973-0f5f2ad97e22",
+      "startTime": "2026-02-16T02:09:37.034Z",
+      "endTime": "2026-02-16T02:11:04.986Z",
+      "duration": 87952,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 80817,
+      "outputTokens": 8814,
+      "totalTokens": 89631,
+      "totalCost": 0.04599380984200079,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 32,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "6c942552-00ae-4725-8a43-0d2a70665d3f",
+      "startTime": "2026-02-14T11:54:34.297Z",
+      "endTime": "2026-02-14T11:55:06.831Z",
+      "duration": 32534,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "6e52f379-f3b8-480b-9010-1bb8d65ed9c8",
+      "startTime": "2026-02-14T14:54:34.237Z",
+      "endTime": "2026-02-14T14:55:07.995Z",
+      "duration": 33758,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "6f39effd-9dc3-47ad-8736-9fd41c649012",
+      "startTime": "2026-02-14T22:05:35.933Z",
+      "endTime": "2026-02-14T22:06:28.837Z",
+      "duration": 52904,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 65544,
+      "outputTokens": 2598,
+      "totalTokens": 68142,
+      "totalCost": 0.029416319907486603,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 28,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "6f979899-05e6-47c8-9ed9-46fb574fed53",
+      "startTime": "2026-02-14T18:03:25.238Z",
+      "endTime": "2026-02-14T18:03:25.239Z",
+      "duration": 1,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 2,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "6ff38067-c6cb-47d0-8273-a3699a616cf6",
+      "startTime": "2026-02-14T11:09:33.380Z",
+      "endTime": "2026-02-14T11:10:05.391Z",
+      "duration": 32011,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "711277ce-840c-448f-b0e4-cac2cc4f8bf3",
+      "startTime": "2026-02-15T21:39:35.454Z",
+      "endTime": "2026-02-15T21:40:10.367Z",
+      "duration": 34913,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 39931,
+      "outputTokens": 3883,
+      "totalTokens": 43814,
+      "totalCost": 0.0185921899587803,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 17,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "74599579-0576-44c5-b481-77499a1f9c0f",
+      "startTime": "2026-02-16T03:58:47.769Z",
+      "endTime": "2026-02-16T04:02:01.808Z",
+      "duration": 194039,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 109145,
+      "outputTokens": 5055,
+      "totalTokens": 114200,
+      "totalCost": 0.0424743599179704,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 23,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7474d39b-0e86-414a-b2a7-e3d53e8baa3c",
+      "startTime": "2026-02-15T15:39:36.113Z",
+      "endTime": "2026-02-15T15:41:07.052Z",
+      "duration": 90939,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 57042,
+      "outputTokens": 4473,
+      "totalTokens": 61515,
+      "totalCost": 0.024975779946749096,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 15,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "75c486b2-aa67-4240-96cf-54df0d4538df",
+      "startTime": "2026-02-14T19:58:49.457Z",
+      "endTime": "2026-02-14T20:04:21.726Z",
+      "duration": 332269,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 114699,
+      "outputTokens": 4191,
+      "totalTokens": 118890,
+      "totalCost": 0.0392499299570025,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 20,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "75df7b32-fc06-4615-ab3c-38f04f809f37",
+      "startTime": "2026-02-15T21:00:02.154Z",
+      "endTime": "2026-02-15T21:03:40.937Z",
+      "duration": 218783,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 164140,
+      "outputTokens": 3818,
+      "totalTokens": 167958,
+      "totalCost": 0.0744674197347748,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 54,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7abc38ad-979d-48c8-ba6c-b405db1bde11",
+      "startTime": "2026-02-15T04:15:05.579Z",
+      "endTime": "2026-02-15T04:16:06.581Z",
+      "duration": 61002,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 27685,
+      "outputTokens": 1827,
+      "totalTokens": 29512,
+      "totalCost": 0.009896699993139,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7af6596d-9bfd-4c07-b239-203b9bf9a0bb",
+      "startTime": "2026-02-15T10:24:35.327Z",
+      "endTime": "2026-02-15T10:25:26.481Z",
+      "duration": 51154,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 66289,
+      "outputTokens": 2581,
+      "totalTokens": 68870,
+      "totalCost": 0.0225812899776869,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 12,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7c2d7695-6994-4269-8339-d84eaffd58e0",
+      "startTime": "2026-02-15T01:24:55.060Z",
+      "endTime": "2026-02-15T01:29:08.425Z",
+      "duration": 253365,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 30049,
+      "outputTokens": 11667,
+      "totalTokens": 41716,
+      "totalCost": 0.0263968199280006,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 18,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7d30dc13-4234-4c5b-936d-0fe476bce8b0",
+      "startTime": "2026-02-14T23:02:29.254Z",
+      "endTime": "2026-02-14T23:03:54.142Z",
+      "duration": 84888,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 50064,
+      "outputTokens": 5611,
+      "totalTokens": 55675,
+      "totalCost": 0.0320245698682316,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 39,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "7f74ce64-d87c-4c54-9d2c-46900f1abddc",
+      "startTime": "2026-02-15T22:39:33.911Z",
+      "endTime": "2026-02-15T22:39:33.912Z",
+      "duration": 1,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 2,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "815836bc-fe8f-440b-b619-354b3dde4d42",
+      "startTime": "2026-02-15T04:24:35.714Z",
+      "endTime": "2026-02-15T04:26:06.564Z",
+      "duration": 90850,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 31581,
+      "outputTokens": 10773,
+      "totalTokens": 42354,
+      "totalCost": 0.030773189879880303,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 24,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "822dce26-266c-48f0-8590-a42ac40b01e1",
+      "startTime": "2026-02-14T22:24:34.857Z",
+      "endTime": "2026-02-14T22:25:48.189Z",
+      "duration": 73332,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 237163,
+      "outputTokens": 7156,
+      "totalTokens": 244319,
+      "totalCost": 0.07129300999539201,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 18,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "82e1d711-d2f5-4f17-bce2-67bb25e311a5",
+      "startTime": "2026-02-15T23:58:49.057Z",
+      "endTime": "2026-02-15T23:59:44.532Z",
+      "duration": 55475,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 60878,
+      "outputTokens": 5073,
+      "totalTokens": 65951,
+      "totalCost": 0.028530509927258998,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 23,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "83441dec-6c41-4a64-9cf0-25ecf67af7e8",
+      "startTime": "2026-02-15T17:09:33.882Z",
+      "endTime": "2026-02-15T17:09:54.191Z",
+      "duration": 20309,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 41691,
+      "outputTokens": 2319,
+      "totalTokens": 44010,
+      "totalCost": 0.0141638999929572,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "835b7a08-1e2a-44c8-9020-8eba5dbc3fc0",
+      "startTime": "2026-02-14T15:39:34.172Z",
+      "endTime": "2026-02-14T15:40:07.538Z",
+      "duration": 33366,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "83a7c6c9-abae-40b3-984f-1cfdb5d70c9a",
+      "startTime": "2026-02-14T20:16:46.256Z",
+      "endTime": "2026-02-14T20:18:46.852Z",
+      "duration": 120596,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 153734,
+      "outputTokens": 7865,
+      "totalTokens": 161599,
+      "totalCost": 0.059228349897515804,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 20,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "83b85315-98ca-474b-9b80-47a415bfbe2d",
+      "startTime": "2026-02-14T15:00:00.727Z",
+      "endTime": "2026-02-14T15:00:35.331Z",
+      "duration": 34604,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "895d78f7-7979-409a-8230-5420d21cd117",
+      "startTime": "2026-02-16T03:53:13.683Z",
+      "endTime": "2026-02-16T04:55:48.139Z",
+      "duration": 3754456,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 166,
+      "outputTokens": 3986,
+      "totalTokens": 4152,
+      "totalCost": 0.5643225000000001,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 51,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "89746288-cfc8-4fbf-863d-da7fd5539526",
+      "startTime": "2026-02-15T18:39:36.880Z",
+      "endTime": "2026-02-15T18:39:58.654Z",
+      "duration": 21774,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 41881,
+      "outputTokens": 2038,
+      "totalTokens": 43919,
+      "totalCost": 0.0139443799929959,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "8bcf5fb7-e0fd-4559-95d0-1e9fd7d172b0",
+      "startTime": "2026-02-16T01:58:49.474Z",
+      "endTime": "2026-02-16T02:00:31.380Z",
+      "duration": 101906,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 52938,
+      "outputTokens": 2299,
+      "totalTokens": 55237,
+      "totalCost": 0.019857919966193897,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 15,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "8db8fd61-f156-45f4-a72a-54728cca2a5c",
+      "startTime": "2026-02-14T19:12:23.484Z",
+      "endTime": "2026-02-14T19:13:24.517Z",
+      "duration": 61033,
+      "model": "gemini-3-pro-preview",
+      "provider": "google",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 8,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "8e5ad0af-f25f-4a11-a9dc-807d00b5122e",
+      "startTime": "2026-02-15T12:39:34.622Z",
+      "endTime": "2026-02-15T12:40:26.651Z",
+      "duration": 52029,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 71705,
+      "outputTokens": 4047,
+      "totalTokens": 75752,
+      "totalCost": 0.0335305198967448,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 26,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "8f89826d-e38d-4476-9f4b-e72c4efec9c9",
+      "startTime": "2026-02-15T04:18:30.657Z",
+      "endTime": "2026-02-15T04:19:44.858Z",
+      "duration": 74201,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 148579,
+      "outputTokens": 4481,
+      "totalTokens": 153060,
+      "totalCost": 0.056171079882022,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 33,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "92323148-685d-4cdc-87e0-caa86acf6358",
+      "startTime": "2026-02-15T04:44:48.864Z",
+      "endTime": "2026-02-15T21:03:05.587Z",
+      "duration": 58696723,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 436793,
+      "outputTokens": 11774,
+      "totalTokens": 448567,
+      "totalCost": 2.7678349499675505,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 127,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "948f040a-243b-4dc5-ba21-d97d8424d562",
+      "startTime": "2026-02-15T08:54:35.899Z",
+      "endTime": "2026-02-15T08:58:27.603Z",
+      "duration": 231704,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 57183,
+      "outputTokens": 9112,
+      "totalTokens": 66295,
+      "totalCost": 0.05720806966887739,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 48,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "94a07882-73a0-4134-aaf3-42ccdd007018",
+      "startTime": "2026-02-15T21:33:27.723Z",
+      "endTime": "2026-02-16T04:36:07.945Z",
+      "duration": 25360222,
+      "model": "claude-opus-4-5",
+      "provider": "anthropic",
+      "inputTokens": 2604682,
+      "outputTokens": 118884,
+      "totalTokens": 2723566,
+      "totalCost": 36.35393209999998,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 1000,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "956525e6-b8f3-4a41-a7cb-cb0a0d737f17",
+      "startTime": "2026-02-15T21:05:26.512Z",
+      "endTime": "2026-02-15T21:07:57.718Z",
+      "duration": 151206,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 39813,
+      "outputTokens": 4451,
+      "totalTokens": 44264,
+      "totalCost": 0.0242266899075127,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 30,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "9706d181-d7c1-41ff-bb35-6d0ff179d0ff",
+      "startTime": "2026-02-14T19:20:44.803Z",
+      "endTime": "2026-02-14T19:34:20.090Z",
+      "duration": 815287,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 10,
+      "outputTokens": 216,
+      "totalTokens": 226,
+      "totalCost": 0.12480275,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 7,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "986b5b63-ec01-4a65-be21-9f61941012d0",
+      "startTime": "2026-02-14T22:03:13.457Z",
+      "endTime": "2026-02-14T22:05:35.084Z",
+      "duration": 141627,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 154024,
+      "outputTokens": 6513,
+      "totalTokens": 160537,
+      "totalCost": 0.06783218979941641,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 38,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "9c9ce1fd-2fda-45b1-b10e-2231d6f724bc",
+      "startTime": "2026-02-16T04:24:36.289Z",
+      "endTime": "2026-02-16T04:26:38.346Z",
+      "duration": 122057,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 49737,
+      "outputTokens": 4408,
+      "totalTokens": 54145,
+      "totalCost": 0.019495789981208,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 11,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "a31e115e-1f05-44ed-8686-64eaebeb8106",
+      "startTime": "2026-02-15T15:58:48.480Z",
+      "endTime": "2026-02-15T16:02:27.998Z",
+      "duration": 219518,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 41361,
+      "outputTokens": 5936,
+      "totalTokens": 47297,
+      "totalCost": 0.029869899869367698,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 32,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "a438ccc1-987c-4426-8252-846440cf48b6",
+      "startTime": "2026-02-14T13:00:00.698Z",
+      "endTime": "2026-02-14T13:00:31.943Z",
+      "duration": 31245,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "a66eb0ab-ac91-4adb-929d-48d94c9a718c",
+      "startTime": "2026-02-15T06:39:34.067Z",
+      "endTime": "2026-02-15T06:40:02.202Z",
+      "duration": 28135,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 18617,
+      "outputTokens": 2051,
+      "totalTokens": 20668,
+      "totalCost": 0.0083359299863911,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "a864d9ea-cf82-43a9-9bc9-3888171ca79c",
+      "startTime": "2026-02-15T00:02:30.641Z",
+      "endTime": "2026-02-15T00:03:34.961Z",
+      "duration": 64320,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 66620,
+      "outputTokens": 3500,
+      "totalTokens": 70120,
+      "totalCost": 0.0316697498964265,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 30,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "ab68d94c-21b9-4a7b-b3d5-249d3e3362b3",
+      "startTime": "2026-02-15T04:25:33.708Z",
+      "endTime": "2026-02-15T04:29:55.381Z",
+      "duration": 261673,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 54229,
+      "outputTokens": 8872,
+      "totalTokens": 63101,
+      "totalCost": 0.040616179824540494,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 34,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "abc20909-5821-4aa3-947c-647e0d6b55ca",
+      "startTime": "2026-02-14T11:02:30.743Z",
+      "endTime": "2026-02-14T11:03:04.506Z",
+      "duration": 33763,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "ac1acf6a-32f6-42a9-9343-fa911a2319e7",
+      "startTime": "2026-02-15T17:00:04.530Z",
+      "endTime": "2026-02-15T17:01:12.053Z",
+      "duration": 67523,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 71057,
+      "outputTokens": 2388,
+      "totalTokens": 73445,
+      "totalCost": 0.02145399,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "ac677cd9-0e62-4d00-8c9f-2ee12b75e1c6",
+      "startTime": "2026-02-16T03:17:16.382Z",
+      "endTime": "2026-02-16T03:17:35.072Z",
+      "duration": 18690,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 4,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "ad07a716-2028-459e-880b-aa407bbc767f",
+      "startTime": "2026-02-16T01:24:37.399Z",
+      "endTime": "2026-02-16T01:25:56.089Z",
+      "duration": 78690,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 129140,
+      "outputTokens": 7390,
+      "totalTokens": 136530,
+      "totalCost": 0.0534239298846437,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 28,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "ae48050e-3ce8-490d-8403-32cc3e328e10",
+      "startTime": "2026-02-14T13:58:48.364Z",
+      "endTime": "2026-02-14T13:59:21.401Z",
+      "duration": 33037,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "af3bedb5-afd2-49c2-89d2-350da154f1ab",
+      "startTime": "2026-02-15T11:52:31.461Z",
+      "endTime": "2026-02-15T11:52:52.387Z",
+      "duration": 20926,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 78024,
+      "outputTokens": 2449,
+      "totalTokens": 80473,
+      "totalCost": 0.023393030000000002,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b0e0657c-503a-4897-b390-f16bc2d13a70",
+      "startTime": "2026-02-14T22:01:06.693Z",
+      "endTime": "2026-02-14T22:03:10.181Z",
+      "duration": 123488,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 80081,
+      "outputTokens": 3073,
+      "totalTokens": 83154,
+      "totalCost": 0.033867169906740505,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 39,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b28fdefa-3f2c-414b-bbed-8eef1c9fc38d",
+      "startTime": "2026-02-16T03:51:34.574Z",
+      "endTime": "2026-02-16T03:52:05.282Z",
+      "duration": 30708,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 10,
+      "outputTokens": 175,
+      "totalTokens": 185,
+      "totalCost": 0.11979775000000001,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 7,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b3dcf133-20ad-48d6-a2e7-1e97ffe08279",
+      "startTime": "2026-02-15T20:54:37.886Z",
+      "endTime": "2026-02-15T20:55:12.140Z",
+      "duration": 34254,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 64003,
+      "outputTokens": 3681,
+      "totalTokens": 67684,
+      "totalCost": 0.0207881699998959,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b557482c-1e69-4dbe-909e-de1efd10fdb7",
+      "startTime": "2026-02-15T01:11:13.473Z",
+      "endTime": "2026-02-15T02:05:41.727Z",
+      "duration": 3268254,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 204797,
+      "outputTokens": 21167,
+      "totalTokens": 225964,
+      "totalCost": 0.5439524992818567,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 122,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b93e4df9-3508-470d-8921-da94588c9de8",
+      "startTime": "2026-02-14T12:39:33.699Z",
+      "endTime": "2026-02-14T12:40:07.773Z",
+      "duration": 34074,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "b9e61a0b-83f9-4924-9155-273829eeab83",
+      "startTime": "2026-02-15T04:10:33.523Z",
+      "endTime": "2026-02-15T04:11:54.898Z",
+      "duration": 81375,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 38345,
+      "outputTokens": 2793,
+      "totalTokens": 41138,
+      "totalCost": 0.014866349981401501,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 13,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "bacfca7a-b226-4da2-8620-f867d59fb937",
+      "startTime": "2026-02-15T07:24:34.786Z",
+      "endTime": "2026-02-15T07:25:02.053Z",
+      "duration": 27267,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 44413,
+      "outputTokens": 3035,
+      "totalTokens": 47448,
+      "totalCost": 0.0168358899803887,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 12,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "be464034-709a-47b9-a32e-c933e0c8a5ab",
+      "startTime": "2026-02-16T02:15:57.534Z",
+      "endTime": "2026-02-16T05:00:27.836Z",
+      "duration": 9870302,
+      "model": "unknown",
+      "provider": "unknown",
+      "inputTokens": 245529,
+      "outputTokens": 132042,
+      "totalTokens": 377571,
+      "totalCost": 44.75574765000003,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 1000,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "be9107d6-4422-4681-b8a3-8fcb2ca3f580",
+      "startTime": "2026-02-14T12:02:29.784Z",
+      "endTime": "2026-02-14T12:03:02.393Z",
+      "duration": 32609,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "bf18e936-d57e-4b1d-bec4-165de20b0198",
+      "startTime": "2026-02-14T23:09:33.656Z",
+      "endTime": "2026-02-14T23:10:57.365Z",
+      "duration": 83709,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 48031,
+      "outputTokens": 6192,
+      "totalTokens": 54223,
+      "totalCost": 0.0262701599258061,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 21,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c09765ac-439d-4a68-bcba-bbd5f84ffd95",
+      "startTime": "2026-02-15T17:54:33.615Z",
+      "endTime": "2026-02-15T18:01:28.267Z",
+      "duration": 414652,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 106846,
+      "outputTokens": 8133,
+      "totalTokens": 114979,
+      "totalCost": 0.0549678898160688,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 36,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c1458471-1fa3-4565-aabb-6488f27cfbdf",
+      "startTime": "2026-02-15T01:58:49.096Z",
+      "endTime": "2026-02-15T02:09:22.445Z",
+      "duration": 633349,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 75346,
+      "outputTokens": 2595,
+      "totalTokens": 77941,
+      "totalCost": 0.025518059972906102,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 19,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c27af285-b21c-4476-902c-503f96dbec5e",
+      "startTime": "2026-02-15T23:00:02.418Z",
+      "endTime": "2026-02-15T23:00:10.507Z",
+      "duration": 8089,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 22616,
+      "outputTokens": 581,
+      "totalTokens": 23197,
+      "totalCost": 0.00665827,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 6,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c452751c-7adf-4a78-a5e6-3681e860f397",
+      "startTime": "2026-02-15T04:16:16.088Z",
+      "endTime": "2026-02-15T04:17:42.096Z",
+      "duration": 86008,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 38324,
+      "outputTokens": 4314,
+      "totalTokens": 42638,
+      "totalCost": 0.0210161699342961,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 20,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c508ee44-60c4-4450-b321-42701b7e6290",
+      "startTime": "2026-02-14T13:02:29.197Z",
+      "endTime": "2026-02-14T13:03:02.840Z",
+      "duration": 33643,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "c80e6c32-f091-487e-8adf-1805bff860e4",
+      "startTime": "2026-02-14T23:01:36.703Z",
+      "endTime": "2026-02-14T23:01:59.543Z",
+      "duration": 22840,
+      "model": "gemini-3-pro-preview",
+      "provider": "google",
+      "inputTokens": 24313,
+      "outputTokens": 417,
+      "totalTokens": 24730,
+      "totalCost": 0.05363,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 15,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "d1421ff6-9a21-4a4b-9562-83a20739093f",
+      "startTime": "2026-02-15T07:00:19.424Z",
+      "endTime": "2026-02-15T07:04:01.526Z",
+      "duration": 222102,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 91288,
+      "outputTokens": 6243,
+      "totalTokens": 97531,
+      "totalCost": 0.05058119979997409,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 43,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "d30fa940-2a6b-4ade-9fc0-6b710a5e56ab",
+      "startTime": "2026-02-14T19:13:53.561Z",
+      "endTime": "2026-02-14T19:14:18.862Z",
+      "duration": 25301,
+      "model": "gemini-3-pro-preview",
+      "provider": "google",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "d611831a-123a-4bdc-a66b-4aaea146ddc5",
+      "startTime": "2026-02-14T20:29:32.873Z",
+      "endTime": "2026-02-14T20:32:32.837Z",
+      "duration": 179964,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 95961,
+      "outputTokens": 1935,
+      "totalTokens": 97896,
+      "totalCost": 0.027747720000000003,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 13,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "d8219490-8b33-4134-a6ee-8cca73a9028b",
+      "startTime": "2026-02-16T03:53:02.665Z",
+      "endTime": "2026-02-16T03:53:10.821Z",
+      "duration": 8156,
+      "model": "claude-opus-4-5",
+      "provider": "anthropic",
+      "inputTokens": 18,
+      "outputTokens": 140,
+      "totalTokens": 158,
+      "totalCost": 0.13547075,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "d95433e9-7b5d-4dab-b7d7-d2bf845b2258",
+      "startTime": "2026-02-15T09:02:32.505Z",
+      "endTime": "2026-02-15T09:02:53.654Z",
+      "duration": 21149,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 31389,
+      "outputTokens": 2424,
+      "totalTokens": 33813,
+      "totalCost": 0.013051289977265401,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 23,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "da3dbfc8-55f8-4502-8b98-415f5c81a9cb",
+      "startTime": "2026-02-14T14:09:34.126Z",
+      "endTime": "2026-02-14T14:10:05.717Z",
+      "duration": 31591,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "db6d2f79-b010-499e-b26a-046af3de283b",
+      "startTime": "2026-02-15T11:54:34.606Z",
+      "endTime": "2026-02-15T11:55:12.130Z",
+      "duration": 37524,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 40595,
+      "outputTokens": 2152,
+      "totalTokens": 42747,
+      "totalCost": 0.0137093299929572,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "dbd13582-1bf6-4c53-80a1-d35b5cd5a2d4",
+      "startTime": "2026-02-15T22:24:35.817Z",
+      "endTime": "2026-02-15T22:25:42.284Z",
+      "duration": 66467,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 54290,
+      "outputTokens": 10285,
+      "totalTokens": 64575,
+      "totalCost": 0.0248044099962464,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "dd62479f-b5f4-4d13-8c1e-4f601fb36553",
+      "startTime": "2026-02-15T07:58:47.924Z",
+      "endTime": "2026-02-15T08:01:30.033Z",
+      "duration": 162109,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 44954,
+      "outputTokens": 6397,
+      "totalTokens": 51351,
+      "totalCost": 0.0324595398575519,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 33,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "df98d7f1-29f2-4011-a902-0bb9c0e5e612",
+      "startTime": "2026-02-15T05:09:34.978Z",
+      "endTime": "2026-02-15T05:09:56.652Z",
+      "duration": 21674,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 60800,
+      "outputTokens": 1390,
+      "totalTokens": 62190,
+      "totalCost": 0.017736500000000002,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e0f61691-7858-45c0-9dc5-8bd7dbcdf650",
+      "startTime": "2026-02-16T00:39:34.732Z",
+      "endTime": "2026-02-16T00:41:07.514Z",
+      "duration": 92782,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 47883,
+      "outputTokens": 4061,
+      "totalTokens": 51944,
+      "totalCost": 0.025542969912433905,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 22,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e114f2fd-baaa-4428-841c-c2230b9f2637",
+      "startTime": "2026-02-16T04:32:03.693Z",
+      "endTime": "2026-02-16T04:32:39.356Z",
+      "duration": 35663,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 22156,
+      "outputTokens": 359,
+      "totalTokens": 22515,
+      "totalCost": 0.0070014099932176,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 8,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e2dd499e-4354-4fc8-af2d-64302a5732e9",
+      "startTime": "2026-02-16T03:15:08.635Z",
+      "endTime": "2026-02-16T03:17:36.891Z",
+      "duration": 148256,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 66997,
+      "outputTokens": 1957,
+      "totalTokens": 68954,
+      "totalCost": 0.027008509929398298,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 30,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e3563161-739c-4f0e-8299-ad5651f42a5a",
+      "startTime": "2026-02-15T04:17:47.623Z",
+      "endTime": "2026-02-15T04:18:24.772Z",
+      "duration": 37149,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 52950,
+      "outputTokens": 3130,
+      "totalTokens": 56080,
+      "totalCost": 0.0228206599444934,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 19,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e4c31d47-ea0f-4d78-929c-6c9832639420",
+      "startTime": "2026-02-15T08:09:34.996Z",
+      "endTime": "2026-02-15T08:10:17.870Z",
+      "duration": 42874,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 36596,
+      "outputTokens": 4760,
+      "totalTokens": 41356,
+      "totalCost": 0.0189987999540412,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 14,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e8a3ca84-fd94-4985-b2c2-a506e2c10070",
+      "startTime": "2026-02-15T05:00:02.737Z",
+      "endTime": "2026-02-15T06:35:46.396Z",
+      "duration": 5743659,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 1729040,
+      "outputTokens": 113772,
+      "totalTokens": 1842812,
+      "totalCost": 1.9491629562576138,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 1000,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "e902fdaf-40a7-4249-9578-d82e00a99387",
+      "startTime": "2026-02-14T14:02:29.810Z",
+      "endTime": "2026-02-14T14:03:04.377Z",
+      "duration": 34567,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "eaa051dd-5cae-4202-a624-91a8b8bebb26",
+      "startTime": "2026-02-14T16:24:34.235Z",
+      "endTime": "2026-02-14T16:25:04.501Z",
+      "duration": 30266,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f2658235-e47e-4087-86e5-abdc830327e4",
+      "startTime": "2026-02-14T20:21:23.180Z",
+      "endTime": "2026-02-14T20:23:51.380Z",
+      "duration": 148200,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 44215,
+      "outputTokens": 5062,
+      "totalTokens": 49277,
+      "totalCost": 0.0284635398828341,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 31,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f350daa3-0ac3-4f08-ad67-a99c31049ef6",
+      "startTime": "2026-02-15T13:58:47.204Z",
+      "endTime": "2026-02-15T13:59:11.754Z",
+      "duration": 24550,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 38058,
+      "outputTokens": 1655,
+      "totalTokens": 39713,
+      "totalCost": 0.012514929993329801,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 11,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f39a19f1-8cf9-4965-a1f6-576a5e8ecb78",
+      "startTime": "2026-02-15T09:58:49.152Z",
+      "endTime": "2026-02-15T10:01:33.559Z",
+      "duration": 164407,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 54288,
+      "outputTokens": 4900,
+      "totalTokens": 59188,
+      "totalCost": 0.03496918984343571,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 32,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f6808643-ebc8-4280-aa1e-9dcbcc6a82ae",
+      "startTime": "2026-02-15T13:24:35.635Z",
+      "endTime": "2026-02-15T13:24:48.074Z",
+      "duration": 12439,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 74852,
+      "outputTokens": 1461,
+      "totalTokens": 76313,
+      "totalCost": 0.02159799,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 9,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f81509ac-96df-4761-8cad-bbc51123915e",
+      "startTime": "2026-02-15T09:39:34.182Z",
+      "endTime": "2026-02-15T09:40:37.886Z",
+      "duration": 63704,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 64248,
+      "outputTokens": 8115,
+      "totalTokens": 72363,
+      "totalCost": 0.0377167198733949,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 25,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "f983b95f-8dfc-4232-9e7c-a1c13faa819b",
+      "startTime": "2026-02-15T15:52:29.405Z",
+      "endTime": "2026-02-15T15:54:02.797Z",
+      "duration": 93392,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 62513,
+      "outputTokens": 12284,
+      "totalTokens": 74797,
+      "totalCost": 0.0322890399625927,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 15,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "fa449a9c-f72e-4496-8579-ad335de8bd15",
+      "startTime": "2026-02-15T07:52:28.912Z",
+      "endTime": "2026-02-15T08:04:32.146Z",
+      "duration": 723234,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 182365,
+      "outputTokens": 7285,
+      "totalTokens": 189650,
+      "totalCost": 0.0643820599177724,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 27,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "fd53040c-e526-46cd-8096-3c230e3f1dc0",
+      "startTime": "2026-02-14T23:00:00.772Z",
+      "endTime": "2026-02-14T23:01:17.167Z",
+      "duration": 76395,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 75207,
+      "outputTokens": 3195,
+      "totalTokens": 78402,
+      "totalCost": 0.030947189923939498,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 31,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "fdb6eade-6efd-42b4-80fe-4309f4b214b4",
+      "startTime": "2026-02-14T15:30:01.696Z",
+      "endTime": "2026-02-14T15:30:33.582Z",
+      "duration": 31886,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "fec86ce2-4dd4-4d0b-bbdd-c09a21e70847",
+      "startTime": "2026-02-14T16:02:30.006Z",
+      "endTime": "2026-02-14T16:03:01.834Z",
+      "duration": 31828,
+      "model": "claude-sonnet-4-5",
+      "provider": "anthropic",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "totalCost": 0,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 10,
+      "agent": "pm-orchestrator"
+    },
+    {
+      "id": "61c54c4d-6861-40ff-80d3-cd584c66dd42",
+      "startTime": "2026-02-15T16:01:08.766Z",
+      "endTime": "2026-02-15T19:23:02.359Z",
+      "duration": 12113593,
+      "model": "minimax/minimax-m2.1",
+      "provider": "openrouter",
+      "inputTokens": 25290,
+      "outputTokens": 1719,
+      "totalTokens": 27009,
+      "totalCost": 0.12213059999991151,
+      "messageCount": 0,
+      "toolCalls": 0,
+      "tools": [],
+      "events": 17,
+      "agent": "validator"
+    }
+  ],
+  "lastUpdated": "2026-02-16T05:03:54.258Z"
 }
