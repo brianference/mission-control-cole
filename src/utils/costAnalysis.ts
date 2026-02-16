@@ -124,6 +124,20 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
     }
   }
   
+  if (!sessions || !Array.isArray(sessions)) {
+    // Return empty heatmap if no sessions
+    const data = [];
+    for (let hour = 0; hour < 24; hour++) {
+      const row: any = { hour: `${hour}:00` };
+      for (let day = 0; day < 7; day++) {
+        const dayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day];
+        row[dayName] = 0;
+      }
+      data.push(row);
+    }
+    return data;
+  }
+  
   // Aggregate real session data
   sessions.forEach(session => {
     const date = new Date(session.timestamp);
@@ -152,7 +166,10 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
 export function aggregateToolCalls(sessions: SessionData[]) {
   const toolStats: { [tool: string]: { count: number; cost: number; totalDuration: number; calls: number } } = {};
   
+  if (!sessions || !Array.isArray(sessions)) return [];
+  
   sessions.forEach(session => {
+    if (!session?.toolCalls || !Array.isArray(session.toolCalls)) return;
     session.toolCalls.forEach(tc => {
       if (!toolStats[tc.tool]) {
         toolStats[tc.tool] = { count: 0, cost: 0, totalDuration: 0, calls: 0 };
