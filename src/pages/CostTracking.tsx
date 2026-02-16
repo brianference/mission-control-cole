@@ -106,7 +106,7 @@ const CostTracking: React.FC = () => {
   const [cronJobs, setCronJobs] = useState<CronJob[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'overview' | 'sessions' | 'tools' | 'cron' | 'optimization' | 'tokens' | 'agents'>('overview');
-  const [timeRange, setTimeRange] = useState<TimeRange>('monthly');
+  const [timeRange, setTimeRange] = useState<TimeRange>('daily');
 
   useEffect(() => {
     // Load usage data and real sessions
@@ -244,7 +244,7 @@ const CostTracking: React.FC = () => {
 
       {/* Top Optimization Recommendations */}
       <div className="top-recs-container">
-        <TopRecommendations timeRange={timeRange === 'monthly' ? 'weekly' : timeRange} />
+        <TopRecommendations timeRange={timeRange} />
       </div>
 
       {/* Tab Navigation */}

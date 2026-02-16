@@ -24,7 +24,7 @@ interface UsageData {
 }
 
 interface TopRecommendationsProps {
-  timeRange: 'daily' | 'weekly';
+  timeRange: 'daily' | 'weekly' | 'monthly';
 }
 
 const TopRecommendations: React.FC<TopRecommendationsProps> = ({ timeRange }) => {
@@ -39,8 +39,8 @@ const TopRecommendations: React.FC<TopRecommendationsProps> = ({ timeRange }) =>
 
         const recs: Recommendation[] = [];
 
-        // Get recent data for analysis
-        const recentDays = timeRange === 'daily' ? 1 : 7;
+        // Get recent data for analysis based on time range
+        const recentDays = timeRange === 'daily' ? 1 : timeRange === 'weekly' ? 7 : 30;
         const recentData = data.daily.slice(-recentDays);
 
         // === MODEL COST OPTIMIZATION ===
