@@ -5,8 +5,8 @@
  * Verifies real data, no mock/fake data visible
  */
 
-const { chromium } = require('playwright');
-const percySnapshot = require('@percy/playwright');
+import { chromium } from 'playwright';
+import percySnapshot from '@percy/playwright';
 
 const BASE_URL = process.env.BASE_URL || 'https://mission-control-cole.pages.dev';
 
