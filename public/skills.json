@@ -1,482 +1,1080 @@
 [
   {
+    "id": "1password",
+    "name": "1password",
+    "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.",
+    "path": "/usr/lib/node_modules/openclaw/skills/1password/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "accessibility-toolkit",
     "name": "accessibility-toolkit",
     "description": "Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.",
+    "path": "/root/.openclaw/workspace/skills/accessibility-toolkit/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "agent-orchestrator",
     "name": "agent-orchestrator",
     "description": "|",
+    "path": "/root/.openclaw/workspace/skills/agent-orchestrator/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "agent-task-chunking",
     "name": "agent-task-chunking",
     "description": "Skill: agent-task-chunking",
+    "path": "/root/.openclaw/workspace/skills/agent-task-chunking/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "ai-automation-workflows",
     "name": "ai-automation-workflows",
     "description": "|",
+    "path": "/root/.openclaw/workspace/skills/ai-automation-workflows/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "ai-phone",
+    "name": "ai-phone",
+    "description": "Skill: ai-phone",
+    "path": "/root/.openclaw/workspace/skills/ai-phone/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "airbnb-search",
     "name": "airbnb-search",
     "description": "Search Airbnb listings with prices, ratings, and direct links. No API key required.",
+    "path": "/root/.openclaw/workspace/skills/airbnb-search/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "analytics-tracking",
     "name": "analytics-tracking",
-    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event trackin",
+    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions",
+    "path": "/root/.openclaw/workspace/skills/analytics-tracking/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "android-adb",
+    "id": "android-adb",
+    "name": "android-automation",
     "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screensh",
+    "path": "/root/.openclaw/workspace/skills/android-adb/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "atl-mobile",
+    "id": "apple-notes",
+    "name": "apple-notes",
+    "description": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folde",
+    "path": "/usr/lib/node_modules/openclaw/skills/apple-notes/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "apple-reminders",
+    "name": "apple-reminders",
+    "description": "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.",
+    "path": "/usr/lib/node_modules/openclaw/skills/apple-reminders/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "atl-mobile",
+    "name": "atl-browser",
     "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
+    "path": "/root/.openclaw/workspace/skills/atl-mobile/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "autonomous-work",
     "name": "autonomous-work",
-    "description": "Autonomous overnight work system using Ralph Loop + exec/process tools. Enables true autonomous coding work while you sleep - tasks are picked from ACTIVE queue, executed using Claude Code in Ralph Lo",
+    "description": "Autonomous overnight work system using Ralph Loop + sessions_spawn. Enables true autonomous coding work while you sleep - tasks are picked from ACTIVE queue, executed via sessions_spawn, monitored unt",
+    "path": "/root/.openclaw/workspace/skills/autonomous-work/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "bear-notes",
+    "name": "bear-notes",
+    "description": "Create, search, and manage Bear notes via grizzly CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/bear-notes/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "bird",
     "name": "bird",
     "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "path": "/root/.openclaw/workspace/skills/bird/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "blogwatcher",
+    "name": "blogwatcher",
+    "description": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/blogwatcher/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "blucli",
+    "name": "blucli",
+    "description": "BluOS CLI (blu) for discovery, playback, grouping, and volume.",
+    "path": "/usr/lib/node_modules/openclaw/skills/blucli/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "bluebubbles",
+    "name": "bluebubbles",
+    "description": "Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration). Calls go through the generic message tool with channel=",
+    "path": "/usr/lib/node_modules/openclaw/skills/bluebubbles/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "calendar",
     "name": "calendar",
     "description": "Calendar management and scheduling. Create events, manage meetings, and sync across calendar providers.",
+    "path": "/root/.openclaw/workspace/skills/calendar/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "camsnap",
+    "name": "camsnap",
+    "description": "Capture frames or clips from RTSP/ONVIF cameras.",
+    "path": "/usr/lib/node_modules/openclaw/skills/camsnap/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "canvas",
+    "name": "canvas",
+    "description": "Skill: canvas",
+    "path": "/usr/lib/node_modules/openclaw/skills/canvas/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "chirp",
     "name": "chirp",
-    "description": "\"X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI fo",
+    "description": "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI for",
+    "path": "/root/.openclaw/workspace/skills/chirp/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "claude-agent-sdk",
-    "description": "|",
+    "id": "clawdex",
+    "name": "clawdex by Koi",
+    "description": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it",
+    "path": "/root/.openclaw/workspace/skills/clawdex/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "claude-code-autonomous-build",
-    "description": ">",
-    "type": "skill"
-  },
-  {
-    "name": "claude-code-comms",
-    "description": "Skill: claude-code-comms",
-    "type": "skill"
-  },
-  {
-    "name": "claude-code-supervisor",
-    "description": ">",
-    "type": "skill"
-  },
-  {
-    "name": "claude-team",
-    "description": "Orchestrate multiple Claude Code workers via iTerm2 using the claude-team MCP server. Spawn workers with git worktrees, assign beads issues, monitor progress, and coordinate parallel development work.",
-    "type": "skill"
-  },
-  {
-    "name": "clawdex",
-    "description": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.",
-    "type": "skill"
-  },
-  {
+    "id": "clawflows",
     "name": "clawflows",
     "description": "Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.",
+    "path": "/root/.openclaw/workspace/skills/clawflows/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "clawhub",
+    "name": "clawhub",
+    "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or p",
+    "path": "/usr/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "clawhub-security",
     "name": "clawhub-security",
     "description": "Skill: clawhub-security",
+    "path": "/root/.openclaw/workspace/skills/clawhub-security/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "clean-blue-design",
     "name": "clean-blue-design",
     "description": "Skill: clean-blue-design",
+    "path": "/root/.openclaw/workspace/skills/clean-blue-design/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "clips-machine",
     "name": "clips-machine",
     "description": "Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts.",
+    "path": "/root/.openclaw/workspace/skills/clips-machine/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "cole-claudecode-comms",
-    "description": "Communication protocol and quality enforcement between Cole (OpenClaw) and Claude Code",
+    "id": "cloudflare-pages-deploy",
+    "name": "cloudflare-pages-deploy",
+    "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say",
+    "path": "/root/.openclaw/workspace/skills/cloudflare-pages-deploy/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "coder-agent",
+    "name": "coder-agent",
+    "description": ">",
+    "path": "/root/.openclaw/workspace/skills/coder-agent/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "coding-agent",
+    "name": "coding-agent",
+    "description": "Run Codex CLI, Claude Code, OpenCode, or Pi Coding Agent via background process for programmatic control.",
+    "path": "/usr/lib/node_modules/openclaw/skills/coding-agent/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "cost-model-optimization",
+    "name": "cost-model-optimization",
+    "description": "Skill: cost-model-optimization",
+    "path": "/root/.openclaw/workspace/skills/cost-model-optimization/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "cron-mastery",
     "name": "cron-mastery",
-    "description": "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron vs Heartbeat for time-sensitive tasks.",
+    "description": "Skill: cron-mastery",
+    "path": "/root/.openclaw/workspace/skills/cron-mastery/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "database",
     "name": "database",
     "description": "Database management and queries. Connect to SQL and NoSQL databases, run queries, and manage schemas.",
+    "path": "/root/.openclaw/workspace/skills/database/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "deploy-agent",
     "name": "deploy-agent",
     "description": "Multi-step deployment agent for full-stack apps. Build → Test → GitHub → Cloudflare Pages with human approval at each step.",
+    "path": "/root/.openclaw/workspace/skills/deploy-agent/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "deployment-proof",
+    "name": "deployment-proof",
+    "description": ">",
+    "path": "/root/.openclaw/workspace/skills/deployment-proof/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "desktop-control",
     "name": "desktop-control",
-    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
+    "description": "Skill: desktop-control",
+    "path": "/root/.openclaw/workspace/skills/desktop-control/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "discord",
+    "name": "discord",
+    "description": "Discord ops via the message tool (channel=discord).",
+    "path": "/usr/lib/node_modules/openclaw/skills/discord/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "eightctl",
+    "name": "eightctl",
+    "description": "Control Eight Sleep pods (status, temperature, alarms, schedules).",
+    "path": "/usr/lib/node_modules/openclaw/skills/eightctl/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "email-daily-summary",
     "name": "email-daily-summary",
     "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or creat",
+    "path": "/root/.openclaw/workspace/skills/email-daily-summary/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "emergency-rate-limit",
+    "name": "emergency-rate-limit",
+    "description": "Skill: emergency-rate-limit",
+    "path": "/root/.openclaw/workspace/skills/emergency-rate-limit/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "expo-mobile-app",
     "name": "expo-mobile-app",
     "description": "Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.",
+    "path": "/root/.openclaw/workspace/skills/expo-mobile-app/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "file-editing",
+    "name": "file-editing",
+    "description": "Skill: file-editing",
+    "path": "/root/.openclaw/workspace/skills/file-editing/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "flight-search",
     "name": "flight-search",
     "description": "Search Google Flights for prices, times, and airlines. No API key required.",
+    "path": "/root/.openclaw/workspace/skills/flight-search/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "food-order",
+    "name": "food-order",
+    "description": "Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA.",
+    "path": "/usr/lib/node_modules/openclaw/skills/food-order/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "gemini",
+    "name": "gemini",
+    "description": "Gemini CLI for one-shot Q&A, summaries, and generation.",
+    "path": "/usr/lib/node_modules/openclaw/skills/gemini/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "gifgrep",
+    "name": "gifgrep",
+    "description": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets.",
+    "path": "/usr/lib/node_modules/openclaw/skills/gifgrep/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "github",
+    "name": "github",
+    "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+    "path": "/usr/lib/node_modules/openclaw/skills/github/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "gog",
+    "name": "gog",
+    "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+    "path": "/usr/lib/node_modules/openclaw/skills/gog/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "google-analytics",
     "name": "google-analytics",
     "description": "|",
+    "path": "/root/.openclaw/workspace/skills/google-analytics/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "goplaces",
     "name": "goplaces",
     "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.",
+    "path": "/usr/lib/node_modules/openclaw/skills/goplaces/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "goplaces",
+    "name": "goplaces",
+    "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.",
+    "path": "/root/.openclaw/workspace/skills/goplaces/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "healthcheck",
+    "name": "healthcheck",
+    "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron",
+    "path": "/usr/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "himalaya",
+    "name": "himalaya",
+    "description": "CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIM",
+    "path": "/usr/lib/node_modules/openclaw/skills/himalaya/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "hostile-audit",
     "name": "hostile-audit",
     "description": "Skill: hostile-audit",
+    "path": "/root/.openclaw/workspace/skills/hostile-audit/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "humanizer",
     "name": "humanizer",
     "description": "|",
+    "path": "/root/.openclaw/workspace/skills/humanizer/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "image-cog",
     "name": "image-cog",
     "description": "AI image generation powered by CellCog. Create images, edit photos, consistent characters, product photography, reference-based images, sets of images, style transfer. Professional image creation with",
+    "path": "/root/.openclaw/workspace/skills/image-cog/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "implementation-patterns",
     "name": "implementation-patterns",
-    "description": "**",
+    "description": "Skill: implementation-patterns",
+    "path": "/root/.openclaw/workspace/skills/implementation-patterns/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "imsg",
+    "name": "imsg",
+    "description": "iMessage/SMS CLI for listing chats, history, watch, and sending.",
+    "path": "/usr/lib/node_modules/openclaw/skills/imsg/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "kanban-deploy",
+    "name": "kanban-deploy",
+    "description": "Skill: kanban-deploy",
+    "path": "/root/.openclaw/workspace/skills/kanban-deploy/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "kanban-task",
+    "name": "kanban-task",
+    "description": "Skill: kanban-task",
+    "path": "/root/.openclaw/workspace/skills/kanban-task/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "last30days",
     "name": "last30days",
-    "description": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.",
+    "description": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user",
+    "path": "/root/.openclaw/workspace/skills/last30days/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "linkedin",
     "name": "linkedin",
     "description": "LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.",
+    "path": "/root/.openclaw/workspace/skills/linkedin/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "location-places",
     "name": "location-places",
     "description": "Skill: location-places",
+    "path": "/root/.openclaw/workspace/skills/location-places/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "mailgun",
     "name": "mailgun",
     "description": "Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requires MAILGUN_API_KEY and MAILGUN_DOMAIN envi",
+    "path": "/root/.openclaw/workspace/skills/mailgun/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "markdown-optimization",
     "name": "markdown-optimization",
     "description": "Skill: markdown-optimization",
+    "path": "/root/.openclaw/workspace/skills/markdown-optimization/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "mcporter",
+    "name": "mcporter",
+    "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+    "path": "/usr/lib/node_modules/openclaw/skills/mcporter/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "memory-management",
     "name": "memory-management",
     "description": "Skill: memory-management",
+    "path": "/root/.openclaw/workspace/skills/memory-management/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "memory-optimization",
     "name": "memory-optimization",
     "description": "Skill: memory-optimization",
+    "path": "/root/.openclaw/workspace/skills/memory-optimization/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "metricool",
     "name": "metricool",
     "description": "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.",
+    "path": "/root/.openclaw/workspace/skills/metricool/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "model-usage",
+    "name": "model-usage",
+    "description": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost d",
+    "path": "/usr/lib/node_modules/openclaw/skills/model-usage/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "modern-design",
     "name": "modern-design",
     "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
+    "path": "/root/.openclaw/workspace/skills/modern-design/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "nano-banana-pro",
+    "name": "nano-banana-pro",
+    "description": "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro).",
+    "path": "/usr/lib/node_modules/openclaw/skills/nano-banana-pro/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "nano-pdf",
+    "name": "nano-pdf",
+    "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/nano-pdf/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "netlify-deploy",
     "name": "netlify-deploy",
     "description": "Skill: netlify-deploy",
+    "path": "/root/.openclaw/workspace/skills/netlify-deploy/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "no-bs-debugging",
     "name": "no-bs-debugging",
-    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. The",
+    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No",
+    "path": "/root/.openclaw/workspace/skills/no-bs-debugging/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "notion",
+    "name": "notion",
+    "description": "Notion API for creating and managing pages, databases, and blocks.",
+    "path": "/usr/lib/node_modules/openclaw/skills/notion/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "obsidian",
+    "name": "obsidian",
+    "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+    "path": "/usr/lib/node_modules/openclaw/skills/obsidian/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "openai-image-gen",
+    "name": "openai-image-gen",
+    "description": "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery.",
+    "path": "/usr/lib/node_modules/openclaw/skills/openai-image-gen/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "openai-whisper",
+    "name": "openai-whisper",
+    "description": "Local speech-to-text with the Whisper CLI (no API key).",
+    "path": "/usr/lib/node_modules/openclaw/skills/openai-whisper/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "openai-whisper-api",
+    "name": "openai-whisper-api",
+    "description": "Transcribe audio via OpenAI Audio Transcriptions API (Whisper).",
+    "path": "/usr/lib/node_modules/openclaw/skills/openai-whisper-api/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "openclaw-auto-updater",
     "name": "openclaw-auto-updater",
     "description": "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update r",
+    "path": "/root/.openclaw/workspace/skills/openclaw-auto-updater/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "openclaw-release-monitor",
     "name": "openclaw-release-monitor",
     "description": "Skill: openclaw-release-monitor",
+    "path": "/root/.openclaw/workspace/skills/openclaw-release-monitor/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "openclaw-sec",
     "name": "openclaw-sec",
     "description": "AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violations",
+    "path": "/root/.openclaw/workspace/skills/openclaw-sec/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "openclaw-social-scheduler",
     "name": "openclaw-social-scheduler",
-    "description": "Schedule posts to multiple social media platforms:",
+    "description": "Skill: openclaw-social-scheduler",
+    "path": "/root/.openclaw/workspace/skills/openclaw-social-scheduler/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "pentest",
-    "description": "Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.",
+    "id": "openhue",
+    "name": "openhue",
+    "description": "Control Philips Hue lights/scenes via the OpenHue CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/openhue/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "oracle",
+    "name": "oracle",
+    "description": "Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns).",
+    "path": "/usr/lib/node_modules/openclaw/skills/oracle/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "ordercli",
+    "name": "ordercli",
+    "description": "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).",
+    "path": "/usr/lib/node_modules/openclaw/skills/ordercli/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "peekaboo",
+    "name": "peekaboo",
+    "description": "Capture and automate macOS UI with the Peekaboo CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/peekaboo/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "percy-visual-testing",
     "name": "percy-visual-testing",
     "description": "Skill: percy-visual-testing",
+    "path": "/root/.openclaw/workspace/skills/percy-visual-testing/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "phone-calls-bland",
+    "name": "phone-calls",
+    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
+    "path": "/root/.openclaw/workspace/skills/phone-calls-bland/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "places-api-recommendations",
     "name": "places-api-recommendations",
     "description": ">",
+    "path": "/root/.openclaw/workspace/skills/places-api-recommendations/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "places-search",
     "name": "places-search",
     "description": "Skill: places-search",
+    "path": "/root/.openclaw/workspace/skills/places-search/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "playwright-screenshots",
     "name": "playwright-screenshots",
     "description": "Skill: playwright-screenshots",
+    "path": "/root/.openclaw/workspace/skills/playwright-screenshots/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "postgres",
     "name": "postgres",
     "description": "PostgreSQL database management. Run queries, manage schemas, and monitor performance.",
+    "path": "/root/.openclaw/workspace/skills/postgres/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "postiz",
     "name": "postiz",
     "description": "Postiz is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Google My Business, TikTok, Pinterest, Dribbble",
+    "path": "/root/.openclaw/workspace/skills/postiz/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "ralph-loop-agent",
-    "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using exec and process tools. Agent orchestrates coding agents (Codex, Claude Code, OpenCode, Goose) with proper TTY support via pty:true. Plans/bui",
+    "id": "ralph-loop-agent",
+    "name": "ralph-loop",
+    "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using sessions_spawn or exec/process tools. Agent orchestrates coding agents (Codex, OpenCode, Goose) with proper TTY support. Plans/builds code via",
+    "path": "/root/.openclaw/workspace/skills/ralph-loop-agent/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "ralph-loop-patterns",
     "name": "ralph-loop-patterns",
-    "description": "**",
+    "description": "Skill: ralph-loop-patterns",
+    "path": "/root/.openclaw/workspace/skills/ralph-loop-patterns/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "react-expert",
     "name": "react-expert",
     "description": "Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 fe",
+    "path": "/root/.openclaw/workspace/skills/react-expert/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "restaurant-reservation",
+    "name": "restaurant-reservation",
+    "description": "Skill: restaurant-reservation",
+    "path": "/root/.openclaw/workspace/skills/restaurant-reservation/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "safe-diagnostics",
     "name": "safe-diagnostics",
     "description": "Skill: safe-diagnostics",
+    "path": "/root/.openclaw/workspace/skills/safe-diagnostics/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "sag",
+    "name": "sag",
+    "description": "ElevenLabs text-to-speech with mac-style say UX.",
+    "path": "/usr/lib/node_modules/openclaw/skills/sag/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "scholarship-browser-agent",
     "name": "scholarship-browser-agent",
-    "description": "** Finding scholarships for Lena (ASU accounting/finance). Verifies \"no fee\" claims and extracts precise requirements directly from source.",
+    "description": "Skill: scholarship-browser-agent",
+    "path": "/root/.openclaw/workspace/skills/scholarship-browser-agent/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "scholarship-research",
     "name": "scholarship-research",
     "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholar",
+    "path": "/root/.openclaw/workspace/skills/scholarship-research/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "screenshot-delivery",
     "name": "screenshot-delivery",
     "description": "Skill: screenshot-delivery",
+    "path": "/root/.openclaw/workspace/skills/screenshot-delivery/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "screenshot-fallback",
+    "name": "screenshot-fallback",
+    "description": "Skill: screenshot-fallback",
+    "path": "/root/.openclaw/workspace/skills/screenshot-fallback/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "screenshot-proof-workflow",
     "name": "screenshot-proof-workflow",
     "description": ">",
+    "path": "/root/.openclaw/workspace/skills/screenshot-proof-workflow/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "second-brain",
     "name": "second-brain",
     "description": "Skill: second-brain",
+    "path": "/root/.openclaw/workspace/skills/second-brain/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "secret-vault",
     "name": "secret-vault",
     "description": "Skill: secret-vault",
+    "path": "/root/.openclaw/workspace/skills/secret-vault/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "security-audit",
     "name": "security-audit",
-    "description": "**",
+    "description": "Skill: security-audit",
+    "path": "/root/.openclaw/workspace/skills/security-audit/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "security-auditor",
     "name": "security-auditor",
     "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection preventi",
+    "path": "/root/.openclaw/workspace/skills/security-auditor/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "security-monitor",
     "name": "security-monitor",
     "description": "Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.",
+    "path": "/root/.openclaw/workspace/skills/security-monitor/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "pentest",
+    "name": "security-reviewer",
+    "description": "Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.",
+    "path": "/root/.openclaw/workspace/skills/pentest/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "security-sentinel",
     "name": "security-sentinel",
     "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
+    "path": "/root/.openclaw/workspace/skills/security-sentinel/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "senior-devops",
     "name": "senior-devops",
     "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
+    "path": "/root/.openclaw/workspace/skills/senior-devops/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "seo-competitor-analysis",
     "name": "seo-competitor-analysis",
-    "description": "Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website's competitors or improve their own SEO r",
+    "description": "Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website",
+    "path": "/root/.openclaw/workspace/skills/seo-competitor-analysis/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "session-logs",
+    "name": "session-logs",
+    "description": "Search and analyze your own session logs (older/parent conversations) using jq.",
+    "path": "/usr/lib/node_modules/openclaw/skills/session-logs/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "sherpa-onnx-tts",
+    "name": "sherpa-onnx-tts",
+    "description": "Local text-to-speech via sherpa-onnx (offline, no cloud)",
+    "path": "/usr/lib/node_modules/openclaw/skills/sherpa-onnx-tts/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "skill-creator",
+    "name": "skill-creator",
+    "description": "Create or update AgentSkills. Use when designing, structuring, or packaging skills with scripts, references, and assets.",
+    "path": "/usr/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "slack",
+    "name": "slack",
+    "description": "Use when you need to control Slack from OpenClaw via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.",
+    "path": "/usr/lib/node_modules/openclaw/skills/slack/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "smart-memory",
+    "name": "smart-memory",
+    "description": "Skill: smart-memory",
+    "path": "/root/.openclaw/workspace/skills/smart-memory/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "songsee",
+    "name": "songsee",
+    "description": "Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.",
+    "path": "/usr/lib/node_modules/openclaw/skills/songsee/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "sonoscli",
+    "name": "sonoscli",
+    "description": "Control Sonos speakers (discover/status/play/volume/group).",
+    "path": "/usr/lib/node_modules/openclaw/skills/sonoscli/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "spotify-player",
+    "name": "spotify-player",
+    "description": "Terminal Spotify playback/search via spogo (preferred) or spotify_player.",
+    "path": "/usr/lib/node_modules/openclaw/skills/spotify-player/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "spots",
     "name": "spots",
     "description": "Exhaustive Google Places search using grid-based scanning. Finds ALL places, not just what Google surfaces.",
+    "path": "/root/.openclaw/workspace/skills/spots/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "standard-features",
     "name": "standard-features",
     "description": "Skill: standard-features",
+    "path": "/root/.openclaw/workspace/skills/standard-features/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "summarize",
+    "name": "summarize",
+    "description": "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).",
+    "path": "/usr/lib/node_modules/openclaw/skills/summarize/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "supermemory-integration",
     "name": "supermemory-integration",
     "description": "Skill: supermemory-integration",
+    "path": "/root/.openclaw/workspace/skills/supermemory-integration/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "telegram-screenshot-delivery",
     "name": "telegram-screenshot-delivery",
     "description": "Skill: telegram-screenshot-delivery",
+    "path": "/root/.openclaw/workspace/skills/telegram-screenshot-delivery/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "telegram-screenshots",
     "name": "telegram-screenshots",
     "description": "Skill: telegram-screenshots",
+    "path": "/root/.openclaw/workspace/skills/telegram-screenshots/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "things-mac",
+    "name": "things-mac",
+    "description": "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user asks OpenClaw to add a task to Things, list i",
+    "path": "/usr/lib/node_modules/openclaw/skills/things-mac/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "tiktok-browser-scanner",
     "name": "tiktok-browser-scanner",
-    "description": "** Brian needs to find recent TikTok videos criticizing TPUSA figures (Erica Kirk, Tyler Bowyer, Charlie Kirk, etc.) to repost on @swordtruth.",
+    "description": "Skill: tiktok-browser-scanner",
+    "path": "/root/.openclaw/workspace/skills/tiktok-browser-scanner/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "tiktok-teneo",
     "name": "tiktok-teneo",
     "description": "The agent gives you the ability to extract data from tiktok through different commands.",
+    "path": "/root/.openclaw/workspace/skills/tiktok-teneo/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "tmux",
+    "name": "tmux",
+    "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+    "path": "/usr/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "travel-concierge",
     "name": "travel-concierge",
     "description": "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)",
+    "path": "/root/.openclaw/workspace/skills/travel-concierge/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "travel-restaurants",
     "name": "travel-restaurants",
     "description": "Skill: travel-restaurants",
+    "path": "/root/.openclaw/workspace/skills/travel-restaurants/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "trello",
+    "name": "trello",
+    "description": "Manage Trello boards, lists, and cards via the Trello REST API.",
+    "path": "/usr/lib/node_modules/openclaw/skills/trello/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "twitter",
     "name": "twitter",
     "description": "Twitter/X platform integration. Post tweets, read timeline, manage followers, and analyze engagement.",
+    "path": "/root/.openclaw/workspace/skills/twitter/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "uptime-monitor",
     "name": "uptime-monitor",
     "description": "24/7 OpenClaw uptime monitor. Every 5min cron ping → writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracki",
+    "path": "/root/.openclaw/workspace/skills/uptime-monitor/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "vercel-deploy",
     "name": "vercel-deploy",
     "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports produc",
+    "path": "/root/.openclaw/workspace/skills/vercel-deploy/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "vibe-coding-patterns",
     "name": "vibe-coding-patterns",
     "description": "Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Trigg",
+    "path": "/root/.openclaw/workspace/skills/vibe-coding-patterns/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "video-agent",
     "name": "video-agent",
-    "description": "Generate AI avatar videos with HeyGen's Video Agent API. One-shot prompt to video generation.",
+    "description": "Generate AI avatar videos with HeyGen",
+    "path": "/root/.openclaw/workspace/skills/video-agent/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "video-frames",
+    "name": "video-frames",
+    "description": "Extract frames or short clips from videos using ffmpeg.",
+    "path": "/usr/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "voice-call",
+    "name": "voice-call",
+    "description": "Start voice calls via the OpenClaw voice-call plugin.",
+    "path": "/usr/lib/node_modules/openclaw/skills/voice-call/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "wacli",
+    "name": "wacli",
+    "description": "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).",
+    "path": "/usr/lib/node_modules/openclaw/skills/wacli/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "weather",
+    "name": "weather",
+    "description": "Get current weather and forecasts (no API key required).",
+    "path": "/usr/lib/node_modules/openclaw/skills/weather/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "x-api",
     "name": "x-api",
     "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches lik",
+    "path": "/root/.openclaw/workspace/skills/x-api/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "x-browser-monitor",
-    "description": "** Brian needs to check X notifications, find TikTok links to repost, or verify engagement on monetized content.",
-    "type": "skill"
-  },
-  {
-    "name": "x-post-automation",
+    "id": "x-post-automation",
+    "name": "x-automation",
     "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation",
+    "path": "/root/.openclaw/workspace/skills/x-post-automation/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "x-publisher",
+    "id": "x-browser-monitor",
+    "name": "x-browser-monitor",
+    "description": "Skill: x-browser-monitor",
+    "path": "/root/.openclaw/workspace/skills/x-browser-monitor/SKILL.md",
+    "type": "skill"
+  },
+  {
+    "id": "x-publisher",
+    "name": "X-Publisher",
     "description": "Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X AP",
+    "path": "/root/.openclaw/workspace/skills/x-publisher/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "youtube-downloader-clipper",
     "name": "youtube-downloader-clipper",
     "description": "Skill: youtube-downloader-clipper",
+    "path": "/root/.openclaw/workspace/skills/youtube-downloader-clipper/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "youtube-transcript",
     "name": "youtube-transcript",
-    "description": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's",
+    "description": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube",
+    "path": "/root/.openclaw/workspace/skills/youtube-transcript/SKILL.md",
     "type": "skill"
   },
   {
-    "name": "yt-dlp-downloader-skill",
+    "id": "yt-dlp-downloader-skill",
+    "name": "yt-dlp-downloader",
     "description": "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or",
+    "path": "/root/.openclaw/workspace/skills/yt-dlp-downloader-skill/SKILL.md",
     "type": "skill"
   },
   {
+    "id": "zero-trust",
     "name": "zero-trust",
     "description": "Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Trigger",
+    "path": "/root/.openclaw/workspace/skills/zero-trust/SKILL.md",
     "type": "skill"
   }
 ]

@@ -1,0 +1,128 @@
+[
+  {
+    "name": "AGENTS.md",
+    "path": "/root/.openclaw/workspace/AGENTS.md",
+    "size": 11101,
+    "modified": "2026-02-16T04:26:20.364Z",
+    "type": "config"
+  },
+  {
+    "name": "MEMORY.md",
+    "path": "/root/.openclaw/workspace/MEMORY.md",
+    "size": 19552,
+    "modified": "2026-02-16T04:21:22.664Z",
+    "type": "config"
+  },
+  {
+    "name": "SOUL.md",
+    "path": "/root/.openclaw/workspace/SOUL.md",
+    "size": 2182,
+    "modified": "2026-02-15T21:40:52.766Z",
+    "type": "config"
+  },
+  {
+    "name": "USER.md",
+    "path": "/root/.openclaw/workspace/USER.md",
+    "size": 1837,
+    "modified": "2026-02-10T08:03:08.960Z",
+    "type": "config"
+  },
+  {
+    "name": "COMMANDMENTS.md",
+    "path": "/root/.openclaw/workspace/COMMANDMENTS.md",
+    "size": 73873,
+    "modified": "2026-02-16T04:45:48.279Z",
+    "type": "config"
+  },
+  {
+    "name": "TOOLS.md",
+    "path": "/root/.openclaw/workspace/TOOLS.md",
+    "size": 7933,
+    "modified": "2026-02-16T04:17:57.653Z",
+    "type": "config"
+  },
+  {
+    "name": "HEARTBEAT.md",
+    "path": "/root/.openclaw/workspace/HEARTBEAT.md",
+    "size": 2345,
+    "modified": "2026-02-16T04:31:00.731Z",
+    "type": "config"
+  },
+  {
+    "name": "IDENTITY.md",
+    "path": "/root/.openclaw/workspace/IDENTITY.md",
+    "size": 220,
+    "modified": "2026-02-05T07:43:35.181Z",
+    "type": "config"
+  },
+  {
+    "name": "2026-02-16.md",
+    "path": "/root/.openclaw/workspace/memory/2026-02-16.md",
+    "size": 5010,
+    "modified": "2026-02-16T04:19:08.551Z",
+    "type": "memory"
+  },
+  {
+    "name": "AGENT-FRAMEWORK-CONFIRMATION.md",
+    "path": "/root/.openclaw/workspace/memory/AGENT-FRAMEWORK-CONFIRMATION.md",
+    "size": 7080,
+    "modified": "2026-02-11T22:00:38.894Z",
+    "type": "memory"
+  },
+  {
+    "name": "MEMORY-OPTIMIZATION-2026-02-12-FINAL.md",
+    "path": "/root/.openclaw/workspace/memory/MEMORY-OPTIMIZATION-2026-02-12-FINAL.md",
+    "size": 2647,
+    "modified": "2026-02-13T00:56:50.889Z",
+    "type": "memory"
+  },
+  {
+    "name": "MEMORY-OPTIMIZATION-2026-02-12.md",
+    "path": "/root/.openclaw/workspace/memory/MEMORY-OPTIMIZATION-2026-02-12.md",
+    "size": 2840,
+    "modified": "2026-02-12T19:19:43.282Z",
+    "type": "memory"
+  },
+  {
+    "name": "MEMORY-WORKFLOW-FIX-2026-02-11.md",
+    "path": "/root/.openclaw/workspace/memory/MEMORY-WORKFLOW-FIX-2026-02-11.md",
+    "size": 3794,
+    "modified": "2026-02-12T03:12:16.404Z",
+    "type": "memory"
+  },
+  {
+    "name": "OPENCLAW-2.2.9-TELEGRAM-FIXES.md",
+    "path": "/root/.openclaw/workspace/memory/OPENCLAW-2.2.9-TELEGRAM-FIXES.md",
+    "size": 6861,
+    "modified": "2026-02-10T07:34:33.564Z",
+    "type": "memory"
+  },
+  {
+    "name": "blocker-definition-2026-02-10.md",
+    "path": "/root/.openclaw/workspace/memory/blocker-definition-2026-02-10.md",
+    "size": 1282,
+    "modified": "2026-02-11T02:14:12.237Z",
+    "type": "memory"
+  },
+  {
+    "name": "standup-2026-02-15.md",
+    "path": "/root/.openclaw/workspace/memory/standup-2026-02-15.md",
+    "size": 923,
+    "modified": "2026-02-15T21:59:45.803Z",
+    "type": "memory"
+  },
+  {
+    "name": "testing-standards.md",
+    "path": "/root/.openclaw/workspace/memory/testing-standards.md",
+    "size": 5791,
+    "modified": "2026-02-08T21:47:57.499Z",
+    "type": "memory"
+  },
+  {
+    "name": "tokyo-trip-restore-point-2026-02-12.md",
+    "path": "/root/.openclaw/workspace/memory/tokyo-trip-restore-point-2026-02-12.md",
+    "size": 1429,
+    "modified": "2026-02-12T18:20:52.600Z",
+    "type": "memory"
+  }
+]

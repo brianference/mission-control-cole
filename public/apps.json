@@ -1,43 +1,92 @@
-
 [
   {
-    "name": "Python Kanban",
-    "status": "online",
-    "lastDeploy": "2026-02-12T21:45:00",
-    "url": "https://python-kanban.pages.dev",
-    "metrics": {
-      "cpu": "5%",
-      "memory": "128MB"
-    }
-  },
-  {
-    "name": "Second Brain",
-    "status": "online",
-    "lastDeploy": "2026-02-11T14:30:00",
+    "id": "second-brain-cole",
+    "name": "Second Brain Cole",
     "url": "https://second-brain-cole.pages.dev",
-    "metrics": {
-      "cpu": "3%",
-      "memory": "96MB"
-    }
-  },
-  {
-    "name": "Secret Vault",
-    "status": "offline",
-    "lastDeploy": "2026-02-10T09:00:00",
-    "url": "https://secret-vault-9r3.pages.dev",
-    "metrics": {
-      "cpu": "0%",
-      "memory": "0MB"
-    }
-  },
-  {
-    "name": "Tokyo Trip",
     "status": "online",
-    "lastDeploy": "2026-02-12T18:00:00",
-    "url": "https://tokyo-osaka-trip-2026.netlify.app",
-    "metrics": {
-      "cpu": "8%",
-      "memory": "256MB"
-    }
+    "lastDeploy": "2026-02-16T04:52:40.229289Z",
+    "environment": "production",
+    "productionBranch": "master"
+  },
+  {
+    "id": "mission-control-cole",
+    "name": "Mission Control Cole",
+    "url": "https://mission-control-cole.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-16T04:50:52.956051Z",
+    "environment": "production",
+    "productionBranch": "master"
+  },
+  {
+    "id": "python-kanban",
+    "name": "Python Kanban",
+    "url": "https://python-kanban.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-16T04:40:05.495887Z",
+    "environment": "production",
+    "productionBranch": "master"
+  },
+  {
+    "id": "lena-scholarships",
+    "name": "Lena Scholarships",
+    "url": "https://lena-scholarships.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-16T00:37:54.616034Z",
+    "environment": "production",
+    "productionBranch": "main"
+  },
+  {
+    "id": "secret-vault",
+    "name": "Secret Vault",
+    "url": "https://secret-vault.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-15T22:55:55.651757Z",
+    "environment": "production",
+    "productionBranch": "master"
+  },
+  {
+    "id": "tokyo-itinerary",
+    "name": "Tokyo Itinerary",
+    "url": "https://tokyo-itinerary.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-15T04:45:17.965519Z",
+    "environment": "production",
+    "productionBranch": "master"
+  },
+  {
+    "id": "tokyo-trip",
+    "name": "Tokyo Trip",
+    "url": "https://tokyo-trip.pages.dev",
+    "status": "online",
+    "lastDeploy": "2026-02-12T08:05:36.644269Z",
+    "environment": "preview",
+    "productionBranch": "main"
+  },
+  {
+    "id": "scholarship-hunt",
+    "name": "Scholarship Hunt",
+    "url": "https://scholarship-hunt.pages.dev",
+    "status": "offline",
+    "lastDeploy": null,
+    "environment": "unknown",
+    "productionBranch": "main"
+  },
+  {
+    "id": "viral-score",
+    "name": "Viral Score",
+    "url": "https://viral-score.pages.dev",
+    "status": "offline",
+    "lastDeploy": null,
+    "environment": "unknown",
+    "productionBranch": "main"
+  },
+  {
+    "id": "tiktok-dl",
+    "name": "Tiktok Dl",
+    "url": "https://tiktok-dl.pages.dev",
+    "status": "offline",
+    "lastDeploy": null,
+    "environment": "unknown",
+    "productionBranch": "main"
   }
 ]
