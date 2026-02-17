@@ -68,13 +68,14 @@ jobs:
       # ── STEP 2: Deploy to Cloudflare Pages ───────────────────────────────
       - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: mission-control-cole
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx wrangler pages deploy dist \
+            --project-name=mission-control-cole \
+            --branch=production \
+            --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
 
       # ── STEP 3: Percy Visual Regression ──────────────────────────────────
       - name: Percy snapshot
