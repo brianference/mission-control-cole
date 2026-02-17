@@ -186,6 +186,12 @@
   color: var(--accent-primary);
 }
 
+.skill-version {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono, monospace);
+}
+
 /* ===== EMPTY STATE ===== */
 .empty-state {
   padding: var(--spacing-12) var(--spacing-6);

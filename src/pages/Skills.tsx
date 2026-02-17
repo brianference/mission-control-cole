@@ -5,6 +5,7 @@ interface Skill {
   name: string;
   description: string;
   type: string;
+  version: string;
 }
 
 const Skills: React.FC = () => {
@@ -129,6 +130,9 @@ const Skills: React.FC = () => {
                 <div className="skill-type">
                   <span className="type-badge">{skill.type}</span>
                 </div>
+                {skill.version && (
+                  <span className="skill-version">v{skill.version}</span>
+                )}
               </div>
             </div>
           ))}

@@ -1,582 +1,704 @@
 [
   {
-    "name": "tiktok-teneo",
-    "description": "The agent gives you the ability to extract data from tiktok through different commands.",
-    "type": "automation"
-  },
-  {
-    "name": "places-api-recommendations",
-    "description": ">",
-    "type": "search"
-  },
-  {
-    "name": "analytics-tracking",
-    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event trackin",
-    "type": "automation"
-  },
-  {
-    "name": "kanban-task",
-    "description": "# Kanban Task Skill\n\n**Purpose:** Create, manage, and verify kanban tasks with visual proof of completion.\n\n**Board:** https://python-kanban.pages.dev\n**Data:** `/root/.openclaw/workspace/python-kanba",
-    "type": "automation"
-  },
-  {
-    "name": "smart-memory",
-    "description": "# Smart Memory Skill\n\n**Purpose:** Intelligent memory management across Supermemory, mem0, and local files.\n\n**Created:** 2026-02-15\n\n---\n\n## Memory Priority\n\n1. **mem0** \u2014 Fast semantic search, auto-",
-    "type": "memory"
-  },
-  {
     "name": "accessibility-toolkit",
     "description": "Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.",
-    "type": "automation"
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "atl-mobile",
-    "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
-    "type": "automation"
+    "name": "agent-orchestrator",
+    "description": "Meta-agent skill for orchestrating complex tasks through autonomous sub-agents. Decomposes macro tasks into subtasks, spawns specialized sub-agents with dynamically generated SKILL.md files, coordinat",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "skill-creator-2",
-    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
-    "type": "automation"
+    "name": "agent-task-chunking",
+    "description": "name: agent-task-chunking",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "openclaw-release-monitor",
-    "description": "# OpenClaw Release Monitor Skill\n\n**Purpose:** Monitor GitHub releases for OpenClaw updates and suggest workflow improvements.\n\n**Trigger:** Weekly heartbeat check (Mondays 9 AM)\n\n---\n\n## Workflow\n\n##",
-    "type": "automation"
+    "name": "ai-automation-workflows",
+    "description": "Build automated AI workflows combining multiple models and services.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "ralph-loop-patterns",
-    "description": "# Ralph Loop Patterns\n\n**Version:** 1.0  \n**Created:** 2026-02-09  \n**Purpose:** Patterns for autonomous multi-agent loops (Ralph Loop style)\n\n## Overview\n\nRalph Loop is an autonomous multi-agent deve",
-    "type": "automation"
-  },
-  {
-    "name": "google-analytics",
-    "description": "|",
-    "type": "automation"
-  },
-  {
-    "name": "travel-concierge",
-    "description": "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)",
-    "type": "automation"
-  },
-  {
-    "name": "phone-calls-bland",
-    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
-    "type": "automation"
-  },
-  {
-    "name": "security-audit",
-    "description": "# Security Audit Skill\n\n**Version:** 1.0  \n**Created:** 2026-02-09  \n**Purpose:** Hostile security auditing for security-sensitive changes\n\n## Overview\n\nThis skill provides hostile security audit meth",
-    "type": "security"
-  },
-  {
-    "name": "no-bs-debugging",
-    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. The",
-    "type": "automation"
-  },
-  {
-    "name": "email-daily-summary",
-    "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or creat",
-    "type": "ai"
-  },
-  {
-    "name": "expo-mobile-app",
-    "description": "Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.",
-    "type": "automation"
-  },
-  {
-    "name": "yt-dlp-downloader-skill",
-    "description": "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or",
-    "type": "automation"
-  },
-  {
-    "name": "desktop-control",
-    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
-    "type": "automation"
-  },
-  {
-    "name": "postgres",
-    "description": "PostgreSQL database management. Run queries, manage schemas, and monitor performance.",
-    "type": "automation"
+    "name": "ai-phone",
+    "description": "name: ai-phone",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "airbnb-search",
     "description": "Search Airbnb listings with prices, ratings, and direct links. No API key required.",
-    "type": "ai"
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "analytics-tracking",
+    "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event trackin",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "android-automation",
+    "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screensh",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "atl-browser",
+    "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "autonomous-work",
-    "description": "Autonomous overnight work system using Ralph Loop + sessions_spawn. Enables true autonomous coding work while you sleep - tasks are picked from ACTIVE queue, executed via sessions_spawn, monitored unt",
-    "type": "automation"
+    "description": "name: autonomous-work",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "supadata-transcript",
-    "description": "# Supadata Transcript Skill\n\nExtract transcripts and metadata from YouTube, TikTok, Instagram, Twitter (X), and Facebook using the Supadata API.\n\n## Usage\n\n```bash\nsupadata-transcript \"https://www.you",
-    "type": "automation"
+    "name": "batch-memory-save",
+    "description": "name: batch-memory-save",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "hostile-audit",
-    "description": "# Hostile Audit Methodology\n\n**Version:** 1.0  \n**Created:** 2026-02-09  \n**Purpose:** Catch production bugs, security issues, and authority leakage before deployment\n\n## Overview\n\nHostile auditing is",
-    "type": "security"
-  },
-  {
-    "name": "linkedin",
-    "description": "LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.",
-    "type": "automation"
-  },
-  {
-    "name": "seo-competitor-analysis",
-    "description": "Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website's competitors or improve their own SEO r",
-    "type": "automation"
-  },
-  {
-    "name": "flight-search",
-    "description": "Search Google Flights for prices, times, and airlines. No API key required.",
-    "type": "search"
-  },
-  {
-    "name": "ralph-loop-agent",
-    "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using sessions_spawn or exec/process tools. Agent orchestrates coding agents (Codex, OpenCode, Goose) with proper TTY support. Plans/builds code via",
-    "type": "ai"
-  },
-  {
-    "name": "screenshot-fallback",
-    "description": "# Screenshot Fallback Skill\n\n**Purpose:** Provide all agents with screenshot capability using Percy (primary) or Playwright (secondary).\n\n**Created:** 2026-02-15\n**Updated:** 2026-02-15\n**Author:** Co",
-    "type": "automation"
-  },
-  {
-    "name": "clips-machine",
-    "description": "Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts.",
-    "type": "automation"
-  },
-  {
-    "name": "vercel-deploy",
-    "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports produc",
-    "type": "deployment"
-  },
-  {
-    "name": "secret-vault",
-    "description": "# Secret Vault - Encrypted Key Manager\n\n**Purpose:** Manage API keys and tokens securely without exposing them in chat, logs, or git.\n\n## When to Use This Skill\n\nUse Secret Vault when:\n- Rotating API ",
-    "type": "automation"
-  },
-  {
-    "name": "file-editing",
-    "description": "# file-editing (Skill)\n\n## Purpose\nReliable file changes in OpenClaw when `edit` requires exact matches.\n\n## Key Constraint\n`functions.edit` only replaces **exact** text (whitespace/newlines must matc",
-    "type": "automation"
-  },
-  {
-    "name": "tiktok-browser-scanner",
-    "description": "# TikTok Browser Scanner\n\n**Purpose:** Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X.\n\n**Use when:** Brian needs to find recent TikTok videos criticizin",
-    "type": "automation"
-  },
-  {
-    "name": "openclaw-sec",
-    "description": "AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violations",
-    "type": "automation"
-  },
-  {
-    "name": "postiz",
-    "description": "Postiz is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Google My Business, TikTok, Pinterest, Dribbble",
-    "type": "automation"
-  },
-  {
-    "name": "scholarship-research",
-    "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholar",
-    "type": "search"
-  },
-  {
-    "name": "telegram-screenshot-delivery",
-    "description": "# Telegram Screenshot Delivery Skill\n\n**Purpose:** Reliably deliver screenshots to Telegram using the correct path format\n\n**Created:** 2026-02-08  \n**Updated:** 2026-02-15 (Added Percy integration)\n*",
-    "type": "automation"
-  },
-  {
-    "name": "database",
-    "description": "Database management and queries. Connect to SQL and NoSQL databases, run queries, and manage schemas.",
-    "type": "automation"
-  },
-  {
-    "name": "phone-reservations",
-    "description": "Make AI-powered phone reservations via Bland AI API. Use when: (1) Booking restaurant reservations by phone, (2) Confirming appointments with auto-dialer, (3) Getting full call transcripts with outcom",
-    "type": "automation"
-  },
-  {
-    "name": "emergency-rate-limit",
-    "description": "# Emergency Rate Limit Manager\n\nThis skill manages emergency rate limit protocols for OpenClaw. It allows you to instantly switch all agent models away from a rate-limited provider (e.g., Anthropic) t",
-    "type": "automation"
-  },
-  {
-    "name": "android-adb",
-    "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screensh",
-    "type": "automation"
-  },
-  {
-    "name": "x-post-automation",
-    "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation",
-    "type": "social"
-  },
-  {
-    "name": "security-sentinel",
-    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
-    "type": "security"
-  },
-  {
-    "name": "clawdex",
-    "description": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.",
-    "type": "automation"
-  },
-  {
-    "name": "pentest",
-    "description": "Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.",
-    "type": "automation"
-  },
-  {
-    "name": "goplaces",
-    "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.",
-    "type": "search"
-  },
-  {
-    "name": "ai-automation-workflows",
-    "description": "|",
-    "type": "ai"
-  },
-  {
-    "name": "cost-model-optimization",
-    "description": "# Cost Model Optimization Skill\n\n**Purpose:** Identify and fix costly model misconfigurations, optimize cron jobs, and reduce token burn without performance loss.\n\n**Created:** 2026-02-15\n**Author:** ",
-    "type": "automation"
-  },
-  {
-    "name": "supermemory-integration",
-    "description": "# Supermemory.ai Integration\n\n## Overview\n\nSupermemory.ai provides cloud-based semantic memory storage with vector search. It's a permanent memory backend for AI agents that persists across sessions.\n",
-    "type": "memory"
-  },
-  {
-    "name": "spots",
-    "description": "Exhaustive Google Places search using grid-based scanning. Finds ALL places, not just what Google surfaces.",
-    "type": "automation"
-  },
-  {
-    "name": "x-publisher",
-    "description": "Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X AP",
-    "type": "social"
-  },
-  {
-    "name": "last30days",
-    "description": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.",
-    "type": "automation"
-  },
-  {
-    "name": "security-monitor",
-    "description": "Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.",
-    "type": "security"
-  },
-  {
-    "name": "ai-phone",
-    "description": "# AI Phone Calls Skill\n\nMake AI phone calls for reservations, appointments, and inquiries.\n\n**Version:** 2.1 (2026-02-15)\n**Tested:** 10 simulated scenarios + 1 live call\n\n## Architecture Decision (20",
-    "type": "ai"
-  },
-  {
-    "name": "places-search",
-    "description": "# Places Search - Merged goplaces + spots\n\n**Purpose:** Comprehensive location search combining quick lookups (goplaces) with exhaustive grid-based scanning (spots).\n\n## Overview\n\nThis skill merges th",
-    "type": "search"
-  },
-  {
-    "name": "twitter",
-    "description": "Twitter/X platform integration. Post tweets, read timeline, manage followers, and analyze engagement.",
-    "type": "social"
-  },
-  {
-    "name": "safe-diagnostics",
-    "description": "# Safe Diagnostics Skill\n\n**Purpose:** Debug config and API issues WITHOUT exposing credentials in chat\n\n**Created:** 2026-02-09 22:56 MST  \n**Reason:** After exposing Gemini API key in chat, requirin",
-    "type": "automation"
-  },
-  {
-    "name": "playwright-screenshots",
-    "description": "# Playwright Screenshots Skill\n\n**Purpose:** Capture visual screenshots of web apps and CLI tools to send via Telegram\n\n**When to use:** User asks for screenshots, visual proof, or \"show me what it lo",
-    "type": "automation"
-  },
-  {
-    "name": "second-brain",
-    "description": "# Second Brain - Active Intelligence Layer\n\n**Version:** 2.0.0  \n**Created:** 2026-02-07  \n**Updated:** 2026-02-15  \n**Purpose:** Proactively capture ideas from conversations, auto-extract tasks, and ",
-    "type": "memory"
-  },
-  {
-    "name": "modern-design",
-    "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
-    "type": "automation"
-  },
-  {
-    "name": "clean-blue-design",
-    "description": "# Clean Blue Design System\n\n**Created:** 2026-02-09  \n**Origin:** Tokyo/Osaka Trip Planning App  \n**Live Example:** https://cole-workspace.pages.dev/\n\n## Overview\n\nProfessional, clean design system bu",
-    "type": "automation"
-  },
-  {
-    "name": "mailgun",
-    "description": "Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requires MAILGUN_API_KEY and MAILGUN_DOMAIN envi",
-    "type": "ai"
-  },
-  {
-    "name": "tripadvisor-api",
-    "description": "Interact with TripAdvisor Content API v3 to search locations, retrieve details, and fetch user reviews. Use when: (1) Getting TripAdvisor-specific ratings and review counts, (2) Searching for restaura",
-    "type": "automation"
-  },
-  {
-    "name": "supabase-secrets-sync",
-    "description": "Sync secrets from Supabase vault to local keys.env file. Use this skill when you need to transfer API keys, credentials, or sensitive configuration from a Supabase-backed secrets vault and merge them ",
-    "type": "automation"
-  },
-  {
-    "name": "telegram-screenshots",
-    "description": "# Telegram Screenshots Skill\n\n## Purpose\nSend visual screenshots directly in Telegram chat instead of text descriptions or localhost URLs.\n\n## Problem\nUser receives localhost links or ASCII art mockup",
-    "type": "automation"
-  },
-  {
-    "name": "standard-features",
-    "description": "# Standard App Features Checklist - MANDATORY\n\n**Purpose:** Ensure ALL web and mobile apps include essential features for quality, accessibility, and user experience.\n\n**Created:** 2026-02-07  \n**Upda",
-    "type": "automation"
-  },
-  {
-    "name": "kanban-deploy",
-    "description": "# Kanban Board Deployment Skill\n\nDeploy and manage tasks on the Python Kanban Board (https://python-kanban.pages.dev).\n\n## Critical Knowledge\n\n**Data Source:** Page loads from `tasks.json` file (NOT l",
-    "type": "deployment"
-  },
-  {
-    "name": "openclaw-auto-updater",
-    "description": "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update r",
-    "type": "automation"
-  },
-  {
-    "name": "x-browser-monitor",
-    "description": "# X/Twitter Browser Monitor\n\n**Purpose:** Monitor @swordtruth X account via browser automation for notifications, mentions, and TikTok content links.\n\n**Use when:** Brian needs to check X notification",
-    "type": "social"
-  },
-  {
-    "name": "x-api",
-    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches lik",
-    "type": "social"
-  },
-  {
-    "name": "coder-agent",
-    "description": ">",
-    "type": "ai"
-  },
-  {
-    "name": "youtube-transcript",
-    "description": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's",
-    "type": "automation"
-  },
-  {
-    "name": "senior-devops",
-    "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
-    "type": "automation"
-  },
-  {
-    "name": "serpapi-location-search",
-    "description": "Perform location-based searches using Google Search API via SerpApi. Use this skill when you need to find businesses, places, or services in a specific geographic area (e.g., \"pizza places in Phoenix\"",
-    "type": "search"
-  },
-  {
-    "name": "implementation-patterns",
-    "description": "# Implementation Patterns\n\n**Version:** 1.0  \n**Created:** 2026-02-09  \n**Purpose:** Comprehensive implementation guidelines for quality code\n\n## Overview\n\nProfessional implementation standards coveri",
-    "type": "automation"
-  },
-  {
-    "name": "image-cog",
-    "description": "AI image generation powered by CellCog. Create images, edit photos, consistent characters, product photography, reference-based images, sets of images, style transfer. Professional image creation with",
-    "type": "automation"
-  },
-  {
-    "name": "secret-keys",
-    "description": "# Secret Keys Management Skill\n\n**Purpose:** Handle API keys, secrets, and sensitive credentials securely. Never expose secrets in chat, logs, or code.\n\n**Created:** 2026-02-17  \n**Trigger:** When han",
-    "type": "automation"
-  },
-  {
-    "name": "memory-optimization",
-    "description": "# Memory Optimization Skill\n\n**Purpose:** Consolidate, optimize, and deduplicate all memory systems (Supermemory, mem0, MEMORY.md, daily files) so they work in concert efficiently.\n\n**Created:** 2026-",
-    "type": "memory"
-  },
-  {
-    "name": "chirp",
-    "description": "\"X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI fo",
-    "type": "automation"
-  },
-  {
-    "name": "clawflows",
-    "description": "Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.",
-    "type": "automation"
+    "name": "batch-memory-update",
+    "description": "name: batch-memory-update",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "bird",
     "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
-    "type": "social"
-  },
-  {
-    "name": "batch-memory-save",
-    "description": "Save learnings and config changes to ALL memory systems at once. Prevents knowledge loss and repeated mistakes by ensuring consistency across Supermemory, mem0, daily files, COMMANDMENTS.md, and TOOLS",
-    "type": "memory"
-  },
-  {
-    "name": "cron-mastery",
-    "description": "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron vs Heartbeat for time-sensitive tasks.",
-    "type": "automation"
-  },
-  {
-    "name": "screenshot-proof-workflow",
-    "description": ">",
-    "type": "automation"
-  },
-  {
-    "name": "percy-visual-testing",
-    "description": "# Percy Visual Testing - Intelligent Visual Regression\n\n## Overview\n\nPercy by BrowserStack provides AI-powered visual regression testing that integrates with Playwright and mobile testing frameworks. ",
-    "type": "automation"
-  },
-  {
-    "name": "security-auditor",
-    "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection preventi",
-    "type": "security"
-  },
-  {
-    "name": "location-places",
-    "description": "# Location & Places Skill\n\n**Purpose:** Guidelines for providing location information with complete details including Google Maps links.\n\n## Core Rule\n\n**ALWAYS provide Google Maps links for ANY locat",
-    "type": "search"
-  },
-  {
-    "name": "serpapi",
-    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, ma",
-    "type": "automation"
-  },
-  {
-    "name": "metricool",
-    "description": "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.",
-    "type": "automation"
-  },
-  {
-    "name": "zero-trust",
-    "description": "Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Trigger",
-    "type": "automation"
-  },
-  {
-    "name": "travel-restaurants",
-    "description": "# Travel & Restaurants Search Skill\n\n**Purpose:** Find restaurants, cafes, and dining locations using Google Places API (New) with comprehensive data including ratings, hours, phone numbers, and preci",
-    "type": "automation"
-  },
-  {
-    "name": "screenshot-delivery",
-    "description": "# Screenshot Delivery Skill\n\n## Purpose\nGenerate and deliver screenshots/mockups via ImageMagick + Read tool for inline Telegram display.\n\n**Proven method:** ImageMagick `convert` command \u2192 PNG files ",
-    "type": "automation"
-  },
-  {
-    "name": "youtube-downloader-clipper",
-    "description": "# ClawHub - YouTube Video Clipper & Downloader\n\nExtract specific sections from YouTube videos with precise timestamps. A powerful ClawHub skill that makes video clipping effortless - just provide a UR",
-    "type": "automation"
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "calendar",
     "description": "Calendar management and scheduling. Create events, manage meetings, and sync across calendar providers.",
-    "type": "automation"
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "humanizer",
-    "description": "|",
-    "type": "automation"
+    "name": "chirp",
+    "description": "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI for",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "deployment-proof",
-    "description": ">",
-    "type": "deployment"
+    "name": "clawdex by Koi",
+    "description": "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "model-priority",
-    "description": "# Model Priority Skill\n\n**Keywords:** priority, fallback, model selection, kimi, gemini, minimax, model hierarchy, fallback chain\n\n---\n\n## Description\n\nManage AI model priorities and fallback chains f",
-    "type": "automation"
+    "name": "clawflows",
+    "description": "Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "agent-orchestrator",
-    "description": "|",
-    "type": "ai"
+    "name": "clawhub-security",
+    "description": "name: clawhub-security",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "restaurant-lookup",
-    "description": "Comprehensive restaurant search and recommendation system combining Google Places API (primary), TripAdvisor API (reviews/ratings), and SerpApi Google Images (food photos). Use when: (1) Finding resta",
-    "type": "automation"
+    "name": "clean-blue-design",
+    "description": "name: clean-blue-design",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "uptime-monitor",
-    "description": "24/7 OpenClaw uptime monitor. Every 5min cron ping \u2192 writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracki",
-    "type": "automation"
-  },
-  {
-    "name": "batch-memory-update",
-    "description": "# Batch Memory Update Skill\n\n**Keywords:** batch, memory, update, save, learnings, everywhere, everywhere, sync, mem0, supermemory, files, agents, audit, optimization, cleanup, contradictions, repeat ",
-    "type": "memory"
-  },
-  {
-    "name": "openclaw-social-scheduler",
-    "description": "# Social Scheduler Skill\n\n**Free, open-source social media scheduler for OpenClaw agents**\n\nBuilt by AI, for AI. Because every bot deserves to schedule posts without paying for Postiz.\n\n## \ud83c\udfaf What It D",
-    "type": "social"
-  },
-  {
-    "name": "restaurant-reservation",
-    "description": "# Restaurant Reservation Skill\n\n**Version:** 3.0\n**Created:** 2026-02-15\n**Tested:** 5 live calls (all successful)\n\nMake AI phone calls to book restaurant reservations using Bland.ai.\n\n---\n\n## Configu",
-    "type": "automation"
+    "name": "clips-machine",
+    "description": "Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "cloudflare-pages-deploy",
     "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
-    "type": "deployment"
+    "version": "2.1.0",
+    "type": "installed"
+  },
+  {
+    "name": "coder-agent",
+    "description": "Spawn and manage autonomous coding agents via sessions_spawn. Inherits capabilities from deprecated tmux workflows: task discovery, error detection, quality gates, 3-platform testing, and result loggi",
+    "version": "2.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "cost-model-optimization",
+    "description": "name: cost-model-optimization",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "cron-mastery",
+    "description": "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron vs Heartbeat for time-sensitive tasks.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "database",
+    "description": "Database management and queries. Connect to SQL and NoSQL databases, run queries, and manage schemas.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "deploy-agent",
     "description": "Multi-step deployment agent for full-stack apps. Build \u2192 Test \u2192 GitHub \u2192 Cloudflare Pages with human approval at each step.",
-    "type": "deployment"
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "agent-task-chunking",
-    "description": "# Agent Task Chunking Skill\n\n## Problem\n\nAgents hit context overflow when given massive tasks:\n- Reading 30KB+ spec files\n- Converting 62 test cases at once\n- Implementing 9+ features simultaneously\n-",
-    "type": "ai"
+    "name": "deployment-proof",
+    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
+    "version": "2.0.0",
+    "type": "installed"
   },
   {
-    "name": "tripadvisor",
-    "description": "# TripAdvisor API Integration Skill\n\n**Purpose:** Search TripAdvisor for restaurants, hotels, attractions. Get reviews, ratings, photos, and pricing.\n\n**API Docs:** https://developer-tripadvisor.com/d",
-    "type": "automation"
+    "name": "desktop-control",
+    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "vibe-coding-patterns",
-    "description": "Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Trigg",
-    "type": "automation"
+    "name": "email-daily-summary",
+    "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or creat",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "emergency-rate-limit",
+    "description": "name: emergency-rate-limit",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "expo-mobile-app",
+    "description": "Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "file-editing",
+    "description": "name: file-editing",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "flight-search",
+    "description": "Search Google Flights for prices, times, and airlines. No API key required.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "google-analytics",
+    "description": "Google Analytics API integration with managed OAuth. Manage accounts, properties, and data streams (Admin API). Run reports on sessions, users, page views, and conversions (Data API). Use this skill w",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "goplaces",
+    "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "hostile-audit",
+    "description": "name: hostile-audit",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "humanizer",
+    "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing",
+    "version": "2.1.1",
+    "type": "installed"
+  },
+  {
+    "name": "image-cog",
+    "description": "AI image generation powered by CellCog. Create images, edit photos, consistent characters, product photography, reference-based images, sets of images, style transfer. Professional image creation with",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "implementation-patterns",
+    "description": "name: implementation-patterns",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "kanban-deploy",
+    "description": "name: kanban-deploy",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "kanban-task",
+    "description": "name: kanban-task",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "last30days",
+    "description": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "linkedin",
+    "description": "LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "location-places",
+    "description": "name: location-places",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "mailgun",
+    "description": "Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requires MAILGUN_API_KEY and MAILGUN_DOMAIN envi",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "markdown-optimization",
-    "description": "# Markdown Optimization Skill\n\n## Purpose\nDaily monitoring and correction of workspace documentation to prevent repeat mistakes caused by incorrect/outdated information in markdown files.\n\n## Problem ",
-    "type": "automation"
+    "description": "name: markdown-optimization",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "memory-management",
-    "description": "# Memory Management Skill\n\n**Version:** 1.0.0  \n**Created:** 2026-02-07 18:28 MST  \n**Purpose:** Systematic memory storage, retrieval, and optimization for decision-making  \n\n---\n\n## \ud83e\udde0 Core Concept\n\n*",
-    "type": "memory"
+    "description": "name: memory-management",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "clawhub-security",
-    "description": "# ClawHub Security - Clawdex Integration\n\n**Purpose:** Always scan ClawHub skills with Clawdex API before installation to prevent malicious code execution.\n\n## \ud83d\udd12 Core Rule\n\n**NEVER install a ClawHub s",
-    "type": "security"
+    "name": "memory-optimization",
+    "description": "name: memory-optimization",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "metricool",
+    "description": "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "model-priority",
+    "description": "name: model-priority",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "modern-design",
+    "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "netlify-deploy",
-    "description": "# Netlify Deployment Skill\n\n## Quick Reference\n\n**NEVER use `netlify login`** - it's interactive and hangs in automation.\n\n**ALWAYS use API token from secrets file:**\n```bash\nexport NETLIFY_AUTH_TOKEN",
-    "type": "deployment"
+    "description": "**NEVER use `netlify login`** \u2014 it HANGS; it's interactive and requires browser auth. Use NETLIFY_AUTH_TOKEN instead.",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
-    "name": "scholarship-browser-agent",
-    "description": "# Scholarship Browser Agent\n\n**Purpose:** Enhance scholarship research by navigating directly to scholarship portals, verifying eligibility, and extracting structured data via browser automation.\n\n**U",
-    "type": "ai"
+    "name": "no-bs-debugging",
+    "description": "name: no-bs-debugging",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "openclaw-auto-updater",
+    "description": "Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update r",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "openclaw-release-monitor",
+    "description": "name: openclaw-release-monitor",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "openclaw-sec",
+    "description": "AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violations",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "openclaw-social-scheduler",
+    "description": "**Free, open-source social media scheduler for OpenClaw agents**",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "security-reviewer",
+    "description": "Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "percy-visual-testing",
+    "description": "name: percy-visual-testing",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "phone-calls",
+    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "phone-reservations",
+    "description": "name: phone-reservations",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "places-api-recommendations",
+    "description": "MANDATORY method for all restaurant, cafe, and place recommendations. Always use Google Places API (New) - never web scraping or Brave Search. Brian's directive: \"make it a commandment across all appl",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "places-search",
+    "description": "name: places-search",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "playwright-screenshots",
+    "description": "name: playwright-screenshots",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "postgres",
+    "description": "PostgreSQL database management. Run queries, manage schemas, and monitor performance.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "postiz",
+    "description": "Postiz is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Google My Business, TikTok, Pinterest, Dribbble",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "ralph-loop",
+    "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using sessions_spawn or exec/process tools. Agent orchestrates coding agents (Codex, OpenCode, Goose) with proper TTY support. Plans/builds code via",
+    "version": "2.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "ralph-loop-patterns",
+    "description": "name: ralph-loop-patterns",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "react-expert",
     "description": "Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 fe",
-    "type": "automation"
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "restaurant-lookup",
+    "description": "name: restaurant-lookup",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "restaurant-reservation",
+    "description": "name: restaurant-reservation",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "safe-diagnostics",
+    "description": "name: safe-diagnostics",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "scholarship-browser-agent",
+    "description": "name: scholarship-browser-agent",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "scholarship-research",
+    "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholar",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "screenshot-delivery",
+    "description": "name: screenshot-delivery",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "screenshot-fallback",
+    "description": "name: screenshot-fallback",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "screenshot-proof-workflow",
+    "description": "Mandatory workflow for delivering screenshot proof to Telegram before claiming any fix is \"deployed\" or \"working\". Enforced after multiple violations where agents claimed fixes worked without screensh",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "second-brain",
+    "description": "name: second-brain",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "secret-keys",
+    "description": "name: secret-keys",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "secret-vault",
+    "description": "**Purpose:** Manage API keys and tokens securely without exposing them in chat, logs, or git.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "security-audit",
+    "description": "name: security-audit",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "security-auditor",
+    "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection preventi",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "security-monitor",
+    "description": "Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "security-sentinel",
+    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "senior-devops",
+    "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "seo-competitor-analysis",
+    "description": "Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website's competitors or improve their own SEO r",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "serpapi",
+    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, ma",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "serpapi-location-search",
+    "description": "Perform location-based searches using Google Search API via SerpApi. Use this skill when you need to find businesses, places, or services in a specific geographic area (e.g., \"pizza places in Phoenix\"",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workfl",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "smart-memory",
+    "description": "name: smart-memory",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "spots",
+    "description": "Exhaustive Google Places search using grid-based scanning. Finds ALL places, not just what Google surfaces.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "standard-features",
+    "description": "Comprehensive checklist for web and mobile app quality \u2014 authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensu",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "supabase-secrets-sync",
+    "description": "Sync secrets from Supabase vault to local keys.env file. Use this skill when you need to transfer API keys, credentials, or sensitive configuration from a Supabase-backed secrets vault and merge them ",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "supadata-transcript",
+    "description": "name: supadata-transcript",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "supermemory-integration",
+    "description": "name: supermemory-integration",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "telegram-config",
+    "description": "Configure OpenClaw Telegram bot access control \u2014 group allowlists, sender filtering, mention behavior, and DM policies. Use when setting up Telegram groups, fixing \"group not allowed\" errors, troubles",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "telegram-screenshot-delivery",
+    "description": "name: telegram-screenshot-delivery",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "telegram-screenshots",
+    "description": "name: telegram-screenshots",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "tiktok-browser-scanner",
+    "description": "name: tiktok-browser-scanner",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "tiktok-teneo",
+    "description": "The agent gives you the ability to extract data from tiktok through different commands.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "travel-concierge",
+    "description": "Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "travel-restaurants",
+    "description": "name: travel-restaurants",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "tripadvisor",
+    "description": "name: tripadvisor",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "tripadvisor-api",
+    "description": "name: tripadvisor-api",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "twitter",
+    "description": "Twitter/X platform integration. Post tweets, read timeline, manage followers, and analyze engagement.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "uptime-monitor",
+    "description": "24/7 OpenClaw uptime monitor. Every 5min cron ping \u2192 writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracki",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "vercel-deploy",
+    "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports produc",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "vibe-coding-patterns",
+    "description": "Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Trigg",
+    "version": "1.0.0",
+    "type": "installed"
   },
   {
     "name": "video-agent",
     "description": "Generate AI avatar videos with HeyGen's Video Agent API. One-shot prompt to video generation.",
-    "type": "ai"
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "x-api",
+    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches lik",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "x-browser-monitor",
+    "description": "name: x-browser-monitor",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "x-automation",
+    "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "X-Publisher",
+    "description": "Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X AP",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "youtube-downloader-clipper",
+    "description": "Extract specific sections from YouTube videos with precise timestamps. A powerful ClawHub skill that makes video clipping effortless - just provide a URL and time range.",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "youtube-transcript",
+    "description": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "yt-dlp-downloader",
+    "description": "Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or",
+    "version": "1.0.0",
+    "type": "installed"
+  },
+  {
+    "name": "zero-trust",
+    "description": "Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Trigger",
+    "version": "1.0.0",
+    "type": "installed"
   }
 ]
