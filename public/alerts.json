@@ -1,0 +1,31 @@
+{
+  "lastChecked": "2026-02-19T19:03:24.738147+00:00",
+  "alerts": [
+    {
+      "id": "cmd-last-session",
+      "type": "info",
+      "severity": "info",
+      "title": "Latest Session",
+      "message": "Session agent:main:telegram:group:-1003673339958 started at 2026-02-19T06:07:07.502Z",
+      "timestamp": "2026-02-19T06:07:07.502Z",
+      "dismissed": false,
+      "source": "commands-log"
+    },
+    {
+      "id": "sys-info-001",
+      "type": "system",
+      "severity": "info",
+      "title": "Mission Control Online",
+      "message": "All core systems operational. Anthropic, Google, and OpenRouter providers authenticated.",
+      "timestamp": "2026-02-19T19:03:19.720639+00:00",
+      "dismissed": false,
+      "source": "system"
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "errors": 0,
+    "warnings": 0,
+    "info": 2
+  }
+}

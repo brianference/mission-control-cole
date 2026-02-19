@@ -1051,3 +1051,91 @@
     max-width: 100%;
   }
 }
+
+/* ===== LIVE STATUS / AUTO-REFRESH (MC-003) ===== */
+.agents-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.live-badge--live {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.live-badge--cached {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.live-badge--offline {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.refresh-countdown {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}
+
+.last-updated-text {
+  font-size: 0.72rem;
+  color: #4b5563;
+}
+
+/* ===== SESSION KEY ROW (MC-001) ===== */
+.session-key-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.session-key-label {
+  font-size: 0.68rem;
+  color: #4b5563;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.session-key-code {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.session-kind-badge {
+  font-size: 0.65rem;
+  color: #6b7280;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.session-msgs {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}

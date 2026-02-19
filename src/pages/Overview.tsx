@@ -4,6 +4,7 @@ import ActiveAgents from '../components/overview/ActiveAgents';
 import TokenUsage from '../components/overview/TokenUsage';
 import BudgetMeter from '../components/overview/BudgetMeter';
 import BudgetSettings from '../components/settings/BudgetSettings';
+import KanbanWidget from '../components/overview/KanbanWidget';
 import './Overview.css';
 
 const Overview: React.FC = () => {
@@ -330,6 +331,12 @@ const Overview: React.FC = () => {
             <div className="card">
               <TokenUsage autoRefresh={true} />
             </div>
+          </section>
+
+          {/* Kanban Board Widget */}
+          <section className="kanban-section">
+            <h2 className="section-title">📋 Project Board</h2>
+            <KanbanWidget />
           </section>
         </div>
       </div>

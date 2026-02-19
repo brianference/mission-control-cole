@@ -1,0 +1,80 @@
+{
+  "lastChecked": "2026-02-19T19:02:16.662435+00:00",
+  "providers": {
+    "anthropic": {
+      "status": "ok",
+      "profiles": 2
+    },
+    "google": {
+      "status": "ok",
+      "profiles": 1
+    },
+    "openrouter": {
+      "status": "ok",
+      "profiles": 1
+    }
+  },
+  "models": [
+    {
+      "id": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
+      "provider": "anthropic",
+      "alias": "anthropic/claude-sonnet-4-5",
+      "status": "ok",
+      "message": "Authenticated",
+      "latency": null,
+      "is_default": true
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "provider": "anthropic",
+      "alias": "anthropic/claude-sonnet-4-6",
+      "status": "ok",
+      "message": "Authenticated",
+      "latency": null,
+      "is_default": false
+    },
+    {
+      "id": "claude-opus-4-6",
+      "name": "Claude Opus 4.6",
+      "provider": "anthropic",
+      "alias": "anthropic-opus46",
+      "status": "ok",
+      "message": "Authenticated (auth status is false positive)",
+      "latency": null,
+      "is_default": false
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "name": "Gemini 3 Flash Preview",
+      "provider": "google",
+      "alias": "google/gemini-3-flash-preview",
+      "status": "ok",
+      "message": "Authenticated",
+      "latency": null,
+      "is_default": false
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "name": "Gemini 2.5 Flash",
+      "provider": "google",
+      "alias": "google/gemini-2.5-flash",
+      "status": "ok",
+      "message": "Authenticated",
+      "latency": null,
+      "is_default": false
+    },
+    {
+      "id": "minimax-m2.1",
+      "name": "MiniMax M2.1",
+      "provider": "openrouter",
+      "alias": "openrouter/minimax/minimax-m2.1",
+      "status": "ok",
+      "message": "Authenticated via OpenRouter",
+      "latency": null,
+      "is_default": false
+    }
+  ],
+  "rawOutput": "Config        : ~/.openclaw/openclaw.json\nAgent dir     : ~/.openclaw/agents/main/agent\nDefault       : anthropic/claude-sonnet-4-5\nFallbacks (2) : google/gemini-3-flash-preview, openrouter/minimax/minimax-m2.1\nImage model   : -\nImage fallbacks (0): -\nAliases (2)   : gemini-flash -> google/gemini-3-flash-preview, sonnet-45 -> anthropic/claude-sonnet-4-5\nConfigured models (2): google/gemini-3-flash-preview, anthropic/claude-sonnet-4-5\n\nAuth overview\nAuth store    : ~/.openclaw/agents/main/agent/auth-profiles.json\nShell env     : off\nProviders w/ OAuth/tokens (3): anthropic (2), google (1), openrouter (1)\n- anthropic effective=profiles:~/.openclaw/agents/main/agent/auth-profiles.json | profiles=2 (oauth=0, token=2, api_key=0) | anthropic:manual=token:sk-ant-o...GzHEJwAA, anthropic:default=token:sk-ant-o...GzHEJwAA\n- google effective=profiles:~/.openclaw/agents/main/agent/auth-profiles.json | profiles=1 (oauth=0, token=1, api_key=0) | google:manual=token:AIzaSyD7...4bobmlgk | env=AIzaSyCC...wHw-iMmI | source=env: GEMINI_API_KEY\n- openrouter effective=profiles:~/.openclaw/agents/main/agent/auth-profiles.json | profiles=1 (oauth=0, token=1, api_key=0) | openrouter:manual=token:sk-or-v1...e65fa118 | env=sk-or-v1...e65fa118 | source=env: OPENROUTER_API_KEY\n\nOAuth/token status\n- anthropic\n  - anthropic:default static\n  - anthropic:manual static\n- google\n  - google:manual static\n- openrouter\n  - openrouter:manual static\n/root/.openclaw/secrets/keys.env: line 28: AcwdrOOmnAmlOgtCJpdJjtFazifec: command not found\n"
+}

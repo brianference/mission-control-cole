@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import WorkspaceActivity from '../components/WorkspaceActivity';
+import { fetchSessions, fetchUsage, type ConnectionStatus } from '../utils/gatewayApi';
 import './Agents.css';
+
+const REFRESH_INTERVAL_MS = 30_000;
 
 interface Agent {
   id: string;
@@ -19,12 +22,13 @@ interface ActiveSession {
   totalTokens: number;
   updatedAt: number;
   status: string;
+  messageCount?: number;
+  inputTokens?: number;
+  outputTokens?: number;
 }
 
-interface SessionsData {
-  lastUpdated: string;
-  sessions: ActiveSession[];
-}
+// SessionsData kept for reference (used internally by gatewayApi)
+// interface SessionsData { ... }
 
 interface DailyUsage {
   date: string;
@@ -91,6 +95,9 @@ const Agents: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [usageData, setUsageData] = useState<UsageData | null>(null);
+  const [dataStatus, setDataStatus] = useState<ConnectionStatus>('offline');
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+  const [countdown, setCountdown] = useState(REFRESH_INTERVAL_MS / 1000);
 
   // Command Center state
   const [showSpawnModal, setShowSpawnModal] = useState(false);
@@ -104,19 +111,27 @@ const Agents: React.FC = () => {
     label: '',
   });
 
+  const loadSessions = useCallback(async () => {
+    const { data, status } = await fetchSessions();
+    const realSessions = data.sessions || [];
+    setActiveSessions(realSessions.length > 0 ? realSessions : DEMO_SESSIONS);
+    setDataStatus(status);
+    setLastUpdated(data.lastUpdated);
+    setCountdown(REFRESH_INTERVAL_MS / 1000);
+  }, []);
+
   useEffect(() => {
+    // Initial load: agents + sessions + usage in parallel
     Promise.all([
       fetch('/agents.json').then(res => res.json()),
-      fetch('/active-sessions.json').then(res => res.json()).catch(() => ({ sessions: [] })),
-      fetch('/usage-data.json').then(res => res.json()).catch(() => null),
+      loadSessions(),
+      fetchUsage(),
     ])
-      .then(([agentsData, sessionsData, usage]: [Agent[], SessionsData, UsageData | null]) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .then(([agentsData, , usage]: [Agent[], void, any]) => {
         setAgents(agentsData);
         setFilteredAgents(agentsData);
-        // Use demo sessions if real data is empty (static site demo)
-        const realSessions = sessionsData.sessions || [];
-        setActiveSessions(realSessions.length > 0 ? realSessions : DEMO_SESSIONS);
-        setUsageData(usage);
+        setUsageData(usage as UsageData | null);
         setLoading(false);
       })
       .catch(err => {
@@ -124,6 +139,18 @@ const Agents: React.FC = () => {
         setActiveSessions(DEMO_SESSIONS);
         setLoading(false);
       });
+
+    // Auto-refresh sessions every 30s
+    const interval = setInterval(loadSessions, REFRESH_INTERVAL_MS);
+    return () => clearInterval(interval);
+  }, [loadSessions]);
+
+  // Countdown ticker
+  useEffect(() => {
+    const tick = setInterval(() => {
+      setCountdown(c => (c <= 1 ? REFRESH_INTERVAL_MS / 1000 : c - 1));
+    }, 1000);
+    return () => clearInterval(tick);
   }, []);
 
   useEffect(() => {
@@ -317,6 +344,18 @@ openclaw sessions spawn \\
             {agents.length} agents configured • {activeCount} active now
           </p>
         </div>
+        <div className="agents-header-right">
+          {/* Connection Status Badge */}
+          <span className={`live-badge live-badge--${dataStatus}`}>
+            {dataStatus === 'live' ? '🟢 LIVE' : dataStatus === 'cached' ? '🟡 CACHED' : '🔴 OFFLINE'}
+          </span>
+          <span className="refresh-countdown">↻ {countdown}s</span>
+          {lastUpdated && (
+            <span className="last-updated-text">
+              Built {new Date(lastUpdated).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+            </span>
+          )}
+        </div>
         {/* Token Burn Rate */}
         {burnRate && (
           <div className="burn-rate-widget card">
@@ -398,8 +437,19 @@ openclaw sessions spawn \\
                         <span className="session-tokens">
                           {(session.totalTokens / 1000).toFixed(0)}K tokens
                         </span>
+                        {session.messageCount !== undefined && session.messageCount > 0 && (
+                          <>
+                            <span className="session-sep">•</span>
+                            <span className="session-msgs">{session.messageCount} msgs</span>
+                          </>
+                        )}
                         <span className="session-sep">•</span>
                         <span className="session-time">Active {timeAgo}</span>
+                      </div>
+                      <div className="session-key-row">
+                        <span className="session-key-label">key:</span>
+                        <code className="session-key-code">{session.sessionKey.slice(0, 28)}{session.sessionKey.length > 28 ? '…' : ''}</code>
+                        <span className="session-kind-badge">{session.status}</span>
                       </div>
                     </div>
                   </div>

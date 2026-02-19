@@ -1,0 +1,44 @@
+{
+  "lastUpdated": "2026-02-19T19:02:41.068008+00:00",
+  "counts": {
+    "total": 130,
+    "in-progress": 0,
+    "next-up": 11,
+    "done": 12,
+    "blocked": 0,
+    "backlog": 76
+  },
+  "colCounts": {
+    "done": 12,
+    "backlog": 76,
+    "progress": 17,
+    "unknown": 14,
+    "next-up": 11
+  },
+  "quickWins": [
+    {
+      "id": 1770772798161,
+      "title": "Fix missing hamburger menu and misplaced navigation (production regression)",
+      "priority": "critical",
+      "col": "next-up",
+      "tag": "",
+      "storyNumber": ""
+    },
+    {
+      "id": 1770772860152,
+      "title": "Card click not showing description (production regression - Bug #3 returned)",
+      "priority": "critical",
+      "col": "next-up",
+      "tag": "",
+      "storyNumber": ""
+    },
+    {
+      "id": 1770775891131,
+      "title": "BUG: Card descriptions not showing when card clicked",
+      "priority": "critical",
+      "col": "backlog",
+      "tag": "",
+      "storyNumber": ""
+    }
+  ]
+}

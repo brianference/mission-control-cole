@@ -1,0 +1,48 @@
+{
+  "lastChecked": "2026-02-19T19:02:42.655096+00:00",
+  "memoryFiles": {
+    "count": 51,
+    "latest": {
+      "name": "us126-2026-02-19.md",
+      "modified": "2026-02-19T19:02:12.426201+00:00",
+      "size": 2470
+    },
+    "recentFiles": [
+      {
+        "name": "us126-2026-02-19.md",
+        "modified": "2026-02-19T19:02:12.426201+00:00",
+        "size": 2470
+      },
+      {
+        "name": "mc001-2026-02-19.md",
+        "modified": "2026-02-19T19:00:26.203509+00:00",
+        "size": 3462
+      },
+      {
+        "name": "us120-2026-02-19.md",
+        "modified": "2026-02-19T18:56:58.055158+00:00",
+        "size": 3249
+      },
+      {
+        "name": "bugfix-2026-02-19.md",
+        "modified": "2026-02-19T17:26:19.539999+00:00",
+        "size": 3939
+      },
+      {
+        "name": "mobileclaw-chat-2026-02-19.md",
+        "modified": "2026-02-19T17:18:51.397865+00:00",
+        "size": 4149
+      }
+    ]
+  },
+  "mem0": {
+    "status": "not_configured",
+    "provider": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small"
+  },
+  "supermemory": {
+    "status": "key_configured",
+    "client": "/root/.openclaw/workspace/python-kanban/supermemory_client.py"
+  },
+  "backupScript": "/root/.openclaw/workspace/update-supermemory.py"
+}

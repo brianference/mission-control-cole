@@ -217,7 +217,38 @@ const CostTracking: React.FC = () => {
   }
 
   const { summary, daily, providers: staticProviders, models: staticModels, taskTypes } = data;
-  
+
+  // ── MC-004: Daily spend by model / burn rate / budget alert ──────────────
+  const DAILY_BUDGET = 10; // $10/day budget
+  const today = new Date().toISOString().split('T')[0];
+  const todayData = daily.find(d => d.date === today) || daily[daily.length - 1];
+  const todaySpend = todayData?.cost || 0;
+  // @ts-ignore
+  const todayTokens = todayData?.tokens || 0;
+
+  // Burn rate: avg spend per hour today
+  const nowHour = new Date().getHours() || 1;
+  const burnRatePerHour = todaySpend / nowHour;
+  // @ts-ignore
+  const projectedDaySpend = burnRatePerHour * 24;
+  const budgetPct = (todaySpend / DAILY_BUDGET) * 100;
+  const isOverBudget = todaySpend >= DAILY_BUDGET;
+  // @ts-ignore
+  const isNearBudget = !isOverBudget && budgetPct >= 80;
+
+  // Daily spend by provider from today's data
+  const todayByProvider: Record<string, { cost: number; requests: number }> = (todayData as any)?.byProvider || {};
+  // If no daily breakdown, use aggregated provider data scaled to today
+  const providerBreakdown = Object.entries(todayByProvider).length > 0
+    ? Object.entries(todayByProvider).map(([name, stats]) => ({ name, ...stats }))
+    : staticProviders.map(p => ({
+        name: p.name,
+        cost: summary.weekTotal > 0 ? (p.cost / summary.monthTotal) * todaySpend : 0,
+        requests: p.requests > 0 ? Math.round((p.requests / (summary.totalRequests || 1)) * (todayData?.requests || 0)) : 0,
+      }));
+
+  // ── End MC-004 ────────────────────────────────────────────────────────────
+
   // Filter data by selected time range
   const filteredDaily = filterDataByTimeRange(daily, timeRange);
   const rangeSummary = calculateSummaryForRange(filteredDaily);
@@ -367,6 +398,117 @@ const CostTracking: React.FC = () => {
       {/* Overview Tab */}
       {activeTab === 'overview' && (
         <>
+          {/* MC-004: $10/day Budget Alert Banner */}
+          {(isOverBudget || isNearBudget) && (
+            <div style={{
+              padding: '0.875rem 1.25rem',
+              borderRadius: '10px',
+              background: isOverBudget ? 'rgba(248, 113, 113, 0.12)' : 'rgba(251, 191, 36, 0.12)',
+              border: `1px solid ${isOverBudget ? 'rgba(248, 113, 113, 0.5)' : 'rgba(251, 191, 36, 0.5)'}`,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              marginBottom: '1.5rem',
+            }}>
+              <span style={{ fontSize: '1.5rem' }}>{isOverBudget ? '🔴' : '⚠️'}</span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 700, color: isOverBudget ? '#f87171' : '#fbbf24', fontSize: '1rem' }}>
+                  {isOverBudget ? `Budget Exceeded — $${todaySpend.toFixed(2)} of $${DAILY_BUDGET}/day` : `Budget Alert — ${budgetPct.toFixed(0)}% of $${DAILY_BUDGET}/day used`}
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#9ca3af' }}>
+                  Burn rate: ${burnRatePerHour.toFixed(3)}/hr · Projected: ${projectedDaySpend.toFixed(2)}/day
+                </div>
+              </div>
+              <div style={{ fontWeight: 700, fontSize: '1.25rem', color: isOverBudget ? '#f87171' : '#fbbf24' }}>
+                ${todaySpend.toFixed(2)}
+              </div>
+            </div>
+          )}
+
+          {/* MC-004: Daily Spend by Provider */}
+          <div className="glass-card p-5" style={{ marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              📊 Today's Spend by Provider
+              <span style={{ fontSize: '0.75rem', color: '#6b7280', fontWeight: 400 }}>
+                ({today})
+              </span>
+              <span style={{
+                marginLeft: 'auto',
+                padding: '0.2rem 0.75rem',
+                borderRadius: '20px',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                background: budgetPct >= 100 ? 'rgba(248,113,113,0.2)' : budgetPct >= 80 ? 'rgba(251,191,36,0.2)' : 'rgba(52,211,153,0.2)',
+                color: budgetPct >= 100 ? '#f87171' : budgetPct >= 80 ? '#fbbf24' : '#34d399',
+              }}>
+                ${todaySpend.toFixed(2)} / ${DAILY_BUDGET} budget
+              </span>
+            </h3>
+
+            {/* Budget progress bar */}
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ height: '6px', background: 'rgba(255,255,255,0.08)', borderRadius: '3px', overflow: 'hidden' }}>
+                <div style={{
+                  height: '100%',
+                  width: `${Math.min(budgetPct, 100)}%`,
+                  background: budgetPct >= 100 ? '#f87171' : budgetPct >= 80 ? '#fbbf24' : '#34d399',
+                  borderRadius: '3px',
+                  transition: 'width 0.5s ease',
+                }} />
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                <span>$0</span>
+                <span style={{ color: '#9ca3af' }}>{budgetPct.toFixed(0)}% used · {burnRatePerHour > 0 ? `$${burnRatePerHour.toFixed(3)}/hr burn` : 'no activity'}</span>
+                <span>${DAILY_BUDGET}</span>
+              </div>
+            </div>
+
+            {/* Provider breakdown */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.75rem' }}>
+              {[
+                { name: 'anthropic', emoji: '🟣', color: '#818cf8' },
+                { name: 'google', emoji: '🔵', color: '#34d399' },
+                { name: 'openrouter', emoji: '🟠', color: '#fb923c' },
+              ].map(({ name, emoji, color }) => {
+                const provider = providerBreakdown.find(p => p.name.toLowerCase() === name);
+                const cost = provider?.cost || 0;
+                const pct = todaySpend > 0 ? (cost / todaySpend) * 100 : 0;
+                return (
+                  <div key={name} style={{
+                    padding: '0.875rem',
+                    borderRadius: '8px',
+                    background: `${color}10`,
+                    border: `1px solid ${color}30`,
+                  }}>
+                    <div style={{ fontSize: '0.75rem', color: '#9ca3af', marginBottom: '0.25rem' }}>
+                      {emoji} {name}
+                    </div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 700, color }}>
+                      ${cost.toFixed(3)}
+                    </div>
+                    <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>
+                      {pct.toFixed(1)}% of today
+                    </div>
+                  </div>
+                );
+              })}
+              <div style={{
+                padding: '0.875rem',
+                borderRadius: '8px',
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}>
+                <div style={{ fontSize: '0.75rem', color: '#9ca3af', marginBottom: '0.25rem' }}>
+                  🔢 Tokens
+                </div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#e5e7eb' }}>
+                  {(todayTokens / 1000).toFixed(0)}K
+                </div>
+                <div style={{ fontSize: '0.7rem', color: '#6b7280' }}>today's usage</div>
+              </div>
+            </div>
+          </div>
+
           {/* Compact Summary Row */}
           <div className="overview-summary">
             <div className="summary-main">

@@ -264,6 +264,14 @@
     "usageCount": 32
   },
   {
+    "id": "phone-calls-bland",
+    "name": "phone-calls",
+    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
+    "type": "communication",
+    "source": "workspace",
+    "usageCount": 30
+  },
+  {
     "id": "places-api-recommendations",
     "name": "places-api-recommendations",
     "description": "MANDATORY method for all restaurant, cafe, and place recommendations. Always use Google Places API (New) - never web scraping or Brave Search. Brian's directive: \"make it a commandment across all applications.\"",
@@ -278,14 +286,6 @@
     "type": "utility",
     "source": "workspace",
     "usageCount": 30
-  },
-  {
-    "id": "phone-calls-bland",
-    "name": "phone-calls",
-    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
-    "type": "communication",
-    "source": "workspace",
-    "usageCount": 29
   },
   {
     "id": "restaurant-lookup",

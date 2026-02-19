@@ -82,6 +82,13 @@ export const navigationItems: NavItem[] = [
     badge: { count: 8, status: 'success' },
   },
   {
+    id: 'crons',
+    label: 'Crons',
+    icon: '⏰',
+    url: '/crons',
+    badge: { count: 42 },
+  },
+  {
     id: 'apps',
     label: 'Apps',
     icon: '🚀',
@@ -92,6 +99,24 @@ export const navigationItems: NavItem[] = [
     label: 'Logs',
     icon: '📜',
     url: '/logs',
+  },
+  {
+    id: 'models',
+    label: 'Model Health',
+    icon: '🏥',
+    url: '/models',
+  },
+  {
+    id: 'alerts',
+    label: 'Alert Center',
+    icon: '🚨',
+    url: '/alerts',
+  },
+  {
+    id: 'memory-health',
+    label: 'Memory Health',
+    icon: '🧠',
+    url: '/memory-health',
   },
   {
     id: 'docs',

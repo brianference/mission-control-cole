@@ -1,5 +1,15 @@
 {
-  "lastUpdated": "2026-02-16T05:01:40Z",
-  "sessions": [],
-  "_note": "Session data is populated at runtime via cron job or API"
+  "lastUpdated": "2026-02-19T19:13:54.462Z",
+  "sessions": [
+    {
+      "agentId": "main",
+      "sessionKey": "2f46db4b-2836-4d06-9136-c5c658c8145a",
+      "displayName": "main",
+      "model": "claude-sonnet-4-5",
+      "totalTokens": 124,
+      "updatedAt": 1771528433270.1987,
+      "status": "running",
+      "messageCount": 12
+    }
+  ]
 }

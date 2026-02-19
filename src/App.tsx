@@ -18,6 +18,10 @@ import Agents from './pages/Agents';
 import Tasks from './pages/Tasks';
 import Apps from './pages/Apps';
 import Logs from './pages/Logs';
+import ModelHealth from './pages/ModelHealth';
+import AlertCenter from './pages/AlertCenter';
+import MemoryHealth from './pages/MemoryHealth';
+import CronPanel from './pages/CronPanel';
 
 import './styles/globals.css';
 
@@ -52,6 +56,10 @@ function App() {
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/apps" element={<Apps />} />
             <Route path="/logs" element={<Logs />} />
+            <Route path="/crons" element={<CronPanel />} />
+            <Route path="/models" element={<ModelHealth />} />
+            <Route path="/alerts" element={<AlertCenter />} />
+            <Route path="/memory-health" element={<MemoryHealth />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
