@@ -16,6 +16,7 @@ import TopExpensiveTable from '../components/cost/TopExpensiveTable';
 import SpikeDetector from '../components/cost/SpikeDetector';
 import CostHeatmap from '../components/cost/CostHeatmap';
 import TopRecommendations from '../components/cost/TopRecommendations';
+import BudgetMeter from '../components/cost/BudgetMeter';
 import {
   parseCronCosts,
   calculateWeekOverWeek,
@@ -300,6 +301,17 @@ const CostTracking: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Budget Monitor — shows real-time spend vs limits with threshold alerts */}
+      <BudgetMeter
+        dailyCost={daily.length > 0 ? daily[daily.length - 1].cost : 0}
+        weeklyCost={summary.weekTotal}
+        monthlyCost={summary.monthTotal}
+        sessions={(data.sessions ?? []).map(s => ({
+          agent: s.agent,
+          totalCost: s.totalCost,
+        }))}
+      />
 
       {/* Top Optimization Recommendations */}
       <div className="top-recs-container">

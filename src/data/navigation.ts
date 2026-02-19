@@ -13,16 +13,8 @@ export const navigationItems: NavItem[] = [
     id: 'tasks',
     label: 'Tasks',
     icon: '✅',
-    url: '/tasks',
-    subItems: [
-      {
-        id: 'kanban',
-        label: 'Kanban',
-        icon: '📋',
-        url: 'https://python-kanban.pages.dev',
-        external: true,
-      },
-    ],
+    url: 'https://python-kanban.pages.dev',
+    external: true,
   },
   {
     id: 'secret-vault',

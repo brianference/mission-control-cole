@@ -4,6 +4,11 @@
     "weekly": 500,
     "monthly": 1500
   },
+  "agentCaps": {
+    "PM-orchestrator": 50,
+    "Candi": 20,
+    "default": 30
+  },
   "alerts": {
     "thresholds": [0.7, 0.9, 1.0],
     "enabled": true,

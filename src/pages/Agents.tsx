@@ -26,33 +26,107 @@ interface SessionsData {
   sessions: ActiveSession[];
 }
 
+interface DailyUsage {
+  date: string;
+  cost: number;
+  tokens: number;
+  requests: number;
+  sessions: number;
+}
+
+interface UsageData {
+  summary: object;
+  daily: DailyUsage[];
+}
+
+interface SpawnForm {
+  task: string;
+  model: string;
+  timeout: string;
+  label: string;
+}
+
+const CONTEXT_WINDOW = 200000;
+
+const MODEL_OPTIONS = [
+  { label: 'Claude Sonnet 4.5', value: 'anthropic/claude-sonnet-4-5' },
+  { label: 'Claude Opus 4.6', value: 'anthropic/claude-opus-4-6' },
+  { label: 'Gemini Flash', value: 'google/gemini-2.5-flash' },
+  { label: 'Minimax M2.1', value: 'openrouter/minimax/minimax-m2.1' },
+];
+
+const TIMEOUT_OPTIONS = [
+  { label: '30 min', value: '1800' },
+  { label: '1 hr', value: '3600' },
+  { label: '2 hr', value: '7200' },
+  { label: '4 hr', value: '14400' },
+];
+
+// Demo sessions for display when real data is empty
+const DEMO_SESSIONS: ActiveSession[] = [
+  {
+    agentId: 'main',
+    sessionKey: 'main',
+    displayName: 'main',
+    model: 'claude-sonnet-4-5',
+    totalTokens: 164000,
+    updatedAt: Date.now() - 14 * 60 * 1000,
+    status: 'running',
+  },
+  {
+    agentId: 'coder',
+    sessionKey: 'coder-agent',
+    displayName: 'coder-agent',
+    model: 'claude-sonnet-4-5',
+    totalTokens: 80000,
+    updatedAt: Date.now() - 3 * 60 * 1000,
+    status: 'running',
+  },
+];
+
 const Agents: React.FC = () => {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [activeSessions, setActiveSessions] = useState<ActiveSession[]>([]);
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
+  const [usageData, setUsageData] = useState<UsageData | null>(null);
+
+  // Command Center state
+  const [showSpawnModal, setShowSpawnModal] = useState(false);
+  const [killConfirmSession, setKillConfirmSession] = useState<ActiveSession | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+  const [generatedCommand, setGeneratedCommand] = useState<string>('');
+  const [spawnForm, setSpawnForm] = useState<SpawnForm>({
+    task: '',
+    model: 'anthropic/claude-sonnet-4-5',
+    timeout: '3600',
+    label: '',
+  });
 
   useEffect(() => {
-    // Load agents from JSON file (real config data)
     Promise.all([
       fetch('/agents.json').then(res => res.json()),
-      fetch('/active-sessions.json').then(res => res.json()).catch(() => ({ sessions: [] }))
+      fetch('/active-sessions.json').then(res => res.json()).catch(() => ({ sessions: [] })),
+      fetch('/usage-data.json').then(res => res.json()).catch(() => null),
     ])
-      .then(([agentsData, sessionsData]: [Agent[], SessionsData]) => {
+      .then(([agentsData, sessionsData, usage]: [Agent[], SessionsData, UsageData | null]) => {
         setAgents(agentsData);
         setFilteredAgents(agentsData);
-        setActiveSessions(sessionsData.sessions || []);
+        // Use demo sessions if real data is empty (static site demo)
+        const realSessions = sessionsData.sessions || [];
+        setActiveSessions(realSessions.length > 0 ? realSessions : DEMO_SESSIONS);
+        setUsageData(usage);
         setLoading(false);
       })
       .catch(err => {
         console.error('Failed to load agents:', err);
+        setActiveSessions(DEMO_SESSIONS);
         setLoading(false);
       });
   }, []);
 
   useEffect(() => {
-    // Filter agents based on search term
     if (searchTerm.trim() === '') {
       setFilteredAgents(agents);
     } else {
@@ -65,11 +139,16 @@ const Agents: React.FC = () => {
     }
   }, [searchTerm, agents]);
 
-  // Check if agent has active session
+  // ── Toast helper ─────────────────────────────────────────────────────────────
+  const showToast = (msg: string) => {
+    setToast(msg);
+    setTimeout(() => setToast(null), 3500);
+  };
+
+  // ── Session helpers ───────────────────────────────────────────────────────────
   const getAgentStatus = (agentId: string): { isActive: boolean; session?: ActiveSession } => {
     const session = activeSessions.find(s => s.agentId === agentId);
     if (session) {
-      // Consider active if updated in last 30 minutes
       const thirtyMinAgo = Date.now() - 30 * 60 * 1000;
       const isActive = session.updatedAt > thirtyMinAgo;
       return { isActive, session };
@@ -77,21 +156,114 @@ const Agents: React.FC = () => {
     return { isActive: false };
   };
 
-  // Get icon based on agent name or role
+  const getContextPct = (tokens: number): number =>
+    Math.min(100, Math.round((tokens / CONTEXT_WINDOW) * 100));
+
+  const getContextClass = (pct: number): string => {
+    if (pct >= 80) return 'ctx-critical';
+    if (pct >= 60) return 'ctx-warning';
+    return 'ctx-ok';
+  };
+
+  const formatTimeAgo = (ts: number): string => {
+    const diffMs = Date.now() - ts;
+    const diffMin = Math.floor(diffMs / 60000);
+    if (diffMin < 1) return 'just now';
+    if (diffMin < 60) return `${diffMin}m ago`;
+    const diffHr = Math.floor(diffMin / 60);
+    return `${diffHr}h ${diffMin % 60}m ago`;
+  };
+
+  // ── Kill session ──────────────────────────────────────────────────────────────
+  const confirmKill = (session: ActiveSession) => {
+    setKillConfirmSession(session);
+  };
+
+  const executeKill = async () => {
+    if (!killConfirmSession) return;
+    const cmd = `openclaw session kill ${killConfirmSession.sessionKey}`;
+    try {
+      await navigator.clipboard.writeText(cmd);
+    } catch {
+      // clipboard may fail in non-secure contexts
+    }
+    setKillConfirmSession(null);
+    showToast('Command copied — run in terminal to kill session');
+  };
+
+  // ── Spawn agent ───────────────────────────────────────────────────────────────
+  const handleSpawn = async () => {
+    if (!spawnForm.task.trim()) return;
+    const modelLabel = MODEL_OPTIONS.find(m => m.value === spawnForm.model)?.label || spawnForm.model;
+    const timeoutLabel = TIMEOUT_OPTIONS.find(t => t.value === spawnForm.timeout)?.label || spawnForm.timeout + 's';
+    const labelPart = spawnForm.label ? `\n  label: "${spawnForm.label}"` : '';
+    const cmd = `# sessions_spawn equivalent command:
+openclaw sessions spawn \\
+  --task "${spawnForm.task.replace(/"/g, '\\"')}" \\
+  --model "${spawnForm.model}" \\
+  --timeout ${spawnForm.timeout}${spawnForm.label ? ` \\\n  --label "${spawnForm.label}"` : ''}
+
+# Or via OpenClaw API:
+# model: ${modelLabel}
+# timeout: ${timeoutLabel}${labelPart}`;
+    setGeneratedCommand(cmd);
+    try {
+      await navigator.clipboard.writeText(cmd);
+    } catch {
+      // clipboard may fail
+    }
+    showToast('Command copied to clipboard');
+  };
+
+  const closeSpawnModal = () => {
+    setShowSpawnModal(false);
+    setGeneratedCommand('');
+    setSpawnForm({ task: '', model: 'anthropic/claude-sonnet-4-5', timeout: '3600', label: '' });
+  };
+
+  // ── Token burn rate ───────────────────────────────────────────────────────────
+  const getBurnRate = () => {
+    if (!usageData?.daily?.length) return null;
+    const today = new Date().toISOString().split('T')[0];
+    let entry = usageData.daily.find(d => d.date === today);
+    if (!entry) {
+      // Fall back to last available entry
+      entry = usageData.daily[usageData.daily.length - 1];
+    }
+    if (!entry) return null;
+
+    const now = new Date();
+    let hoursElapsed: number;
+    if (entry.date === today) {
+      hoursElapsed = now.getHours() + now.getMinutes() / 60;
+      if (hoursElapsed < 0.1) hoursElapsed = 0.1;
+    } else {
+      hoursElapsed = 24;
+    }
+    const tokPerHr = Math.round(entry.tokens / hoursElapsed);
+    return {
+      cost: entry.cost.toFixed(2),
+      tokens: entry.tokens,
+      tokPerHr,
+      date: entry.date,
+      isToday: entry.date === today,
+    };
+  };
+
+  // ── Display helpers ───────────────────────────────────────────────────────────
   const getAgentIcon = (name: string): string => {
-    const lowerName = name.toLowerCase();
-    if (lowerName.includes('coder') || lowerName.includes('developer')) return '👨‍💻';
-    if (lowerName.includes('designer') || lowerName.includes('morpheus')) return '🎨';
-    if (lowerName.includes('pm') || lowerName.includes('orchestrator')) return '📋';
-    if (lowerName.includes('test') || lowerName.includes('validator')) return '🧪';
-    if (lowerName.includes('idea')) return '💡';
-    if (lowerName.includes('scholarship')) return '🎓';
-    if (lowerName.includes('visual')) return '👁️';
-    if (lowerName.includes('candi')) return '🍬';
+    const n = name.toLowerCase();
+    if (n.includes('coder') || n.includes('developer')) return '👨‍💻';
+    if (n.includes('designer') || n.includes('morpheus')) return '🎨';
+    if (n.includes('pm') || n.includes('orchestrator')) return '📋';
+    if (n.includes('test') || n.includes('validator')) return '🧪';
+    if (n.includes('idea')) return '💡';
+    if (n.includes('scholarship')) return '🎓';
+    if (n.includes('visual')) return '👁️';
+    if (n.includes('candi')) return '🍬';
     return '🤖';
   };
 
-  // Format model name for display
   const formatModelName = (model: string): string => {
     if (model.includes('minimax')) return 'Minimax M2.1';
     if (model.includes('opus-4-6')) return 'Claude Opus 4.6';
@@ -103,17 +275,13 @@ const Agents: React.FC = () => {
     return model.split('/').pop() || model;
   };
 
-  // Get cost tier badge
   const getCostTier = (model: string): { label: string; className: string } => {
-    if (model.includes('minimax') || model.includes('haiku')) {
+    if (model.includes('minimax') || model.includes('haiku'))
       return { label: '💰 Low Cost', className: 'cost-low' };
-    }
-    if (model.includes('sonnet') || model.includes('gemini')) {
+    if (model.includes('sonnet') || model.includes('gemini'))
       return { label: '💵 Medium', className: 'cost-medium' };
-    }
-    if (model.includes('opus') || model.includes('gpt')) {
+    if (model.includes('opus') || model.includes('gpt'))
       return { label: '💎 Premium', className: 'cost-high' };
-    }
     return { label: '❓ Unknown', className: 'cost-unknown' };
   };
 
@@ -129,9 +297,19 @@ const Agents: React.FC = () => {
   }
 
   const activeCount = agents.filter(a => getAgentStatus(a.id).isActive).length;
+  const burnRate = getBurnRate();
 
   return (
     <div className="agents-page">
+      {/* ── Toast ─────────────────────────────────────────────────────────── */}
+      {toast && (
+        <div className="toast-notification">
+          <span className="toast-icon">✅</span>
+          {toast}
+        </div>
+      )}
+
+      {/* ── Page Header ───────────────────────────────────────────────────── */}
       <header className="page-header">
         <div>
           <h1 className="page-title gradient-text">Agents</h1>
@@ -139,8 +317,107 @@ const Agents: React.FC = () => {
             {agents.length} agents configured • {activeCount} active now
           </p>
         </div>
+        {/* Token Burn Rate */}
+        {burnRate && (
+          <div className="burn-rate-widget card">
+            <span className="burn-icon">🔥</span>
+            <div className="burn-stats">
+              <span className="burn-label">{burnRate.isToday ? 'Today' : burnRate.date}:</span>
+              <span className="burn-cost">${burnRate.cost}</span>
+              <span className="burn-sep">•</span>
+              <span className="burn-tokens">
+                {burnRate.tokens >= 1000
+                  ? `${(burnRate.tokens / 1000).toFixed(0)}K`
+                  : burnRate.tokens}{' '}
+                tokens
+              </span>
+              <span className="burn-sep">•</span>
+              <span className="burn-rate">
+                ~{burnRate.tokPerHr >= 1000
+                  ? `${(burnRate.tokPerHr / 1000).toFixed(1)}K`
+                  : burnRate.tokPerHr}{' '}
+                tok/hr
+              </span>
+            </div>
+          </div>
+        )}
       </header>
 
+      {/* ── Live Sessions Panel ────────────────────────────────────────────── */}
+      <section className="live-sessions-panel card">
+        <div className="live-sessions-header">
+          <div className="live-sessions-title">
+            <span className="live-icon">⚡</span>
+            <h2>Live Sessions</h2>
+            <span className="session-count-badge">{activeSessions.length}</span>
+          </div>
+          <button
+            className="spawn-btn"
+            onClick={() => setShowSpawnModal(true)}
+          >
+            <span>+</span> Spawn Agent
+          </button>
+        </div>
+
+        {activeSessions.length === 0 ? (
+          <div className="no-sessions">
+            <span>💤</span> No active sessions
+          </div>
+        ) : (
+          <div className="sessions-list">
+            {activeSessions.map((session) => {
+              const ctxPct = getContextPct(session.totalTokens);
+              const ctxClass = getContextClass(ctxPct);
+              const timeAgo = formatTimeAgo(session.updatedAt);
+
+              return (
+                <div key={session.sessionKey} className={`session-row ${ctxClass}`}>
+                  <div className="session-info">
+                    <span className="session-bot-icon">🤖</span>
+                    <div className="session-meta">
+                      <div className="session-top">
+                        <span className="session-name">{session.displayName}</span>
+                        <span className="session-model">{formatModelName(session.model)}</span>
+                        {ctxPct >= 80 && (
+                          <span className="ctx-warn-badge">⚠️ Context warning</span>
+                        )}
+                        {ctxPct >= 60 && ctxPct < 80 && (
+                          <span className="ctx-caution-badge">⚠️ Nearing limit</span>
+                        )}
+                      </div>
+                      <div className="session-ctx-bar-wrap">
+                        <div className="session-ctx-bar">
+                          <div
+                            className={`session-ctx-fill ${ctxClass}`}
+                            style={{ width: `${ctxPct}%` }}
+                          />
+                        </div>
+                        <span className="session-ctx-pct">{ctxPct}% ctx</span>
+                      </div>
+                      <div className="session-bottom">
+                        <span className="session-tokens">
+                          {(session.totalTokens / 1000).toFixed(0)}K tokens
+                        </span>
+                        <span className="session-sep">•</span>
+                        <span className="session-time">Active {timeAgo}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    className="kill-btn"
+                    onClick={() => confirmKill(session)}
+                    title={`Kill session ${session.displayName}`}
+                  >
+                    Kill
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
+
+      {/* ── Search ────────────────────────────────────────────────────────── */}
       <div className="search-section">
         <div className="search-box card">
           <span className="search-icon">🔍</span>
@@ -152,7 +429,7 @@ const Agents: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {searchTerm && (
-            <button 
+            <button
               className="search-clear"
               onClick={() => setSearchTerm('')}
               aria-label="Clear search"
@@ -166,15 +443,18 @@ const Agents: React.FC = () => {
         </div>
       </div>
 
-      {/* Workspace Activity Summary */}
+      {/* ── Workspace Activity ─────────────────────────────────────────────── */}
       <WorkspaceActivity />
 
+      {/* ── Agent Grid ─────────────────────────────────────────────────────── */}
       <section className="agents-grid-section">
         <div className="agents-grid">
           {filteredAgents.map((agent) => {
             const { isActive, session } = getAgentStatus(agent.id);
             const costTier = getCostTier(agent.model);
-            
+            const ctxPct = session ? getContextPct(session.totalTokens) : 0;
+            const ctxClass = getContextClass(ctxPct);
+
             return (
               <div key={agent.id} className={`agent-card card ${isActive ? 'agent-active' : ''}`}>
                 <div className="agent-header">
@@ -182,21 +462,32 @@ const Agents: React.FC = () => {
                     <span className="agent-icon">{getAgentIcon(agent.name)}</span>
                     <h3 className="agent-name">{agent.name}</h3>
                   </div>
-                  <span 
-                    className={`status-dot ${isActive ? 'online' : 'offline'}`} 
+                  <span
+                    className={`status-dot ${isActive ? 'online active-pulse' : 'offline'}`}
                     title={isActive ? 'Active' : 'Idle'}
-                  ></span>
+                  />
                 </div>
-                
-                <div className="agent-description">
-                  {agent.description}
-                </div>
+
+                <div className="agent-description">{agent.description}</div>
 
                 <div className="agent-model">
                   <span className="model-label">Model:</span>
                   <span className="model-value">{formatModelName(agent.model)}</span>
                   <span className={`cost-badge ${costTier.className}`}>{costTier.label}</span>
                 </div>
+
+                {/* Mini context bar when agent has active session */}
+                {isActive && session && (
+                  <div className="agent-ctx-bar-wrap">
+                    <div className="agent-ctx-bar">
+                      <div
+                        className={`agent-ctx-fill ${ctxClass}`}
+                        style={{ width: `${ctxPct}%` }}
+                      />
+                    </div>
+                    <span className="agent-ctx-label">{ctxPct}% ctx</span>
+                  </div>
+                )}
 
                 {agent.canSpawn && agent.canSpawn.length > 0 && (
                   <div className="agent-spawns">
@@ -222,6 +513,14 @@ const Agents: React.FC = () => {
                         <span className="stat-label">Tokens</span>
                       </div>
                     )}
+                    {isActive && session && (
+                      <div className="stat-item">
+                        <span className="stat-value stat-time">
+                          {formatTimeAgo(session.updatedAt)}
+                        </span>
+                        <span className="stat-label">Last seen</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -237,6 +536,119 @@ const Agents: React.FC = () => {
           </div>
         )}
       </section>
+
+      {/* ── Kill Confirmation Modal ────────────────────────────────────────── */}
+      {killConfirmSession && (
+        <div className="modal-overlay" onClick={() => setKillConfirmSession(null)}>
+          <div className="modal-card card" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>⚠️ Kill Session</h3>
+              <button className="modal-close" onClick={() => setKillConfirmSession(null)}>✕</button>
+            </div>
+            <div className="modal-body">
+              <p className="modal-desc">
+                Kill session <strong className="session-name-highlight">{killConfirmSession.displayName}</strong>?
+              </p>
+              <div className="kill-cmd-preview">
+                <code>openclaw session kill {killConfirmSession.sessionKey}</code>
+              </div>
+              <p className="modal-note">
+                This will copy the kill command to your clipboard. Run it in your terminal to terminate the session.
+              </p>
+            </div>
+            <div className="modal-footer">
+              <button className="btn-secondary" onClick={() => setKillConfirmSession(null)}>
+                Cancel
+              </button>
+              <button className="btn-kill" onClick={executeKill}>
+                📋 Copy &amp; Kill
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Spawn Agent Modal ──────────────────────────────────────────────── */}
+      {showSpawnModal && (
+        <div className="modal-overlay" onClick={closeSpawnModal}>
+          <div className="modal-card spawn-modal card" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>⚡ Spawn Agent</h3>
+              <button className="modal-close" onClick={closeSpawnModal}>✕</button>
+            </div>
+            <div className="modal-body">
+              <div className="form-field">
+                <label className="form-label">Task <span className="required">*</span></label>
+                <textarea
+                  className="form-textarea"
+                  placeholder="Describe what the agent should do..."
+                  value={spawnForm.task}
+                  onChange={e => setSpawnForm(f => ({ ...f, task: e.target.value }))}
+                  rows={4}
+                />
+              </div>
+
+              <div className="form-row">
+                <div className="form-field">
+                  <label className="form-label">Model</label>
+                  <select
+                    className="form-select"
+                    value={spawnForm.model}
+                    onChange={e => setSpawnForm(f => ({ ...f, model: e.target.value }))}
+                  >
+                    {MODEL_OPTIONS.map(o => (
+                      <option key={o.value} value={o.value}>{o.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-field">
+                  <label className="form-label">Timeout</label>
+                  <select
+                    className="form-select"
+                    value={spawnForm.timeout}
+                    onChange={e => setSpawnForm(f => ({ ...f, timeout: e.target.value }))}
+                  >
+                    {TIMEOUT_OPTIONS.map(o => (
+                      <option key={o.value} value={o.value}>{o.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-field">
+                <label className="form-label">Label <span className="optional">(optional)</span></label>
+                <input
+                  type="text"
+                  className="form-input"
+                  placeholder="agent label for tracking"
+                  value={spawnForm.label}
+                  onChange={e => setSpawnForm(f => ({ ...f, label: e.target.value }))}
+                />
+              </div>
+
+              {generatedCommand && (
+                <div className="spawn-cmd-output">
+                  <div className="spawn-cmd-label">Generated command:</div>
+                  <pre className="spawn-cmd-pre">{generatedCommand}</pre>
+                </div>
+              )}
+            </div>
+            <div className="modal-footer">
+              <button className="btn-secondary" onClick={closeSpawnModal}>
+                Cancel
+              </button>
+              <button
+                className="btn-spawn"
+                onClick={handleSpawn}
+                disabled={!spawnForm.task.trim()}
+              >
+                📋 Generate &amp; Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

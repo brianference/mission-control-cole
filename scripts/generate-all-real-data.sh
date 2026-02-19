@@ -78,20 +78,43 @@ for (const dir of skillDirs) {
     
     // Parse YAML frontmatter for description
     const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-    let description = 'Skill: ' + entry.name;
+    let description = '';
     
     if (frontmatterMatch) {
-      const descMatch = frontmatterMatch[1].match(/description:\s*['\"]?([^'\"\\n]+)/);
-      if (descMatch) {
-        description = descMatch[1].trim().substring(0, 200);
+      const fm = frontmatterMatch[1];
+      // Handle single-line: description: "text" or description: text
+      const singleLine = fm.match(/description:\s*['\"]?([^'\"\\n]{10,})/);
+      if (singleLine) {
+        description = singleLine[1].trim().substring(0, 300);
+      } else {
+        // Handle multi-line: description: |\n  text\n  text
+        const multiLine = fm.match(/description:\s*[|>]-?\s*\n((?:[ \t]+.+\n?)+)/);
+        if (multiLine) {
+          description = multiLine[1].replace(/^[ \t]+/gm, '').replace(/\n/g, ' ').trim().substring(0, 300);
+        }
       }
     }
+    
+    // Fallback: first substantial paragraph after frontmatter
+    if (!description || description.length < 15) {
+      const body = frontmatterMatch ? content.slice(content.indexOf('---', 3) + 3) : content;
+      const lines = body.split('\\n');
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (trimmed && !trimmed.startsWith('#') && !trimmed.startsWith('|') && !trimmed.startsWith('```') && trimmed.length > 20) {
+          description = trimmed.substring(0, 300);
+          break;
+        }
+      }
+    }
+    
+    if (!description) description = 'Skill: ' + entry.name;
     
     // Check for name in frontmatter
     let name = entry.name;
     if (frontmatterMatch) {
       const nameMatch = frontmatterMatch[1].match(/name:\s*['\"]?([^'\"\\n]+)/);
-      if (nameMatch) {
+      if (nameMatch && nameMatch[1].trim().length > 1) {
         name = nameMatch[1].trim();
       }
     }

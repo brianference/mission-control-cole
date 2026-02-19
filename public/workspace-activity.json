@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "date": "2026-02-18",
+    "label": "Today",
+    "commits": 1,
+    "files": 97,
+    "skills": [
+      "cron",
+      "fix"
+    ],
+    "projects": [],
+    "highlight": "batch: save 2026-02-18 learnings \u2014 Netlify ban, Tokyo ban, b"
+  },
+  {
+    "date": "2026-02-17",
+    "label": "Yesterday",
+    "commits": 5,
+    "files": 43,
+    "skills": [
+      "memory",
+      "deploy",
+      "cron",
+      "skill",
+      "telegram",
+      "docs",
+      "fix",
+      "model"
+    ],
+    "projects": [],
+    "highlight": "docs: fix outdated deployment patterns in audit [2026-02-17]"
+  },
+  {
+    "date": "2026-02-16",
+    "label": "Mon",
+    "commits": 5,
+    "files": 367,
+    "skills": [
+      "memory",
+      "skill",
+      "fix",
+      "git"
+    ],
+    "projects": [],
+    "highlight": "fix: remove large tar.gz file, add to gitignore"
+  },
+  {
+    "date": "2026-02-15",
+    "label": "Sun",
+    "commits": 8,
+    "files": 1237,
+    "skills": [
+      "memory",
+      "deploy",
+      "cron",
+      "agent",
+      "skill",
+      "fix",
+      "git"
+    ],
+    "projects": [],
+    "highlight": "Add Commandment #37: Deployment Proof - Percy + Screenshots "
+  },
+  {
+    "date": "2026-02-14",
+    "label": "Sat",
+    "commits": 1,
+    "files": 1,
+    "skills": [
+      "fix"
+    ],
+    "projects": [],
+    "highlight": "Fix icon mappings for Tokyo trip app"
+  },
+  {
+    "date": "2026-02-13",
+    "label": "Fri",
+    "commits": 0,
+    "files": 0,
+    "skills": [],
+    "projects": [],
+    "highlight": null
+  },
+  {
+    "date": "2026-02-12",
+    "label": "Thu",
+    "commits": 41,
+    "files": 116,
+    "skills": [
+      "memory",
+      "deploy",
+      "cron",
+      "agent",
+      "kanban",
+      "docs",
+      "fix",
+      "model",
+      "git"
+    ],
+    "projects": [],
+    "highlight": "Add Commandment #31: Never store API keys except in .env fil"
+  }
+]
