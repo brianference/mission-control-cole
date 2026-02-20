@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T19:13:54.394Z",
+  "lastUpdated": "2026-02-19T19:24:09.900Z",
   "jobs": [
     {
       "id": "e49d1ba0-1d49-4053-bf1e-6fd7cc33fe91",
@@ -124,10 +124,10 @@
       "scheduleKind": "every",
       "tz": "UTC",
       "model": "unknown",
-      "lastRunMs": 1771521326814,
-      "nextRunMs": 1771528523357,
+      "lastRunMs": 1771528553512,
+      "nextRunMs": 1771535723357,
       "lastStatus": "ok",
-      "lastDurationMs": 5,
+      "lastDurationMs": 1,
       "consecutiveErrors": 0,
       "agentId": "main"
     },

@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-02-19T19:02:41.068008+00:00",
+  "lastUpdated": "2026-02-19T19:23:32.474090+00:00",
   "counts": {
     "total": 130,
     "in-progress": 0,
-    "next-up": 11,
-    "done": 12,
+    "next-up": 3,
+    "done": 20,
     "blocked": 0,
     "backlog": 76
   },
   "colCounts": {
-    "done": 12,
+    "done": 20,
     "backlog": 76,
     "progress": 17,
     "unknown": 14,
-    "next-up": 11
+    "next-up": 3
   },
   "quickWins": [
     {
