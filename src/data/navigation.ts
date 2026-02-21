@@ -27,7 +27,7 @@ export const navigationItems: NavItem[] = [
     id: 'itinerary',
     label: 'Itinerary',
     icon: '🗾',
-    url: 'https://tokyo-itinerary.pages.dev',
+    url: 'https://tokyo-one.pages.dev',
     external: true,
   },
   {
