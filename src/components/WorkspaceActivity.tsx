@@ -24,7 +24,28 @@ const WorkspaceActivity: React.FC = () => {
         const response = await fetch('/workspace-activity.json');
         if (response.ok) {
           const data = await response.json();
-          setWeekData(data);
+          
+          // Transform workspace-activity.json format to ActivityDay format
+          // workspace-activity.json has: { week: [{date, commits, files}], topRepos: [...] }
+          const transformedData: ActivityDay[] = data.week?.map((day: any) => {
+            const dayDate = new Date(day.date);
+            const dayLabel = dayDate.toLocaleDateString('en-US', { weekday: 'short' });
+            
+            // Extract repo names as projects
+            const projects = data.topRepos?.slice(0, 3).map((r: any) => r.name) || [];
+            
+            return {
+              date: day.date,
+              label: dayLabel,
+              commits: day.commits || 0,
+              files: day.files || 0,
+              skills: [], // Skills would need to be added to generate-real-data.sh
+              projects: day.commits > 0 ? projects : [],
+              highlight: day.commits > 50 ? `${day.commits} commits!` : undefined
+            };
+          }) || [];
+          
+          setWeekData(transformedData);
           setError(null);
         } else {
           setWeekData([]);
