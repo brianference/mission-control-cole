@@ -1,43 +1,37 @@
 #!/bin/bash
-
-# Mission Control Dashboard - Deployment Script
-# Deploys to Cloudflare Pages (mission-control-cole.pages.dev)
+# MISSION CONTROL DEPLOYMENT - MANDATORY GATE ENFORCEMENT
+# NEVER deploy without running full verification workflow
 
 set -e
 
-echo "🚀 Mission Control Dashboard - Deployment Script"
-echo "=================================================="
-echo ""
+PROJECT_DIR="/root/.openclaw/workspace/mission-control-cole"
+DEPLOYED_URL="https://mission-control-cole.pages.dev"
+CF_PROJECT="mission-control-cole"
+MANDATORY_GATE="/root/.openclaw/workspace/DEPLOY.sh"
 
-# Check if wrangler is installed
-if ! command -v wrangler &> /dev/null; then
-    echo "⚠️  Wrangler not found. Installing..."
-    npm install -g wrangler
+echo ""
+echo "🔒 MISSION CONTROL DEPLOYMENT"
+echo "=============================="
+echo ""
+echo "This script enforces Commandment #45:"
+echo "NEVER claim 'deployed' without full verification."
+echo ""
+echo "The mandatory gate will:"
+echo "  1. Run tests (block if <85%)"
+echo "  2. Deploy to Cloudflare"
+echo "  3. Percy visual snapshot"
+echo "  4. Screenshots (3 platforms)"
+echo "  5. Send proof to Telegram"
+echo ""
+echo "Continue? (y/n)"
+read -p "> " answer
+
+if [ "$answer" != "y" ]; then
+  echo "❌ Deployment cancelled"
+  exit 1
 fi
 
-# Build the project
-echo "📦 Building project..."
-npm run build
+# Call mandatory gate
+bash "$MANDATORY_GATE" "$PROJECT_DIR" "$DEPLOYED_URL" "$CF_PROJECT"
 
-# Check if build was successful
-if [ ! -d "dist" ]; then
-    echo "❌ Build failed! dist/ directory not found."
-    exit 1
-fi
-
-echo "✅ Build successful!"
-echo ""
-
-# Deploy to Cloudflare Pages
-echo "🌐 Deploying to Cloudflare Pages..."
-echo "Project: mission-control-cole"
-echo "URL: https://mission-control-cole.pages.dev"
-echo ""
-
-# Deploy (will prompt for login if not authenticated)
-wrangler pages deploy dist --project-name=mission-control-cole
-
-echo ""
-echo "✅ Deployment complete!"
-echo "🌐 Live at: https://mission-control-cole.pages.dev"
-echo ""
+exit $?
