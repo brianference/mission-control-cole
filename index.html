@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary: #FF9500;
+  --primary-light: #FFB340;
+  --primary-bg: rgba(255, 149, 0, 0.1);
+  --accent: #5856D6;
+  --success: #34C759;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --text-muted: #636366;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.welcome {
+  font-size: 32px;
+  font-weight: 700;
+  color: #60A5FA;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.date {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.budget-display {
+  margin-bottom: 16px;
+}
+
+.budget-amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.budget-limit {
+  color: var(--text-muted);
+  font-size: 20px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--surface2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--success), var(--primary));
+  transition: width 0.3s;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stat-value.percentage {
+  color: var(--success);
+}
+
+.stat-value.remaining {
+  color: var(--success);
+}
+
+.optimization {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  border-left: 4px solid var(--success);
+}
+
+.optimization-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.savings-card {
+  background: rgba(52, 199, 89, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.savings-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.savings-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.optimization-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optimization-item {
+  font-size: 14px;
+  color: var(--text-dim);
+  padding-left: 20px;
+  position: relative;
+}
+
+.optimization-item:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #EF4444;
+  border-radius: 12px;
+  padding: 16px;
+  color: #EF4444;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.refresh-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 16px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F7;
+    --surface: #FFFFFF;
+    --surface2: #F2F2F7;
+    --text: #000000;
+    --text-dim: #3C3C43;
+    --text-muted: #8E8E93;
+    --border: #D1D1D6;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="icon">🚀</div>
+    <div class="header-title">Mission Control</div>
+  </div>
+  <div class="header-right">
+    <button class="icon-button" id="notificationBtn">🔔</button>
+    <button class="icon-button" id="settingsBtn">⚙️</button>
+    <button class="icon-button" id="userBtn" style="background: var(--accent);">B</button>
+  </div>
+</div>
+
+<h1 class="welcome">Welcome back, Brian</h1>
+<div class="date" id="currentDate">Loading...</div>
+
+<div id="errorContainer"></div>
+
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">💰 Budget 🔔</div>
+    <button class="icon-button" id="budgetSettings">⚙️</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab" data-period="daily">Daily</button>
+    <button class="tab active" data-period="weekly">Weekly</button>
+    <button class="tab" data-period="monthly">Monthly</button>
+  </div>
+
+  <div class="budget-display">
+    <div class="budget-amount">$<span id="currentUsage">0.00</span></div>
+    <div class="budget-limit">/ $<span id="budgetLimit">500</span></div>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label" id="periodLabel">THIS WEEK</div>
+      <div class="stat-value percentage" id="usagePercent">0%</div>
+    </div>
+    <div class="stat" style="text-align: right;">
+      <div class="stat-label">REMAINING</div>
+      <div class="stat-value remaining">$<span id="remaining">500.00</span></div>
+    </div>
+  </div>
+
+  <button class="refresh-button" id="refreshBtn">🔄 Refresh Usage</button>
+</div>
+
+<div class="optimization">
+  <div class="optimization-header">
+    Cost Optimization
+  </div>
+
+  <div class="savings-card">
+    <div class="savings-label">💰 MONTHLY SAVINGS</div>
+    <div class="savings-amount">$<span id="monthlySavings">0.00</span></div>
+  </div>
+
+  <div class="optimization-list" id="optimizationList">
+    <div class="optimization-item">Loading optimization data...</div>
+  </div>
+</div>
+
+<script>
+// Budget limits per period
+const BUDGETS = {
+  daily: 100,
+  weekly: 500,
+  monthly: 2000
+};
+
+let currentPeriod = 'weekly';
+let usageData = {
+  daily: 0,
+  weekly: 0,
+  monthly: 0
+};
+
+// Update date display
+function updateDate() {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+}
+
+// Fetch usage from OpenClaw API
+async function fetchUsage() {
+  try {
+    const response = await fetch('/api/usage', {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('openclaw_token') || ''}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`API returned ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // Parse usage data
+    if (data.current_period) {
+      usageData.daily = parseFloat(data.current_period.daily_cost || 0);
+      usageData.weekly = parseFloat(data.current_period.weekly_cost || 0);
+      usageData.monthly = parseFloat(data.current_period.monthly_cost || 0);
+    }
+
+    // Calculate monthly savings (comparing to GPT-4 pricing)
+    const monthlySavings = calculateSavings(data);
+    document.getElementById('monthlySavings').textContent = monthlySavings.toFixed(2);
+
+    updateDisplay();
+    updateOptimizations(data);
+    clearError();
+  } catch (error) {
+    console.error('Failed to fetch usage:', error);
+    showError('Unable to connect to OpenClaw API. Using demo mode.');
+    // Use demo data
+    usageData = {
+      daily: 2.45,
+      weekly: 12.30,
+      monthly: 48.75
+    };
+    updateDisplay();
+    updateOptimizationsMock();
+  }
+}
+
+function calculateSavings(data) {
+  // Estimate savings vs GPT-4 pricing
+  const sonnetTokens = data?.total_tokens || 0;
+  const gpt4Cost = (sonnetTokens / 1000) * 0.03; // GPT-4 ~$0.03/1K tokens
+  const actualCost = usageData.monthly;
+  return Math.max(0, gpt4Cost - actualCost);
+}
+
+function updateDisplay() {
+  const usage = usageData[currentPeriod];
+  const limit = BUDGETS[currentPeriod];
+  const percentage = Math.min((usage / limit) * 100, 100);
+  const remaining = Math.max(limit - usage, 0);
+
+  document.getElementById('currentUsage').textContent = usage.toFixed(2);
+  document.getElementById('budgetLimit').textContent = limit.toFixed(0);
+  document.getElementById('usagePercent').textContent = percentage.toFixed(0) + '%';
+  document.getElementById('remaining').textContent = remaining.toFixed(2);
+  document.getElementById('progressBar').style.width = percentage + '%';
+
+  // Update period label
+  const labels = {
+    daily: 'TODAY',
+    weekly: 'THIS WEEK',
+    monthly: 'THIS MONTH'
+  };
+  document.getElementById('periodLabel').textContent = labels[currentPeriod];
+}
+
+function updateOptimizations(data) {
+  const optimizations = [
+    `Using Claude Sonnet saves ~${(calculateSavings(data) * 0.4).toFixed(2)}/mo vs GPT-4`,
+    `Gemini Flash saves ~${(calculateSavings(data) * 0.3).toFixed(2)}/mo on simple tasks`,
+    `Efficient prompting reduces ~${(calculateSavings(data) * 0.2).toFixed(2)}/mo token waste`,
+    `Batch processing optimizes API calls`,
+    `Model routing based on task complexity`
+  ];
+
+  const listEl = document.getElementById('optimizationList');
+  listEl.innerHTML = optimizations.map(opt => 
+    `<div class="optimization-item">${opt}</div>`
+  ).join('');
+}
+
+function updateOptimizationsMock() {
+  const optimizations = [
+    'Using Claude Sonnet saves ~$291.80/mo vs GPT-4',
+    'Gemini Flash saves ~$218.85/mo on simple tasks',
+    'Efficient prompting reduces ~$145.90/mo token waste',
+    'Batch processing optimizes API calls',
+    'Model routing based on task complexity'
+  ];
+
+  document.getElementById('monthlySavings').textContent = '729.50';
+  
+  const listEl = document.getElementById('optimizationList');
+  listEl.innerHTML = optimizations.map(opt => 
+    `<div class="optimization-item">${opt}</div>`
+  ).join('');
+}
+
+function showError(message) {
+  const errorContainer = document.getElementById('errorContainer');
+  errorContainer.innerHTML = `<div class="error">${message}</div>`;
+}
+
+function clearError() {
+  document.getElementById('errorContainer').innerHTML = '';
+}
+
+// Tab switching
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentPeriod = tab.dataset.period;
+    updateDisplay();
+  });
+});
+
+// Refresh button
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  fetchUsage();
+});
+
+// Icon button actions
+document.getElementById('notificationBtn').addEventListener('click', () => {
+  alert('Notifications: No new alerts');
+});
+
+document.getElementById('settingsBtn').addEventListener('click', () => {
+  alert('Settings: Budget limits can be configured here');
+});
+
+document.getElementById('budgetSettings').addEventListener('click', () => {
+  const newLimit = prompt(`Set ${currentPeriod} budget limit:`, BUDGETS[currentPeriod]);
+  if (newLimit && !isNaN(newLimit)) {
+    BUDGETS[currentPeriod] = parseFloat(newLimit);
+    updateDisplay();
+  }
+});
+
+// Initialize
+updateDate();
+fetchUsage();
+
+// Auto-refresh every 5 minutes
+setInterval(fetchUsage, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>
