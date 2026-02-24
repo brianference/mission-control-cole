@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 710,
-    "totalRequests": 36380
+    "totalSessions": 715,
+    "totalRequests": 36466
   },
   "daily": [
     {
@@ -122,17 +122,17 @@
     },
     {
       "date": "2026-02-24",
-      "cost": 9.467979300000001,
-      "tokens": 10430974,
-      "requests": 141
+      "cost": 16.060492999999997,
+      "tokens": 16394156,
+      "requests": 227
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 1589.6129542499968,
-      "tokens": 2237823392,
-      "requests": 23968
+      "cost": 1596.2054679499984,
+      "tokens": 2243786574,
+      "requests": 24053
     },
     {
       "name": "OpenAI",
@@ -144,15 +144,15 @@
       "name": "Other",
       "cost": 64.87873807780987,
       "tokens": 746057172,
-      "requests": 10917
+      "requests": 10918
     }
   ],
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 1288.7345279999981,
-      "tokens": 1856223836,
-      "requests": 19648
+      "cost": 1295.315900699998,
+      "tokens": 1862170120,
+      "requests": 19732
     },
     {
       "name": "claude-opus-4-5",
@@ -180,9 +180,9 @@
     },
     {
       "name": "claude-opus-4-6",
-      "cost": 21.60064225,
-      "tokens": 12139781,
-      "requests": 224
+      "cost": 21.611783250000002,
+      "tokens": 12156679,
+      "requests": 225
     },
     {
       "name": "gemini-2.5-flash",
@@ -206,7 +206,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 1423
+      "requests": 1424
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -248,9 +248,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 1472.450766313103,
-      "tokens": 2114074742,
-      "requests": 24838
+      "cost": 1479.0432800131048,
+      "tokens": 2120037924,
+      "requests": 24924
     },
     {
       "name": "planning",
@@ -271,5 +271,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-24T03:59:47.554Z"
+  "lastUpdated": "2026-02-24T05:00:04.929Z"
 }
