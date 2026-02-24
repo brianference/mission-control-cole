@@ -24,12 +24,12 @@
     "usageCount": 117
   },
   {
-    "id": "phone-calls-bland",
-    "name": "phone-calls",
-    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
-    "type": "communication",
+    "id": "cloudflare-pages-deploy",
+    "name": "cloudflare-pages-deploy",
+    "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
+    "type": "deployment",
     "source": "workspace",
-    "usageCount": 110
+    "usageCount": 115
   },
   {
     "id": "travel-restaurants",
@@ -48,20 +48,28 @@
     "usageCount": 108
   },
   {
+    "id": "phone-calls-bland",
+    "name": "phone-calls",
+    "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
+    "type": "communication",
+    "source": "workspace",
+    "usageCount": 105
+  },
+  {
     "id": "memory-optimization",
     "name": "memory-optimization",
     "description": "Consolidate, optimize, and deduplicate all memory systems \u2014 Supermemory, mem0, MEMORY.md, and daily files \u2014 so they work together efficiently. Removes duplicates, fixes contradictions, and improves searchability. Trigger words: optimize memory, consolidate memory, memory cleanup, deduplicate, clean ",
     "type": "memory",
     "source": "workspace",
-    "usageCount": 93
+    "usageCount": 94
   },
   {
-    "id": "cloudflare-pages-deploy",
-    "name": "cloudflare-pages-deploy",
-    "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
-    "type": "deployment",
+    "id": "intel-monitor",
+    "name": "intel-monitor",
+    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
+    "type": "utility",
     "source": "workspace",
-    "usageCount": 92
+    "usageCount": 87
   },
   {
     "id": "coding-agent",
@@ -101,14 +109,6 @@
     "description": "The agent gives you the ability to extract data from tiktok through different commands.",
     "type": "social",
     "source": "workspace",
-    "usageCount": 64
-  },
-  {
-    "id": "places-lookup",
-    "name": "places-lookup",
-    "description": "Universal place search for ANY type of location \u2014 grocery stores, gas stations, restaurants, pharmacies, parks, attractions, coffee shops, salons, anything. Always includes Google Maps driving directions links. Uses Google Places API (New) as primary source with optional TripAdvisor enrichment for r",
-    "type": "search",
-    "source": "workspace",
     "usageCount": 63
   },
   {
@@ -120,6 +120,22 @@
     "usageCount": 61
   },
   {
+    "id": "security-sentinel",
+    "name": "security-sentinel",
+    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
+    "type": "security",
+    "source": "workspace",
+    "usageCount": 61
+  },
+  {
+    "id": "telegram-screenshot-delivery",
+    "name": "telegram-screenshot-delivery",
+    "description": "Reliably deliver screenshots to Telegram using correct path format. Supports ImageMagick, Playwright, and Percy integration. Use when sending screenshots, mockups, or visual proof to Telegram. Trigger words: telegram screenshot, send image to telegram, telegram delivery, screenshot to telegram, tele",
+    "type": "communication",
+    "source": "workspace",
+    "usageCount": 60
+  },
+  {
     "id": "vibe-coding-patterns",
     "name": "vibe-coding-patterns",
     "description": "Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Triggers on mentions of security audit, code review, production ready, best practices, hostile audit.",
@@ -128,28 +144,20 @@
     "usageCount": 60
   },
   {
-    "id": "security-sentinel",
-    "name": "security-sentinel",
-    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
-    "type": "security",
-    "source": "workspace",
-    "usageCount": 58
-  },
-  {
-    "id": "telegram-screenshot-delivery",
-    "name": "telegram-screenshot-delivery",
-    "description": "Reliably deliver screenshots to Telegram using correct path format. Supports ImageMagick, Playwright, and Percy integration. Use when sending screenshots, mockups, or visual proof to Telegram. Trigger words: telegram screenshot, send image to telegram, telegram delivery, screenshot to telegram, tele",
-    "type": "communication",
-    "source": "workspace",
-    "usageCount": 58
-  },
-  {
     "id": "clawhub-security",
     "name": "clawhub-security",
     "description": "Security check for ClawHub skills using Clawdex API before installation. ALWAYS scan with Clawdex before installing any ClawHub skill. Blocks malicious skills, warns on unknown ones. Trigger words: install skill, clawhub install, skill security, clawdex scan, safe install.",
     "type": "security",
     "source": "workspace",
     "usageCount": 57
+  },
+  {
+    "id": "coder-agent",
+    "name": "coder-agent",
+    "description": "Spawn and manage autonomous coding agents via sessions_spawn. Inherits capabilities from deprecated tmux workflows: task discovery, error detection, quality gates, 3-platform testing, and result logging. Use for autonomous coding, overnight builds, and any background development work.",
+    "type": "agent",
+    "source": "workspace",
+    "usageCount": 55
   },
   {
     "id": "flight-search",
@@ -176,10 +184,26 @@
     "usageCount": 54
   },
   {
+    "id": "scholarship-research",
+    "name": "scholarship-research",
+    "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholarship lists. Enforces strict criteria - no duplicates, direct application links only (not aggregators",
+    "type": "search",
+    "source": "workspace",
+    "usageCount": 54
+  },
+  {
     "id": "calendar",
     "name": "calendar",
     "description": "Calendar management and scheduling. Create events, manage meetings, and sync across calendar providers.",
     "type": "communication",
+    "source": "workspace",
+    "usageCount": 53
+  },
+  {
+    "id": "places-lookup",
+    "name": "places-lookup",
+    "description": "Universal place search for ANY type of location \u2014 grocery stores, gas stations, restaurants, pharmacies, parks, attractions, coffee shops, salons, anything. Always includes Google Maps driving directions links. Uses Google Places API (New) as primary source with optional TripAdvisor enrichment for r",
+    "type": "search",
     "source": "workspace",
     "usageCount": 53
   },
@@ -208,30 +232,6 @@
     "usageCount": 53
   },
   {
-    "id": "intel-monitor",
-    "name": "intel-monitor",
-    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 52
-  },
-  {
-    "id": "scholarship-research",
-    "name": "scholarship-research",
-    "description": "Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholarship lists. Enforces strict criteria - no duplicates, direct application links only (not aggregators",
-    "type": "search",
-    "source": "workspace",
-    "usageCount": 52
-  },
-  {
-    "id": "coder-agent",
-    "name": "coder-agent",
-    "description": "Spawn and manage autonomous coding agents via sessions_spawn. Inherits capabilities from deprecated tmux workflows: task discovery, error detection, quality gates, 3-platform testing, and result logging. Use for autonomous coding, overnight builds, and any background development work.",
-    "type": "agent",
-    "source": "workspace",
-    "usageCount": 51
-  },
-  {
     "id": "ralph-loop-agent",
     "name": "ralph-loop",
     "description": "Guide OpenClaw agents to execute Ralph Wiggum loops using sessions_spawn or exec/process tools. Agent orchestrates coding agents (Codex, OpenCode, Goose) with proper TTY support. Plans/builds code via PROMPT.md + AGENTS.md, SPECS and IMPLEMENTATION_PLAN.md. Includes PLANNING vs BUILDING modes, backp",
@@ -246,14 +246,6 @@
     "type": "search",
     "source": "workspace",
     "usageCount": 50
-  },
-  {
-    "id": "secret-keys",
-    "name": "secret-keys",
-    "description": "Secure handling of API keys, secrets, and credentials. Never expose keys in chat \u2014 store in keys.env, reference by variable name only. Covers storage, rotation, Supabase cloud sync, and git hygiene. Trigger words: API key, secret, credentials, keys.env, token, bearer token, secret management, key ro",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 47
   },
   {
     "id": "spots",
@@ -272,12 +264,12 @@
     "usageCount": 43
   },
   {
-    "id": "deployment-proof",
-    "name": "deployment-proof",
-    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
-    "type": "deployment",
+    "id": "secret-keys",
+    "name": "secret-keys",
+    "description": "Secure handling of API keys, secrets, and credentials. Never expose keys in chat \u2014 store in keys.env, reference by variable name only. Covers storage, rotation, Supabase cloud sync, and git hygiene. Trigger words: API key, secret, credentials, keys.env, token, bearer token, secret management, key ro",
+    "type": "utility",
     "source": "workspace",
-    "usageCount": 36
+    "usageCount": 39
   },
   {
     "id": "memory-management",
@@ -320,14 +312,6 @@
     "usageCount": 29
   },
   {
-    "id": "screenshot-proof-workflow",
-    "name": "screenshot-proof-workflow",
-    "description": "Mandatory workflow for delivering screenshot proof to Telegram before claiming any fix is \"deployed\" or \"working\". Enforced after multiple violations where agents claimed fixes worked without screenshots, and bugs were still present. Use when: reporting test results, deployment verifications, bug fi",
-    "type": "testing",
-    "source": "workspace",
-    "usageCount": 28
-  },
-  {
     "id": "openclaw-release-monitor",
     "name": "openclaw-release-monitor",
     "description": "Monitor OpenClaw releases and updates via GitHub API. Checks for new versions, reports what changed, and triggers update workflow. Trigger words: openclaw update, new version, openclaw release, check for updates, openclaw monitor.",
@@ -348,6 +332,14 @@
     "name": "autonomous-work",
     "description": "Autonomous overnight work system using Ralph Loop and sessions_spawn. Enables coding work while you sleep \u2014 tasks are picked from ACTIVE queue, executed via sessions_spawn, monitored until complete, and results logged. Trigger words: overnight work, autonomous, ralph loop, background coding, work wh",
     "type": "agent",
+    "source": "workspace",
+    "usageCount": 24
+  },
+  {
+    "id": "screenshot-proof-workflow",
+    "name": "screenshot-proof-workflow",
+    "description": "Mandatory workflow for delivering screenshot proof to Telegram before claiming any fix is \"deployed\" or \"working\". Enforced after multiple violations where agents claimed fixes worked without screenshots, and bugs were still present. Use when: reporting test results, deployment verifications, bug fi",
+    "type": "testing",
     "source": "workspace",
     "usageCount": 24
   },
@@ -384,14 +376,6 @@
     "usageCount": 20
   },
   {
-    "id": "hostile-audit",
-    "name": "hostile-audit",
-    "description": "Systematic hostile code review methodology to catch production bugs, security issues, and authority leakage before deployment. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems. Use when reviewing code, preparing for production, securi",
-    "type": "security",
-    "source": "workspace",
-    "usageCount": 20
-  },
-  {
     "id": "screenshot-fallback",
     "name": "screenshot-fallback",
     "description": "Screenshot capability with Percy (primary) and Playwright (secondary) fallback. Use when visual proof of deployment or UI state is needed. Percy for visual regression, Playwright for direct screenshots. Trigger words: screenshot, percy screenshot, playwright screenshot, visual proof, screenshot fall",
@@ -408,18 +392,18 @@
     "usageCount": 20
   },
   {
-    "id": "scholarship-browser-agent",
-    "name": "scholarship-browser-agent",
-    "description": "Browser automation for scholarship research \u2014 navigates scholarship portals, verifies eligibility criteria, extracts deadlines, confirms no-fee status, and takes screenshots. Use when finding scholarships for students (especially accounting/finance). Trigger words: scholarship, scholarship search, f",
-    "type": "agent",
+    "id": "hostile-audit",
+    "name": "hostile-audit",
+    "description": "Systematic hostile code review methodology to catch production bugs, security issues, and authority leakage before deployment. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems. Use when reviewing code, preparing for production, securi",
+    "type": "security",
     "source": "workspace",
     "usageCount": 19
   },
   {
-    "id": "tiktok-browser-scanner",
-    "name": "tiktok-browser-scanner",
-    "description": "Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X. Finds videos from Erica Kirk, Tyler Bowyer, Charlie Kirk critics. Use when searching TikTok for political content to repost. Trigger words: TikTok scanner, find TikTok videos, TikTok browser, scan TikTok, ",
-    "type": "social",
+    "id": "scholarship-browser-agent",
+    "name": "scholarship-browser-agent",
+    "description": "Browser automation for scholarship research \u2014 navigates scholarship portals, verifies eligibility criteria, extracts deadlines, confirms no-fee status, and takes screenshots. Use when finding scholarships for students (especially accounting/finance). Trigger words: scholarship, scholarship search, f",
+    "type": "agent",
     "source": "workspace",
     "usageCount": 19
   },
@@ -444,6 +428,14 @@
     "name": "senior-devops",
     "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementi",
     "type": "deployment",
+    "source": "workspace",
+    "usageCount": 18
+  },
+  {
+    "id": "tiktok-browser-scanner",
+    "name": "tiktok-browser-scanner",
+    "description": "Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X. Finds videos from Erica Kirk, Tyler Bowyer, Charlie Kirk critics. Use when searching TikTok for political content to repost. Trigger words: TikTok scanner, find TikTok videos, TikTok browser, scan TikTok, ",
+    "type": "social",
     "source": "workspace",
     "usageCount": 18
   },
@@ -520,6 +512,14 @@
     "usageCount": 14
   },
   {
+    "id": "deployment-proof",
+    "name": "deployment-proof",
+    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
+    "type": "deployment",
+    "source": "workspace",
+    "usageCount": 12
+  },
+  {
     "id": "safe-diagnostics",
     "name": "safe-diagnostics",
     "description": "Debug config and API issues WITHOUT exposing credentials in chat. Use safe patterns to check API keys, verify configs, and diagnose problems without leaking secrets. Trigger words: debug API, check key, diagnose config, API not working, credentials safe, debug without exposing, safe debug.",
@@ -528,18 +528,18 @@
     "usageCount": 12
   },
   {
+    "id": "vercel-deploy",
+    "name": "vercel-deploy",
+    "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports production and preview deployments. Practical infrastructure operations - no \"AI will build your app\" magi",
+    "type": "deployment",
+    "source": "workspace",
+    "usageCount": 12
+  },
+  {
     "id": "expo-mobile-app",
     "name": "expo-mobile-app",
     "description": "Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.",
     "type": "development",
-    "source": "workspace",
-    "usageCount": 11
-  },
-  {
-    "id": "screenshot-delivery",
-    "name": "screenshot-delivery",
-    "description": "Generate and deliver screenshots and mockups via ImageMagick and Playwright to Telegram. Use when user asks for screenshots, UI previews, or visual mockups. ImageMagick for design mockups, Playwright for live web screenshots. Trigger words: take screenshot, send screenshot, show me, visual preview, ",
-    "type": "testing",
     "source": "workspace",
     "usageCount": 11
   },
@@ -584,6 +584,22 @@
     "usageCount": 8
   },
   {
+    "id": "reaction-trigger",
+    "name": "reaction-trigger",
+    "description": "Routes Telegram emoji reactions on intel-monitor alerts into the SwordTruth",
+    "type": "development",
+    "source": "workspace",
+    "usageCount": 7
+  },
+  {
+    "id": "screenshot-delivery",
+    "name": "screenshot-delivery",
+    "description": "Generate and deliver screenshots and mockups via ImageMagick and Playwright to Telegram. Use when user asks for screenshots, UI previews, or visual mockups. ImageMagick for design mockups, Playwright for live web screenshots. Trigger words: take screenshot, send screenshot, show me, visual preview, ",
+    "type": "testing",
+    "source": "workspace",
+    "usageCount": 7
+  },
+  {
     "id": "accessibility-toolkit",
     "name": "accessibility-toolkit",
     "description": "Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.",
@@ -608,12 +624,12 @@
     "usageCount": 6
   },
   {
-    "id": "bird",
-    "name": "bird",
-    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
-    "type": "social",
+    "id": "serpapi",
+    "name": "serpapi",
+    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
+    "type": "search",
     "source": "workspace",
-    "usageCount": 5
+    "usageCount": 6
   },
   {
     "id": "percy-visual-testing",
@@ -640,18 +656,18 @@
     "usageCount": 5
   },
   {
-    "id": "testing-agent",
-    "name": "testing-agent",
-    "description": "The Testing Agent automatically generates comprehensive UX test cases for features, ensuring consistent test coverage across all projects with minimal manual effort.",
-    "type": "agent",
-    "source": "workspace",
-    "usageCount": 5
-  },
-  {
     "id": "atl-mobile",
     "name": "atl-browser",
     "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
     "type": "utility",
+    "source": "workspace",
+    "usageCount": 4
+  },
+  {
+    "id": "bird",
+    "name": "bird",
+    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "type": "social",
     "source": "workspace",
     "usageCount": 4
   },
@@ -712,10 +728,10 @@
     "usageCount": 3
   },
   {
-    "id": "serpapi",
-    "name": "serpapi",
-    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
-    "type": "search",
+    "id": "testing-agent",
+    "name": "testing-agent",
+    "description": "The Testing Agent automatically generates comprehensive UX test cases for features, ensuring consistent test coverage across all projects with minimal manual effort.",
+    "type": "agent",
     "source": "workspace",
     "usageCount": 3
   },
@@ -1016,14 +1032,6 @@
     "usageCount": 0
   },
   {
-    "id": "food-order",
-    "name": "food-order",
-    "description": "Reorder Foodora orders + track ETA/status with ordercli. Never confirm without explicit user approval. Triggers: order food, reorder, track ETA.",
-    "type": "utility",
-    "source": "openclaw",
-    "usageCount": 0
-  },
-  {
     "id": "gemini",
     "name": "gemini",
     "description": "Gemini CLI for one-shot Q&A, summaries, and generation.",
@@ -1224,14 +1232,6 @@
     "usageCount": 0
   },
   {
-    "id": "reaction-trigger",
-    "name": "reaction-trigger",
-    "description": "Routes Telegram emoji reactions on intel-monitor alerts into the SwordTruth",
-    "type": "development",
-    "source": "workspace",
-    "usageCount": 0
-  },
-  {
     "id": "sag",
     "name": "sag",
     "description": "ElevenLabs text-to-speech with mac-style say UX.",
@@ -1328,14 +1328,6 @@
     "usageCount": 0
   },
   {
-    "id": "vercel-deploy",
-    "name": "vercel-deploy",
-    "description": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports production and preview deployments. Practical infrastructure operations - no \"AI will build your app\" magi",
-    "type": "deployment",
-    "source": "workspace",
-    "usageCount": 0
-  },
-  {
     "id": "video-agent",
     "name": "video-agent",
     "description": "Generate AI avatar videos with HeyGen's Video Agent API. One-shot prompt to video generation.",
@@ -1373,6 +1365,14 @@
     "description": "Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X API credentials (API Key, API Secret, Access Token, Access Token Secret).",
     "type": "social",
     "source": "workspace",
+    "usageCount": 0
+  },
+  {
+    "id": "xurl",
+    "name": "xurl",
+    "description": "A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.",
+    "type": "utility",
+    "source": "openclaw",
     "usageCount": 0
   }
 ]

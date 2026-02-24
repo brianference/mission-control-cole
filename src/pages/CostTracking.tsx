@@ -559,8 +559,37 @@ const CostTracking: React.FC = () => {
                 <span className="text-xs text-gray-400 ml-2">What should I optimize next?</span>
               </h2>
               
+              {/* Provider cost comparison chart */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Cost Breakdown by Provider</h3>
+                <BarChart data={providers.slice(0, 5)}>
+                  <div className="chart-title">Provider Costs</div>
+                  {providers.slice(0, 5).map((provider, index) => {
+                    const shareOfTotal = (provider.cost / summary.monthTotal) * 100;
+                    return (
+                      <div key={provider.name} className="bar-row">
+                        <div className="bar-label">
+                          <span className="bar-label-text">{provider.name}</span>
+                          <span className="bar-label-value">${provider.cost.toFixed(2)} ({shareOfTotal.toFixed(1)}%)</span>
+                        </div>
+                        <div className="bar-container">
+                          <div 
+                            className="bar-fill"
+                            style={{ 
+                              width: `${shareOfTotal}%`,
+                              backgroundColor: COLORS[index % COLORS.length]
+                            }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </BarChart>
+              </div>
+              
               {/* Provider efficiency metrics */}
               <div className="space-y-3 mb-4">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3">Detailed Metrics</h3>
                 {providers.map((provider, index) => {
                   const costPerRequest = provider.cost / provider.requests;
                   const costPer1KTokens = (provider.cost / provider.tokens) * 1000;
