@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 988,
-    "totalRequests": 38040
+    "totalSessions": 992,
+    "totalRequests": 38058
   },
   "daily": [
     {
@@ -122,17 +122,17 @@
     },
     {
       "date": "2026-02-24",
-      "cost": 67.29570995000003,
-      "tokens": 89298887,
-      "requests": 1801
+      "cost": 67.94632085000002,
+      "tokens": 89802710,
+      "requests": 1819
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 1647.4406848999993,
-      "tokens": 2316691305,
-      "requests": 25608
+      "cost": 1648.0912957999992,
+      "tokens": 2317195128,
+      "requests": 25625
     },
     {
       "name": "OpenAI",
@@ -144,15 +144,15 @@
       "name": "Other",
       "cost": 64.87873807780987,
       "tokens": 746057172,
-      "requests": 10937
+      "requests": 10938
     }
   ],
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 1346.5511176499938,
-      "tokens": 1935074851,
-      "requests": 21287
+      "cost": 1347.2017285499937,
+      "tokens": 1935578674,
+      "requests": 21304
     },
     {
       "name": "claude-opus-4-5",
@@ -206,7 +206,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 1443
+      "requests": 1444
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -248,9 +248,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 1530.2784969631066,
-      "tokens": 2192942655,
-      "requests": 26498
+      "cost": 1530.9291078631065,
+      "tokens": 2193446478,
+      "requests": 26516
     },
     {
       "name": "planning",
@@ -271,5 +271,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-24T15:10:12.403Z"
+  "lastUpdated": "2026-02-24T15:16:14.910Z"
 }
