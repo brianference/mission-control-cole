@@ -159,21 +159,17 @@ function aggregateData(sessions) {
       dailyStats[dayKey].tokens += msg.usage.total;
       dailyStats[dayKey].requests += 1;
 
-      // Weekly (last 7 days) - DISABLED: Use OpenClaw native usage API instead
-      // This script counts rolling 8 days (0-7) and doesn't know about billing resets
-      // if (daysAgo <= 7) {
-      //   weeklyTotal.cost += msg.cost.total;
-      //   weeklyTotal.tokens += msg.usage.total;
-      // }
+      // Weekly (last 7 days)
+      if (daysAgo <= 7) {
+        weeklyTotal.cost += msg.cost.total;
+        weeklyTotal.tokens += msg.usage.total;
+      }
 
-      // Monthly (last 30 days) - DISABLED: Inaccurate (2026-02-23)
-      // Brian reports both week AND month are not accurate
-      // This script reads from session JSONL files which may not be the source of truth
-      // Need to use OpenClaw's actual billing/usage API instead
-      // if (daysAgo <= 30) {
-      //   monthlyTotal.cost += msg.cost.total;
-      //   monthlyTotal.tokens += msg.usage.total;
-      // }
+      // Monthly (last 30 days)
+      if (daysAgo <= 30) {
+        monthlyTotal.cost += msg.cost.total;
+        monthlyTotal.tokens += msg.usage.total;
+      }
 
       // Provider breakdown
       const provider = msg.provider === 'anthropic' ? 'Anthropic' : 

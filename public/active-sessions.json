@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-19T19:24:09.968Z",
+  "lastUpdated": "2026-02-23T05:14:03.238Z",
   "sessions": [
     {
       "agentId": "main",
-      "sessionKey": "a73f8242-dea5-4a41-82d8-3b965459e10a",
+      "sessionKey": "85d22675-2274-40cb-9f35-3c56e342c7c0",
       "displayName": "main",
       "model": "claude-sonnet-4-5",
-      "totalTokens": 5419,
-      "updatedAt": 1771529048958.9065,
+      "totalTokens": 4544,
+      "updatedAt": 1771823642198.6692,
       "status": "running",
-      "messageCount": 118
+      "messageCount": 413
     }
   ]
 }

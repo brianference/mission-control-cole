@@ -1,72 +1,72 @@
 [
   {
-    "timestamp": "2026-02-22T06:45:26.790454+00:00",
+    "timestamp": "2026-02-22T19:03:33.248837+00:00",
     "level": "info",
     "app": "gateway",
     "message": "Gateway started on port 18789"
   },
   {
-    "timestamp": "2026-02-22T06:50:26.790454+00:00",
+    "timestamp": "2026-02-22T19:08:33.248837+00:00",
     "level": "info",
     "app": "agent",
     "message": "Session initialized: agent:main:telegram:group:-1003886382452"
   },
   {
-    "timestamp": "2026-02-22T07:15:26.790454+00:00",
+    "timestamp": "2026-02-22T19:33:33.248837+00:00",
     "level": "info",
     "app": "cron",
     "message": "Morning Briefing triggered (07:00 MST)"
   },
   {
-    "timestamp": "2026-02-22T07:45:26.790454+00:00",
+    "timestamp": "2026-02-22T20:03:33.248837+00:00",
     "level": "info",
     "app": "cron",
     "message": "PM Orchestrator check triggered"
   },
   {
-    "timestamp": "2026-02-22T08:00:26.790454+00:00",
+    "timestamp": "2026-02-22T20:18:33.248837+00:00",
     "level": "info",
     "app": "agent",
     "message": "Subagent coder spawned for task US-166"
   },
   {
-    "timestamp": "2026-02-22T08:15:26.790454+00:00",
+    "timestamp": "2026-02-22T20:33:33.248837+00:00",
     "level": "info",
     "app": "deploy",
     "message": "Cloudflare Pages deploy triggered: mission-control-cole"
   },
   {
-    "timestamp": "2026-02-22T08:20:26.790454+00:00",
+    "timestamp": "2026-02-22T20:38:33.248837+00:00",
     "level": "info",
     "app": "deploy",
     "message": "Deploy complete: https://mission-control-cole.pages.dev"
   },
   {
-    "timestamp": "2026-02-22T08:25:26.790454+00:00",
+    "timestamp": "2026-02-22T20:43:33.248837+00:00",
     "level": "warn",
     "app": "agent",
     "message": "Token usage at 75% of daily budget"
   },
   {
-    "timestamp": "2026-02-22T08:30:26.790454+00:00",
+    "timestamp": "2026-02-22T20:48:33.248837+00:00",
     "level": "info",
     "app": "gateway",
     "message": "WebSocket connection established"
   },
   {
-    "timestamp": "2026-02-22T08:35:26.790454+00:00",
+    "timestamp": "2026-02-22T20:53:33.248837+00:00",
     "level": "info",
     "app": "cron",
     "message": "Supermemory backup completed"
   },
   {
-    "timestamp": "2026-02-22T08:40:26.790454+00:00",
+    "timestamp": "2026-02-22T20:58:33.248837+00:00",
     "level": "info",
     "app": "agent",
     "message": "Task US-166 completed successfully"
   },
   {
-    "timestamp": "2026-02-22T08:45:26.790454+00:00",
+    "timestamp": "2026-02-22T21:03:33.248837+00:00",
     "level": "info",
     "app": "system",
     "message": "Real data generation script executed"

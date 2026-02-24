@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist --project-name=mission-control-cole",
-    "prebuild": "python3 scripts/gen-skills.py && node scripts/gen-crons.js && node scripts/gen-sessions.js"
+    "prebuild": "python3 scripts/gen-skills.py && node scripts/gen-crons.js && node scripts/gen-sessions.js",
+    "test": "playwright test",
+    "test:percy": "npx percy exec -- node tests/percy-full-suite.js",
+    "test:percy:local": "BASE_URL=http://localhost:5173 node tests/percy-full-suite.js"
   },
   "dependencies": {
     "framer-motion": "^12.34.0",

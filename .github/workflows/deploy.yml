@@ -77,23 +77,14 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
 
-      # ── STEP 3: Percy Visual Regression ──────────────────────────────────
-      - name: Percy snapshot
+      # ── STEP 3: Percy Visual Regression (Comprehensive Suite) ───────────
+      - name: Percy comprehensive visual test suite
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
         run: |
           sleep 30  # Wait for CF Pages to propagate
-          npx percy exec -- node -e "
-            const { chromium } = require('playwright');
-            const percySnapshot = require('@percy/playwright');
-            (async () => {
-              const browser = await chromium.launch();
-              const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-              await page.goto('https://mission-control-cole.pages.dev', { waitUntil: 'networkidle', timeout: 30000 });
-              await page.waitForTimeout(3000);
-              await percySnapshot(page, 'Mission Control - Post Deploy');
-              await browser.close();
-            })();
-          "
+          BASE_URL=https://mission-control-cole.pages.dev npm run test:percy
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       # ── STEP 4: 3-Platform Screenshots ───────────────────────────────────
       - name: Take 3-platform screenshots

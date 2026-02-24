@@ -5,6 +5,7 @@ import TokenUsage from '../components/overview/TokenUsage';
 import BudgetMeter from '../components/overview/BudgetMeter';
 import BudgetSettings from '../components/settings/BudgetSettings';
 import KanbanWidget from '../components/overview/KanbanWidget';
+import { fetchUsageData, formatDataAge, getStaleStatus } from '../utils/usageDataFetcher';
 import './Overview.css';
 
 const Overview: React.FC = () => {
@@ -12,20 +13,26 @@ const Overview: React.FC = () => {
   const [currentSpend, setCurrentSpend] = useState({ daily: 0, weekly: 0, monthly: 0 });
 
   useEffect(() => {
-    // Load current spending from usage data
-    fetch('/usage-data.json')
-      .then(res => res.json())
-      .then(data => {
+    // Load current spending from usage data with multi-tier fallback
+    fetchUsageData()
+      .then(result => {
+        const { data, source, age, stale } = result;
+        
+        console.log(`✅ Usage data loaded from ${source} (${formatDataAge(age)})`);
+        if (stale) {
+          console.warn(`⚠️ Data is stale (${getStaleStatus(age)})`);
+        }
+        
         const today = new Date();
         const todayStr = today.toISOString().split('T')[0];
         
         // Calculate daily (today's spend)
         const todayData = data.daily?.find((d: any) => d.date === todayStr);
-        const dailySpend = todayData?.cost || 0;
+        const dailySpend = todayData?.cost || data.summary?.dailyTotal || 0;
         
         // Calculate weekly (last 7 days)
         const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-        const weeklySpend = data.daily
+        const weeklySpend = data.summary?.weekTotal || data.daily
           ?.filter((d: any) => new Date(d.date) >= weekAgo)
           .reduce((sum: number, d: any) => sum + d.cost, 0) || 0;
         
@@ -38,7 +45,10 @@ const Overview: React.FC = () => {
           monthly: monthlySpend
         });
       })
-      .catch(err => console.error('Failed to load usage data:', err));
+      .catch(err => {
+        console.error('❌ All data sources failed:', err);
+        // Keep showing zeros but log the error
+      });
   }, []);
 
   const handleBudgetSave = (config: any) => {
