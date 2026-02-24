@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 938,
-    "totalRequests": 37790
+    "totalSessions": 939,
+    "totalRequests": 37794
   },
   "daily": [
     {
@@ -122,17 +122,17 @@
     },
     {
       "date": "2026-02-24",
-      "cost": 63.236802499999996,
-      "tokens": 82235345,
-      "requests": 1551
+      "cost": 63.29878415,
+      "tokens": 82372068,
+      "requests": 1555
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 1643.3817774499985,
-      "tokens": 2309627763,
-      "requests": 25359
+      "cost": 1643.4437590999987,
+      "tokens": 2309764486,
+      "requests": 25363
     },
     {
       "name": "OpenAI",
@@ -150,9 +150,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 1342.492210199993,
-      "tokens": 1928011309,
-      "requests": 21038
+      "cost": 1342.5541918499932,
+      "tokens": 1928148032,
+      "requests": 21042
     },
     {
       "name": "claude-opus-4-5",
@@ -248,9 +248,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 1526.2195895131063,
-      "tokens": 2185879113,
-      "requests": 26248
+      "cost": 1526.2815711631063,
+      "tokens": 2186015836,
+      "requests": 26252
     },
     {
       "name": "planning",
@@ -271,5 +271,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-24T13:17:10.274Z"
+  "lastUpdated": "2026-02-24T13:21:11.048Z"
 }
