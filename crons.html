@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<parameter name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Cron Control Panel - Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary: #FF9500;
+  --primary-light: #FFB340;
+  --primary-bg: rgba(255, 149, 0, 0.1);
+  --accent: #5856D6;
+  --success: #34C759;
+  --danger: #FF3B30;
+  --warning: #FF9500;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --text-muted: #636366;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+.icon-button:active {
+  background: var(--surface2);
+  transform: scale(0.95);
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.welcome {
+  font-size: 32px;
+  font-weight: 700;
+  color: #60A5FA;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 16px;
+  border-left: 4px solid var(--accent);
+}
+
+.stat-card.expensive {
+  border-left-color: var(--danger);
+}
+
+.stat-card.active {
+  border-left-color: var(--success);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-value.small {
+  font-size: 18px;
+}
+
+/* Search & Filters */
+.controls {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.search-bar::placeholder {
+  color: var(--text-muted);
+}
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.chip {
+  padding: 8px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.chip:active {
+  transform: scale(0.95);
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bulk-btn {
+  padding: 8px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bulk-btn:active {
+  transform: scale(0.95);
+}
+
+.bulk-btn.danger {
+  background: rgba(255, 59, 48, 0.2);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Section */
+.section {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-badge {
+  background: var(--accent);
+  color: var(--text);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Cron Cards */
+.cron-card {
+  background: var(--surface2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.cron-card.disabled {
+  opacity: 0.6;
+}
+
+.cron-card.expensive {
+  border-left: 4px solid var(--danger);
+}
+
+.cron-card.error {
+  border-left: 4px solid var(--danger);
+  background: rgba(255, 59, 48, 0.05);
+}
+
+.cron-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.cron-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.cron-schedule {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-family: 'SF Mono', monospace;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 51px;
+  height: 31px;
+  background: var(--border);
+  border-radius: 15.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-switch.active {
+  background: var(--success);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.toggle-switch.active .toggle-knob {
+  left: 22px;
+}
+
+.cron-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.meta-icon {
+  font-size: 14px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.ok {
+  background: rgba(52, 199, 89, 0.2);
+  color: var(--success);
+}
+
+.status-badge.error {
+  background: rgba(255, 59, 48, 0.2);
+  color: var(--danger);
+}
+
+.status-badge.disabled {
+  background: rgba(152, 152, 157, 0.2);
+  color: var(--text-dim);
+}
+
+.cost-tag {
+  background: var(--primary-bg);
+  color: var(--primary);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cost-tag.expensive {
+  background: rgba(255, 59, 48, 0.2);
+  color: var(--danger);
+}
+
+.cron-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 10px 16px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.action-btn.secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.action-btn.danger {
+  background: var(--danger);
+}
+
+.action-btn.success {
+  background: var(--success);
+}
+
+/* Next Run Timer */
+.next-run {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.next-run.soon {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 18px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.empty-subtext {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cron-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .cron-actions {
+    width: 100%;
+  }
+  
+  .action-btn {
+    flex: 1;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">← Back to Dashboard</a>
+
+<div class="header">
+  <div class="header-left">
+    <span class="icon">⏰</span>
+    <h1 class="header-title">Mission Control</h1>
+  </div>
+  <div class="header-right">
+    <button class="icon-button" onclick="refreshData()">🔄</button>
+  </div>
+</div>
+
+<h2 class="welcome">Cron Control Panel</h2>
+<p class="subtitle">Manage 27+ scheduled jobs • Enable/disable • Run now • Monitor costs</p>
+
+<!-- Stats -->
+<div class="stats-grid">
+  <div class="stat-card active">
+    <div class="stat-label">Active Jobs</div>
+    <div class="stat-value" id="stat-active">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Total Jobs</div>
+    <div class="stat-value" id="stat-total">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Today's Runs</div>
+    <div class="stat-value" id="stat-runs">0</div>
+  </div>
+  <div class="stat-card expensive">
+    <div class="stat-label">Daily Cost</div>
+    <div class="stat-value small" id="stat-cost">$0.00</div>
+  </div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <input type="text" class="search-bar" placeholder="Search cron jobs..." id="search-input" oninput="filterCrons()">
+  
+  <div class="filter-chips">
+    <div class="chip active" data-filter="all" onclick="setFilter('all')">All</div>
+    <div class="chip" data-filter="active" onclick="setFilter('active')">Active</div>
+    <div class="chip" data-filter="disabled" onclick="setFilter('disabled')">Disabled</div>
+    <div class="chip" data-filter="error" onclick="setFilter('error')">Errors</div>
+    <div class="chip" data-filter="expensive" onclick="setFilter('expensive')">Expensive</div>
+  </div>
+  
+  <div class="bulk-actions">
+    <button class="bulk-btn" onclick="bulkEnable()">✅ Enable Selected</button>
+    <button class="bulk-btn" onclick="bulkDisable()">⏸️ Disable Selected</button>
+    <button class="bulk-btn danger" onclick="bulkDelete()">🗑️ Delete Selected</button>
+  </div>
+</div>
+
+<!-- Cron Jobs List -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">
+      ⚙️ Cron Jobs
+      <span class="count-badge" id="filtered-count">0</span>
+    </div>
+  </div>
+  
+  <div id="crons-container">
+    <div class="loading">
+      <div class="spinner"></div>
+      <div class="loading-text">Loading cron jobs...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// State
+let cronJobs = [];
+let currentFilter = 'all';
+
+// Sample data (DEMO MODE - will be replaced with real OpenClaw cron data)
+const sampleCrons = [
+  {
+    id: 'pm-orchestrator',
+    name: 'PM Orchestrator',
+    schedule: '0 */2 * * *',
+    human_schedule: 'Every 2 hours',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 3600000,
+    next_run: Date.now() + 3600000,
+    model: 'anthropic/claude-sonnet-4-5',
+    cost_per_run: 0.85,
+    runs_today: 12,
+    prompt: 'Pick highest priority task and execute directly'
+  },
+  {
+    id: 'intel-monitor',
+    name: 'Intel Monitor (TPUSA)',
+    schedule: '0 */4 * * *',
+    human_schedule: 'Every 4 hours',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 7200000,
+    next_run: Date.now() + 7200000,
+    model: 'google/gemini-2.5-flash',
+    cost_per_run: 0.02,
+    runs_today: 6,
+    prompt: 'Scan X for TPUSA keyword alerts'
+  },
+  {
+    id: 'scholarship-research',
+    name: 'Scholarship Research (Lena)',
+    schedule: '0 9 * * 1',
+    human_schedule: 'Mondays at 9 AM',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 86400000,
+    next_run: Date.now() + 518400000,
+    model: 'anthropic/claude-sonnet-4-5',
+    cost_per_run: 1.24,
+    runs_today: 0,
+    prompt: 'Find new scholarships for accounting/finance majors'
+  },
+  {
+    id: 'morning-brief',
+    name: 'Morning Brief',
+    schedule: '0 6 * * *',
+    human_schedule: 'Daily at 6 AM',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 3600000,
+    next_run: Date.now() + 82800000,
+    model: 'google/gemini-2.5-flash',
+    cost_per_run: 0.01,
+    runs_today: 1,
+    prompt: 'Weather + calendar + keyword news for Cave Creek AZ'
+  },
+  {
+    id: 'uptime-monitor',
+    name: 'Uptime Monitor',
+    schedule: '*/5 * * * *',
+    human_schedule: 'Every 5 minutes',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 300000,
+    next_run: Date.now() + 300000,
+    model: 'none',
+    cost_per_run: 0.00,
+    runs_today: 288,
+    prompt: 'Ping gateway, write dead.json if down'
+  },
+  {
+    id: 'cost-alert',
+    name: 'Cost Alert Check',
+    schedule: '0 */6 * * *',
+    human_schedule: 'Every 6 hours',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 10800000,
+    next_run: Date.now() + 10800000,
+    model: 'google/gemini-2.5-flash',
+    cost_per_run: 0.01,
+    runs_today: 4,
+    prompt: 'Check if daily spend approaching budget limit'
+  },
+  {
+    id: 'backup-supermemory',
+    name: 'Supermemory Backup',
+    schedule: '0 2 * * *',
+    human_schedule: 'Daily at 2 AM',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 43200000,
+    next_run: Date.now() + 43200000,
+    model: 'none',
+    cost_per_run: 0.00,
+    runs_today: 1,
+    prompt: 'Sync MEMORY.md to Supermemory cloud'
+  },
+  {
+    id: 'x-trend-check',
+    name: 'X Trend Check (@swordtruth)',
+    schedule: '0 8,20 * * *',
+    human_schedule: '8 AM & 8 PM daily',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 28800000,
+    next_run: Date.now() + 28800000,
+    model: 'anthropic/claude-sonnet-4-5',
+    cost_per_run: 0.45,
+    runs_today: 1,
+    prompt: 'Find trending TPUSA content on TikTok/X for reposting'
+  },
+  {
+    id: 'openclaw-update',
+    name: 'OpenClaw Auto-Update',
+    schedule: '0 3 * * 0',
+    human_schedule: 'Sundays at 3 AM',
+    enabled: false,
+    last_status: 'disabled',
+    last_run: Date.now() - 604800000,
+    next_run: null,
+    model: 'google/gemini-2.5-flash',
+    cost_per_run: 0.02,
+    runs_today: 0,
+    prompt: 'Check for OpenClaw updates, install if available'
+  },
+  {
+    id: 'skill-update',
+    name: 'Skill Update Check',
+    schedule: '0 4 * * 0',
+    human_schedule: 'Sundays at 4 AM',
+    enabled: false,
+    last_status: 'disabled',
+    last_run: Date.now() - 604800000,
+    next_run: null,
+    model: 'google/gemini-2.5-flash',
+    cost_per_run: 0.01,
+    runs_today: 0,
+    prompt: 'Check ClawHub for skill updates'
+  },
+  {
+    id: 'security-scan',
+    name: 'Security Scan (Weekly)',
+    schedule: '0 1 * * 1',
+    human_schedule: 'Mondays at 1 AM',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 86400000,
+    next_run: Date.now() + 518400000,
+    model: 'anthropic/claude-sonnet-4-5',
+    cost_per_run: 0.75,
+    runs_today: 0,
+    prompt: 'Run security-sentinel on workspace + skills'
+  },
+  {
+    id: 'log-cleanup',
+    name: 'Log Cleanup',
+    schedule: '0 0 * * 0',
+    human_schedule: 'Sundays at midnight',
+    enabled: true,
+    last_status: 'ok',
+    last_run: Date.now() - 86400000,
+    next_run: Date.now() + 518400000,
+    model: 'none',
+    cost_per_run: 0.00,
+    runs_today: 0,
+    prompt: 'Archive logs older than 30 days'
+  }
+];
+
+// Initialize
+function init() {
+  loadCronJobs();
+}
+
+// Load cron jobs (currently demo data)
+function loadCronJobs() {
+  // TODO: Replace with real OpenClaw cron data
+  // exec('openclaw cron list --json')
+  
+  cronJobs = sampleCrons;
+  renderCrons();
+  updateStats();
+}
+
+// Render crons
+function renderCrons() {
+  const container = document.getElementById('crons-container');
+  const filteredCrons = getFilteredCrons();
+  
+  document.getElementById('filtered-count').textContent = filteredCrons.length;
+  
+  if (filteredCrons.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">⏰</div>
+        <div class="empty-text">No cron jobs found</div>
+        <div class="empty-subtext">Try adjusting your filters</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = filteredCrons.map(cron => `
+    <div class="cron-card ${!cron.enabled ? 'disabled' : ''} ${cron.cost_per_run > 1 ? 'expensive' : ''} ${cron.last_status === 'error' ? 'error' : ''}" data-id="${cron.id}">
+      <div class="cron-header">
+        <div>
+          <div class="cron-title">${cron.name}</div>
+          <div class="cron-schedule">${cron.human_schedule}</div>
+        </div>
+        <div class="toggle-switch ${cron.enabled ? 'active' : ''}" onclick="toggleCron('${cron.id}')">
+          <div class="toggle-knob"></div>
+        </div>
+      </div>
+      
+      <div class="cron-meta">
+        <div class="meta-item">
+          <span class="meta-icon">🤖</span>
+          ${cron.model !== 'none' ? cron.model.split('/')[1] || cron.model : 'Script'}
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon">▶️</span>
+          ${cron.runs_today} runs today
+        </div>
+        <div class="status-badge ${cron.enabled ? cron.last_status : 'disabled'}">
+          ${cron.enabled ? (cron.last_status === 'ok' ? '✓ OK' : '✗ Error') : 'Disabled'}
+        </div>
+        <div class="cost-tag ${cron.cost_per_run > 1 ? 'expensive' : ''}">
+          $${cron.cost_per_run.toFixed(3)}/run
+        </div>
+      </div>
+      
+      <div class="cron-actions">
+        <button class="action-btn success" onclick="runNow('${cron.id}')">
+          ▶️ Run Now
+        </button>
+        <button class="action-btn secondary" onclick="viewDetails('${cron.id}')">
+          📋 Details
+        </button>
+        <button class="action-btn secondary" onclick="editCron('${cron.id}')">
+          ✏️ Edit
+        </button>
+        <button class="action-btn danger" onclick="deleteCron('${cron.id}')">
+          🗑️
+        </button>
+      </div>
+      
+      ${cron.enabled && cron.next_run ? `
+        <div class="next-run ${(cron.next_run - Date.now()) < 1800000 ? 'soon' : ''}">
+          ⏱️ Next run: ${formatNextRun(cron.next_run)}
+        </div>
+      ` : ''}
+    </div>
+  `).join('');
+}
+
+// Update stats
+function updateStats() {
+  const activeCrons = cronJobs.filter(c => c.enabled).length;
+  const totalCrons = cronJobs.length;
+  const totalRuns = cronJobs.reduce((sum, c) => sum + c.runs_today, 0);
+  const dailyCost = cronJobs.reduce((sum, c) => sum + (c.cost_per_run * c.runs_today), 0);
+  
+  document.getElementById('stat-active').textContent = activeCrons;
+  document.getElementById('stat-total').textContent = totalCrons;
+  document.getElementById('stat-runs').textContent = totalRuns;
+  document.getElementById('stat-cost').textContent = `$${dailyCost.toFixed(2)}`;
+}
+
+// Filter crons
+function getFilteredCrons() {
+  const searchTerm = document.getElementById('search-input').value.toLowerCase();
+  
+  return cronJobs.filter(cron => {
+    // Search filter
+    if (searchTerm && !cron.name.toLowerCase().includes(searchTerm) && !cron.prompt.toLowerCase().includes(searchTerm)) {
+      return false;
+    }
+    
+    // Category filter
+    if (currentFilter === 'active' && !cron.enabled) return false;
+    if (currentFilter === 'disabled' && cron.enabled) return false;
+    if (currentFilter === 'error' && cron.last_status !== 'error') return false;
+    if (currentFilter === 'expensive' && cron.cost_per_run <= 1) return false;
+    
+    return true;
+  });
+}
+
+function filterCrons() {
+  renderCrons();
+}
+
+function setFilter(filter) {
+  currentFilter = filter;
+  
+  // Update chip UI
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.classList.toggle('active', chip.dataset.filter === filter);
+  });
+  
+  renderCrons();
+}
+
+// Actions
+function toggleCron(id) {
+  const cron = cronJobs.find(c => c.id === id);
+  if (cron) {
+    cron.enabled = !cron.enabled;
+    renderCrons();
+    updateStats();
+    
+    // TODO: Call OpenClaw API
+    // exec(`openclaw cron ${cron.enabled ? 'enable' : 'disable'} ${id}`)
+    alert(`Cron "${cron.name}" ${cron.enabled ? 'enabled' : 'disabled'}`);
+  }
+}
+
+function runNow(id) {
+  const cron = cronJobs.find(c => c.id === id);
+  if (cron) {
+    // TODO: Call OpenClaw API
+    // exec(`openclaw cron run ${id}`)
+    alert(`Running "${cron.name}" now...\n\nThis will execute the cron job immediately.`);
+  }
+}
+
+function viewDetails(id) {
+  const cron = cronJobs.find(c => c.id === id);
+  if (cron) {
+    alert(`📋 Cron Details\n\nName: ${cron.name}\nSchedule: ${cron.schedule}\nModel: ${cron.model}\nCost/run: $${cron.cost_per_run}\nRuns today: ${cron.runs_today}\n\nPrompt:\n${cron.prompt}`);
+  }
+}
+
+function editCron(id) {
+  const cron = cronJobs.find(c => c.id === id);
+  if (cron) {
+    alert(`✏️ Edit Cron\n\nEditing interface coming soon.\n\nFor now, use:\nopenclaw cron update ${id} --schedule "0 */2 * * *"`);
+  }
+}
+
+function deleteCron(id) {
+  const cron = cronJobs.find(c => c.id === id);
+  if (cron && confirm(`Delete "${cron.name}"?\n\nThis action cannot be undone.`)) {
+    cronJobs = cronJobs.filter(c => c.id !== id);
+    renderCrons();
+    updateStats();
+    
+    // TODO: Call OpenClaw API
+    // exec(`openclaw cron delete ${id}`)
+    alert(`Cron "${cron.name}" deleted`);
+  }
+}
+
+function bulkEnable() {
+  alert('Bulk enable coming soon.\n\nSelect crons with checkboxes, then enable all at once.');
+}
+
+function bulkDisable() {
+  alert('Bulk disable coming soon.\n\nSelect crons with checkboxes, then disable all at once.');
+}
+
+function bulkDelete() {
+  alert('Bulk delete coming soon.\n\nSelect crons with checkboxes, then delete all at once.');
+}
+
+function refreshData() {
+  const spinner = document.querySelector('.icon-button');
+  spinner.style.animation = 'spin 1s linear';
+  setTimeout(() => {
+    spinner.style.animation = '';
+    loadCronJobs();
+  }, 500);
+}
+
+// Utility functions
+function formatNextRun(timestamp) {
+  const diff = timestamp - Date.now();
+  const minutes = Math.floor(diff / 60000);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  
+  if (days > 0) return `in ${days}d ${hours % 24}h`;
+  if (hours > 0) return `in ${hours}h ${minutes % 60}m`;
+  return `in ${minutes}m`;
+}
+
+// Auto-refresh every 30 seconds
+setInterval(() => {
+  loadCronJobs();
+}, 30000);
+
+// Initialize on load
+init();
+</script>
+
+</body>
+</html>

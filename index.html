@@ -320,13 +320,23 @@ body {
 <div id="errorContainer"></div>
 
 <!-- Quick Links -->
-<div style="display: flex; gap: 12px; margin-bottom: 20px;">
-  <a href="agents.html" style="flex: 1; text-decoration: none;">
+<div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+  <a href="agents.html" style="flex: 1; min-width: 280px; text-decoration: none;">
     <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid var(--accent); display: flex; align-items: center; gap: 12px; color: var(--text);">
       <div style="font-size: 32px;">🤖</div>
       <div>
         <div style="font-weight: 600; font-size: 16px;">Agent Command Center</div>
         <div style="font-size: 13px; color: var(--text-dim);">Manage active agents & sessions</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="crons.html" style="flex: 1; min-width: 280px; text-decoration: none;">
+    <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid var(--primary); display: flex; align-items: center; gap: 12px; color: var(--text);">
+      <div style="font-size: 32px;">⏰</div>
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">Cron Control Panel</div>
+        <div style="font-size: 13px; color: var(--text-dim);">27+ jobs • Enable/disable • Run now</div>
       </div>
     </div>
   </a>
