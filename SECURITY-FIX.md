@@ -1,27 +1,35 @@
 # Supabase Security Advisor Fix
 
-## Issue
+## Issues
 
-Supabase Security Advisor flagged **1 error** in project `swordtruth` (jvkrdrboermwmpzblwlx):
+Supabase Security Advisor flagged **2 errors** in project `swordtruth` (jvkrdrboermwmpzblwlx):
 
-**Problem:** RLS policies are too permissive — allow UPDATE and DELETE operations that aren't needed.
+### Error 1: Security Definer View
+**Entity:** `public.recent_activity_summary`  
+**Problem:** View uses SECURITY DEFINER property (runs with creator's elevated permissions)  
+**Risk:** Could allow privilege escalation attacks
 
-**Risk:** Anyone with the anon key could modify or delete all activity data.
+### Error 2: RLS Disabled on secrets table
+**Entity:** `public.secrets`  
+**Problem:** Row Level Security not enabled  
+**Risk:** Anyone with anon key can read/modify all secrets
 
 ## Fix (2 minutes)
 
-### Option 1: Run Security Fix SQL
+### Run Complete Security Fix SQL
 
 1. Open Supabase SQL Editor: https://app.supabase.com/project/jvkrdrboermwmpzblwlx/sql
-2. Copy/paste the entire contents of `supabase-security-fix.sql`
+2. Copy/paste the entire contents of `supabase-security-fix-complete.sql`
 3. Click **Run**
 
 This will:
-- ✅ Remove overly-permissive "Allow all operations" policies
-- ✅ Add specific INSERT + SELECT policies (what we actually need)
-- ✅ Block UPDATE/DELETE operations (prevents unauthorized modifications)
+- ✅ Recreate `recent_activity_summary` view WITHOUT security definer
+- ✅ Enable RLS on `secrets` table
+- ✅ Add user-scoped policies for `secrets` (user_id = 'brian')
+- ✅ Tighten activity table policies (INSERT + SELECT only)
+- ✅ Block unnecessary UPDATE/DELETE operations
 
-**Result:** Security Advisor warnings will clear within 24 hours.
+**Result:** Both Security Advisor errors will clear within 24 hours.
 
 ### Option 2: View Security Advisor
 
@@ -31,14 +39,49 @@ This will:
 
 ## What Changed
 
-### Before (Insecure)
+### Fix 1: Remove SECURITY DEFINER from View
+
+**Before (Insecure):**
+```sql
+CREATE OR REPLACE VIEW recent_activity_summary AS
+SELECT ... 
+-- Implicitly uses SECURITY DEFINER (runs with creator's permissions)
+```
+
+**After (Secure):**
+```sql
+CREATE OR REPLACE VIEW recent_activity_summary AS
+SELECT ... 
+-- Uses SECURITY INVOKER (runs with caller's permissions - safer default)
+```
+
+### Fix 2: Enable RLS on secrets table
+
+**Before (Insecure):**
+```sql
+ALTER TABLE secrets ENABLE ROW LEVEL SECURITY;  -- Was disabled
+-- Anyone could read/modify all secrets
+```
+
+**After (Secure):**
+```sql
+ALTER TABLE secrets ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can read own secrets" ON secrets
+  FOR SELECT USING (user_id = 'brian');
+-- Only user 'brian' can access their secrets
+```
+
+### Fix 3: Tighten Activity Table Policies
+
+**Before (Insecure):**
 ```sql
 CREATE POLICY "Allow all operations on activity_log" ON activity_log
   FOR ALL USING (true) WITH CHECK (true);
 -- Allows: INSERT, SELECT, UPDATE, DELETE (too permissive)
 ```
 
-### After (Secure)
+**After (Secure):**
 ```sql
 CREATE POLICY "Allow anon to insert activity" ON activity_log
   FOR INSERT WITH CHECK (true);
@@ -46,7 +89,7 @@ CREATE POLICY "Allow anon to insert activity" ON activity_log
 CREATE POLICY "Allow anon to read activity" ON activity_log
   FOR SELECT USING (true);
 -- Allows: INSERT, SELECT only
--- Blocks: UPDATE, DELETE (not needed for heartbeat)
+-- Blocks: UPDATE, DELETE (not needed)
 ```
 
 ## Why This Is Safe
