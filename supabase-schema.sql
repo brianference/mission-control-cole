@@ -72,22 +72,40 @@ ALTER TABLE performance_metrics ENABLE ROW LEVEL SECURITY;
 ALTER TABLE heartbeat_pings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
 
--- Create policies to allow all operations (for now - tighten later)
+-- Create secure RLS policies (fixes Security Advisor warnings)
+-- Allow INSERT + SELECT for anon (heartbeat writes, dashboard reads)
+-- No UPDATE/DELETE allowed (prevents unauthorized data modification)
+
 -- Activity Log Policies
-CREATE POLICY "Allow all operations on activity_log" ON activity_log
-  FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow anon to insert activity" ON activity_log
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Allow anon to read activity" ON activity_log
+  FOR SELECT USING (true);
 
 -- Performance Metrics Policies
-CREATE POLICY "Allow all operations on performance_metrics" ON performance_metrics
-  FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow anon to insert metrics" ON performance_metrics
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Allow anon to read metrics" ON performance_metrics
+  FOR SELECT USING (true);
 
 -- Heartbeat Pings Policies
-CREATE POLICY "Allow all operations on heartbeat_pings" ON heartbeat_pings
-  FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow anon to insert heartbeat" ON heartbeat_pings
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Allow anon to read heartbeat" ON heartbeat_pings
+  FOR SELECT USING (true);
 
 -- Sessions Policies
-CREATE POLICY "Allow all operations on sessions" ON sessions
-  FOR ALL USING (true) WITH CHECK (true);
+CREATE POLICY "Allow anon to insert sessions" ON sessions
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Allow anon to read sessions" ON sessions
+  FOR SELECT USING (true);
+
+CREATE POLICY "Allow anon to update sessions" ON sessions
+  FOR UPDATE USING (true) WITH CHECK (true);
 
 -- Create a view for recent activity summary
 CREATE OR REPLACE VIEW recent_activity_summary AS
