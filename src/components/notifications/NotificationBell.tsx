@@ -163,8 +163,8 @@ const NotificationBell: React.FC = () => {
       const stored = localStorage.getItem(NOTIFICATION_SOURCES.localStorage);
       let persistedNotifications: Notification[] = [];
       if (stored) {
-        const parsed = JSON.parse(stored);
-        persistedNotifications = parsed.map((n: any) => ({
+        const parsed: Array<Omit<Notification, 'timestamp'> & { timestamp: string }> = JSON.parse(stored);
+        persistedNotifications = parsed.map(n => ({
           ...n,
           timestamp: new Date(n.timestamp),
         }));
@@ -383,24 +383,6 @@ const NotificationBell: React.FC = () => {
       )}
     </div>
   );
-};
-
-// Helper function to create and dispatch notifications from anywhere in the app
-export const sendNotification = (notification: Omit<Notification, 'id' | 'timestamp' | 'read'>) => {
-  const fullNotification: Notification = {
-    ...notification,
-    id: `notif-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-    timestamp: new Date(),
-    read: false,
-  };
-  
-  window.dispatchEvent(
-    new CustomEvent('mission-control-notification', {
-      detail: fullNotification,
-    })
-  );
-  
-  return fullNotification;
 };
 
 export default NotificationBell;

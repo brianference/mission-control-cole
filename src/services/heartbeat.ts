@@ -57,7 +57,7 @@ class HeartbeatService {
       metadata: {
         browser: navigator.userAgent,
         online: navigator.onLine,
-        memory_usage: (performance as any).memory?.usedJSHeapSize || 0,
+        memory_usage: (performance as { memory?: { usedJSHeapSize?: number } }).memory?.usedJSHeapSize || 0,
         timestamp_local: new Date().toLocaleString(),
       },
     });
@@ -110,7 +110,7 @@ class HeartbeatService {
       {
         metric_type: 'memory_usage',
         metric_name: 'js_heap_size',
-        value: (performance as any).memory?.usedJSHeapSize || 0,
+        value: (performance as { memory?: { usedJSHeapSize?: number } }).memory?.usedJSHeapSize || 0,
         unit: 'bytes',
         metadata: {},
       },

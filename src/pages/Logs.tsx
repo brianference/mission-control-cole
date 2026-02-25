@@ -32,7 +32,7 @@ const Logs: React.FC = () => {
         setLogs([]);
         setError('No logs available. Generate logs with generate-real-data.sh');
       }
-    } catch (err) {
+    } catch {
       setLogs([]);
       setError('Failed to load logs');
     } finally {

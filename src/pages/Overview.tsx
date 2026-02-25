@@ -29,14 +29,14 @@ const Overview: React.FC = () => {
         const todayStr = today.toISOString().split('T')[0];
         
         // Calculate daily (today's spend)
-        const todayData = data.daily?.find((d: any) => d.date === todayStr);
+        const todayData = data.daily?.find(d => d.date === todayStr);
         const dailySpend = todayData?.cost || data.summary?.dailyTotal || 0;
         
         // Calculate weekly (last 7 days)
         const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
         const weeklySpend = data.summary?.weekTotal || data.daily
-          ?.filter((d: any) => new Date(d.date) >= weekAgo)
-          .reduce((sum: number, d: any) => sum + d.cost, 0) || 0;
+          ?.filter(d => new Date(d.date) >= weekAgo)
+          .reduce((sum, d) => sum + d.cost, 0) || 0;
         
         // Monthly from summary
         const monthlySpend = data.summary?.monthTotal || 0;
@@ -53,7 +53,7 @@ const Overview: React.FC = () => {
       });
   }, []);
 
-  const handleBudgetSave = (config: any) => {
+  const handleBudgetSave = (config: { daily: number; weekly: number; monthly: number; alerts: boolean }) => {
     console.log('Budget config saved:', config);
     // Config is saved to localStorage in the BudgetSettings component
   };

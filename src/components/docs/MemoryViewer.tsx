@@ -66,7 +66,7 @@ const MemoryViewer: React.FC<MemoryViewerProps> = ({ memories, onSearch }) => {
           <select
             className="filter-select"
             value={filterSource}
-            onChange={(e) => setFilterSource(e.target.value as any)}
+            onChange={(e) => setFilterSource(e.target.value as 'all' | 'mem0' | 'supermemory')}
           >
             <option value="all">All Sources</option>
             <option value="mem0">Mem0</option>

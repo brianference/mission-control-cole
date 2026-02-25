@@ -18,6 +18,7 @@ const Tasks: React.FC = () => {
     const savedTasks = localStorage.getItem('mission-control-tasks');
     if (savedTasks) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTasks(JSON.parse(savedTasks));
       } catch (e) {
         console.error('Failed to load tasks:', e);

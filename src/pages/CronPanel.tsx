@@ -6,10 +6,9 @@ const REFRESH_INTERVAL_MS = 30_000;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function formatTs(ms?: number): string {
+function formatTs(ms: number | undefined, now: number): string {
   if (!ms) return '—';
   const d = new Date(ms);
-  const now = Date.now();
   const diff = now - ms;
   if (diff < 60_000) return 'just now';
   if (diff < 3600_000) return `${Math.floor(diff / 60_000)}m ago`;
@@ -17,9 +16,8 @@ function formatTs(ms?: number): string {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-function formatNextRun(ms?: number): string {
+function formatNextRun(ms: number | undefined, now: number): string {
   if (!ms) return '—';
-  const now = Date.now();
   const diff = ms - now;
   if (diff < 0) return 'overdue';
   if (diff < 60_000) return 'in <1m';
@@ -74,6 +72,7 @@ const CronPanel: React.FC = () => {
   const [search, setSearch] = useState('');
   const [toast, setToast] = useState<string | null>(null);
   const [countdown, setCountdown] = useState(REFRESH_INTERVAL_MS / 1000);
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
 
   const showToast = (msg: string) => {
     setToast(msg);
@@ -90,6 +89,7 @@ const CronPanel: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     const interval = setInterval(load, REFRESH_INTERVAL_MS);
     return () => clearInterval(interval);
@@ -99,6 +99,7 @@ const CronPanel: React.FC = () => {
   useEffect(() => {
     const tick = setInterval(() => {
       setCountdown(c => (c <= 1 ? REFRESH_INTERVAL_MS / 1000 : c - 1));
+      setCurrentTime(Date.now());
     }, 1000);
     return () => clearInterval(tick);
   }, []);
@@ -262,9 +263,9 @@ const CronPanel: React.FC = () => {
                   <td className="col-model">
                     <span className="model-tag">{modelShort(job.model)}</span>
                   </td>
-                  <td className="col-lastrun">{formatTs(job.lastRunMs)}</td>
-                  <td className={`col-nextrun ${job.nextRunMs && job.nextRunMs < Date.now() ? 'overdue' : ''}`}>
-                    {formatNextRun(job.nextRunMs)}
+                  <td className="col-lastrun">{formatTs(job.lastRunMs, currentTime)}</td>
+                  <td className={`col-nextrun ${job.nextRunMs && job.nextRunMs < currentTime ? 'overdue' : ''}`}>
+                    {formatNextRun(job.nextRunMs, currentTime)}
                   </td>
                   <td className="col-duration">{formatDuration(job.lastDurationMs)}</td>
                   <td className="col-status">

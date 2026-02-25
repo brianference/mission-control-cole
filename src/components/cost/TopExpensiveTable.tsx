@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import './TopExpensiveTable.css';
 
+interface TableRow {
+  [key: string]: string | number | boolean | undefined;
+}
+
 interface Column {
   key: string;
   label: string;
-  render?: (value: any, row: any) => React.ReactNode;
+  render?: (value: string | number | boolean | undefined, row: TableRow) => React.ReactNode;
   sortable?: boolean;
 }
 
 interface TopExpensiveTableProps {
-  data: any[];
+  data: TableRow[];
   columns: Column[];
   defaultSort?: string;
   defaultOrder?: 'asc' | 'desc';

@@ -11,7 +11,7 @@ export interface ActivityLog {
   timestamp: string;
   action_type: string; // 'tool_call', 'deployment', 'session_start', 'cron_run', 'heartbeat'
   action_name: string;
-  details: Record<string, any>;
+  details: Record<string, unknown>;
   status: 'success' | 'error' | 'pending';
   user_id: string;
 }
@@ -41,7 +41,7 @@ export interface PerformanceMetric {
   metric_name: string;
   value: number;
   unit: string; // 'ms', 'tokens', 'bytes', 'count'
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
 }
 
 export async function logMetric(metric: Omit<PerformanceMetric, 'id' | 'timestamp'>) {
@@ -70,7 +70,7 @@ export interface HeartbeatPing {
   total_tokens_today: number;
   uptime_seconds: number;
   last_activity: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
 }
 
 export async function sendHeartbeat(ping: Omit<HeartbeatPing, 'id' | 'timestamp'>) {
@@ -148,7 +148,7 @@ export interface SessionRecord {
   messages_count: number;
   model: string;
   status: 'active' | 'completed' | 'error';
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
 }
 
 export async function logSession(session: Omit<SessionRecord, 'id'>) {

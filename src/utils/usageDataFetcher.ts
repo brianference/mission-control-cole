@@ -21,8 +21,8 @@ interface UsageData {
     requests: number;
     sessions: number;
   }>;
-  providers: Array<any>;
-  models: Array<any>;
+  providers: Array<{ name: string; cost: number; tokens: number }>;
+  models: Array<{ name: string; cost: number; tokens: number }>;
   lastUpdated?: string;
 }
 

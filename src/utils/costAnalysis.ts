@@ -126,9 +126,9 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
   
   if (!sessions || !Array.isArray(sessions)) {
     // Return empty heatmap if no sessions
-    const data = [];
+    const data: Array<Record<string, string | number>> = [];
     for (let hour = 0; hour < 24; hour++) {
-      const row: any = { hour: `${hour}:00` };
+      const row: Record<string, string | number> = { hour: `${hour}:00` };
       for (let day = 0; day < 7; day++) {
         const dayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day];
         row[dayName] = 0;
@@ -149,9 +149,9 @@ export function generateHourOfDayHeatmap(sessions: SessionData[]) {
   });
   
   // Convert to array format for Recharts
-  const data = [];
+  const data: Array<Record<string, string | number>> = [];
   for (let hour = 0; hour < 24; hour++) {
-    const row: any = { hour: `${hour}:00` };
+    const row: Record<string, string | number> = { hour: `${hour}:00` };
     for (let day = 0; day < 7; day++) {
       const dayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day];
       row[dayName] = heatmap[hour][day] || 0;

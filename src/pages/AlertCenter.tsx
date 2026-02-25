@@ -53,7 +53,9 @@ const loadDismissed = (): Set<string> => {
 const saveDismissed = (ids: Set<string>) => {
   try {
     localStorage.setItem(DISMISSED_KEY, JSON.stringify([...ids]));
-  } catch {}
+  } catch {
+    // Empty catch block intentional - localStorage errors are non-critical
+  }
 };
 
 const AlertCenter: React.FC = () => {
@@ -79,6 +81,7 @@ const AlertCenter: React.FC = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadData();
   }, []);
 

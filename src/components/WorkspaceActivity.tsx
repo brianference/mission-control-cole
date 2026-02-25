@@ -12,6 +12,22 @@ interface ActivityDay {
   highlight?: string;
 }
 
+interface WorkspaceActivityDay {
+  date: string;
+  commits: number;
+  files: number;
+}
+
+interface WorkspaceActivityRepo {
+  name: string;
+  commits?: number;
+}
+
+interface WorkspaceActivityData {
+  week?: WorkspaceActivityDay[];
+  topRepos?: WorkspaceActivityRepo[];
+}
+
 const WorkspaceActivity: React.FC = () => {
   const [view, setView] = useState<'daily' | 'weekly'>('daily');
   const [weekData, setWeekData] = useState<ActivityDay[]>([]);
@@ -23,16 +39,16 @@ const WorkspaceActivity: React.FC = () => {
       try {
         const response = await fetch('/workspace-activity.json');
         if (response.ok) {
-          const data = await response.json();
+          const data: WorkspaceActivityData = await response.json();
           
           // Transform workspace-activity.json format to ActivityDay format
           // workspace-activity.json has: { week: [{date, commits, files}], topRepos: [...] }
-          const transformedData: ActivityDay[] = data.week?.map((day: any) => {
+          const transformedData: ActivityDay[] = data.week?.map((day: WorkspaceActivityDay) => {
             const dayDate = new Date(day.date);
             const dayLabel = dayDate.toLocaleDateString('en-US', { weekday: 'short' });
             
             // Extract repo names as projects
-            const projects = data.topRepos?.slice(0, 3).map((r: any) => r.name) || [];
+            const projects = data.topRepos?.slice(0, 3).map((r: WorkspaceActivityRepo) => r.name) || [];
             
             return {
               date: day.date,

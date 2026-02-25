@@ -98,6 +98,7 @@ const Agents: React.FC = () => {
   const [dataStatus, setDataStatus] = useState<ConnectionStatus>('offline');
   const [lastUpdated, setLastUpdated] = useState<string>('');
   const [countdown, setCountdown] = useState(REFRESH_INTERVAL_MS / 1000);
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
 
   // Command Center state
   const [showSpawnModal, setShowSpawnModal] = useState(false);
@@ -122,8 +123,9 @@ const Agents: React.FC = () => {
 
   useEffect(() => {
     // Initial load: agents + sessions + usage in parallel
-    Promise.all([
+    void Promise.all([
       fetch('/agents.json').then(res => res.json()),
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       loadSessions(),
       fetchUsage(),
     ])
@@ -149,12 +151,14 @@ const Agents: React.FC = () => {
   useEffect(() => {
     const tick = setInterval(() => {
       setCountdown(c => (c <= 1 ? REFRESH_INTERVAL_MS / 1000 : c - 1));
+      setCurrentTime(Date.now());
     }, 1000);
     return () => clearInterval(tick);
   }, []);
 
   useEffect(() => {
     if (searchTerm.trim() === '') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFilteredAgents(agents);
     } else {
       const filtered = agents.filter(agent =>
@@ -176,7 +180,7 @@ const Agents: React.FC = () => {
   const getAgentStatus = (agentId: string): { isActive: boolean; session?: ActiveSession } => {
     const session = activeSessions.find(s => s.agentId === agentId);
     if (session) {
-      const thirtyMinAgo = Date.now() - 30 * 60 * 1000;
+      const thirtyMinAgo = currentTime - 30 * 60 * 1000;
       const isActive = session.updatedAt > thirtyMinAgo;
       return { isActive, session };
     }
@@ -193,7 +197,7 @@ const Agents: React.FC = () => {
   };
 
   const formatTimeAgo = (ts: number): string => {
-    const diffMs = Date.now() - ts;
+    const diffMs = currentTime - ts;
     const diffMin = Math.floor(diffMs / 60000);
     if (diffMin < 1) return 'just now';
     if (diffMin < 60) return `${diffMin}m ago`;

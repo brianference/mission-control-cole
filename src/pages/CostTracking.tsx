@@ -122,7 +122,7 @@ interface AgentUsage {
   avgDuration: string;
 }
 
-const aggregateByAgent = (sessions: any[]): AgentUsage[] => {
+const aggregateByAgent = (sessions: UsageData['sessions']): AgentUsage[] => {
   const agentMap = new Map<string, { sessions: number; requests: number; cost: number; totalDuration: number }>();
   
   for (const session of sessions) {
@@ -223,21 +223,21 @@ const CostTracking: React.FC = () => {
   const today = new Date().toISOString().split('T')[0];
   const todayData = daily.find(d => d.date === today) || daily[daily.length - 1];
   const todaySpend = todayData?.cost || 0;
-  // @ts-ignore
+  // @ts-expect-error - todayTokens unused but kept for future metric display
   const todayTokens = todayData?.tokens || 0;
 
   // Burn rate: avg spend per hour today
   const nowHour = new Date().getHours() || 1;
   const burnRatePerHour = todaySpend / nowHour;
-  // @ts-ignore
+  // @ts-expect-error - projectedDaySpend unused but kept for future budget projection
   const projectedDaySpend = burnRatePerHour * 24;
   const budgetPct = (todaySpend / DAILY_BUDGET) * 100;
   const isOverBudget = todaySpend >= DAILY_BUDGET;
-  // @ts-ignore
+  // @ts-expect-error - isNearBudget unused but kept for future alert system
   const isNearBudget = !isOverBudget && budgetPct >= 80;
 
   // Daily spend by provider from today's data
-  const todayByProvider: Record<string, { cost: number; requests: number }> = (todayData as any)?.byProvider || {};
+  const todayByProvider: Record<string, { cost: number; requests: number }> = todayData?.byProvider || {};
   // If no daily breakdown, use aggregated provider data scaled to today
   const providerBreakdown = Object.entries(todayByProvider).length > 0
     ? Object.entries(todayByProvider).map(([name, stats]) => ({ name, ...stats }))
@@ -261,15 +261,16 @@ const CostTracking: React.FC = () => {
     const aggregated: Record<string, { cost: number; tokens: number; requests: number }> = {};
     
     data.forEach(day => {
-      const breakdown = (day as any)[key];
+      const breakdown = day[key];
       if (breakdown) {
-        Object.entries(breakdown).forEach(([name, stats]: [string, any]) => {
+        Object.entries(breakdown).forEach(([name, stats]) => {
           if (!aggregated[name]) {
             aggregated[name] = { cost: 0, tokens: 0, requests: 0 };
           }
-          aggregated[name].cost += stats.cost || 0;
-          aggregated[name].tokens += stats.tokens || 0;
-          aggregated[name].requests += stats.requests || 0;
+          const typedStats = stats as { cost?: number; tokens?: number; requests?: number };
+          aggregated[name].cost += typedStats.cost || 0;
+          aggregated[name].tokens += typedStats.tokens || 0;
+          aggregated[name].requests += typedStats.requests || 0;
         });
       }
     });
@@ -687,7 +688,7 @@ const CostTracking: React.FC = () => {
                       border: '1px solid rgba(129, 140, 248, 0.3)',
                       borderRadius: '8px',
                     }}
-                    formatter={(value: any) => `$${Number(value).toFixed(2)}`}
+                    formatter={(value: number | string) => `$${Number(value).toFixed(2)}`}
                   />
                   <Bar dataKey="cost" fill="#14b8a6" />
                 </BarChart>
@@ -780,7 +781,7 @@ const CostTracking: React.FC = () => {
                 {
                   key: 'tokens',
                   label: 'Cost per 1M',
-                  render: (value, row: any) => {
+                  render: (value: number, row: { cost: number }) => {
                     const costPer1M = (row.cost / (value / 1000000));
                     return `$${costPer1M.toFixed(2)}`;
                   },
@@ -814,7 +815,7 @@ const CostTracking: React.FC = () => {
                     border: '1px solid rgba(129, 140, 248, 0.3)',
                     borderRadius: '8px',
                   }}
-                  formatter={(value: any) => [`${(value / 1000000).toFixed(2)}M tokens`, 'Tokens']}
+                  formatter={(value: number | string) => [`${(value / 1000000).toFixed(2)}M tokens`, 'Tokens']}
                   labelFormatter={(label) => new Date(label).toLocaleDateString('en-US', { 
                     weekday: 'long', 
                     month: 'short', 
@@ -1299,7 +1300,7 @@ const CostTracking: React.FC = () => {
                     border: '1px solid rgba(129, 140, 248, 0.3)',
                     borderRadius: '8px',
                   }}
-                  formatter={(value: any) => `$${Number(value).toFixed(2)}`}
+                  formatter={(value: number | string) => `$${Number(value).toFixed(2)}`}
                 />
                 <Legend />
                 <Bar dataKey="before" fill="#f87171" name="Before" />
@@ -1466,7 +1467,7 @@ const CostTracking: React.FC = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={(entry: any) => `${entry.name}: $${Number(entry.value).toFixed(2)} (${entry.percentage.toFixed(1)}%)`}
+                  label={(entry: { name: string; value: number; percentage: number }) => `${entry.name}: $${Number(entry.value).toFixed(2)} (${entry.percentage.toFixed(1)}%)`}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="value"
@@ -1480,7 +1481,7 @@ const CostTracking: React.FC = () => {
                     border: '1px solid rgba(129, 140, 248, 0.3)',
                     borderRadius: '8px',
                   }}
-                  formatter={(value: any) => `$${Number(value).toFixed(2)}`}
+                  formatter={(value: number | string) => `$${Number(value).toFixed(2)}`}
                 />
               </PieChart>
             </ResponsiveContainer>

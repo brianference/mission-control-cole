@@ -25,18 +25,27 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
 }) => {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
 
   const fetchAgents = async () => {
     try {
       // Fetch real agent data from OpenClaw sessions
       const response = await fetch('/active-agents.json');
-      const agentData = await response.json();
+      const agentData: Array<{
+        id: string;
+        name: string;
+        sessionCount?: number;
+        status: string;
+        lastActivity?: string;
+        model?: string;
+        totalTokens?: number;
+      }> = await response.json();
       
       // Map to Agent format
-      const activeAgents: Agent[] = agentData.map((agent: any) => ({
+      const activeAgents: Agent[] = agentData.map(agent => ({
         id: agent.id,
         name: agent.name,
-        task: agent.sessionCount > 0 
+        task: agent.sessionCount && agent.sessionCount > 0 
           ? `Active sessions: ${agent.sessionCount}` 
           : 'Idle',
         status: agent.status as Agent['status'],
@@ -56,11 +65,16 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
 
   useEffect(() => {
     fetchAgents();
+    setCurrentTime(Date.now());
     
     if (autoRefresh) {
-      const interval = setInterval(fetchAgents, refreshInterval);
+      const interval = setInterval(() => {
+        fetchAgents();
+        setCurrentTime(Date.now());
+      }, refreshInterval);
       return () => clearInterval(interval);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoRefresh, refreshInterval, maxAgents]);
 
   const getStatusIcon = (status: Agent['status']): string => {
@@ -86,7 +100,7 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
   const getRunningTime = (startedAt?: Date): string => {
     if (!startedAt) return '';
     
-    const seconds = Math.floor((Date.now() - startedAt.getTime()) / 1000);
+    const seconds = Math.floor((currentTime - startedAt.getTime()) / 1000);
     if (seconds < 60) return `${seconds}s`;
     if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
     return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`;

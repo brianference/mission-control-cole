@@ -7,7 +7,14 @@ const ActivityFeed: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<string>('all');
 
+  const loadActivities = async () => {
+    const data = await getRecentActivity(50);
+    setActivities(data);
+    setLoading(false);
+  };
+
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadActivities();
 
     // Subscribe to real-time updates
@@ -34,12 +41,6 @@ const ActivityFeed: React.FC = () => {
       clearInterval(interval);
     };
   }, []);
-
-  const loadActivities = async () => {
-    const data = await getRecentActivity(50);
-    setActivities(data);
-    setLoading(false);
-  };
 
   const filteredActivities = filter === 'all'
     ? activities

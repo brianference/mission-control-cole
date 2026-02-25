@@ -77,6 +77,7 @@ const TokenUsage: React.FC<TokenUsageProps> = ({
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchTokenUsage();
     
     if (autoRefresh) {

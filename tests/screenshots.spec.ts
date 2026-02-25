@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
-async function snap(page: any, name: string, projectName: string) {
+async function snap(page: Page, name: string, projectName?: string) {
   await page.waitForTimeout(500);
-  await page.screenshot({ path: `screenshots/${projectName}-${name}.png`, fullPage: false });
+  await page.screenshot({ path: `screenshots/${projectName ? projectName + '-' : ''}${name}.png`, fullPage: false });
 }
 
 test.describe('Mission Control - production verification screenshots', () => {

@@ -7,6 +7,14 @@ interface SpikeDetectorProps {
   threshold?: number;
 }
 
+interface DotProps {
+  cx: number;
+  cy: number;
+  payload: {
+    isSpike: boolean;
+  };
+}
+
 const SpikeDetector: React.FC<SpikeDetectorProps> = ({ data, threshold = 2 }) => {
   // Calculate average cost
   const avgCost = data.reduce((sum, d) => sum + d.cost, 0) / data.length;
@@ -43,7 +51,7 @@ const SpikeDetector: React.FC<SpikeDetectorProps> = ({ data, threshold = 2 }) =>
               border: '1px solid rgba(129, 140, 248, 0.3)',
               borderRadius: '8px',
             }}
-            formatter={(value: any) => `$${Number(value).toFixed(2)}`}
+            formatter={(value: number | string) => `$${Number(value).toFixed(2)}`}
             labelFormatter={(label) => new Date(label).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           />
           <Legend />
@@ -67,7 +75,7 @@ const SpikeDetector: React.FC<SpikeDetectorProps> = ({ data, threshold = 2 }) =>
             dataKey="cost"
             stroke="#818cf8"
             strokeWidth={2}
-            dot={(props: any) => {
+            dot={(props: DotProps) => {
               const { cx, cy, payload } = props;
               if (payload.isSpike) {
                 return (

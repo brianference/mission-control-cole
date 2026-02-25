@@ -22,11 +22,15 @@ const Calendar: React.FC = () => {
       try {
         const response = await fetch('/calendar-events.json');
         if (response.ok) {
-          const data = await response.json();
+          const data: {
+            month: number;
+            year: number;
+            events?: Array<{ day: number; title: string; time?: string }>;
+          } = await response.json();
           
           // Transform calendar-events.json format to CalendarEvent format
           // calendar-events.json has: { month, year, events: [{ day, title, time }] }
-          const transformedEvents: CalendarEvent[] = data.events?.map((event: any) => ({
+          const transformedEvents: CalendarEvent[] = data.events?.map(event => ({
             id: `${data.year}-${String(data.month).padStart(2, '0')}-${String(event.day).padStart(2, '0')}-${event.title}`,
             title: event.title,
             date: `${data.year}-${String(data.month).padStart(2, '0')}-${String(event.day).padStart(2, '0')}`,

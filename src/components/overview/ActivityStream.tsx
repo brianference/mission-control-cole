@@ -29,15 +29,24 @@ const ActivityStream: React.FC<ActivityStreamProps> = ({
 }) => {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
 
   const fetchActivities = async () => {
     try {
       // Fetch real activity data from OpenClaw sessions
       const response = await fetch('/activity-stream.json');
-      const activityData = await response.json();
+      const activityData: Array<{
+        id: string;
+        type: string;
+        icon: string;
+        title: string;
+        description?: string;
+        timestamp: string;
+        metadata?: Activity['metadata'];
+      }> = await response.json();
       
       // Transform to Activity format if needed
-      const mappedActivities: Activity[] = activityData.map((activity: any) => ({
+      const mappedActivities: Activity[] = activityData.map(activity => ({
         id: activity.id,
         type: activity.type as Activity['type'],
         icon: activity.icon,
@@ -57,15 +66,20 @@ const ActivityStream: React.FC<ActivityStreamProps> = ({
 
   useEffect(() => {
     fetchActivities();
+    setCurrentTime(Date.now());
     
     if (autoRefresh) {
-      const interval = setInterval(fetchActivities, refreshInterval);
+      const interval = setInterval(() => {
+        fetchActivities();
+        setCurrentTime(Date.now());
+      }, refreshInterval);
       return () => clearInterval(interval);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoRefresh, refreshInterval, maxItems]);
 
   const getTimeAgo = (timestamp: Date): string => {
-    const seconds = Math.floor((Date.now() - timestamp.getTime()) / 1000);
+    const seconds = Math.floor((currentTime - timestamp.getTime()) / 1000);
     
     if (seconds < 60) return `${seconds}s ago`;
     if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;

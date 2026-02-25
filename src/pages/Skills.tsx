@@ -55,6 +55,7 @@ const Skills: React.FC = () => {
         s.type.toLowerCase().includes(q)
       );
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFilteredSkills(getSorted(base, sortMode));
   }, [searchTerm, skills, sortMode]);
 
