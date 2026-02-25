@@ -5,7 +5,14 @@ Real-time budget tracking and cost optimization for OpenClaw AI usage.
 ## Features
 
 - **Budget Tracking**: Monitor Daily/Weekly/Monthly AI usage costs
-- **Real-time Updates**: Auto-refresh every 5 minutes
+- **Agent Command Center**: Manage active agents and sessions with:
+  - Real-time agent status (active/idle/error)
+  - Token usage and burn rate per agent
+  - Context window warnings (>80% usage alerts)
+  - One-click kill agent controls
+  - Spawn new agents with custom tasks
+  - Cost tracking per agent session
+- **Real-time Updates**: Auto-refresh every 5-10 seconds
 - **Cost Optimization**: See monthly savings vs GPT-4 pricing
 - **Mobile-First**: Optimized for iPhone/Android
 - **Dark/Light Mode**: Automatic theme switching
