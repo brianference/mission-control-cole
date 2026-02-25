@@ -1,19 +1,19 @@
 [
   {
+    "id": "standard-features",
+    "name": "standard-features",
+    "description": "Comprehensive checklist for web and mobile app quality \u2014 authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensure \u226590% feature coverage and WCAG 2.1 AA compliance. Includes Eruda mobile console, footer, hamburge",
+    "type": "development",
+    "source": "workspace",
+    "usageCount": 128
+  },
+  {
     "id": "modern-design",
     "name": "modern-design",
     "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
     "type": "design",
     "source": "workspace",
     "usageCount": 124
-  },
-  {
-    "id": "standard-features",
-    "name": "standard-features",
-    "description": "Comprehensive checklist for web and mobile app quality \u2014 authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensure \u226590% feature coverage and WCAG 2.1 AA compliance. Includes Eruda mobile console, footer, hamburge",
-    "type": "development",
-    "source": "workspace",
-    "usageCount": 123
   },
   {
     "id": "location-places",
@@ -32,20 +32,20 @@
     "usageCount": 115
   },
   {
+    "id": "no-bs-debugging",
+    "name": "no-bs-debugging",
+    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. Then deploy.",
+    "type": "development",
+    "source": "workspace",
+    "usageCount": 112
+  },
+  {
     "id": "travel-restaurants",
     "name": "travel-restaurants",
     "description": "Find restaurants and dining locations using Google Places API with comprehensive data \u2014 ratings, hours, phone numbers, and precise locations. Use when searching for restaurants during travel or trip planning. Trigger words: travel restaurants, restaurant search, find restaurants, dining, Google Plac",
     "type": "lifestyle",
     "source": "workspace",
     "usageCount": 110
-  },
-  {
-    "id": "no-bs-debugging",
-    "name": "no-bs-debugging",
-    "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. Then deploy.",
-    "type": "development",
-    "source": "workspace",
-    "usageCount": 108
   },
   {
     "id": "phone-calls-bland",
@@ -56,20 +56,20 @@
     "usageCount": 105
   },
   {
+    "id": "intel-monitor",
+    "name": "intel-monitor",
+    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
+    "type": "utility",
+    "source": "workspace",
+    "usageCount": 102
+  },
+  {
     "id": "memory-optimization",
     "name": "memory-optimization",
     "description": "Consolidate, optimize, and deduplicate all memory systems \u2014 Supermemory, mem0, MEMORY.md, and daily files \u2014 so they work together efficiently. Removes duplicates, fixes contradictions, and improves searchability. Trigger words: optimize memory, consolidate memory, memory cleanup, deduplicate, clean ",
     "type": "memory",
     "source": "workspace",
     "usageCount": 94
-  },
-  {
-    "id": "intel-monitor",
-    "name": "intel-monitor",
-    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 87
   },
   {
     "id": "coding-agent",
@@ -96,10 +96,42 @@
     "usageCount": 72
   },
   {
+    "id": "weather",
+    "name": "weather",
+    "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+    "type": "lifestyle",
+    "source": "openclaw",
+    "usageCount": 66
+  },
+  {
+    "id": "email-daily-summary",
+    "name": "email-daily-summary",
+    "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.",
+    "type": "communication",
+    "source": "workspace",
+    "usageCount": 65
+  },
+  {
+    "id": "security-sentinel",
+    "name": "security-sentinel",
+    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
+    "type": "security",
+    "source": "workspace",
+    "usageCount": 65
+  },
+  {
     "id": "markdown-optimization",
     "name": "markdown-optimization",
     "description": "Daily monitoring and correction of workspace documentation to prevent repeat mistakes caused by incorrect or outdated markdown files. Detects conflicting docs, outdated deployment instructions, and bad Supermemory entries. Trigger words: fix docs, outdated documentation, repeat mistakes, audit docs,",
     "type": "development",
+    "source": "workspace",
+    "usageCount": 64
+  },
+  {
+    "id": "telegram-screenshot-delivery",
+    "name": "telegram-screenshot-delivery",
+    "description": "Reliably deliver screenshots to Telegram using correct path format. Supports ImageMagick, Playwright, and Percy integration. Use when sending screenshots, mockups, or visual proof to Telegram. Trigger words: telegram screenshot, send image to telegram, telegram delivery, screenshot to telegram, tele",
+    "type": "communication",
     "source": "workspace",
     "usageCount": 64
   },
@@ -110,30 +142,6 @@
     "type": "social",
     "source": "workspace",
     "usageCount": 63
-  },
-  {
-    "id": "email-daily-summary",
-    "name": "email-daily-summary",
-    "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.",
-    "type": "communication",
-    "source": "workspace",
-    "usageCount": 61
-  },
-  {
-    "id": "security-sentinel",
-    "name": "security-sentinel",
-    "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
-    "type": "security",
-    "source": "workspace",
-    "usageCount": 61
-  },
-  {
-    "id": "telegram-screenshot-delivery",
-    "name": "telegram-screenshot-delivery",
-    "description": "Reliably deliver screenshots to Telegram using correct path format. Supports ImageMagick, Playwright, and Percy integration. Use when sending screenshots, mockups, or visual proof to Telegram. Trigger words: telegram screenshot, send image to telegram, telegram delivery, screenshot to telegram, tele",
-    "type": "communication",
-    "source": "workspace",
-    "usageCount": 60
   },
   {
     "id": "vibe-coding-patterns",
@@ -221,14 +229,6 @@
     "description": "24/7 OpenClaw uptime monitor. Every 5min cron ping \u2192 writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracking, status files).",
     "type": "utility",
     "source": "workspace",
-    "usageCount": 53
-  },
-  {
-    "id": "weather",
-    "name": "weather",
-    "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
-    "type": "lifestyle",
-    "source": "openclaw",
     "usageCount": 53
   },
   {
@@ -333,7 +333,15 @@
     "description": "Autonomous overnight work system using Ralph Loop and sessions_spawn. Enables coding work while you sleep \u2014 tasks are picked from ACTIVE queue, executed via sessions_spawn, monitored until complete, and results logged. Trigger words: overnight work, autonomous, ralph loop, background coding, work wh",
     "type": "agent",
     "source": "workspace",
-    "usageCount": 24
+    "usageCount": 26
+  },
+  {
+    "id": "deployment-proof",
+    "name": "deployment-proof",
+    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
+    "type": "deployment",
+    "source": "workspace",
+    "usageCount": 26
   },
   {
     "id": "screenshot-proof-workflow",
@@ -360,6 +368,14 @@
     "usageCount": 22
   },
   {
+    "id": "screenshot-fallback",
+    "name": "screenshot-fallback",
+    "description": "Screenshot capability with Percy (primary) and Playwright (secondary) fallback. Use when visual proof of deployment or UI state is needed. Percy for visual regression, Playwright for direct screenshots. Trigger words: screenshot, percy screenshot, playwright screenshot, visual proof, screenshot fall",
+    "type": "testing",
+    "source": "workspace",
+    "usageCount": 22
+  },
+  {
     "id": "supermemory-integration",
     "name": "supermemory-integration",
     "description": "Integration with Supermemory.ai cloud-based semantic memory storage. Store decisions, learnings, and project context that survives agent restarts. Semantic search, tagging, spaces, and API access. Use when storing long-term memories, decisions, or project context. Trigger words: Supermemory, semanti",
@@ -368,18 +384,26 @@
     "usageCount": 22
   },
   {
+    "id": "tiktok-browser-scanner",
+    "name": "tiktok-browser-scanner",
+    "description": "Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X. Finds videos from Erica Kirk, Tyler Bowyer, Charlie Kirk critics. Use when searching TikTok for political content to repost. Trigger words: TikTok scanner, find TikTok videos, TikTok browser, scan TikTok, ",
+    "type": "social",
+    "source": "workspace",
+    "usageCount": 22
+  },
+  {
+    "id": "hostile-audit",
+    "name": "hostile-audit",
+    "description": "Systematic hostile code review methodology to catch production bugs, security issues, and authority leakage before deployment. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems. Use when reviewing code, preparing for production, securi",
+    "type": "security",
+    "source": "workspace",
+    "usageCount": 21
+  },
+  {
     "id": "google-analytics",
     "name": "google-analytics",
     "description": "Google Analytics API integration with managed OAuth. Manage accounts, properties, and data streams (Admin API). Run reports on sessions, users, page views, and conversions (Data API). Use this skill when users want to configure or query Google Analytics. For other third party apps, use the api-gatew",
     "type": "utility",
-    "source": "workspace",
-    "usageCount": 20
-  },
-  {
-    "id": "screenshot-fallback",
-    "name": "screenshot-fallback",
-    "description": "Screenshot capability with Percy (primary) and Playwright (secondary) fallback. Use when visual proof of deployment or UI state is needed. Percy for visual regression, Playwright for direct screenshots. Trigger words: screenshot, percy screenshot, playwright screenshot, visual proof, screenshot fall",
-    "type": "testing",
     "source": "workspace",
     "usageCount": 20
   },
@@ -392,18 +416,18 @@
     "usageCount": 20
   },
   {
-    "id": "hostile-audit",
-    "name": "hostile-audit",
-    "description": "Systematic hostile code review methodology to catch production bugs, security issues, and authority leakage before deployment. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems. Use when reviewing code, preparing for production, securi",
-    "type": "security",
-    "source": "workspace",
-    "usageCount": 19
-  },
-  {
     "id": "scholarship-browser-agent",
     "name": "scholarship-browser-agent",
     "description": "Browser automation for scholarship research \u2014 navigates scholarship portals, verifies eligibility criteria, extracts deadlines, confirms no-fee status, and takes screenshots. Use when finding scholarships for students (especially accounting/finance). Trigger words: scholarship, scholarship search, f",
     "type": "agent",
+    "source": "workspace",
+    "usageCount": 19
+  },
+  {
+    "id": "security-audit",
+    "name": "security-audit",
+    "description": "Hostile security audit methodology for security-sensitive code changes. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems (always required). Use when reviewing encryption, authentication, payments, admin features, or file uploads. Trig",
+    "type": "security",
     "source": "workspace",
     "usageCount": 19
   },
@@ -432,14 +456,6 @@
     "usageCount": 18
   },
   {
-    "id": "tiktok-browser-scanner",
-    "name": "tiktok-browser-scanner",
-    "description": "Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X. Finds videos from Erica Kirk, Tyler Bowyer, Charlie Kirk critics. Use when searching TikTok for political content to repost. Trigger words: TikTok scanner, find TikTok videos, TikTok browser, scan TikTok, ",
-    "type": "social",
-    "source": "workspace",
-    "usageCount": 18
-  },
-  {
     "id": "x-browser-monitor",
     "name": "x-browser-monitor",
     "description": "Monitor @swordtruth X account via browser automation for notifications, mentions, and TikTok content links. Use when checking X/Twitter notifications, finding TikTok links, or verifying engagement. Trigger words: X monitor, Twitter monitor, @swordtruth, X notifications, monitor mentions, check X.",
@@ -464,12 +480,12 @@
     "usageCount": 17
   },
   {
-    "id": "security-audit",
-    "name": "security-audit",
-    "description": "Hostile security audit methodology for security-sensitive code changes. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems (always required). Use when reviewing encryption, authentication, payments, admin features, or file uploads. Trig",
-    "type": "security",
+    "id": "morning-brief",
+    "name": "morning-brief",
+    "description": "Automated daily morning briefing delivered via Telegram. Pulls weather",
+    "type": "utility",
     "source": "workspace",
-    "usageCount": 17
+    "usageCount": 16
   },
   {
     "id": "secret-vault",
@@ -496,28 +512,12 @@
     "usageCount": 14
   },
   {
-    "id": "morning-brief",
-    "name": "morning-brief",
-    "description": "Automated daily morning briefing delivered via Telegram. Pulls weather",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 14
-  },
-  {
     "id": "telegram-config",
     "name": "telegram-config",
     "description": "Configure OpenClaw Telegram bot access control \u2014 group allowlists, sender filtering, mention behavior, and DM policies. Use when setting up Telegram groups, fixing \"group not allowed\" errors, troubleshooting bot visibility, or managing who can trigger the bot in groups vs DMs.",
     "type": "communication",
     "source": "workspace",
     "usageCount": 14
-  },
-  {
-    "id": "deployment-proof",
-    "name": "deployment-proof",
-    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
-    "type": "deployment",
-    "source": "workspace",
-    "usageCount": 12
   },
   {
     "id": "safe-diagnostics",
@@ -552,6 +552,14 @@
     "usageCount": 10
   },
   {
+    "id": "serpapi",
+    "name": "serpapi",
+    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
+    "type": "search",
+    "source": "workspace",
+    "usageCount": 10
+  },
+  {
     "id": "mobile-web-debugging",
     "name": "mobile-web-debugging",
     "description": "- User reports \"navigation not working\" on mobile",
@@ -566,6 +574,22 @@
     "type": "lifestyle",
     "source": "workspace",
     "usageCount": 9
+  },
+  {
+    "id": "atl-mobile",
+    "name": "atl-browser",
+    "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
+    "type": "utility",
+    "source": "workspace",
+    "usageCount": 8
+  },
+  {
+    "id": "desktop-control",
+    "name": "desktop-control",
+    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
+    "type": "utility",
+    "source": "workspace",
+    "usageCount": 8
   },
   {
     "id": "supabase-secrets-sync",
@@ -624,12 +648,12 @@
     "usageCount": 6
   },
   {
-    "id": "serpapi",
-    "name": "serpapi",
-    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
-    "type": "search",
+    "id": "bird",
+    "name": "bird",
+    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "type": "social",
     "source": "workspace",
-    "usageCount": 6
+    "usageCount": 5
   },
   {
     "id": "percy-visual-testing",
@@ -656,20 +680,12 @@
     "usageCount": 5
   },
   {
-    "id": "atl-mobile",
-    "name": "atl-browser",
-    "description": "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 4
-  },
-  {
-    "id": "bird",
-    "name": "bird",
-    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "id": "x-api",
+    "name": "x-api",
+    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.",
     "type": "social",
     "source": "workspace",
-    "usageCount": 4
+    "usageCount": 5
   },
   {
     "id": "deploy-agent",
@@ -680,9 +696,9 @@
     "usageCount": 4
   },
   {
-    "id": "desktop-control",
-    "name": "desktop-control",
-    "description": "Advanced desktop automation with mouse, keyboard, and screen control",
+    "id": "kanban-task",
+    "name": "kanban-task",
+    "description": "Create, manage, move, and complete tasks on the Python Kanban Board with visual proof. Full task lifecycle \u2014 from creation to Done column with screenshot verification. Trigger words: kanban task, create task, user story, US-XXX, task management, move task, complete task, kanban board.",
     "type": "utility",
     "source": "workspace",
     "usageCount": 4
@@ -692,14 +708,6 @@
     "name": "smart-memory",
     "description": "Unified memory interface for storing, searching, and retrieving information across all memory systems (mem0, Supermemory, daily files). Deduplicates and provides a single command interface. Trigger words: smart memory, store memory, search memory, remember, recall, unified memory, memory store.",
     "type": "memory",
-    "source": "workspace",
-    "usageCount": 4
-  },
-  {
-    "id": "x-api",
-    "name": "x-api",
-    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.",
-    "type": "social",
     "source": "workspace",
     "usageCount": 4
   },
@@ -744,6 +752,14 @@
     "usageCount": 2
   },
   {
+    "id": "android-adb",
+    "name": "android-automation",
+    "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.",
+    "type": "utility",
+    "source": "workspace",
+    "usageCount": 2
+  },
+  {
     "id": "canvas",
     "name": "canvas",
     "description": "Display HTML content on connected OpenClaw nodes (Mac app, iOS, Android).",
@@ -752,10 +768,10 @@
     "usageCount": 2
   },
   {
-    "id": "kanban-task",
-    "name": "kanban-task",
-    "description": "Create, manage, move, and complete tasks on the Python Kanban Board with visual proof. Full task lifecycle \u2014 from creation to Done column with screenshot verification. Trigger words: kanban task, create task, user story, US-XXX, task management, move task, complete task, kanban board.",
-    "type": "utility",
+    "id": "file-editing",
+    "name": "file-editing",
+    "description": "Reliable file editing patterns for OpenClaw. Use the read-then-edit workflow to ensure exact matches. Covers when to use edit vs write vs exec (sed). Trigger words: edit file, modify file, update file, file change, replace text, safe edit.",
+    "type": "development",
     "source": "workspace",
     "usageCount": 2
   },
@@ -896,14 +912,6 @@
     "usageCount": 0
   },
   {
-    "id": "android-adb",
-    "name": "android-automation",
-    "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 0
-  },
-  {
     "id": "apple-notes",
     "name": "apple-notes",
     "description": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders.",
@@ -1020,14 +1028,6 @@
     "name": "emergency-rate-limit",
     "description": "Instantly switch all agent models away from a rate-limited provider to a backup provider, then restore when limit lifts. Use when Anthropic or another provider is down or rate-limited. Trigger words: rate limit, provider down, anthropic down, emergency switch, model fallback, quota exceeded.",
     "type": "utility",
-    "source": "workspace",
-    "usageCount": 0
-  },
-  {
-    "id": "file-editing",
-    "name": "file-editing",
-    "description": "Reliable file editing patterns for OpenClaw. Use the read-then-edit workflow to ensure exact matches. Covers when to use edit vs write vs exec (sed). Trigger words: edit file, modify file, update file, file change, replace text, safe edit.",
-    "type": "development",
     "source": "workspace",
     "usageCount": 0
   },

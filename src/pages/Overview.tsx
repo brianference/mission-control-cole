@@ -5,7 +5,9 @@ import TokenUsage from '../components/overview/TokenUsage';
 import BudgetMeter from '../components/overview/BudgetMeter';
 import BudgetSettings from '../components/settings/BudgetSettings';
 import KanbanWidget from '../components/overview/KanbanWidget';
+import ActivityFeed from '../components/activity/ActivityFeed';
 import { fetchUsageData, formatDataAge, getStaleStatus } from '../utils/usageDataFetcher';
+import '../services/heartbeat'; // Initialize heartbeat service
 import './Overview.css';
 
 const Overview: React.FC = () => {
@@ -397,6 +399,10 @@ const Overview: React.FC = () => {
             <div className="stat-trend positive">▲ 12% trend</div>
           </div>
         </div>
+      </section>
+
+      <section className="activity-section">
+        <ActivityFeed />
       </section>
     </div>
   );

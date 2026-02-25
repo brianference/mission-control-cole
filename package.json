@@ -15,6 +15,7 @@
     "test:percy:local": "BASE_URL=http://localhost:5173 node tests/percy-full-suite.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.97.0",
     "framer-motion": "^12.34.0",
     "lucide-react": "^0.563.0",
     "playwright": "^1.58.2",
