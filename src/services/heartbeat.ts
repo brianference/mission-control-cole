@@ -2,7 +2,7 @@ import { sendHeartbeat, logActivity, logMetric } from '../utils/supabase';
 
 // Heartbeat Service - Keeps Supabase active with regular pings
 class HeartbeatService {
-  private intervalId: NodeJS.Timeout | null = null;
+  private intervalId: number | null = null;
   private startTime: number = Date.now();
   private lastActivityTime: number = Date.now();
   private tokensToday: number = 0;

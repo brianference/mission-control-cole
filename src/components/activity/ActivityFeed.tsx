@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getRecentActivity, ActivityLog, supabase } from '../../utils/supabase';
+import { getRecentActivity, supabase, type ActivityLog } from '../../utils/supabase';
 import './ActivityFeed.css';
 
 const ActivityFeed: React.FC = () => {
