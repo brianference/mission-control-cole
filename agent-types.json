@@ -1,0 +1,105 @@
+{
+  "generated": "2026-02-25T21:40:41.880Z",
+  "count": 9,
+  "agents": [
+    {
+      "id": "candi",
+      "name": "AGENT.md - Candi: Restaurant Reservation Assistant",
+      "emoji": "🍬",
+      "label": "",
+      "model": "",
+      "timeout": "",
+      "status": "",
+      "purpose": "Handle restaurant reservations and phone calls on behalf of Brian using Bland AI.",
+      "path": "/root/.openclaw/workspace/agents/candi"
+    },
+    {
+      "id": "coder",
+      "name": "Coder Agent (Architect)",
+      "emoji": "🔨",
+      "label": "`coder-<task-id>`",
+      "model": "anthropic/claude-sonnet-4-5 (CODING tier)",
+      "timeout": "30 minutes",
+      "status": "✅ Implementation complete, ready for testing",
+      "purpose": "You are the Architect, the implementation agent. Your job is to read specs, write clean code, and commit your changes with clear messages. You are spawned once per task, implement the feature, then auto-cleanup.",
+      "path": "/root/.openclaw/workspace/agents/coder"
+    },
+    {
+      "id": "designer",
+      "name": "Designer Agent (Morpheus)",
+      "emoji": "🎨",
+      "label": "`designer-<task-id>`",
+      "model": "anthropic/claude-sonnet-4-5 (DESIGN tier)",
+      "timeout": "20 minutes",
+      "status": "✅ Design complete, ready for implementation",
+      "purpose": "You are Morpheus, the UX/Design agent. Your job is to read feature requirements, create UX specifications, and generate comprehensive test cases. You are spawned once per task, do your work, then auto-cleanup.",
+      "path": "/root/.openclaw/workspace/agents/designer"
+    },
+    {
+      "id": "idea-agent",
+      "name": "Idea Agent — Autonomous Product Intelligence & Backlog Feeder",
+      "emoji": "💡",
+      "label": "",
+      "model": "anthropic/claude-opus-4-5 (HIGH COMPLEXITY - product intelligence)",
+      "timeout": "",
+      "status": "",
+      "purpose": "",
+      "path": "/root/.openclaw/workspace/agents/idea-agent"
+    },
+    {
+      "id": "pm-orchestrator",
+      "name": "PM/Orchestrator Agent",
+      "emoji": "📋",
+      "label": "designer-breakfast-filter",
+      "model": "anthropic/claude-opus-4-5 (HIGH COMPLEXITY - orchestration)",
+      "timeout": "30 minutes",
+      "status": "In Progress",
+      "purpose": "You are the PM/Orchestrator agent. Your job is to monitor the kanban board, decompose tasks, coordinate sub-agents, and keep Brian informed of progress. You run continuously (persistent session) and wake up every 30 minutes via heartbeat to check for new work.",
+      "path": "/root/.openclaw/workspace/agents/pm-orchestrator"
+    },
+    {
+      "id": "scholarship-agent",
+      "name": "Scholarship Agent",
+      "emoji": "🎓",
+      "label": "",
+      "model": "openrouter/minimax/minimax-m2.1 (LOW COMPLEXITY - research)",
+      "timeout": "",
+      "status": "",
+      "purpose": "",
+      "path": "/root/.openclaw/workspace/agents/scholarship-agent"
+    },
+    {
+      "id": "test-case-writer",
+      "name": "Test Case Writer Agent - System Prompt",
+      "emoji": "🧪",
+      "label": "",
+      "model": "openrouter/minimax/minimax-m2.1 (LOW COMPLEXITY - test case writing)",
+      "timeout": "",
+      "status": "",
+      "purpose": "",
+      "path": "/root/.openclaw/workspace/agents/test-case-writer"
+    },
+    {
+      "id": "validator",
+      "name": "Validator Agent",
+      "emoji": "✅",
+      "label": "`validator-<task-id>`",
+      "model": "anthropic/claude-opus-4-5 (HIGH COMPLEXITY - validation + security audit)",
+      "timeout": "60 minutes (intelligent: 15-45 min actual)",
+      "status": "Active",
+      "purpose": "You are the Validator, the intelligent quality gate. Your job is to test, audit security (when needed), and approve or reject code changes. You combine three roles with smart routing: 1. **Test Agent** — Execute tests, screenshot proof (always, 10 min) 2. **Security Agent** — Hostile audit (if secur",
+      "path": "/root/.openclaw/workspace/agents/validator"
+    },
+    {
+      "id": "visual-test-agent",
+      "name": "Visual Test Agent (Tessa V2)",
+      "emoji": "🤖",
+      "label": "",
+      "model": "openrouter/minimax/minimax-m2.1 (LOW COMPLEXITY - test execution)",
+      "timeout": "",
+      "status": "✅ READY TO DEPLOY / ❌ NEEDS FIXES",
+      "purpose": "",
+      "path": "/root/.openclaw/workspace/agents/visual-test-agent"
+    }
+  ]
+}

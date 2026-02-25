@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Agent Types - Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary: #FF9500;
+  --primary-light: #FFB340;
+  --primary-bg: rgba(255, 149, 0, 0.1);
+  --accent: #5856D6;
+  --success: #34C759;
+  --danger: #FF3B30;
+  --warning: #FF9500;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --text-muted: #636366;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.welcome {
+  font-size: 32px;
+  font-weight: 700;
+  color: #60A5FA;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.agent-card {
+  background: var(--surface2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.agent-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.agent-info {
+  flex: 1;
+}
+
+.agent-emoji {
+  font-size: 32px;
+  margin-right: 16px;
+}
+
+.agent-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.agent-id {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.agent-status {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface);
+}
+
+.agent-status.active {
+  background: rgba(52, 199, 89, 0.2);
+  color: var(--success);
+}
+
+.agent-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.detail-item {
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.detail-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.agent-purpose {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+.error {
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F7;
+    --surface: #FFFFFF;
+    --surface2: #F2F2F7;
+    --text: #000000;
+    --text-dim: #3C3C43;
+    --text-muted: #8E8E93;
+    --border: #D1D1D6;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">
+  ← Back to Dashboard
+</a>
+
+<div class="header">
+  <div class="header-left">
+    <div class="icon">🤖</div>
+    <div class="header-title">Agent Types</div>
+  </div>
+  <div class="header-right">
+    <button class="icon-button" id="refreshBtn">🔄</button>
+  </div>
+</div>
+
+<h1 class="welcome">Available Agent Types</h1>
+<div class="subtitle" id="lastUpdate">Loading...</div>
+
+<div id="errorContainer"></div>
+
+<!-- Summary Statistics -->
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-value" id="totalAgents">0</div>
+    <div class="stat-label">Agent Types</div>
+  </div>
+</div>
+
+<!-- Agent Types List -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">📋 Agent Catalog</div>
+  </div>
+
+  <div id="agentsContainer">
+    <div class="loading">Loading agent types...</div>
+  </div>
+</div>
+
+<script>
+let agents = [];
+let refreshInterval = null;
+
+// Fetch agent types data
+async function fetchAgents() {
+  try {
+    const response = await fetch('/agent-types.json');
+    if (!response.ok) throw new Error(`Failed to load agent types: ${response.status}`);
+    
+    const data = await response.json();
+    agents = data.agents || [];
+    
+    updateDisplay();
+    updateStats();
+    clearError();
+  } catch (error) {
+    console.error('Failed to fetch agent types:', error);
+    agents = [];
+    updateDisplay();
+    updateStats();
+    showError(`Unable to load agent types: ${error.message}. Run gen-agent-types.js to generate data.`);
+  }
+}
+
+// Update summary stats
+function updateStats() {
+  document.getElementById('totalAgents').textContent = agents.length;
+  document.getElementById('lastUpdate').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+}
+
+// Render agent cards
+function updateDisplay() {
+  const container = document.getElementById('agentsContainer');
+  
+  if (agents.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🤖</div>
+        <div>No agent types found</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = agents.map(agent => {
+    const isActive = agent.status && (agent.status.includes('Active') || agent.status.includes('✅'));
+    
+    return `
+      <div class="agent-card" onclick="viewAgent('${agent.id}')">
+        <div class="agent-header">
+          <div style="display: flex; align-items: center;">
+            <div class="agent-emoji">${agent.emoji}</div>
+            <div class="agent-info">
+              <div class="agent-name">${agent.name}</div>
+              <div class="agent-id">${agent.id}</div>
+            </div>
+          </div>
+          ${agent.status ? `
+            <div class="agent-status ${isActive ? 'active' : ''}">
+              ${agent.status.replace(/✅|❌/g, '')}
+            </div>
+          ` : ''}
+        </div>
+        
+        ${agent.label || agent.model || agent.timeout ? `
+          <div class="agent-details">
+            ${agent.label ? `
+              <div class="detail-item">
+                <div class="detail-label">Label</div>
+                <div class="detail-value">${agent.label}</div>
+              </div>
+            ` : ''}
+            ${agent.model ? `
+              <div class="detail-item">
+                <div class="detail-label">Model</div>
+                <div class="detail-value">${agent.model}</div>
+              </div>
+            ` : ''}
+            ${agent.timeout ? `
+              <div class="detail-item">
+                <div class="detail-label">Timeout</div>
+                <div class="detail-value">${agent.timeout}</div>
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
+        
+        ${agent.purpose ? `
+          <div class="agent-purpose">
+            ${escapeHtml(agent.purpose)}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// View agent details
+function viewAgent(agentId) {
+  const agent = agents.find(a => a.id === agentId);
+  if (!agent) return;
+  
+  const details = [
+    `Agent: ${agent.name}`,
+    `ID: ${agent.id}`,
+    agent.label ? `Label: ${agent.label}` : '',
+    agent.model ? `Model: ${agent.model}` : '',
+    agent.timeout ? `Timeout: ${agent.timeout}` : '',
+    agent.status ? `Status: ${agent.status}` : '',
+    '',
+    'Purpose:',
+    agent.purpose || 'No description available',
+    '',
+    `Path: ${agent.path}`
+  ].filter(Boolean).join('\n');
+  
+  alert(details + '\n\nFeature: Full agent documentation viewer coming soon!');
+  // TODO: Open modal with full AGENT.md content
+}
+
+// Utility functions
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function showError(message) {
+  const errorContainer = document.getElementById('errorContainer');
+  errorContainer.innerHTML = `<div class="error">${message}</div>`;
+}
+
+function clearError() {
+  document.getElementById('errorContainer').innerHTML = '';
+}
+
+// Event listeners
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  fetchAgents();
+});
+
+// Initialize
+fetchAgents();
+
+// Auto-refresh every 5 minutes
+refreshInterval = setInterval(fetchAgents, 5 * 60 * 1000);
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+  if (refreshInterval) clearInterval(refreshInterval);
+});
+</script>
+
+</body>
+</html>

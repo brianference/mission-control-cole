@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Skills - Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary: #FF9500;
+  --primary-light: #FFB340;
+  --primary-bg: rgba(255, 149, 0, 0.1);
+  --accent: #5856D6;
+  --success: #34C759;
+  --danger: #FF3B30;
+  --warning: #FF9500;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --text-muted: #636366;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.welcome {
+  font-size: 32px;
+  font-weight: 700;
+  color: #60A5FA;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.search-bar {
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.skill-card {
+  background: var(--surface2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.skill-info {
+  flex: 1;
+}
+
+.skill-emoji {
+  font-size: 32px;
+  margin-right: 16px;
+}
+
+.skill-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.skill-id {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.skill-description {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.skill-homepage {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.skill-homepage a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+.error {
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F7;
+    --surface: #FFFFFF;
+    --surface2: #F2F2F7;
+    --text: #000000;
+    --text-dim: #3C3C43;
+    --text-muted: #8E8E93;
+    --border: #D1D1D6;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">
+  ← Back to Dashboard
+</a>
+
+<div class="header">
+  <div class="header-left">
+    <div class="icon">⚡</div>
+    <div class="header-title">Skills Library</div>
+  </div>
+  <div class="header-right">
+    <button class="icon-button" id="refreshBtn">🔄</button>
+  </div>
+</div>
+
+<h1 class="welcome">Available Skills</h1>
+<div class="subtitle" id="lastUpdate">Loading...</div>
+
+<div id="errorContainer"></div>
+
+<!-- Summary Statistics -->
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-value" id="totalSkills">0</div>
+    <div class="stat-label">Total Skills</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="filteredCount">0</div>
+    <div class="stat-label">Shown</div>
+  </div>
+</div>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <input 
+    type="text" 
+    class="search-input" 
+    id="searchInput" 
+    placeholder="🔍 Search skills by name or description..."
+  >
+</div>
+
+<!-- Skills List -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">📚 Skill Catalog</div>
+  </div>
+
+  <div id="skillsContainer">
+    <div class="loading">Loading skills...</div>
+  </div>
+</div>
+
+<script>
+let skills = [];
+let filteredSkills = [];
+let refreshInterval = null;
+
+// Fetch skills data
+async function fetchSkills() {
+  try {
+    const response = await fetch('/skills.json');
+    if (!response.ok) throw new Error(`Failed to load skills: ${response.status}`);
+    
+    const data = await response.json();
+    skills = data.skills || [];
+    filteredSkills = skills;
+    
+    updateDisplay();
+    updateStats();
+    clearError();
+  } catch (error) {
+    console.error('Failed to fetch skills:', error);
+    skills = [];
+    filteredSkills = [];
+    updateDisplay();
+    updateStats();
+    showError(`Unable to load skills data: ${error.message}. Run gen-skills.js to generate data.`);
+  }
+}
+
+// Update summary stats
+function updateStats() {
+  document.getElementById('totalSkills').textContent = skills.length;
+  document.getElementById('filteredCount').textContent = filteredSkills.length;
+  document.getElementById('lastUpdate').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+}
+
+// Render skill cards
+function updateDisplay() {
+  const container = document.getElementById('skillsContainer');
+  
+  if (filteredSkills.length === 0 && skills.length > 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div>No skills match your search</div>
+      </div>
+    `;
+    return;
+  }
+  
+  if (filteredSkills.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">⚡</div>
+        <div>No skills found</div>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = filteredSkills.map(skill => {
+    return `
+      <div class="skill-card" onclick="viewSkill('${skill.id}')">
+        <div class="skill-header">
+          <div style="display: flex; align-items: center;">
+            <div class="skill-emoji">${skill.emoji}</div>
+            <div class="skill-info">
+              <div class="skill-name">${skill.name}</div>
+              <div class="skill-id">${skill.id}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-description">
+          ${escapeHtml(skill.description)}
+        </div>
+        
+        ${skill.homepage ? `
+          <div class="skill-homepage">
+            <a href="${skill.homepage}" target="_blank" onclick="event.stopPropagation();">
+              🔗 ${skill.homepage}
+            </a>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// Search skills
+function searchSkills(query) {
+  const lowerQuery = query.toLowerCase().trim();
+  
+  if (!lowerQuery) {
+    filteredSkills = skills;
+  } else {
+    filteredSkills = skills.filter(skill => {
+      return skill.name.toLowerCase().includes(lowerQuery) ||
+             skill.id.toLowerCase().includes(lowerQuery) ||
+             skill.description.toLowerCase().includes(lowerQuery);
+    });
+  }
+  
+  updateDisplay();
+  updateStats();
+}
+
+// View skill details
+function viewSkill(skillId) {
+  const skill = skills.find(s => s.id === skillId);
+  if (!skill) return;
+  
+  alert(`Skill: ${skill.name}\n\nDescription: ${skill.description}\n\nPath: ${skill.path}\n\nFeature: Full skill viewer coming soon!`);
+  // TODO: Open modal with full SKILL.md content
+  // Could use markdown renderer to display the full skill documentation
+}
+
+// Utility functions
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function showError(message) {
+  const errorContainer = document.getElementById('errorContainer');
+  errorContainer.innerHTML = `<div class="error">${message}</div>`;
+}
+
+function clearError() {
+  document.getElementById('errorContainer').innerHTML = '';
+}
+
+// Event listeners
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  searchSkills(e.target.value);
+});
+
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  fetchSkills();
+});
+
+// Initialize
+fetchSkills();
+
+// Auto-refresh every 5 minutes
+refreshInterval = setInterval(fetchSkills, 5 * 60 * 1000);
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+  if (refreshInterval) clearInterval(refreshInterval);
+});
+</script>
+
+</body>
+</html>

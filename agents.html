@@ -528,55 +528,42 @@ function getAgentStatus(agent) {
   return 'idle';
 }
 
-// Fetch agents from OpenClaw
+// Fetch agents from OpenClaw - REAL DATA ONLY
 async function fetchAgents() {
   try {
-    // Since we don't have a direct API, we'll need to use exec or fetch from a backend
-    // For now, using demo data structure that matches openclaw sessions output
-    
-    const response = await fetch('/api/agents');
-    if (!response.ok) throw new Error('API unavailable');
+    // Fetch from static JSON generated at build time by gen-sessions.js
+    const response = await fetch('/active-sessions.json');
+    if (!response.ok) throw new Error(`Failed to load agents: ${response.status}`);
     
     const data = await response.json();
-    agents = data.sessions || [];
+    
+    // Transform active-sessions.json format to agents format
+    agents = (data.sessions || []).map(session => ({
+      key: `agent:${session.agentId}:${session.sessionKey}`,
+      sessionId: session.sessionKey,
+      model: session.model || 'unknown',
+      modelProvider: session.model?.includes('anthropic') ? 'anthropic' : 
+                     session.model?.includes('google') ? 'google' : 'unknown',
+      inputTokens: Math.floor(session.totalTokens * 0.7),  // Estimate based on typical ratio
+      outputTokens: Math.floor(session.totalTokens * 0.3),
+      totalTokens: session.totalTokens || 0,
+      contextTokens: 200000,  // Default context window
+      ageMs: Date.now() - session.updatedAt,
+      agentId: session.agentId,
+      kind: session.status === 'running' ? 'direct' : 'cron',
+      displayName: session.displayName || session.agentId,
+      messageCount: session.messageCount || 0
+    }));
     
     updateDisplay();
     updateStats();
     clearError();
   } catch (error) {
     console.error('Failed to fetch agents:', error);
-    showError('Unable to connect to OpenClaw API. Install API endpoint or use demo mode.');
-    // Demo data based on actual openclaw sessions format
-    agents = [
-      {
-        key: 'agent:main:cron:pm-orchestrator',
-        sessionId: 'ab08787b-64c0-443a-aae2-4d7fbce6d404',
-        model: 'claude-sonnet-4-5',
-        modelProvider: 'anthropic',
-        inputTokens: 270,
-        outputTokens: 16674,
-        totalTokens: 101538,
-        contextTokens: 200000,
-        ageMs: 102753,
-        agentId: 'main',
-        kind: 'direct'
-      },
-      {
-        key: 'agent:main:main',
-        sessionId: '5a929145-738f-4452-a29a-6d11667d8072',
-        model: 'claude-sonnet-4-5',
-        modelProvider: 'anthropic',
-        inputTokens: 10,
-        outputTokens: 149,
-        totalTokens: 37404,
-        contextTokens: 200000,
-        ageMs: 105905,
-        agentId: 'main',
-        kind: 'direct'
-      }
-    ];
+    agents = [];
     updateDisplay();
     updateStats();
+    showError(`Unable to load agent data: ${error.message}. Ensure gen-sessions.js runs at build time.`);
   }
 }
 

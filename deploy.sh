@@ -6,6 +6,11 @@ REPO_NAME="mission-control"
 
 echo "🚀 Deploying Mission Control Dashboard to Cloudflare Pages..."
 
+# Generate data files
+echo "📊 Generating data files..."
+node api/gen-skills.js || echo "Warning: Failed to generate skills.json"
+node api/gen-agent-types.js || echo "Warning: Failed to generate agent-types.json"
+
 # Check if git repo exists
 if [ ! -d ".git" ]; then
   echo "📦 Initializing git repository..."
