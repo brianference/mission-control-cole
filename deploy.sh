@@ -10,6 +10,7 @@ echo "🚀 Deploying Mission Control Dashboard to Cloudflare Pages..."
 echo "📊 Generating data files..."
 node api/gen-skills.js || echo "Warning: Failed to generate skills.json"
 node api/gen-agent-types.js || echo "Warning: Failed to generate agent-types.json"
+node api/gen-sessions.js || echo "Warning: Failed to generate active-sessions.json"
 
 # Check if git repo exists
 if [ ! -d ".git" ]; then

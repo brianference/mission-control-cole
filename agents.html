@@ -667,10 +667,30 @@ function updateDisplay() {
 }
 
 // View agent logs
-function viewLogs(sessionId) {
-  alert(`View logs for session ${sessionId}\n\nFeature coming soon: Full transcript and execution history`);
-  // TODO: Implement log viewing
-  // Could open modal with openclaw sessions history output
+async function viewLogs(sessionId) {
+  try {
+    const response = await fetch(`/api/agents-logs?sessionId=${sessionId}`);
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.message || 'Failed to fetch logs');
+    
+    // Create modal to display logs
+    const logsHtml = data.messages.map(msg => `
+      <div style="margin-bottom: 12px; padding: 12px; background: var(--bg); border-radius: 8px;">
+        <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;">
+          ${msg.role} • ${new Date(msg.timestamp).toLocaleString()}
+        </div>
+        <div style="font-size: 13px; color: var(--text); white-space: pre-wrap;">
+          ${msg.content.substring(0, 500)}${msg.content.length > 500 ? '...' : ''}
+        </div>
+      </div>
+    `).join('');
+    
+    alert(`Agent Logs (${data.messageCount} messages)\n\n${data.messages.slice(0, 3).map(m => `${m.role}: ${m.content.substring(0, 100)}...`).join('\n\n')}\n\n(Full logs available in console)`);
+    console.log('Agent logs:', data);
+  } catch (error) {
+    alert('Failed to load logs: ' + error.message);
+  }
 }
 
 // Kill agent
@@ -678,11 +698,15 @@ async function killAgent(sessionId) {
   if (!confirm('Are you sure you want to kill this agent?')) return;
   
   try {
-    // TODO: Implement via API endpoint that calls:
-    // openclaw subagents kill <sessionId>
-    alert(`Kill agent ${sessionId}\n\nFeature requires backend API endpoint`);
-    // await fetch(`/api/agents/${sessionId}/kill`, { method: 'POST' });
-    // fetchAgents(); // Refresh
+    const response = await fetch(`/api/agents-kill?sessionId=${sessionId}`, { 
+      method: 'POST' 
+    });
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.message || 'Failed to kill agent');
+    
+    alert(`Agent killed successfully: ${sessionId}`);
+    fetchAgents(); // Refresh
   } catch (error) {
     alert('Failed to kill agent: ' + error.message);
   }
@@ -699,17 +723,24 @@ async function spawnAgent() {
   }
   
   try {
-    // TODO: Implement via API endpoint that calls:
-    // openclaw sessions spawn --task="..." --model="..."
-    alert(`Spawn agent with task: ${task}\n${model ? `Model: ${model}` : ''}\n\nFeature requires backend API endpoint`);
+    const response = await fetch('/api/agents-spawn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ task, model: model || undefined })
+    });
+    
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || 'Failed to spawn agent');
+    
+    alert(`Agent spawned successfully!\nSession: ${data.sessionId || 'unknown'}`);
     
     // Clear form
     document.getElementById('taskInput').value = '';
     document.getElementById('modelInput').value = '';
     document.getElementById('spawnForm').style.display = 'none';
     
-    // Refresh agents
-    // await fetchAgents();
+    // Refresh agents after 2 seconds
+    setTimeout(fetchAgents, 2000);
   } catch (error) {
     alert('Failed to spawn agent: ' + error.message);
   }
