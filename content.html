@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Content Dashboard - Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary: #FF9500;
+  --primary-light: #FFB340;
+  --primary-bg: rgba(255, 149, 0, 0.1);
+  --accent: #5856D6;
+  --success: #34C759;
+  --error: #FF3B30;
+  --warning: #FF9500;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --text-muted: #636366;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.back-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.stat-card.draft {
+  border-color: var(--warning);
+}
+
+.stat-card.published {
+  border-color: var(--success);
+}
+
+.stat-card.scheduled {
+  border-color: var(--accent);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content-item {
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.content-item:hover {
+  background: #3C3C3E;
+  transform: translateX(4px);
+}
+
+.content-info {
+  flex: 1;
+}
+
+.content-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.content-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  display: flex;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-draft {
+  background: rgba(255, 149, 0, 0.2);
+  color: var(--warning);
+}
+
+.status-published {
+  background: rgba(52, 199, 89, 0.2);
+  color: var(--success);
+}
+
+.status-scheduled {
+  background: rgba(88, 86, 214, 0.2);
+  color: var(--accent);
+}
+
+.content-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.icon-button:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F2F2F7;
+    --surface: #FFFFFF;
+    --surface2: #F2F2F7;
+    --text: #000000;
+    --text-dim: #3C3C43;
+    --text-muted: #8E8E93;
+    --border: #D1D1D6;
+  }
+  
+  .content-item:hover {
+    background: #E5E5EA;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .content-actions {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <a href="index.html" class="back-button">←</a>
+    <div>
+      <div class="header-title">📝 Content Dashboard</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn btn-primary" id="newContentBtn">
+      <span>➕</span>
+      New Content
+    </button>
+  </div>
+</div>
+
+<!-- Stats Overview -->
+<div class="stats-grid">
+  <div class="stat-card draft">
+    <div class="stat-label">Drafts</div>
+    <div class="stat-value" id="draftCount">0</div>
+  </div>
+  
+  <div class="stat-card published">
+    <div class="stat-label">Published</div>
+    <div class="stat-value" id="publishedCount">0</div>
+  </div>
+  
+  <div class="stat-card scheduled">
+    <div class="stat-label">Scheduled</div>
+    <div class="stat-value" id="scheduledCount">0</div>
+  </div>
+  
+  <div class="stat-card">
+    <div class="stat-label">Total</div>
+    <div class="stat-value" id="totalCount">0</div>
+  </div>
+</div>
+
+<!-- Content Filters -->
+<div class="section">
+  <div class="tabs">
+    <button class="tab active" data-filter="all">All Content</button>
+    <button class="tab" data-filter="draft">Drafts</button>
+    <button class="tab" data-filter="published">Published</button>
+    <button class="tab" data-filter="scheduled">Scheduled</button>
+  </div>
+  
+  <div id="contentList" class="content-list">
+    <!-- Content items will be loaded here -->
+  </div>
+  
+  <div id="emptyState" class="empty-state" style="display: none;">
+    <div class="empty-icon">📭</div>
+    <div class="empty-title">No content yet</div>
+    <div class="empty-text">Create your first piece of content to get started</div>
+    <button class="btn btn-primary" onclick="document.getElementById('newContentBtn').click()">
+      <span>➕</span>
+      Create Content
+    </button>
+  </div>
+</div>
+
+<script>
+// Demo data - Replace with real API calls
+const contentData = [
+  {
+    id: 1,
+    title: "TPUSA Corruption Intel Report - Week 8",
+    type: "post",
+    status: "published",
+    date: "2026-02-24",
+    author: "Cole AI",
+    tags: ["tpusa", "research"]
+  },
+  {
+    id: 2,
+    title: "Scholarship opportunities for Lena - March 2026",
+    type: "document",
+    status: "draft",
+    date: "2026-02-23",
+    author: "Cole AI",
+    tags: ["scholarships", "lena"]
+  },
+  {
+    id: 3,
+    title: "X Thread: Latest TPUSA corruption findings",
+    type: "tweet",
+    status: "scheduled",
+    date: "2026-02-26 08:00",
+    author: "Cole AI",
+    tags: ["x", "tpusa"]
+  },
+  {
+    id: 4,
+    title: "Mission Control Dashboard deployment notes",
+    type: "document",
+    status: "published",
+    date: "2026-02-25",
+    author: "Cole AI",
+    tags: ["mission-control", "deployment"]
+  },
+  {
+    id: 5,
+    title: "Weekly AI automation workflow summary",
+    type: "post",
+    status: "draft",
+    date: "2026-02-24",
+    author: "Cole AI",
+    tags: ["automation", "summary"]
+  }
+];
+
+let currentFilter = 'all';
+
+// Initialize
+function init() {
+  loadContent();
+  updateStats();
+  setupEventListeners();
+}
+
+function setupEventListeners() {
+  // Tab filters
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentFilter = tab.dataset.filter;
+      loadContent();
+    });
+  });
+  
+  // New content button
+  document.getElementById('newContentBtn').addEventListener('click', () => {
+    alert('New content creation modal would open here.\n\nOptions:\n- Blog Post\n- X/Twitter Thread\n- Document\n- Research Report');
+  });
+}
+
+function loadContent() {
+  const filtered = currentFilter === 'all' 
+    ? contentData 
+    : contentData.filter(item => item.status === currentFilter);
+  
+  const listEl = document.getElementById('contentList');
+  const emptyEl = document.getElementById('emptyState');
+  
+  if (filtered.length === 0) {
+    listEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    return;
+  }
+  
+  listEl.style.display = 'flex';
+  emptyEl.style.display = 'none';
+  
+  listEl.innerHTML = filtered.map(item => `
+    <div class="content-item" onclick="viewContent(${item.id})">
+      <div class="content-info">
+        <div class="content-title">${getTypeIcon(item.type)} ${item.title}</div>
+        <div class="content-meta">
+          <span class="status-badge status-${item.status}">${item.status}</span>
+          <span>📅 ${item.date}</span>
+          <span>👤 ${item.author}</span>
+        </div>
+      </div>
+      <div class="content-actions">
+        <button class="icon-button" onclick="event.stopPropagation(); editContent(${item.id})" title="Edit">✏️</button>
+        <button class="icon-button" onclick="event.stopPropagation(); deleteContent(${item.id})" title="Delete">🗑️</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateStats() {
+  const draft = contentData.filter(item => item.status === 'draft').length;
+  const published = contentData.filter(item => item.status === 'published').length;
+  const scheduled = contentData.filter(item => item.status === 'scheduled').length;
+  
+  document.getElementById('draftCount').textContent = draft;
+  document.getElementById('publishedCount').textContent = published;
+  document.getElementById('scheduledCount').textContent = scheduled;
+  document.getElementById('totalCount').textContent = contentData.length;
+}
+
+function getTypeIcon(type) {
+  const icons = {
+    post: '📝',
+    tweet: '🐦',
+    document: '📄',
+    research: '🔍'
+  };
+  return icons[type] || '📄';
+}
+
+function viewContent(id) {
+  const item = contentData.find(c => c.id === id);
+  alert(`View content: ${item.title}\n\nThis would open the content viewer/editor.`);
+}
+
+function editContent(id) {
+  const item = contentData.find(c => c.id === id);
+  alert(`Edit content: ${item.title}\n\nThis would open the content editor.`);
+}
+
+function deleteContent(id) {
+  const item = contentData.find(c => c.id === id);
+  if (confirm(`Delete "${item.title}"?\n\nThis action cannot be undone.`)) {
+    const index = contentData.findIndex(c => c.id === id);
+    contentData.splice(index, 1);
+    loadContent();
+    updateStats();
+  }
+}
+
+// Initialize on load
+init();
+</script>
+
+</body>
+</html>
