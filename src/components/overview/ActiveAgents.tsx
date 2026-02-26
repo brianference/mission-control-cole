@@ -49,7 +49,7 @@ const ActiveAgents: React.FC<ActiveAgentsProps> = ({
           ? `Active sessions: ${agent.sessionCount}` 
           : 'Idle',
         status: agent.status as Agent['status'],
-        progress: agent.status === 'running' ? undefined : undefined,
+        progress: undefined as any,
         startedAt: agent.lastActivity ? new Date(agent.lastActivity) : undefined,
         model: agent.model || 'unknown',
         tokensUsed: agent.totalTokens || undefined,

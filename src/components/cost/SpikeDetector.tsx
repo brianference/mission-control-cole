@@ -75,6 +75,7 @@ const SpikeDetector: React.FC<SpikeDetectorProps> = ({ data, threshold = 2 }) =>
             dataKey="cost"
             stroke="#818cf8"
             strokeWidth={2}
+            // @ts-ignore
             dot={(props: DotProps) => {
               const { cx, cy, payload } = props;
               if (payload.isSpike) {

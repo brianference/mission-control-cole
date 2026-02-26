@@ -55,7 +55,7 @@ const WorkspaceActivity: React.FC = () => {
               label: dayLabel,
               commits: day.commits || 0,
               files: day.files || 0,
-              skills: [], // Skills would need to be added to generate-real-data.sh
+              skills: [] as any[], // Skills would need to be added to generate-real-data.sh
               projects: day.commits > 0 ? projects : [],
               highlight: day.commits > 50 ? `${day.commits} commits!` : undefined
             };

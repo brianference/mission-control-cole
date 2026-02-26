@@ -1,0 +1,1744 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button "Toggle navigation menu" [ref=e6] [cursor=pointer]: ☰
+      - link "Mission Control" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: 🚀
+        - heading "Mission Control" [level=1] [ref=e10]
+    - generic [ref=e11]:
+      - button "Notifications (1 unread)" [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: 🔔
+        - generic [ref=e15]: "1"
+      - button "Settings" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: ⚙️
+      - button "User menu" [ref=e20] [cursor=pointer]:
+        - generic [ref=e22]: B
+        - generic [ref=e23]: ▼
+  - navigation "Main Navigation" [ref=e24]:
+    - generic [ref=e25]:
+      - link "Go to Dashboard" [ref=e26] [cursor=pointer]:
+        - /url: /
+        - img "Mission Control" [ref=e27]: 🚀
+        - generic [ref=e28]: Mission Control
+      - button "Close navigation" [ref=e29] [cursor=pointer]: ✕
+    - navigation [ref=e30]:
+      - list [ref=e31]:
+        - listitem [ref=e32]:
+          - link "Ideas 12" [ref=e33] [cursor=pointer]:
+            - /url: /ideas
+            - generic [ref=e34]: 💡
+            - generic [ref=e35]: Ideas
+            - generic [ref=e36]: "12"
+        - listitem [ref=e37]:
+          - button "Tasks" [ref=e38] [cursor=pointer]:
+            - generic [ref=e39]: ✅
+            - generic [ref=e40]: Tasks
+        - listitem [ref=e41]:
+          - button "Secret Vault" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: 🔐
+            - generic [ref=e44]: Secret Vault
+        - listitem [ref=e45]:
+          - button "Itinerary" [ref=e46] [cursor=pointer]:
+            - generic [ref=e47]: 🗾
+            - generic [ref=e48]: Itinerary
+        - listitem [ref=e49]:
+          - link "Calendar Today" [ref=e50] [cursor=pointer]:
+            - /url: /calendar
+            - generic [ref=e51]: 📅
+            - generic [ref=e52]: Calendar
+            - generic [ref=e53]: Today
+        - listitem [ref=e54]:
+          - link "Costs $981" [ref=e55] [cursor=pointer]:
+            - /url: /costs
+            - generic [ref=e56]: 💰
+            - generic [ref=e57]: Costs
+            - generic [ref=e58]: $981
+        - listitem [ref=e59]:
+          - button "Memory 1247 ▼" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: 🧠
+            - generic [ref=e62]: Memory
+            - generic [ref=e63]: "1247"
+            - generic [ref=e64]: ▼
+        - listitem [ref=e65]:
+          - link "Skills 96" [ref=e66] [cursor=pointer]:
+            - /url: /skills
+            - generic [ref=e67]: 🎯
+            - generic [ref=e68]: Skills
+            - generic [ref=e69]: "96"
+        - listitem [ref=e70]:
+          - link "Agents 8" [ref=e71] [cursor=pointer]:
+            - /url: /agents
+            - generic [ref=e72]: 🤖
+            - generic [ref=e73]: Agents
+            - generic [ref=e74]: "8"
+        - listitem [ref=e75]:
+          - link "Crons 42" [ref=e76] [cursor=pointer]:
+            - /url: /crons
+            - generic [ref=e77]: ⏰
+            - generic [ref=e78]: Crons
+            - generic [ref=e79]: "42"
+        - listitem [ref=e80]:
+          - link "Apps" [ref=e81] [cursor=pointer]:
+            - /url: /apps
+            - generic [ref=e82]: 🚀
+            - generic [ref=e83]: Apps
+        - listitem [ref=e84]:
+          - link "Logs" [ref=e85] [cursor=pointer]:
+            - /url: /logs
+            - generic [ref=e86]: 📜
+            - generic [ref=e87]: Logs
+        - listitem [ref=e88]:
+          - link "Model Health" [ref=e89] [cursor=pointer]:
+            - /url: /models
+            - generic [ref=e90]: 🏥
+            - generic [ref=e91]: Model Health
+        - listitem [ref=e92]:
+          - link "Alert Center" [ref=e93] [cursor=pointer]:
+            - /url: /alerts
+            - generic [ref=e94]: 🚨
+            - generic [ref=e95]: Alert Center
+        - listitem [ref=e96]:
+          - link "Memory Health" [ref=e97] [cursor=pointer]:
+            - /url: /memory-health
+            - generic [ref=e98]: 🧠
+            - generic [ref=e99]: Memory Health
+        - listitem [ref=e100]:
+          - link "Docs Updated ▼" [ref=e101] [cursor=pointer]:
+            - /url: /docs
+            - generic [ref=e102]: 📄
+            - generic [ref=e103]: Docs
+            - generic [ref=e104]: Updated
+            - generic [ref=e105]: ▼
+      - list [ref=e107]:
+        - listitem [ref=e108]:
+          - link "Settings" [ref=e109] [cursor=pointer]:
+            - /url: /settings
+            - generic [ref=e110]: ⚙️
+            - generic [ref=e111]: Settings
+        - listitem [ref=e112]:
+          - link "Profile" [ref=e113] [cursor=pointer]:
+            - /url: /profile
+            - generic [ref=e114]: 👤
+            - generic [ref=e115]: Profile
+  - main [ref=e116]:
+    - generic [ref=e118]:
+      - generic [ref=e120]:
+        - heading "Skills" [level=1] [ref=e121]
+        - paragraph [ref=e122]: 172 skills · 112 with usage data
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - generic [ref=e125]: 🔍
+          - textbox "Search skills by name, description, or type..." [ref=e126]
+        - generic [ref=e127]:
+          - generic [ref=e128]: Showing 172 of 172 skills
+          - generic [ref=e129]:
+            - generic [ref=e130]: "Sort:"
+            - button "🔥 Most Used" [ref=e131] [cursor=pointer]
+            - button "A–Z" [ref=e132] [cursor=pointer]
+            - button "📂 Type" [ref=e133] [cursor=pointer]
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]: ⚡
+              - heading "standard-features" [level=3] [ref=e140]
+            - generic [ref=e141]:
+              - generic "Used 128 times" [ref=e142]: 🔥 128
+              - generic [ref=e143]: custom
+          - generic [ref=e144]: Comprehensive checklist for web and mobile app quality — authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensure ≥90% feature coverage and WCAG 2.1 AA compliance. Includes Eruda mobile console, footer, hamburge
+          - generic [ref=e146]: development
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - generic [ref=e150]: 🎨
+              - heading "modern-design" [level=3] [ref=e151]
+            - generic [ref=e152]:
+              - generic "Used 124 times" [ref=e153]: 🔥 124
+              - generic [ref=e154]: custom
+          - generic [ref=e155]: Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.
+          - generic [ref=e157]: design
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]: 🔍
+              - heading "location-places" [level=3] [ref=e162]
+            - generic [ref=e163]:
+              - generic "Used 117 times" [ref=e164]: 🔥 117
+              - generic [ref=e165]: custom
+          - generic [ref=e166]: "Guidelines for providing location information with complete details including Google Maps links, ratings, hours, and distances. Always include Maps links for any place mentioned. Integrates with places-search (goplaces + spots) skills. Trigger words: restaurant location, place details, google maps l"
+          - generic [ref=e168]: search
+        - generic [ref=e169]:
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - generic [ref=e172]: 🚀
+              - heading "cloudflare-pages-deploy" [level=3] [ref=e173]
+            - generic [ref=e174]:
+              - generic "Used 115 times" [ref=e175]: 🔥 115
+              - generic [ref=e176]: custom
+          - generic [ref=e177]: Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say "can't deploy" until all 3 methods fail.
+          - generic [ref=e179]: deployment
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: ⚡
+              - heading "no-bs-debugging" [level=3] [ref=e184]
+            - generic [ref=e185]:
+              - generic "Used 112 times" [ref=e186]: 🔥 112
+              - generic [ref=e187]: custom
+          - generic [ref=e188]: "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. Then deploy."
+          - generic [ref=e190]: development
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - generic [ref=e194]: ✈️
+              - heading "travel-restaurants" [level=3] [ref=e195]
+            - generic [ref=e196]:
+              - generic "Used 110 times" [ref=e197]: 🔥 110
+              - generic [ref=e198]: custom
+          - generic [ref=e199]: "Find restaurants and dining locations using Google Places API with comprehensive data — ratings, hours, phone numbers, and precise locations. Use when searching for restaurants during travel or trip planning. Trigger words: travel restaurants, restaurant search, find restaurants, dining, Google Plac"
+          - generic [ref=e201]: lifestyle
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - generic [ref=e205]: 🎤
+              - heading "phone-calls" [level=3] [ref=e206]
+            - generic [ref=e207]:
+              - generic "Used 105 times" [ref=e208]: 🔥 105
+              - generic [ref=e209]: custom
+          - generic [ref=e210]: Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.
+          - generic [ref=e212]: communication
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - generic [ref=e216]: ⚡
+              - heading "intel-monitor" [level=3] [ref=e217]
+            - generic [ref=e218]:
+              - generic "Used 102 times" [ref=e219]: 🔥 102
+              - generic [ref=e220]: custom
+          - generic [ref=e221]: Continuous surveillance on configured X accounts and keywords. Runs on
+          - generic [ref=e223]: utility
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - generic [ref=e226]:
+              - generic [ref=e227]: 🧠
+              - heading "memory-optimization" [level=3] [ref=e228]
+            - generic [ref=e229]:
+              - generic "Used 94 times" [ref=e230]: 🔥 94
+              - generic [ref=e231]: custom
+          - generic [ref=e232]: "Consolidate, optimize, and deduplicate all memory systems — Supermemory, mem0, MEMORY.md, and daily files — so they work together efficiently. Removes duplicates, fixes contradictions, and improves searchability. Trigger words: optimize memory, consolidate memory, memory cleanup, deduplicate, clean"
+          - generic [ref=e234]: memory
+        - generic [ref=e235]:
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - generic [ref=e238]: 🤖
+              - heading "coding-agent" [level=3] [ref=e239]
+            - generic [ref=e240]:
+              - generic "Used 83 times" [ref=e241]: 🔥 83
+              - generic [ref=e242]: built-in
+          - generic [ref=e243]: "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit"
+          - generic [ref=e245]: agent
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: ⚡
+              - heading "clawhub" [level=3] [ref=e250]
+            - generic [ref=e251]:
+              - generic "Used 76 times" [ref=e252]: 🔥 76
+              - generic [ref=e253]: built-in
+          - generic [ref=e254]: Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.
+          - generic [ref=e256]: utility
+        - generic [ref=e257]:
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - generic [ref=e260]: 🔍
+              - heading "places-search" [level=3] [ref=e261]
+            - generic [ref=e262]:
+              - generic "Used 72 times" [ref=e263]: 🔥 72
+              - generic [ref=e264]: custom
+          - generic [ref=e265]: "Comprehensive location search combining goplaces (fast Google Places API queries) with spots (exhaustive grid-based scanning for hidden gems). Use when searching for restaurants, cafes, attractions, or any places near a location. Requires Google Places API key. Trigger words: find restaurant, places"
+          - generic [ref=e267]: search
+        - generic [ref=e268]:
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - generic [ref=e271]: 🌤️
+              - heading "weather" [level=3] [ref=e272]
+            - generic [ref=e273]:
+              - generic "Used 66 times" [ref=e274]: 🔥 66
+              - generic [ref=e275]: built-in
+          - generic [ref=e276]: "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed."
+          - generic [ref=e278]: lifestyle
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - generic [ref=e281]:
+              - generic [ref=e282]: 📧
+              - heading "email-daily-summary" [level=3] [ref=e283]
+            - generic [ref=e284]:
+              - generic "Used 65 times" [ref=e285]: 🔥 65
+              - generic [ref=e286]: custom
+          - generic [ref=e287]: Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.
+          - generic [ref=e289]: communication
+        - generic [ref=e290]:
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: 🔐
+              - heading "security-sentinel" [level=3] [ref=e294]
+            - generic [ref=e295]:
+              - generic "Used 65 times" [ref=e296]: 🔥 65
+              - generic [ref=e297]: custom
+          - generic [ref=e298]: Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.
+          - generic [ref=e300]: security
+        - generic [ref=e301]:
+          - generic [ref=e302]:
+            - generic [ref=e303]:
+              - generic [ref=e304]: ⚡
+              - heading "markdown-optimization" [level=3] [ref=e305]
+            - generic [ref=e306]:
+              - generic "Used 64 times" [ref=e307]: 🔥 64
+              - generic [ref=e308]: custom
+          - generic [ref=e309]: "Daily monitoring and correction of workspace documentation to prevent repeat mistakes caused by incorrect or outdated markdown files. Detects conflicting docs, outdated deployment instructions, and bad Supermemory entries. Trigger words: fix docs, outdated documentation, repeat mistakes, audit docs,"
+          - generic [ref=e311]: development
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e314]:
+              - generic [ref=e315]: 📷
+              - heading "telegram-screenshot-delivery" [level=3] [ref=e316]
+            - generic [ref=e317]:
+              - generic "Used 64 times" [ref=e318]: 🔥 64
+              - generic [ref=e319]: custom
+          - generic [ref=e320]: "Reliably deliver screenshots to Telegram using correct path format. Supports ImageMagick, Playwright, and Percy integration. Use when sending screenshots, mockups, or visual proof to Telegram. Trigger words: telegram screenshot, send image to telegram, telegram delivery, screenshot to telegram, tele"
+          - generic [ref=e322]: communication
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - generic [ref=e325]:
+              - generic [ref=e326]: 🎵
+              - heading "tiktok-teneo" [level=3] [ref=e327]
+            - generic [ref=e328]:
+              - generic "Used 63 times" [ref=e329]: 🔥 63
+              - generic [ref=e330]: custom
+          - generic [ref=e331]: The agent gives you the ability to extract data from tiktok through different commands.
+          - generic [ref=e333]: social
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - generic [ref=e337]: 💻
+              - heading "vibe-coding-patterns" [level=3] [ref=e338]
+            - generic [ref=e339]:
+              - generic "Used 60 times" [ref=e340]: 🔥 60
+              - generic [ref=e341]: custom
+          - generic [ref=e342]: Production-ready coding standards, security checklists, and hostile audit prompts. Use when starting new projects, reviewing code pre-commit, auditing security, or ensuring production readiness. Triggers on mentions of security audit, code review, production ready, best practices, hostile audit.
+          - generic [ref=e344]: agent
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - generic [ref=e347]:
+              - generic [ref=e348]: 🔐
+              - heading "clawhub-security" [level=3] [ref=e349]
+            - generic [ref=e350]:
+              - generic "Used 57 times" [ref=e351]: 🔥 57
+              - generic [ref=e352]: custom
+          - generic [ref=e353]: "Security check for ClawHub skills using Clawdex API before installation. ALWAYS scan with Clawdex before installing any ClawHub skill. Blocks malicious skills, warns on unknown ones. Trigger words: install skill, clawhub install, skill security, clawdex scan, safe install."
+          - generic [ref=e355]: security
+        - generic [ref=e356]:
+          - generic [ref=e357]:
+            - generic [ref=e358]:
+              - generic [ref=e359]: 🤖
+              - heading "coder-agent" [level=3] [ref=e360]
+            - generic [ref=e361]:
+              - generic "Used 55 times" [ref=e362]: 🔥 55
+              - generic [ref=e363]: custom
+          - generic [ref=e364]: "Spawn and manage autonomous coding agents via sessions_spawn. Inherits capabilities from deprecated tmux workflows: task discovery, error detection, quality gates, 3-platform testing, and result logging. Use for autonomous coding, overnight builds, and any background development work."
+          - generic [ref=e366]: agent
+        - generic [ref=e367]:
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]: 🔍
+              - heading "flight-search" [level=3] [ref=e371]
+            - generic [ref=e372]:
+              - generic "Used 55 times" [ref=e373]: 🔥 55
+              - generic [ref=e374]: custom
+          - generic [ref=e375]: Search Google Flights for prices, times, and airlines. No API key required.
+          - generic [ref=e377]: search
+        - generic [ref=e378]:
+          - generic [ref=e379]:
+            - generic [ref=e380]:
+              - generic [ref=e381]: 🎥
+              - heading "yt-dlp-downloader" [level=3] [ref=e382]
+            - generic [ref=e383]:
+              - generic "Used 55 times" [ref=e384]: 🔥 55
+              - generic [ref=e385]: custom
+          - generic [ref=e386]: Download videos from YouTube, Bilibili, Twitter, and thousands of other sites using yt-dlp. Use when the user provides a video URL and wants to download it, extract audio (MP3), download subtitles, or select video quality. Triggers on phrases like "下载视频", "download video", "yt-dlp", "YouTube", "B站",
+          - generic [ref=e388]: media
+        - generic [ref=e389]:
+          - generic [ref=e390]:
+            - generic [ref=e391]:
+              - generic [ref=e392]: 🔍
+              - heading "airbnb-search" [level=3] [ref=e393]
+            - generic [ref=e394]:
+              - generic "Used 54 times" [ref=e395]: 🔥 54
+              - generic [ref=e396]: custom
+          - generic [ref=e397]: Search Airbnb listings with prices, ratings, and direct links. No API key required.
+          - generic [ref=e399]: search
+        - generic [ref=e400]:
+          - generic [ref=e401]:
+            - generic [ref=e402]:
+              - generic [ref=e403]: 🔍
+              - heading "scholarship-research" [level=3] [ref=e404]
+            - generic [ref=e405]:
+              - generic "Used 54 times" [ref=e406]: 🔥 54
+              - generic [ref=e407]: custom
+          - generic [ref=e408]: Research scholarships for students pursuing accounting, finance, or business degrees. Use when asked to find scholarships, research financial aid, identify scholarship opportunities, or create scholarship lists. Enforces strict criteria - no duplicates, direct application links only (not aggregators
+          - generic [ref=e410]: search
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - generic [ref=e414]: 📅
+              - heading "calendar" [level=3] [ref=e415]
+            - generic [ref=e416]:
+              - generic "Used 53 times" [ref=e417]: 🔥 53
+              - generic [ref=e418]: custom
+          - generic [ref=e419]: Calendar management and scheduling. Create events, manage meetings, and sync across calendar providers.
+          - generic [ref=e421]: communication
+        - generic [ref=e422]:
+          - generic [ref=e423]:
+            - generic [ref=e424]:
+              - generic [ref=e425]: 🔍
+              - heading "places-lookup" [level=3] [ref=e426]
+            - generic [ref=e427]:
+              - generic "Used 53 times" [ref=e428]: 🔥 53
+              - generic [ref=e429]: custom
+          - generic [ref=e430]: Universal place search for ANY type of location — grocery stores, gas stations, restaurants, pharmacies, parks, attractions, coffee shops, salons, anything. Always includes Google Maps driving directions links. Uses Google Places API (New) as primary source with optional TripAdvisor enrichment for r
+          - generic [ref=e432]: search
+        - generic [ref=e433]:
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - generic [ref=e436]: ✈️
+              - heading "travel-concierge" [level=3] [ref=e437]
+            - generic [ref=e438]:
+              - generic "Used 53 times" [ref=e439]: 🔥 53
+              - generic [ref=e440]: custom
+          - generic [ref=e441]: Find contact details for accommodation listings (Airbnb, Booking.com, VRBO, Expedia)
+          - generic [ref=e443]: lifestyle
+        - generic [ref=e444]:
+          - generic [ref=e445]:
+            - generic [ref=e446]:
+              - generic [ref=e447]: ⚡
+              - heading "uptime-monitor" [level=3] [ref=e448]
+            - generic [ref=e449]:
+              - generic "Used 53 times" [ref=e450]: 🔥 53
+              - generic [ref=e451]: custom
+          - generic [ref=e452]: 24/7 OpenClaw uptime monitor. Every 5min cron ping → writes dead.json if down, uptime.json after 7d (168h) continuous alive streak. Use when setting up persistent monitoring (cron setup, streak tracking, status files).
+          - generic [ref=e454]: utility
+        - generic [ref=e455]:
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - generic [ref=e458]: 🤖
+              - heading "ralph-loop" [level=3] [ref=e459]
+            - generic [ref=e460]:
+              - generic "Used 51 times" [ref=e461]: 🔥 51
+              - generic [ref=e462]: custom
+          - generic [ref=e463]: Guide OpenClaw agents to execute Ralph Wiggum loops using sessions_spawn or exec/process tools. Agent orchestrates coding agents (Codex, OpenCode, Goose) with proper TTY support. Plans/builds code via PROMPT.md + AGENTS.md, SPECS and IMPLEMENTATION_PLAN.md. Includes PLANNING vs BUILDING modes, backp
+          - generic [ref=e465]: agent
+        - generic [ref=e466]:
+          - generic [ref=e467]:
+            - generic [ref=e468]:
+              - generic [ref=e469]: 🔍
+              - heading "goplaces" [level=3] [ref=e470]
+            - generic [ref=e471]:
+              - generic "Used 50 times" [ref=e472]: 🔥 50
+              - generic [ref=e473]: custom
+          - generic [ref=e474]: Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.
+          - generic [ref=e476]: search
+        - generic [ref=e477]:
+          - generic [ref=e478]:
+            - generic [ref=e479]:
+              - generic [ref=e480]: ⚡
+              - heading "spots" [level=3] [ref=e481]
+            - generic [ref=e482]:
+              - generic "Used 44 times" [ref=e483]: 🔥 44
+              - generic [ref=e484]: custom
+          - generic [ref=e485]: Exhaustive Google Places search using grid-based scanning. Finds ALL places, not just what Google surfaces.
+          - generic [ref=e487]: search
+        - generic [ref=e488]:
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - generic [ref=e491]: 💬
+              - heading "metricool" [level=3] [ref=e492]
+            - generic [ref=e493]:
+              - generic "Used 43 times" [ref=e494]: 🔥 43
+              - generic [ref=e495]: custom
+          - generic [ref=e496]: Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.
+          - generic [ref=e498]: social
+        - generic [ref=e499]:
+          - generic [ref=e500]:
+            - generic [ref=e501]:
+              - generic [ref=e502]: ⚡
+              - heading "secret-keys" [level=3] [ref=e503]
+            - generic [ref=e504]:
+              - generic "Used 39 times" [ref=e505]: 🔥 39
+              - generic [ref=e506]: custom
+          - generic [ref=e507]: "Secure handling of API keys, secrets, and credentials. Never expose keys in chat — store in keys.env, reference by variable name only. Covers storage, rotation, Supabase cloud sync, and git hygiene. Trigger words: API key, secret, credentials, keys.env, token, bearer token, secret management, key ro"
+          - generic [ref=e509]: utility
+        - generic [ref=e510]:
+          - generic [ref=e511]:
+            - generic [ref=e512]:
+              - generic [ref=e513]: 🧠
+              - heading "memory-management" [level=3] [ref=e514]
+            - generic [ref=e515]:
+              - generic "Used 36 times" [ref=e516]: 🔥 36
+              - generic [ref=e517]: custom
+          - generic [ref=e518]: "Systematic memory storage, retrieval, and optimization across all memory systems — daily logs, MEMORY.md, structured decision/pattern files, Supermemory, and mem0. Use to remember important info, search past decisions, and maintain continuity across sessions. Trigger words: remember, memory, recall,"
+          - generic [ref=e520]: memory
+        - generic [ref=e521]:
+          - generic [ref=e522]:
+            - generic [ref=e523]:
+              - generic [ref=e524]: 🔍
+              - heading "places-api-recommendations" [level=3] [ref=e525]
+            - generic [ref=e526]:
+              - generic "Used 36 times" [ref=e527]: 🔥 36
+              - generic [ref=e528]: custom
+          - generic [ref=e529]: "MANDATORY method for all restaurant, cafe, and place recommendations. Always use Google Places API (New) - never web scraping or Brave Search. Brian's directive: \"make it a commandment across all applications.\""
+          - generic [ref=e531]: search
+        - generic [ref=e532]:
+          - generic [ref=e533]:
+            - generic [ref=e534]:
+              - generic [ref=e535]: ⚡
+              - heading "tripadvisor" [level=3] [ref=e536]
+            - generic [ref=e537]:
+              - generic "Used 35 times" [ref=e538]: 🔥 35
+              - generic [ref=e539]: custom
+          - generic [ref=e540]: "TripAdvisor Content API v1 for restaurant search, details, reviews, ratings, and photos. Integrates with Google Places for comprehensive recommendations. Use when getting TripAdvisor data for restaurants, hotels, or attractions. Trigger words: TripAdvisor, restaurant reviews, TA ratings, TripAdvisor"
+          - generic [ref=e542]: lifestyle
+        - generic [ref=e543]:
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - generic [ref=e546]: 🐦
+              - heading "x-automation" [level=3] [ref=e547]
+            - generic [ref=e548]:
+              - generic "Used 31 times" [ref=e549]: 🔥 31
+              - generic [ref=e550]: custom
+          - generic [ref=e551]: Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation. Includes automated hourly monitoring of breaking news sources (@ProjectConstitu, @RealCandaceO, @B
+          - generic [ref=e553]: social
+        - generic [ref=e554]:
+          - generic [ref=e555]:
+            - generic [ref=e556]:
+              - generic [ref=e557]: 🍽️
+              - heading "restaurant-lookup" [level=3] [ref=e558]
+            - generic [ref=e559]:
+              - generic "Used 29 times" [ref=e560]: 🔥 29
+              - generic [ref=e561]: custom
+          - generic [ref=e562]: Comprehensive restaurant search and recommendation system combining Google Places API (primary), TripAdvisor Content API v1 (reviews/ratings/photos), and SerpApi Google Images (food photos). For international locations, automatically enriches results with full TripAdvisor details, reviews, photos, a
+          - generic [ref=e564]: lifestyle
+        - generic [ref=e565]:
+          - generic [ref=e566]:
+            - generic [ref=e567]:
+              - generic [ref=e568]: ⚡
+              - heading "openclaw-release-monitor" [level=3] [ref=e569]
+            - generic [ref=e570]:
+              - generic "Used 27 times" [ref=e571]: 🔥 27
+              - generic [ref=e572]: custom
+          - generic [ref=e573]: "Monitor OpenClaw releases and updates via GitHub API. Checks for new versions, reports what changed, and triggers update workflow. Trigger words: openclaw update, new version, openclaw release, check for updates, openclaw monitor."
+          - generic [ref=e575]: utility
+        - generic [ref=e576]:
+          - generic [ref=e577]:
+            - generic [ref=e578]:
+              - generic [ref=e579]: ⚡
+              - heading "tmux" [level=3] [ref=e580]
+            - generic [ref=e581]:
+              - generic "Used 27 times" [ref=e582]: 🔥 27
+              - generic [ref=e583]: built-in
+          - generic [ref=e584]: Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
+          - generic [ref=e586]: utility
+        - generic [ref=e587]:
+          - generic [ref=e588]:
+            - generic [ref=e589]:
+              - generic [ref=e590]: 🤖
+              - heading "autonomous-work" [level=3] [ref=e591]
+            - generic [ref=e592]:
+              - generic "Used 26 times" [ref=e593]: 🔥 26
+              - generic [ref=e594]: custom
+          - generic [ref=e595]: "Autonomous overnight work system using Ralph Loop and sessions_spawn. Enables coding work while you sleep — tasks are picked from ACTIVE queue, executed via sessions_spawn, monitored until complete, and results logged. Trigger words: overnight work, autonomous, ralph loop, background coding, work wh"
+          - generic [ref=e597]: agent
+        - generic [ref=e598]:
+          - generic [ref=e599]:
+            - generic [ref=e600]:
+              - generic [ref=e601]: 🚀
+              - heading "deployment-proof" [level=3] [ref=e602]
+            - generic [ref=e603]:
+              - generic "Used 26 times" [ref=e604]: 🔥 26
+              - generic [ref=e605]: custom
+          - generic [ref=e606]: "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36."
+          - generic [ref=e608]: deployment
+        - generic [ref=e609]:
+          - generic [ref=e610]:
+            - generic [ref=e611]:
+              - generic [ref=e612]: 📷
+              - heading "screenshot-proof-workflow" [level=3] [ref=e613]
+            - generic [ref=e614]:
+              - generic "Used 24 times" [ref=e615]: 🔥 24
+              - generic [ref=e616]: custom
+          - generic [ref=e617]: "Mandatory workflow for delivering screenshot proof to Telegram before claiming any fix is \"deployed\" or \"working\". Enforced after multiple violations where agents claimed fixes worked without screenshots, and bugs were still present. Use when: reporting test results, deployment verifications, bug fi"
+          - generic [ref=e619]: testing
+        - generic [ref=e620]:
+          - generic [ref=e621]:
+            - generic [ref=e622]:
+              - generic [ref=e623]: 🔐
+              - heading "security-reviewer" [level=3] [ref=e624]
+            - generic [ref=e625]:
+              - generic "Used 23 times" [ref=e626]: 🔥 23
+              - generic [ref=e627]: custom
+          - generic [ref=e628]: Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.
+          - generic [ref=e630]: security
+        - generic [ref=e631]:
+          - generic [ref=e632]:
+            - generic [ref=e633]:
+              - generic [ref=e634]: 🧠
+              - heading "batch-memory-save" [level=3] [ref=e635]
+            - generic [ref=e636]:
+              - generic "Used 22 times" [ref=e637]: 🔥 22
+              - generic [ref=e638]: custom
+          - generic [ref=e639]: "Save learnings and config changes to ALL memory systems at once. Prevents knowledge loss and repeated mistakes by ensuring consistency across Supermemory, mem0, daily files, COMMANDMENTS.md, and TOOLS.md. Trigger words: save everywhere, batch save, save learnings, remember this everywhere, sync memo"
+          - generic [ref=e641]: memory
+        - generic [ref=e642]:
+          - generic [ref=e643]:
+            - generic [ref=e644]:
+              - generic [ref=e645]: 📷
+              - heading "screenshot-fallback" [level=3] [ref=e646]
+            - generic [ref=e647]:
+              - generic "Used 22 times" [ref=e648]: 🔥 22
+              - generic [ref=e649]: custom
+          - generic [ref=e650]: "Screenshot capability with Percy (primary) and Playwright (secondary) fallback. Use when visual proof of deployment or UI state is needed. Percy for visual regression, Playwright for direct screenshots. Trigger words: screenshot, percy screenshot, playwright screenshot, visual proof, screenshot fall"
+          - generic [ref=e652]: testing
+        - generic [ref=e653]:
+          - generic [ref=e654]:
+            - generic [ref=e655]:
+              - generic [ref=e656]: 🧠
+              - heading "supermemory-integration" [level=3] [ref=e657]
+            - generic [ref=e658]:
+              - generic "Used 22 times" [ref=e659]: 🔥 22
+              - generic [ref=e660]: custom
+          - generic [ref=e661]: "Integration with Supermemory.ai cloud-based semantic memory storage. Store decisions, learnings, and project context that survives agent restarts. Semantic search, tagging, spaces, and API access. Use when storing long-term memories, decisions, or project context. Trigger words: Supermemory, semanti"
+          - generic [ref=e663]: memory
+        - generic [ref=e664]:
+          - generic [ref=e665]:
+            - generic [ref=e666]:
+              - generic [ref=e667]: 🌐
+              - heading "tiktok-browser-scanner" [level=3] [ref=e668]
+            - generic [ref=e669]:
+              - generic "Used 22 times" [ref=e670]: 🔥 22
+              - generic [ref=e671]: custom
+          - generic [ref=e672]: "Scan TikTok for TPUSA critic videos using browser automation, extract URLs for reposting to X. Finds videos from Erica Kirk, Tyler Bowyer, Charlie Kirk critics. Use when searching TikTok for political content to repost. Trigger words: TikTok scanner, find TikTok videos, TikTok browser, scan TikTok,"
+          - generic [ref=e674]: social
+        - generic [ref=e675]:
+          - generic [ref=e676]:
+            - generic [ref=e677]:
+              - generic [ref=e678]: 🔐
+              - heading "hostile-audit" [level=3] [ref=e679]
+            - generic [ref=e680]:
+              - generic "Used 21 times" [ref=e681]: 🔥 21
+              - generic [ref=e682]: custom
+          - generic [ref=e683]: Systematic hostile code review methodology to catch production bugs, security issues, and authority leakage before deployment. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems. Use when reviewing code, preparing for production, securi
+          - generic [ref=e685]: security
+        - generic [ref=e686]:
+          - generic [ref=e687]:
+            - generic [ref=e688]:
+              - generic [ref=e689]: 📊
+              - heading "google-analytics" [level=3] [ref=e690]
+            - generic [ref=e691]:
+              - generic "Used 20 times" [ref=e692]: 🔥 20
+              - generic [ref=e693]: custom
+          - generic [ref=e694]: Google Analytics API integration with managed OAuth. Manage accounts, properties, and data streams (Admin API). Run reports on sessions, users, page views, and conversions (Data API). Use this skill when users want to configure or query Google Analytics. For other third party apps, use the api-gatew
+          - generic [ref=e696]: utility
+        - generic [ref=e697]:
+          - generic [ref=e698]:
+            - generic [ref=e699]:
+              - generic [ref=e700]: 📷
+              - heading "telegram-screenshots" [level=3] [ref=e701]
+            - generic [ref=e702]:
+              - generic "Used 20 times" [ref=e703]: 🔥 20
+              - generic [ref=e704]: custom
+          - generic [ref=e705]: "Send visual screenshots directly in Telegram chat using the message tool with filePath. Covers 5 approaches including ImageMagick convert, Playwright, and media upload. Use when user asks for screenshots or visual output in Telegram. Trigger words: telegram screenshots, send image telegram, telegram"
+          - generic [ref=e707]: communication
+        - generic [ref=e708]:
+          - generic [ref=e709]:
+            - generic [ref=e710]:
+              - generic [ref=e711]: 🌐
+              - heading "scholarship-browser-agent" [level=3] [ref=e712]
+            - generic [ref=e713]:
+              - generic "Used 19 times" [ref=e714]: 🔥 19
+              - generic [ref=e715]: custom
+          - generic [ref=e716]: "Browser automation for scholarship research — navigates scholarship portals, verifies eligibility criteria, extracts deadlines, confirms no-fee status, and takes screenshots. Use when finding scholarships for students (especially accounting/finance). Trigger words: scholarship, scholarship search, f"
+          - generic [ref=e718]: agent
+        - generic [ref=e719]:
+          - generic [ref=e720]:
+            - generic [ref=e721]:
+              - generic [ref=e722]: 🔐
+              - heading "security-audit" [level=3] [ref=e723]
+            - generic [ref=e724]:
+              - generic "Used 19 times" [ref=e725]: 🔥 19
+              - generic [ref=e726]: custom
+          - generic [ref=e727]: Hostile security audit methodology for security-sensitive code changes. 8 audit types covering database, API, read/write paths, UI, mobile, production readiness, scalability, and systems (always required). Use when reviewing encryption, authentication, payments, admin features, or file uploads. Trig
+          - generic [ref=e729]: security
+        - generic [ref=e730]:
+          - generic [ref=e731]:
+            - generic [ref=e732]:
+              - generic [ref=e733]: 🎨
+              - heading "clean-blue-design" [level=3] [ref=e734]
+            - generic [ref=e735]:
+              - generic "Used 18 times" [ref=e736]: 🔥 18
+              - generic [ref=e737]: custom
+          - generic [ref=e738]: "Professional clean design system built around solid blue (#2563eb). Mobile-first, minimal, highly readable. Use when building web UIs, dashboards, or apps that need a clean modern look. Trigger words: clean design, blue design system, UI design, dashboard UI, mobile-first, design system, CSS compone"
+          - generic [ref=e740]: design
+        - generic [ref=e741]:
+          - generic [ref=e742]:
+            - generic [ref=e743]:
+              - generic [ref=e744]: ⚡
+              - heading "second-brain" [level=3] [ref=e745]
+            - generic [ref=e746]:
+              - generic "Used 18 times" [ref=e747]: 🔥 18
+              - generic [ref=e748]: custom
+          - generic [ref=e749]: "Active intelligence layer that auto-captures tasks and decisions from conversations, cross-context searches all memory systems, and flows tasks to the kanban board. Proactively listens and captures ideas without being asked. Trigger words: second brain, capture idea, remember task, auto-capture, cro"
+          - generic [ref=e751]: utility
+        - generic [ref=e752]:
+          - generic [ref=e753]:
+            - generic [ref=e754]:
+              - generic [ref=e755]: 🚀
+              - heading "senior-devops" [level=3] [ref=e756]
+            - generic [ref=e757]:
+              - generic "Used 18 times" [ref=e758]: 🔥 18
+              - generic [ref=e759]: custom
+          - generic [ref=e760]: Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementi
+          - generic [ref=e762]: deployment
+        - generic [ref=e763]:
+          - generic [ref=e764]:
+            - generic [ref=e765]:
+              - generic [ref=e766]: 🌐
+              - heading "x-browser-monitor" [level=3] [ref=e767]
+            - generic [ref=e768]:
+              - generic "Used 18 times" [ref=e769]: 🔥 18
+              - generic [ref=e770]: custom
+          - generic [ref=e771]: "Monitor @swordtruth X account via browser automation for notifications, mentions, and TikTok content links. Use when checking X/Twitter notifications, finding TikTok links, or verifying engagement. Trigger words: X monitor, Twitter monitor, @swordtruth, X notifications, monitor mentions, check X."
+          - generic [ref=e773]: social
+        - generic [ref=e774]:
+          - generic [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: ⚡
+              - heading "last30days" [level=3] [ref=e778]
+            - generic [ref=e779]:
+              - generic "Used 17 times" [ref=e780]: 🔥 17
+              - generic [ref=e781]: custom
+          - generic [ref=e782]: Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.
+          - generic [ref=e784]: utility
+        - generic [ref=e785]:
+          - generic [ref=e786]:
+            - generic [ref=e787]:
+              - generic [ref=e788]: 🤖
+              - heading "ralph-loop-patterns" [level=3] [ref=e789]
+            - generic [ref=e790]:
+              - generic "Used 17 times" [ref=e791]: 🔥 17
+              - generic [ref=e792]: custom
+          - generic [ref=e793]: "Patterns for autonomous multi-agent development loops (Ralph Loop). Orchestrates PM → Designer → Test Writer → Coder → Validator cycles that run unattended until complete. Use for overnight builds, autonomous agent pipelines, and iterative development. Trigger words: ralph loop, autonomous agent, mu"
+          - generic [ref=e795]: agent
+        - generic [ref=e796]:
+          - generic [ref=e797]:
+            - generic [ref=e798]:
+              - generic [ref=e799]: ⚡
+              - heading "morning-brief" [level=3] [ref=e800]
+            - generic [ref=e801]:
+              - generic "Used 16 times" [ref=e802]: 🔥 16
+              - generic [ref=e803]: custom
+          - generic [ref=e804]: Automated daily morning briefing delivered via Telegram. Pulls weather
+          - generic [ref=e806]: utility
+        - generic [ref=e807]:
+          - generic [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]: ⚡
+              - heading "secret-vault" [level=3] [ref=e811]
+            - generic [ref=e812]:
+              - generic "Used 15 times" [ref=e813]: 🔥 15
+              - generic [ref=e814]: custom
+          - generic [ref=e815]: "- Rotating API tokens/keys"
+          - generic [ref=e817]: utility
+        - generic [ref=e818]:
+          - generic [ref=e819]:
+            - generic [ref=e820]:
+              - generic [ref=e821]: 🧠
+              - heading "batch-memory-update" [level=3] [ref=e822]
+            - generic [ref=e823]:
+              - generic "Used 14 times" [ref=e824]: 🔥 14
+              - generic [ref=e825]: custom
+          - generic [ref=e826]: "Comprehensive batch memory update that saves learnings and config changes everywhere — mem0, Supermemory, workspace files, AGENTS.md, MEMORY.md, and runs audit/optimization scripts. Deletes contradictory memories to prevent repeat mistakes. Trigger words: batch update, save everywhere, full memory s"
+          - generic [ref=e828]: memory
+        - generic [ref=e829]:
+          - generic [ref=e830]:
+            - generic [ref=e831]:
+              - generic [ref=e832]: ⚡
+              - heading "implementation-patterns" [level=3] [ref=e833]
+            - generic [ref=e834]:
+              - generic "Used 14 times" [ref=e835]: 🔥 14
+              - generic [ref=e836]: custom
+          - generic [ref=e837]: "Comprehensive implementation guidelines for quality code — subagent-driven development, TypeScript standards, state management, API integration, performance, accessibility, testing, and error handling. Use when implementing new features, doing code reviews, or setting up projects. Trigger words: imp"
+          - generic [ref=e839]: development
+        - generic [ref=e840]:
+          - generic [ref=e841]:
+            - generic [ref=e842]:
+              - generic [ref=e843]: ⚡
+              - heading "telegram-config" [level=3] [ref=e844]
+            - generic [ref=e845]:
+              - generic "Used 14 times" [ref=e846]: 🔥 14
+              - generic [ref=e847]: custom
+          - generic [ref=e848]: Configure OpenClaw Telegram bot access control — group allowlists, sender filtering, mention behavior, and DM policies. Use when setting up Telegram groups, fixing "group not allowed" errors, troubleshooting bot visibility, or managing who can trigger the bot in groups vs DMs.
+          - generic [ref=e850]: communication
+        - generic [ref=e851]:
+          - generic [ref=e852]:
+            - generic [ref=e853]:
+              - generic [ref=e854]: 🔐
+              - heading "safe-diagnostics" [level=3] [ref=e855]
+            - generic [ref=e856]:
+              - generic "Used 12 times" [ref=e857]: 🔥 12
+              - generic [ref=e858]: custom
+          - generic [ref=e859]: "Debug config and API issues WITHOUT exposing credentials in chat. Use safe patterns to check API keys, verify configs, and diagnose problems without leaking secrets. Trigger words: debug API, check key, diagnose config, API not working, credentials safe, debug without exposing, safe debug."
+          - generic [ref=e861]: security
+        - generic [ref=e862]:
+          - generic [ref=e863]:
+            - generic [ref=e864]:
+              - generic [ref=e865]: 🚀
+              - heading "vercel-deploy" [level=3] [ref=e866]
+            - generic [ref=e867]:
+              - generic "Used 12 times" [ref=e868]: 🔥 12
+              - generic [ref=e869]: custom
+          - generic [ref=e870]: Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports production and preview deployments. Practical infrastructure operations - no "AI will build your app" magi
+          - generic [ref=e872]: deployment
+        - generic [ref=e873]:
+          - generic [ref=e874]:
+            - generic [ref=e875]:
+              - generic [ref=e876]: 📱
+              - heading "expo-mobile-app" [level=3] [ref=e877]
+            - generic [ref=e878]:
+              - generic "Used 11 times" [ref=e879]: 🔥 11
+              - generic [ref=e880]: custom
+          - generic [ref=e881]: Build production-ready React Native mobile apps with Expo that actually work in Expo Go. Based on bolt.new patterns that succeed where manual approaches fail.
+          - generic [ref=e883]: development
+        - generic [ref=e884]:
+          - generic [ref=e885]:
+            - generic [ref=e886]:
+              - generic [ref=e887]: ⚡
+              - heading "github" [level=3] [ref=e888]
+            - generic [ref=e889]:
+              - generic "Used 10 times" [ref=e890]: 🔥 10
+              - generic [ref=e891]: built-in
+          - generic [ref=e892]: "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooli"
+          - generic [ref=e894]: utility
+        - generic [ref=e895]:
+          - generic [ref=e896]:
+            - generic [ref=e897]:
+              - generic [ref=e898]: 🔍
+              - heading "serpapi" [level=3] [ref=e899]
+            - generic [ref=e900]:
+              - generic "Used 10 times" [ref=e901]: 🔥 10
+              - generic [ref=e902]: custom
+          - generic [ref=e903]: Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.
+          - generic [ref=e905]: search
+        - generic [ref=e906]:
+          - generic [ref=e907]:
+            - generic [ref=e908]:
+              - generic [ref=e909]: 🌐
+              - heading "mobile-web-debugging" [level=3] [ref=e910]
+            - generic [ref=e911]:
+              - generic "Used 9 times" [ref=e912]: 🔥 9
+              - generic [ref=e913]: custom
+          - generic [ref=e914]: "- User reports \"navigation not working\" on mobile"
+          - generic [ref=e916]: utility
+        - generic [ref=e917]:
+          - generic [ref=e918]:
+            - generic [ref=e919]:
+              - generic [ref=e920]: ⚡
+              - heading "tripadvisor-api" [level=3] [ref=e921]
+            - generic [ref=e922]:
+              - generic "Used 9 times" [ref=e923]: 🔥 9
+              - generic [ref=e924]: custom
+          - generic [ref=e925]: "Interact with TripAdvisor Content API v1 to search locations, retrieve details, and fetch user reviews. Use when: (1) Getting TripAdvisor-specific ratings and review counts, (2) Searching for restaurants, hotels, or attractions on TripAdvisor, (3) Enhancing restaurant data with TripAdvisor reviews,"
+          - generic [ref=e927]: lifestyle
+        - generic [ref=e928]:
+          - generic [ref=e929]:
+            - generic [ref=e930]:
+              - generic [ref=e931]: 🌐
+              - heading "atl-browser" [level=3] [ref=e932]
+            - generic [ref=e933]:
+              - generic "Used 8 times" [ref=e934]: 🔥 8
+              - generic [ref=e935]: custom
+          - generic [ref=e936]: Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators.
+          - generic [ref=e938]: utility
+        - generic [ref=e939]:
+          - generic [ref=e940]:
+            - generic [ref=e941]:
+              - generic [ref=e942]: ⚡
+              - heading "desktop-control" [level=3] [ref=e943]
+            - generic [ref=e944]:
+              - generic "Used 8 times" [ref=e945]: 🔥 8
+              - generic [ref=e946]: custom
+          - generic [ref=e947]: Advanced desktop automation with mouse, keyboard, and screen control
+          - generic [ref=e949]: utility
+        - generic [ref=e950]:
+          - generic [ref=e951]:
+            - generic [ref=e952]:
+              - generic [ref=e953]: 💾
+              - heading "supabase-secrets-sync" [level=3] [ref=e954]
+            - generic [ref=e955]:
+              - generic "Used 8 times" [ref=e956]: 🔥 8
+              - generic [ref=e957]: custom
+          - generic [ref=e958]: Sync secrets from Supabase vault to local keys.env file. Use this skill when you need to transfer API keys, credentials, or sensitive configuration from a Supabase-backed secrets vault and merge them into the local keys.env file.
+          - generic [ref=e960]: database
+        - generic [ref=e961]:
+          - generic [ref=e962]:
+            - generic [ref=e963]:
+              - generic [ref=e964]: 🔐
+              - heading "zero-trust" [level=3] [ref=e965]
+            - generic [ref=e966]:
+              - generic "Used 8 times" [ref=e967]: 🔥 8
+              - generic [ref=e968]: custom
+          - generic [ref=e969]: Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Triggers on - any URL/link interaction, package installations, API key handling, sending emails/messages, s
+          - generic [ref=e971]: security
+        - generic [ref=e972]:
+          - generic [ref=e973]:
+            - generic [ref=e974]:
+              - generic [ref=e975]: ⚡
+              - heading "reaction-trigger" [level=3] [ref=e976]
+            - generic [ref=e977]:
+              - generic "Used 7 times" [ref=e978]: 🔥 7
+              - generic [ref=e979]: custom
+          - generic [ref=e980]: Routes Telegram emoji reactions on intel-monitor alerts into the SwordTruth
+          - generic [ref=e982]: development
+        - generic [ref=e983]:
+          - generic [ref=e984]:
+            - generic [ref=e985]:
+              - generic [ref=e986]: 📷
+              - heading "screenshot-delivery" [level=3] [ref=e987]
+            - generic [ref=e988]:
+              - generic "Used 7 times" [ref=e989]: 🔥 7
+              - generic [ref=e990]: custom
+          - generic [ref=e991]: "Generate and deliver screenshots and mockups via ImageMagick and Playwright to Telegram. Use when user asks for screenshots, UI previews, or visual mockups. ImageMagick for design mockups, Playwright for live web screenshots. Trigger words: take screenshot, send screenshot, show me, visual preview,"
+          - generic [ref=e993]: testing
+        - generic [ref=e994]:
+          - generic [ref=e995]:
+            - generic [ref=e996]:
+              - generic [ref=e997]: ♿
+              - heading "accessibility-toolkit" [level=3] [ref=e998]
+            - generic [ref=e999]:
+              - generic "Used 6 times" [ref=e1000]: 🔥 6
+              - generic [ref=e1001]: custom
+          - generic [ref=e1002]: Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.
+          - generic [ref=e1004]: utility
+        - generic [ref=e1005]:
+          - generic [ref=e1006]:
+            - generic [ref=e1007]:
+              - generic [ref=e1008]: 📊
+              - heading "analytics-tracking" [level=3] [ref=e1009]
+            - generic [ref=e1010]:
+              - generic "Used 6 times" [ref=e1011]: 🔥 6
+              - generic [ref=e1012]: custom
+          - generic [ref=e1013]: When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," or "tracking plan." For A/B
+          - generic [ref=e1015]: utility
+        - generic [ref=e1016]:
+          - generic [ref=e1017]:
+            - generic [ref=e1018]:
+              - generic [ref=e1019]: ⚡
+              - heading "seo-competitor-analysis" [level=3] [ref=e1020]
+            - generic [ref=e1021]:
+              - generic "Used 6 times" [ref=e1022]: 🔥 6
+              - generic [ref=e1023]: custom
+          - generic [ref=e1024]: Perform deep SEO competitor analysis, including keyword research, backlink checking, and content strategy mapping. Use when the user wants to analyze a website's competitors or improve their own SEO ranking by studying the competition.
+          - generic [ref=e1026]: utility
+        - generic [ref=e1027]:
+          - generic [ref=e1028]:
+            - generic [ref=e1029]:
+              - generic [ref=e1030]: 🐦
+              - heading "bird" [level=3] [ref=e1031]
+            - generic [ref=e1032]:
+              - generic "Used 5 times" [ref=e1033]: 🔥 5
+              - generic [ref=e1034]: custom
+          - generic [ref=e1035]: X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.
+          - generic [ref=e1037]: social
+        - generic [ref=e1038]:
+          - generic [ref=e1039]:
+            - generic [ref=e1040]:
+              - generic [ref=e1041]: ⚡
+              - heading "percy-visual-testing" [level=3] [ref=e1042]
+            - generic [ref=e1043]:
+              - generic "Used 5 times" [ref=e1044]: 🔥 5
+              - generic [ref=e1045]: custom
+          - generic [ref=e1046]: "Visual regression testing using Percy and Playwright. Take screenshots of deployed sites and compare against baselines. Required for deployment verification. Trigger words: percy, visual test, screenshot test, visual regression, deployment screenshot, percy snapshot, visual diff."
+          - generic [ref=e1048]: testing
+        - generic [ref=e1049]:
+          - generic [ref=e1050]:
+            - generic [ref=e1051]:
+              - generic [ref=e1052]: ⚡
+              - heading "skill-creator" [level=3] [ref=e1053]
+            - generic [ref=e1054]:
+              - generic "Used 5 times" [ref=e1055]: 🔥 5
+              - generic [ref=e1056]: custom
+          - generic [ref=e1057]: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+          - generic [ref=e1059]: utility
+        - generic [ref=e1060]:
+          - generic [ref=e1061]:
+            - generic [ref=e1062]:
+              - generic [ref=e1063]: ⚡
+              - heading "supadata-transcript" [level=3] [ref=e1064]
+            - generic [ref=e1065]:
+              - generic "Used 5 times" [ref=e1066]: 🔥 5
+              - generic [ref=e1067]: custom
+          - generic [ref=e1068]: "Extract transcripts and metadata from YouTube, TikTok, Instagram, Twitter/X, and Facebook using Supadata API. Supports native subtitles, AI generation, and multiple output formats. Use when you need to extract video transcripts or post content. Trigger words: transcript, extract video, YouTube trans"
+          - generic [ref=e1070]: media
+        - generic [ref=e1071]:
+          - generic [ref=e1072]:
+            - generic [ref=e1073]:
+              - generic [ref=e1074]: 🐦
+              - heading "x-api" [level=3] [ref=e1075]
+            - generic [ref=e1076]:
+              - generic "Used 5 times" [ref=e1077]: 🔥 5
+              - generic [ref=e1078]: custom
+          - generic [ref=e1079]: Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.
+          - generic [ref=e1081]: social
+        - generic [ref=e1082]:
+          - generic [ref=e1083]:
+            - generic [ref=e1084]:
+              - generic [ref=e1085]: 🤖
+              - heading "deploy-agent" [level=3] [ref=e1086]
+            - generic [ref=e1087]:
+              - generic "Used 4 times" [ref=e1088]: 🔥 4
+              - generic [ref=e1089]: custom
+          - generic [ref=e1090]: Multi-step deployment agent for full-stack apps. Build → Test → GitHub → Cloudflare Pages with human approval at each step.
+          - generic [ref=e1092]: deployment
+        - generic [ref=e1093]:
+          - generic [ref=e1094]:
+            - generic [ref=e1095]:
+              - generic [ref=e1096]: ⚡
+              - heading "kanban-task" [level=3] [ref=e1097]
+            - generic [ref=e1098]:
+              - generic "Used 4 times" [ref=e1099]: 🔥 4
+              - generic [ref=e1100]: custom
+          - generic [ref=e1101]: "Create, manage, move, and complete tasks on the Python Kanban Board with visual proof. Full task lifecycle — from creation to Done column with screenshot verification. Trigger words: kanban task, create task, user story, US-XXX, task management, move task, complete task, kanban board."
+          - generic [ref=e1103]: utility
+        - generic [ref=e1104]:
+          - generic [ref=e1105]:
+            - generic [ref=e1106]:
+              - generic [ref=e1107]: 🧠
+              - heading "smart-memory" [level=3] [ref=e1108]
+            - generic [ref=e1109]:
+              - generic "Used 4 times" [ref=e1110]: 🔥 4
+              - generic [ref=e1111]: custom
+          - generic [ref=e1112]: "Unified memory interface for storing, searching, and retrieving information across all memory systems (mem0, Supermemory, daily files). Deduplicates and provides a single command interface. Trigger words: smart memory, store memory, search memory, remember, recall, unified memory, memory store."
+          - generic [ref=e1114]: memory
+        - generic [ref=e1115]:
+          - generic [ref=e1116]:
+            - generic [ref=e1117]:
+              - generic [ref=e1118]: ⚡
+              - heading "cost-model-optimization" [level=3] [ref=e1119]
+            - generic [ref=e1120]:
+              - generic "Used 3 times" [ref=e1121]: 🔥 3
+              - generic [ref=e1122]: custom
+          - generic [ref=e1123]: "Identify and fix costly model misconfigurations in cron jobs and sessions. Optimize model selection to reduce token burn — use minimax for routine tasks, sonnet for coding, opus for complex reasoning. Trigger words: model cost, expensive crons, optimize models, token burn, cron model, budget optimiz"
+          - generic [ref=e1125]: utility
+        - generic [ref=e1126]:
+          - generic [ref=e1127]:
+            - generic [ref=e1128]:
+              - generic [ref=e1129]: ⚡
+              - heading "humanizer" [level=3] [ref=e1130]
+            - generic [ref=e1131]:
+              - generic "Used 3 times" [ref=e1132]: 🔥 3
+              - generic [ref=e1133]: custom
+          - generic [ref=e1134]: "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyse"
+          - generic [ref=e1136]: utility
+        - generic [ref=e1137]:
+          - generic [ref=e1138]:
+            - generic [ref=e1139]:
+              - generic [ref=e1140]: ⚡
+              - heading "react-expert" [level=3] [ref=e1141]
+            - generic [ref=e1142]:
+              - generic "Used 3 times" [ref=e1143]: 🔥 3
+              - generic [ref=e1144]: custom
+          - generic [ref=e1145]: Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 features.
+          - generic [ref=e1147]: development
+        - generic [ref=e1148]:
+          - generic [ref=e1149]:
+            - generic [ref=e1150]:
+              - generic [ref=e1151]: 🤖
+              - heading "testing-agent" [level=3] [ref=e1152]
+            - generic [ref=e1153]:
+              - generic "Used 3 times" [ref=e1154]: 🔥 3
+              - generic [ref=e1155]: custom
+          - generic [ref=e1156]: The Testing Agent automatically generates comprehensive UX test cases for features, ensuring consistent test coverage across all projects with minimal manual effort.
+          - generic [ref=e1158]: agent
+        - generic [ref=e1159]:
+          - generic [ref=e1160]:
+            - generic [ref=e1161]:
+              - generic [ref=e1162]: 🤖
+              - heading "agent-task-chunking" [level=3] [ref=e1163]
+            - generic [ref=e1164]:
+              - generic "Used 2 times" [ref=e1165]: 🔥 2
+              - generic [ref=e1166]: custom
+          - generic [ref=e1167]: "Break large tasks into focused chunks for sub-agents to prevent context overflow. Use when spawning coding agents, designers, or test writers. Trigger words: agent task, spawn agent, context overflow, chunk task, break down task, subagent, sessions_spawn, task too large."
+          - generic [ref=e1169]: agent
+        - generic [ref=e1170]:
+          - generic [ref=e1171]:
+            - generic [ref=e1172]:
+              - generic [ref=e1173]: 📱
+              - heading "android-automation" [level=3] [ref=e1174]
+            - generic [ref=e1175]:
+              - generic "Used 2 times" [ref=e1176]: 🔥 2
+              - generic [ref=e1177]: custom
+          - generic [ref=e1178]: Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.
+          - generic [ref=e1180]: utility
+        - generic [ref=e1181]:
+          - generic [ref=e1182]:
+            - generic [ref=e1183]:
+              - generic [ref=e1184]: ⚡
+              - heading "canvas" [level=3] [ref=e1185]
+            - generic [ref=e1186]:
+              - generic "Used 2 times" [ref=e1187]: 🔥 2
+              - generic [ref=e1188]: built-in
+          - generic [ref=e1189]: Display HTML content on connected OpenClaw nodes (Mac app, iOS, Android).
+          - generic [ref=e1191]: utility
+        - generic [ref=e1192]:
+          - generic [ref=e1193]:
+            - generic [ref=e1194]:
+              - generic [ref=e1195]: ⚡
+              - heading "file-editing" [level=3] [ref=e1196]
+            - generic [ref=e1197]:
+              - generic "Used 2 times" [ref=e1198]: 🔥 2
+              - generic [ref=e1199]: custom
+          - generic [ref=e1200]: "Reliable file editing patterns for OpenClaw. Use the read-then-edit workflow to ensure exact matches. Covers when to use edit vs write vs exec (sed). Trigger words: edit file, modify file, update file, file change, replace text, safe edit."
+          - generic [ref=e1202]: development
+        - generic [ref=e1203]:
+          - generic [ref=e1204]:
+            - generic [ref=e1205]:
+              - generic [ref=e1206]: ⚡
+              - heading "notion" [level=3] [ref=e1207]
+            - generic [ref=e1208]:
+              - generic "Used 2 times" [ref=e1209]: 🔥 2
+              - generic [ref=e1210]: built-in
+          - generic [ref=e1211]: Notion API for creating and managing pages, databases, and blocks.
+          - generic [ref=e1213]: utility
+        - generic [ref=e1214]:
+          - generic [ref=e1215]:
+            - generic [ref=e1216]:
+              - generic [ref=e1217]: 📷
+              - heading "playwright-screenshots" [level=3] [ref=e1218]
+            - generic [ref=e1219]:
+              - generic "Used 2 times" [ref=e1220]: 🔥 2
+              - generic [ref=e1221]: custom
+          - generic [ref=e1222]: "Capture visual screenshots of web apps using Playwright and send to Telegram. Use when user asks for screenshots, visual proof, or \"show me what it looks like\". Supports desktop and mobile viewports. Trigger words: screenshot, take screenshot, show me, visual proof, playwright screenshot, capture sc"
+          - generic [ref=e1224]: testing
+        - generic [ref=e1225]:
+          - generic [ref=e1226]:
+            - generic [ref=e1227]:
+              - generic [ref=e1228]: 💾
+              - heading "postgres" [level=3] [ref=e1229]
+            - generic [ref=e1230]:
+              - generic "Used 2 times" [ref=e1231]: 🔥 2
+              - generic [ref=e1232]: custom
+          - generic [ref=e1233]: PostgreSQL database management. Run queries, manage schemas, and monitor performance.
+          - generic [ref=e1235]: database
+        - generic [ref=e1236]:
+          - generic [ref=e1237]:
+            - generic [ref=e1238]:
+              - generic [ref=e1239]: ⚡
+              - heading "skill-creator" [level=3] [ref=e1240]
+            - generic [ref=e1241]:
+              - generic "Used 2 times" [ref=e1242]: 🔥 2
+              - generic [ref=e1243]: built-in
+          - generic [ref=e1244]: Create or update AgentSkills. Use when designing, structuring, or packaging skills with scripts, references, and assets.
+          - generic [ref=e1246]: utility
+        - generic [ref=e1247]:
+          - generic [ref=e1248]:
+            - generic [ref=e1249]:
+              - generic [ref=e1250]: 🤖
+              - heading "agent-orchestrator" [level=3] [ref=e1251]
+            - generic [ref=e1252]:
+              - generic "Used 1 times" [ref=e1253]: 🔥 1
+              - generic [ref=e1254]: custom
+          - generic [ref=e1255]: Meta-agent skill for orchestrating complex tasks through autonomous sub-agents. Decomposes macro tasks into subtasks, spawns specialized sub-agents with dynamically generated SKILL.md files, coordinates file-based communication, consolidates results, and dissolves agents upon completion.
+          - generic [ref=e1257]: agent
+        - generic [ref=e1258]:
+          - generic [ref=e1259]:
+            - generic [ref=e1260]:
+              - generic [ref=e1261]: 🎤
+              - heading "ai-phone" [level=3] [ref=e1262]
+            - generic [ref=e1263]:
+              - generic "Used 1 times" [ref=e1264]: 🔥 1
+              - generic [ref=e1265]: custom
+          - generic [ref=e1266]: "Make AI phone calls using Bland AI for restaurant reservations, appointments, and business inquiries. Use when you need to call a restaurant or business to make a reservation. Trigger words: make a call, phone call, reservation call, call restaurant, Bland AI, AI phone, dial, book by phone."
+          - generic [ref=e1268]: communication
+        - generic [ref=e1269]:
+          - generic [ref=e1270]:
+            - generic [ref=e1271]:
+              - generic [ref=e1272]: ⚡
+              - heading "api-spec-parser" [level=3] [ref=e1273]
+            - generic [ref=e1274]:
+              - generic "Used 1 times" [ref=e1275]: 🔥 1
+              - generic [ref=e1276]: custom
+          - generic [ref=e1277]: "- Building a new OpenClaw skill that wraps a REST API"
+          - generic [ref=e1279]: utility
+        - generic [ref=e1280]:
+          - generic [ref=e1281]:
+            - generic [ref=e1282]:
+              - generic [ref=e1283]: ⚡
+              - heading "clips-machine" [level=3] [ref=e1284]
+            - generic [ref=e1285]:
+              - generic "Used 1 times" [ref=e1286]: 🔥 1
+              - generic [ref=e1287]: custom
+          - generic [ref=e1288]: Transform long videos into viral short-form clips. Auto-detect best moments, add trendy captions, export for TikTok/Reels/Shorts.
+          - generic [ref=e1290]: media
+        - generic [ref=e1291]:
+          - generic [ref=e1292]:
+            - generic [ref=e1293]:
+              - generic [ref=e1294]: ⚡
+              - heading "healthcheck" [level=3] [ref=e1295]
+            - generic [ref=e1296]:
+              - generic "Used 1 times" [ref=e1297]: 🔥 1
+              - generic [ref=e1298]: built-in
+          - generic [ref=e1299]: Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, wor
+          - generic [ref=e1301]: utility
+        - generic [ref=e1302]:
+          - generic [ref=e1303]:
+            - generic [ref=e1304]:
+              - generic [ref=e1305]: 🖼️
+              - heading "image-cog" [level=3] [ref=e1306]
+            - generic [ref=e1307]:
+              - generic "Used 1 times" [ref=e1308]: 🔥 1
+              - generic [ref=e1309]: custom
+          - generic [ref=e1310]: AI image generation powered by CellCog. Create images, edit photos, consistent characters, product photography, reference-based images, sets of images, style transfer. Professional image creation with AI.
+          - generic [ref=e1312]: design
+        - generic [ref=e1313]:
+          - generic [ref=e1314]:
+            - generic [ref=e1315]:
+              - generic [ref=e1316]: 💬
+              - heading "postiz" [level=3] [ref=e1317]
+            - generic [ref=e1318]:
+              - generic "Used 1 times" [ref=e1319]: 🔥 1
+              - generic [ref=e1320]: custom
+          - generic [ref=e1321]: Postiz is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Google My Business, TikTok, Pinterest, Dribbble, Discord, Slack, Kick, Twitch, Mastodon, Bluesky, Lemmy, Farcaster, Telegram, Nostr, VK, Medium, De
+          - generic [ref=e1323]: social
+        - generic [ref=e1324]:
+          - generic [ref=e1325]:
+            - generic [ref=e1326]:
+              - generic [ref=e1327]: 🔐
+              - heading "security-auditor" [level=3] [ref=e1328]
+            - generic [ref=e1329]:
+              - generic "Used 1 times" [ref=e1330]: 🔥 1
+              - generic [ref=e1331]: custom
+          - generic [ref=e1332]: Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.
+          - generic [ref=e1334]: security
+        - generic [ref=e1335]:
+          - generic [ref=e1336]:
+            - generic [ref=e1337]:
+              - generic [ref=e1338]: 🔐
+              - heading "security-monitor" [level=3] [ref=e1339]
+            - generic [ref=e1340]:
+              - generic "Used 1 times" [ref=e1341]: 🔥 1
+              - generic [ref=e1342]: custom
+          - generic [ref=e1343]: Real-time security monitoring for Clawdbot. Detects intrusions, unusual API calls, credential usage patterns, and alerts on breaches.
+          - generic [ref=e1345]: security
+        - generic [ref=e1346]:
+          - generic [ref=e1347]:
+            - generic [ref=e1348]:
+              - generic [ref=e1349]: 🎥
+              - heading "youtube-downloader-clipper" [level=3] [ref=e1350]
+            - generic [ref=e1351]:
+              - generic "Used 1 times" [ref=e1352]: 🔥 1
+              - generic [ref=e1353]: custom
+          - generic [ref=e1354]: Extract specific sections from YouTube videos with precise timestamps. A powerful ClawHub skill that makes video clipping effortless - just provide a URL and time range.
+          - generic [ref=e1356]: media
+        - generic [ref=e1357]:
+          - generic [ref=e1358]:
+            - generic [ref=e1359]:
+              - generic [ref=e1360]: 🎥
+              - heading "youtube-transcript" [level=3] [ref=e1361]
+            - generic [ref=e1362]:
+              - generic "Used 1 times" [ref=e1363]: 🔥 1
+              - generic [ref=e1364]: custom
+          - generic [ref=e1365]: Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's cloud IP blocks.
+          - generic [ref=e1367]: media
+        - generic [ref=e1368]:
+          - generic [ref=e1369]:
+            - generic [ref=e1370]:
+              - generic [ref=e1371]: ⚡
+              - heading "1password" [level=3] [ref=e1372]
+            - generic [ref=e1374]: built-in
+          - generic [ref=e1375]: Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.
+          - generic [ref=e1377]: utility
+        - generic [ref=e1378]:
+          - generic [ref=e1379]:
+            - generic [ref=e1380]:
+              - generic [ref=e1381]: ⚡
+              - heading "ai-automation-workflows" [level=3] [ref=e1382]
+            - generic [ref=e1384]: custom
+          - generic [ref=e1385]: "Build automated AI workflows combining multiple models and services. Patterns: batch processing, scheduled tasks, event-driven pipelines, agent loops. Tools: inference.sh CLI, bash scripting, Python SDK, webhook integration. Use for: content automation, data processing, monitoring, scheduled generat"
+          - generic [ref=e1387]: utility
+        - generic [ref=e1388]:
+          - generic [ref=e1389]:
+            - generic [ref=e1390]:
+              - generic [ref=e1391]: ⚡
+              - heading "apple-notes" [level=3] [ref=e1392]
+            - generic [ref=e1394]: built-in
+          - generic [ref=e1395]: "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders."
+          - generic [ref=e1397]: utility
+        - generic [ref=e1398]:
+          - generic [ref=e1399]:
+            - generic [ref=e1400]:
+              - generic [ref=e1401]: ⚡
+              - heading "apple-reminders" [level=3] [ref=e1402]
+            - generic [ref=e1404]: built-in
+          - generic [ref=e1405]: Manage Apple Reminders via remindctl CLI (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.
+          - generic [ref=e1407]: utility
+        - generic [ref=e1408]:
+          - generic [ref=e1409]:
+            - generic [ref=e1410]:
+              - generic [ref=e1411]: ⚡
+              - heading "bear-notes" [level=3] [ref=e1412]
+            - generic [ref=e1414]: built-in
+          - generic [ref=e1415]: Create, search, and manage Bear notes via grizzly CLI.
+          - generic [ref=e1417]: utility
+        - generic [ref=e1418]:
+          - generic [ref=e1419]:
+            - generic [ref=e1420]:
+              - generic [ref=e1421]: ⚡
+              - heading "blogwatcher" [level=3] [ref=e1422]
+            - generic [ref=e1424]: built-in
+          - generic [ref=e1425]: Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.
+          - generic [ref=e1427]: utility
+        - generic [ref=e1428]:
+          - generic [ref=e1429]:
+            - generic [ref=e1430]:
+              - generic [ref=e1431]: ⚡
+              - heading "blucli" [level=3] [ref=e1432]
+            - generic [ref=e1434]: built-in
+          - generic [ref=e1435]: BluOS CLI (blu) for discovery, playback, grouping, and volume.
+          - generic [ref=e1437]: utility
+        - generic [ref=e1438]:
+          - generic [ref=e1439]:
+            - generic [ref=e1440]:
+              - generic [ref=e1441]: ⚡
+              - heading "bluebubbles" [level=3] [ref=e1442]
+            - generic [ref=e1444]: built-in
+          - generic [ref=e1445]: Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration). Calls go through the generic message tool with channel="bluebubbles".
+          - generic [ref=e1447]: utility
+        - generic [ref=e1448]:
+          - generic [ref=e1449]:
+            - generic [ref=e1450]:
+              - generic [ref=e1451]: ⚡
+              - heading "camsnap" [level=3] [ref=e1452]
+            - generic [ref=e1454]: built-in
+          - generic [ref=e1455]: Capture frames or clips from RTSP/ONVIF cameras.
+          - generic [ref=e1457]: utility
+        - generic [ref=e1458]:
+          - generic [ref=e1459]:
+            - generic [ref=e1460]:
+              - generic [ref=e1461]: 💬
+              - heading "chirp" [level=3] [ref=e1462]
+            - generic [ref=e1464]: custom
+          - generic [ref=e1465]: "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI for environments without Homebrew."
+          - generic [ref=e1467]: social
+        - generic [ref=e1468]:
+          - generic [ref=e1469]:
+            - generic [ref=e1470]:
+              - generic [ref=e1471]: ⚡
+              - heading "clawdex by Koi" [level=3] [ref=e1472]
+            - generic [ref=e1474]: custom
+          - generic [ref=e1475]: Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe.
+          - generic [ref=e1477]: utility
+        - generic [ref=e1478]:
+          - generic [ref=e1479]:
+            - generic [ref=e1480]:
+              - generic [ref=e1481]: ⚡
+              - heading "clawflows" [level=3] [ref=e1482]
+            - generic [ref=e1484]: custom
+          - generic [ref=e1485]: Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.
+          - generic [ref=e1487]: utility
+        - generic [ref=e1488]:
+          - generic [ref=e1489]:
+            - generic [ref=e1490]:
+              - generic [ref=e1491]: ⚡
+              - heading "cron-mastery" [level=3] [ref=e1492]
+            - generic [ref=e1494]: custom
+          - generic [ref=e1495]: Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron vs Heartbeat for time-sensitive tasks.
+          - generic [ref=e1497]: utility
+        - generic [ref=e1498]:
+          - generic [ref=e1499]:
+            - generic [ref=e1500]:
+              - generic [ref=e1501]: 💾
+              - heading "database" [level=3] [ref=e1502]
+            - generic [ref=e1504]: custom
+          - generic [ref=e1505]: Database management and queries. Connect to SQL and NoSQL databases, run queries, and manage schemas.
+          - generic [ref=e1507]: database
+        - generic [ref=e1508]:
+          - generic [ref=e1509]:
+            - generic [ref=e1510]:
+              - generic [ref=e1511]: ⚡
+              - heading "discord" [level=3] [ref=e1512]
+            - generic [ref=e1514]: built-in
+          - generic [ref=e1515]: Discord ops via the message tool (channel=discord).
+          - generic [ref=e1517]: utility
+        - generic [ref=e1518]:
+          - generic [ref=e1519]:
+            - generic [ref=e1520]:
+              - generic [ref=e1521]: ⚡
+              - heading "eightctl" [level=3] [ref=e1522]
+            - generic [ref=e1524]: built-in
+          - generic [ref=e1525]: Control Eight Sleep pods (status, temperature, alarms, schedules).
+          - generic [ref=e1527]: utility
+        - generic [ref=e1528]:
+          - generic [ref=e1529]:
+            - generic [ref=e1530]:
+              - generic [ref=e1531]: ⚡
+              - heading "emergency-rate-limit" [level=3] [ref=e1532]
+            - generic [ref=e1534]: custom
+          - generic [ref=e1535]: "Instantly switch all agent models away from a rate-limited provider to a backup provider, then restore when limit lifts. Use when Anthropic or another provider is down or rate-limited. Trigger words: rate limit, provider down, anthropic down, emergency switch, model fallback, quota exceeded."
+          - generic [ref=e1537]: utility
+        - generic [ref=e1538]:
+          - generic [ref=e1539]:
+            - generic [ref=e1540]:
+              - generic [ref=e1541]: ⚡
+              - heading "gemini" [level=3] [ref=e1542]
+            - generic [ref=e1544]: built-in
+          - generic [ref=e1545]: Gemini CLI for one-shot Q&A, summaries, and generation.
+          - generic [ref=e1547]: utility
+        - generic [ref=e1548]:
+          - generic [ref=e1549]:
+            - generic [ref=e1550]:
+              - generic [ref=e1551]: ⚡
+              - heading "gh-issues" [level=3] [ref=e1552]
+            - generic [ref=e1554]: built-in
+          - generic [ref=e1555]: "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model"
+          - generic [ref=e1557]: utility
+        - generic [ref=e1558]:
+          - generic [ref=e1559]:
+            - generic [ref=e1560]:
+              - generic [ref=e1561]: ⚡
+              - heading "gifgrep" [level=3] [ref=e1562]
+            - generic [ref=e1564]: built-in
+          - generic [ref=e1565]: Search GIF providers with CLI/TUI, download results, and extract stills/sheets.
+          - generic [ref=e1567]: utility
+        - generic [ref=e1568]:
+          - generic [ref=e1569]:
+            - generic [ref=e1570]:
+              - generic [ref=e1571]: ⚡
+              - heading "gog" [level=3] [ref=e1572]
+            - generic [ref=e1574]: built-in
+          - generic [ref=e1575]: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
+          - generic [ref=e1577]: utility
+        - generic [ref=e1578]:
+          - generic [ref=e1579]:
+            - generic [ref=e1580]:
+              - generic [ref=e1581]: ⚡
+              - heading "himalaya" [level=3] [ref=e1582]
+            - generic [ref=e1584]: built-in
+          - generic [ref=e1585]: "CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIME Meta Language)."
+          - generic [ref=e1587]: utility
+        - generic [ref=e1588]:
+          - generic [ref=e1589]:
+            - generic [ref=e1590]:
+              - generic [ref=e1591]: ⚡
+              - heading "imsg" [level=3] [ref=e1592]
+            - generic [ref=e1594]: built-in
+          - generic [ref=e1595]: iMessage/SMS CLI for listing chats, history, and sending messages via Messages.app.
+          - generic [ref=e1597]: utility
+        - generic [ref=e1598]:
+          - generic [ref=e1599]:
+            - generic [ref=e1600]:
+              - generic [ref=e1601]: 🚀
+              - heading "kanban-deploy" [level=3] [ref=e1602]
+            - generic [ref=e1604]: custom
+          - generic [ref=e1605]: "Deploy tasks and changes to the Python Kanban Board at python-kanban.pages.dev. Covers editing tasks.json, git push, Cloudflare API deploy, and Playwright verification. Trigger words: kanban deploy, kanban board, deploy task, update kanban, python-kanban, task board."
+          - generic [ref=e1607]: deployment
+        - generic [ref=e1608]:
+          - generic [ref=e1609]:
+            - generic [ref=e1610]:
+              - generic [ref=e1611]: 💼
+              - heading "linkedin" [level=3] [ref=e1612]
+            - generic [ref=e1614]: custom
+          - generic [ref=e1615]: LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.
+          - generic [ref=e1617]: social
+        - generic [ref=e1618]:
+          - generic [ref=e1619]:
+            - generic [ref=e1620]:
+              - generic [ref=e1621]: 📧
+              - heading "mailgun" [level=3] [ref=e1622]
+            - generic [ref=e1624]: custom
+          - generic [ref=e1625]: Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requires MAILGUN_API_KEY and MAILGUN_DOMAIN environment variables to be configured.
+          - generic [ref=e1627]: communication
+        - generic [ref=e1628]:
+          - generic [ref=e1629]:
+            - generic [ref=e1630]:
+              - generic [ref=e1631]: ⚡
+              - heading "mcporter" [level=3] [ref=e1632]
+            - generic [ref=e1634]: built-in
+          - generic [ref=e1635]: Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.
+          - generic [ref=e1637]: utility
+        - generic [ref=e1638]:
+          - generic [ref=e1639]:
+            - generic [ref=e1640]:
+              - generic [ref=e1641]: ⚡
+              - heading "model-priority" [level=3] [ref=e1642]
+            - generic [ref=e1644]: custom
+          - generic [ref=e1645]: "Manage AI model priorities and fallback chains across all cron jobs. Edit ONE config file to update all crons at once. Supports Kimi-K2.5, Gemini Flash, MiniMax with automatic fallback. Trigger words: model priority, switch model, fallback chain, kimi k2.5, gemini flash, minimax, update all crons, m"
+          - generic [ref=e1647]: utility
+        - generic [ref=e1648]:
+          - generic [ref=e1649]:
+            - generic [ref=e1650]:
+              - generic [ref=e1651]: ⚡
+              - heading "model-usage" [level=3] [ref=e1652]
+            - generic [ref=e1654]: built-in
+          - generic [ref=e1655]: Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost JSON.
+          - generic [ref=e1657]: utility
+        - generic [ref=e1658]:
+          - generic [ref=e1659]:
+            - generic [ref=e1660]:
+              - generic [ref=e1661]: ⚡
+              - heading "nano-banana-pro" [level=3] [ref=e1662]
+            - generic [ref=e1664]: built-in
+          - generic [ref=e1665]: Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro).
+          - generic [ref=e1667]: utility
+        - generic [ref=e1668]:
+          - generic [ref=e1669]:
+            - generic [ref=e1670]:
+              - generic [ref=e1671]: ⚡
+              - heading "nano-pdf" [level=3] [ref=e1672]
+            - generic [ref=e1674]: built-in
+          - generic [ref=e1675]: Edit PDFs with natural-language instructions using the nano-pdf CLI.
+          - generic [ref=e1677]: utility
+        - generic [ref=e1678]:
+          - generic [ref=e1679]:
+            - generic [ref=e1680]:
+              - generic [ref=e1681]: ⚡
+              - heading "obsidian" [level=3] [ref=e1682]
+            - generic [ref=e1684]: built-in
+          - generic [ref=e1685]: Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.
+          - generic [ref=e1687]: utility
+        - generic [ref=e1688]:
+          - generic [ref=e1689]:
+            - generic [ref=e1690]:
+              - generic [ref=e1691]: 🖼️
+              - heading "openai-image-gen" [level=3] [ref=e1692]
+            - generic [ref=e1694]: built-in
+          - generic [ref=e1695]: "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery."
+          - generic [ref=e1697]: design
+        - generic [ref=e1698]:
+          - generic [ref=e1699]:
+            - generic [ref=e1700]:
+              - generic [ref=e1701]: ⚡
+              - heading "openai-whisper" [level=3] [ref=e1702]
+            - generic [ref=e1704]: built-in
+          - generic [ref=e1705]: Local speech-to-text with the Whisper CLI (no API key).
+          - generic [ref=e1707]: utility
+        - generic [ref=e1708]:
+          - generic [ref=e1709]:
+            - generic [ref=e1710]:
+              - generic [ref=e1711]: ⚡
+              - heading "openai-whisper-api" [level=3] [ref=e1712]
+            - generic [ref=e1714]: built-in
+          - generic [ref=e1715]: Transcribe audio via OpenAI Audio Transcriptions API (Whisper).
+          - generic [ref=e1717]: utility
+        - generic [ref=e1718]:
+          - generic [ref=e1719]:
+            - generic [ref=e1720]:
+              - generic [ref=e1721]: ⚡
+              - heading "openclaw-auto-updater" [level=3] [ref=e1722]
+            - generic [ref=e1724]: custom
+          - generic [ref=e1725]: Schedule automatic OpenClaw and skill updates with reliable cron templates, timezone-safe scheduling, and clear summary outputs. Use for hands-off maintenance, scheduled upgrades, and concise update reports.
+          - generic [ref=e1727]: utility
+        - generic [ref=e1728]:
+          - generic [ref=e1729]:
+            - generic [ref=e1730]:
+              - generic [ref=e1731]: 🔐
+              - heading "openclaw-sec" [level=3] [ref=e1732]
+            - generic [ref=e1734]: custom
+          - generic [ref=e1735]: AI Agent Security Suite - Real-time protection against prompt injection, command injection, SSRF, path traversal, secrets exposure, and content policy violations
+          - generic [ref=e1737]: security
+        - generic [ref=e1738]:
+          - generic [ref=e1739]:
+            - generic [ref=e1740]:
+              - generic [ref=e1741]: ⚡
+              - heading "openclaw-social-scheduler" [level=3] [ref=e1742]
+            - generic [ref=e1744]: custom
+          - generic [ref=e1745]: Built by AI, for AI. Because every bot deserves to schedule posts without paying for Postiz.
+          - generic [ref=e1747]: utility
+        - generic [ref=e1748]:
+          - generic [ref=e1749]:
+            - generic [ref=e1750]:
+              - generic [ref=e1751]: ⚡
+              - heading "openhue" [level=3] [ref=e1752]
+            - generic [ref=e1754]: built-in
+          - generic [ref=e1755]: Control Philips Hue lights and scenes via the OpenHue CLI.
+          - generic [ref=e1757]: utility
+        - generic [ref=e1758]:
+          - generic [ref=e1759]:
+            - generic [ref=e1760]:
+              - generic [ref=e1761]: ⚡
+              - heading "oracle" [level=3] [ref=e1762]
+            - generic [ref=e1764]: built-in
+          - generic [ref=e1765]: Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns).
+          - generic [ref=e1767]: utility
+        - generic [ref=e1768]:
+          - generic [ref=e1769]:
+            - generic [ref=e1770]:
+              - generic [ref=e1771]: ⚡
+              - heading "ordercli" [level=3] [ref=e1772]
+            - generic [ref=e1774]: built-in
+          - generic [ref=e1775]: Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).
+          - generic [ref=e1777]: utility
+        - generic [ref=e1778]:
+          - generic [ref=e1779]:
+            - generic [ref=e1780]:
+              - generic [ref=e1781]: ⚡
+              - heading "peekaboo" [level=3] [ref=e1782]
+            - generic [ref=e1784]: built-in
+          - generic [ref=e1785]: Capture and automate macOS UI with the Peekaboo CLI.
+          - generic [ref=e1787]: utility
+        - generic [ref=e1788]:
+          - generic [ref=e1789]:
+            - generic [ref=e1790]:
+              - generic [ref=e1791]: ⚡
+              - heading "sag" [level=3] [ref=e1792]
+            - generic [ref=e1794]: built-in
+          - generic [ref=e1795]: ElevenLabs text-to-speech with mac-style say UX.
+          - generic [ref=e1797]: utility
+        - generic [ref=e1798]:
+          - generic [ref=e1799]:
+            - generic [ref=e1800]:
+              - generic [ref=e1801]: 🔍
+              - heading "serpapi-location-search" [level=3] [ref=e1802]
+            - generic [ref=e1804]: custom
+          - generic [ref=e1805]: Perform location-based searches using Google Search API via SerpApi. Use this skill when you need to find businesses, places, or services in a specific geographic area (e.g., "pizza places in Phoenix", "coffee shops near me", "restaurants in Cave Creek AZ").
+          - generic [ref=e1807]: search
+        - generic [ref=e1808]:
+          - generic [ref=e1809]:
+            - generic [ref=e1810]:
+              - generic [ref=e1811]: ⚡
+              - heading "session-logs" [level=3] [ref=e1812]
+            - generic [ref=e1814]: built-in
+          - generic [ref=e1815]: Search and analyze your own session logs (older/parent conversations) using jq.
+          - generic [ref=e1817]: utility
+        - generic [ref=e1818]:
+          - generic [ref=e1819]:
+            - generic [ref=e1820]:
+              - generic [ref=e1821]: 🐦
+              - heading "sherpa-onnx-tts" [level=3] [ref=e1822]
+            - generic [ref=e1824]: built-in
+          - generic [ref=e1825]: Local text-to-speech via sherpa-onnx (offline, no cloud)
+          - generic [ref=e1827]: social
+        - generic [ref=e1828]:
+          - generic [ref=e1829]:
+            - generic [ref=e1830]:
+              - generic [ref=e1831]: ⚡
+              - heading "slack" [level=3] [ref=e1832]
+            - generic [ref=e1834]: built-in
+          - generic [ref=e1835]: Use when you need to control Slack from OpenClaw via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.
+          - generic [ref=e1837]: utility
+        - generic [ref=e1838]:
+          - generic [ref=e1839]:
+            - generic [ref=e1840]:
+              - generic [ref=e1841]: ⚡
+              - heading "songsee" [level=3] [ref=e1842]
+            - generic [ref=e1844]: built-in
+          - generic [ref=e1845]: Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.
+          - generic [ref=e1847]: utility
+        - generic [ref=e1848]:
+          - generic [ref=e1849]:
+            - generic [ref=e1850]:
+              - generic [ref=e1851]: ⚡
+              - heading "sonoscli" [level=3] [ref=e1852]
+            - generic [ref=e1854]: built-in
+          - generic [ref=e1855]: Control Sonos speakers (discover/status/play/volume/group).
+          - generic [ref=e1857]: utility
+        - generic [ref=e1858]:
+          - generic [ref=e1859]:
+            - generic [ref=e1860]:
+              - generic [ref=e1861]: ⚡
+              - heading "spotify-player" [level=3] [ref=e1862]
+            - generic [ref=e1864]: built-in
+          - generic [ref=e1865]: Terminal Spotify playback/search via spogo (preferred) or spotify_player.
+          - generic [ref=e1867]: utility
+        - generic [ref=e1868]:
+          - generic [ref=e1869]:
+            - generic [ref=e1870]:
+              - generic [ref=e1871]: ⚡
+              - heading "summarize" [level=3] [ref=e1872]
+            - generic [ref=e1874]: built-in
+          - generic [ref=e1875]: Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).
+          - generic [ref=e1877]: utility
+        - generic [ref=e1878]:
+          - generic [ref=e1879]:
+            - generic [ref=e1880]:
+              - generic [ref=e1881]: ⚡
+              - heading "things-mac" [level=3] [ref=e1882]
+            - generic [ref=e1884]: built-in
+          - generic [ref=e1885]: "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user asks OpenClaw to add a task to Things, list inbox/today/upcoming, search tasks, or inspect projects/areas/tags."
+          - generic [ref=e1887]: utility
+        - generic [ref=e1888]:
+          - generic [ref=e1889]:
+            - generic [ref=e1890]:
+              - generic [ref=e1891]: ⚡
+              - heading "trello" [level=3] [ref=e1892]
+            - generic [ref=e1894]: built-in
+          - generic [ref=e1895]: Manage Trello boards, lists, and cards via the Trello REST API.
+          - generic [ref=e1897]: utility
+        - generic [ref=e1898]:
+          - generic [ref=e1899]:
+            - generic [ref=e1900]:
+              - generic [ref=e1901]: 🐦
+              - heading "twitter" [level=3] [ref=e1902]
+            - generic [ref=e1904]: custom
+          - generic [ref=e1905]: Twitter/X platform integration. Post tweets, read timeline, manage followers, and analyze engagement.
+          - generic [ref=e1907]: social
+        - generic [ref=e1908]:
+          - generic [ref=e1909]:
+            - generic [ref=e1910]:
+              - generic [ref=e1911]: 🎥
+              - heading "video-agent" [level=3] [ref=e1912]
+            - generic [ref=e1914]: custom
+          - generic [ref=e1915]: Generate AI avatar videos with HeyGen's Video Agent API. One-shot prompt to video generation.
+          - generic [ref=e1917]: agent
+        - generic [ref=e1918]:
+          - generic [ref=e1919]:
+            - generic [ref=e1920]:
+              - generic [ref=e1921]: 🎥
+              - heading "video-frames" [level=3] [ref=e1922]
+            - generic [ref=e1924]: built-in
+          - generic [ref=e1925]: Extract frames or short clips from videos using ffmpeg.
+          - generic [ref=e1927]: media
+        - generic [ref=e1928]:
+          - generic [ref=e1929]:
+            - generic [ref=e1930]:
+              - generic [ref=e1931]: 🎤
+              - heading "voice-call" [level=3] [ref=e1932]
+            - generic [ref=e1934]: built-in
+          - generic [ref=e1935]: Start voice calls via the OpenClaw voice-call plugin.
+          - generic [ref=e1937]: utility
+        - generic [ref=e1938]:
+          - generic [ref=e1939]:
+            - generic [ref=e1940]:
+              - generic [ref=e1941]: ⚡
+              - heading "wacli" [level=3] [ref=e1942]
+            - generic [ref=e1944]: built-in
+          - generic [ref=e1945]: Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).
+          - generic [ref=e1947]: utility
+        - generic [ref=e1948]:
+          - generic [ref=e1949]:
+            - generic [ref=e1950]:
+              - generic [ref=e1951]: 🐦
+              - heading "X-Publisher" [level=3] [ref=e1952]
+            - generic [ref=e1954]: custom
+          - generic [ref=e1955]: Publish tweets to X (Twitter) using the official Tweepy library. Supports text-only tweets, tweets with images or videos, and returns detailed publish results including tweet ID and URL. Requires X API credentials (API Key, API Secret, Access Token, Access Token Secret).
+          - generic [ref=e1957]: social
+        - generic [ref=e1958]:
+          - generic [ref=e1959]:
+            - generic [ref=e1960]:
+              - generic [ref=e1961]: ⚡
+              - heading "xurl" [level=3] [ref=e1962]
+            - generic [ref=e1964]: built-in
+          - generic [ref=e1965]: A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.
+          - generic [ref=e1967]: utility
+```

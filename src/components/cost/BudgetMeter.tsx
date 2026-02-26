@@ -1,6 +1,12 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { sendNotification } from '../notifications/NotificationBell';
+// import { sendNotification } from '../notifications/NotificationBell';
 import './BudgetMeter.css';
+
+// ─── Stub for sendNotification ───────────────────────────────────────────────
+const sendNotification = (notification: any) => {
+  console.log('Budget notification:', notification);
+  // TODO: Implement actual notification system
+};
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

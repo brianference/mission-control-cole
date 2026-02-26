@@ -1,17 +1,17 @@
 [
   {
-    "id": "standard-features",
-    "name": "standard-features",
-    "description": "Comprehensive checklist for web and mobile app quality \u2014 authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensure \u226590% feature coverage and WCAG 2.1 AA compliance. Includes Eruda mobile console, footer, hamburge",
-    "type": "development",
-    "source": "workspace",
-    "usageCount": 128
-  },
-  {
     "id": "modern-design",
     "name": "modern-design",
     "description": "Modern web design system for 2026 - glassmorphism, gradients, animations, and accessibility. Apply unique themes to each app while maintaining consistency.",
     "type": "design",
+    "source": "workspace",
+    "usageCount": 124
+  },
+  {
+    "id": "standard-features",
+    "name": "standard-features",
+    "description": "Comprehensive checklist for web and mobile app quality \u2014 authentication, navigation, forms, accessibility, responsive design, and mobile debugging. Use for any app build, code review, or audit to ensure \u226590% feature coverage and WCAG 2.1 AA compliance. Includes Eruda mobile console, footer, hamburge",
+    "type": "development",
     "source": "workspace",
     "usageCount": 124
   },
@@ -40,20 +40,20 @@
     "usageCount": 110
   },
   {
-    "id": "cloudflare-pages-deploy",
-    "name": "cloudflare-pages-deploy",
-    "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
-    "type": "deployment",
-    "source": "workspace",
-    "usageCount": 103
-  },
-  {
     "id": "phone-calls-bland",
     "name": "phone-calls",
     "description": "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts.",
     "type": "communication",
     "source": "workspace",
-    "usageCount": 101
+    "usageCount": 105
+  },
+  {
+    "id": "cloudflare-pages-deploy",
+    "name": "cloudflare-pages-deploy",
+    "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
+    "type": "deployment",
+    "source": "workspace",
+    "usageCount": 104
   },
   {
     "id": "memory-optimization",
@@ -93,7 +93,15 @@
     "description": "Scan the workspace for security vulnerabilities, exposed secrets, and misconfigurations.",
     "type": "security",
     "source": "workspace",
-    "usageCount": 69
+    "usageCount": 72
+  },
+  {
+    "id": "intel-monitor",
+    "name": "intel-monitor",
+    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
+    "type": "utility",
+    "source": "workspace",
+    "usageCount": 70
   },
   {
     "id": "email-daily-summary",
@@ -110,14 +118,6 @@
     "type": "development",
     "source": "workspace",
     "usageCount": 64
-  },
-  {
-    "id": "intel-monitor",
-    "name": "intel-monitor",
-    "description": "Continuous surveillance on configured X accounts and keywords. Runs on",
-    "type": "utility",
-    "source": "workspace",
-    "usageCount": 63
   },
   {
     "id": "tiktok-teneo",
@@ -256,6 +256,14 @@
     "usageCount": 44
   },
   {
+    "id": "x-post-automation",
+    "name": "x-automation",
+    "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation. Includes automated hourly monitoring of breaking news sources (@ProjectConstitu, @RealCandaceO, @B",
+    "type": "social",
+    "source": "workspace",
+    "usageCount": 44
+  },
+  {
     "id": "metricool",
     "name": "metricool",
     "description": "Schedule and manage social media posts via Metricool API. Use when posting to multiple platforms (LinkedIn, X, Bluesky, Threads, Instagram), checking scheduled posts, or analyzing social metrics.",
@@ -296,20 +304,20 @@
     "usageCount": 35
   },
   {
-    "id": "x-post-automation",
-    "name": "x-automation",
-    "description": "Automates the process of identifying trends on X (Twitter), generating opinionated/engaging content, and posting it. Use when asked to post to X, run X automation, or check trends for content creation. Includes automated hourly monitoring of breaking news sources (@ProjectConstitu, @RealCandaceO, @B",
-    "type": "social",
-    "source": "workspace",
-    "usageCount": 35
-  },
-  {
     "id": "restaurant-lookup",
     "name": "restaurant-lookup",
     "description": "Comprehensive restaurant search and recommendation system combining Google Places API (primary), TripAdvisor Content API v1 (reviews/ratings/photos), and SerpApi Google Images (food photos). For international locations, automatically enriches results with full TripAdvisor details, reviews, photos, a",
     "type": "lifestyle",
     "source": "workspace",
     "usageCount": 29
+  },
+  {
+    "id": "deployment-proof",
+    "name": "deployment-proof",
+    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
+    "type": "deployment",
+    "source": "workspace",
+    "usageCount": 27
   },
   {
     "id": "openclaw-release-monitor",
@@ -336,12 +344,12 @@
     "usageCount": 26
   },
   {
-    "id": "deployment-proof",
-    "name": "deployment-proof",
-    "description": "MANDATORY deployment workflow with Percy visual testing and Playwright screenshots. NEVER claim \"deployed\" or \"fixed\" without following this exact workflow. Enforced via Commandment #36.",
-    "type": "deployment",
+    "id": "morning-brief",
+    "name": "morning-brief",
+    "description": "Automated daily morning briefing delivered via Telegram. Pulls weather",
+    "type": "utility",
     "source": "workspace",
-    "usageCount": 26
+    "usageCount": 24
   },
   {
     "id": "screenshot-proof-workflow",
@@ -350,6 +358,14 @@
     "type": "testing",
     "source": "workspace",
     "usageCount": 24
+  },
+  {
+    "id": "bird",
+    "name": "bird",
+    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
+    "type": "social",
+    "source": "workspace",
+    "usageCount": 23
   },
   {
     "id": "pentest",
@@ -480,18 +496,18 @@
     "usageCount": 17
   },
   {
-    "id": "morning-brief",
-    "name": "morning-brief",
-    "description": "Automated daily morning briefing delivered via Telegram. Pulls weather",
+    "id": "secret-vault",
+    "name": "secret-vault",
+    "description": "- Rotating API tokens/keys",
     "type": "utility",
     "source": "workspace",
     "usageCount": 15
   },
   {
-    "id": "secret-vault",
-    "name": "secret-vault",
-    "description": "- Rotating API tokens/keys",
-    "type": "utility",
+    "id": "serpapi",
+    "name": "serpapi",
+    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
+    "type": "search",
     "source": "workspace",
     "usageCount": 15
   },
@@ -520,12 +536,12 @@
     "usageCount": 14
   },
   {
-    "id": "serpapi",
-    "name": "serpapi",
-    "description": "Unified search API across Google, Amazon, Yelp, OpenTable, Walmart, and more. Use when searching for products, local businesses, restaurants, shopping, images, news, or any web search. One API key, many engines.",
-    "type": "search",
+    "id": "chirp",
+    "name": "chirp",
+    "description": "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI for environments without Homebrew.",
+    "type": "social",
     "source": "workspace",
-    "usageCount": 13
+    "usageCount": 12
   },
   {
     "id": "safe-diagnostics",
@@ -544,19 +560,19 @@
     "usageCount": 11
   },
   {
-    "id": "bird",
-    "name": "bird",
-    "description": "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics.",
-    "type": "social",
-    "source": "workspace",
-    "usageCount": 10
-  },
-  {
     "id": "github",
     "name": "github",
     "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooli",
     "type": "utility",
     "source": "openclaw",
+    "usageCount": 10
+  },
+  {
+    "id": "x-api",
+    "name": "x-api",
+    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.",
+    "type": "social",
+    "source": "workspace",
     "usageCount": 10
   },
   {
@@ -646,22 +662,6 @@
     "type": "utility",
     "source": "workspace",
     "usageCount": 6
-  },
-  {
-    "id": "x-api",
-    "name": "x-api",
-    "description": "Post to X (Twitter) using the official API with OAuth 1.0a. Use when you need to tweet, post updates, or publish content. Bypasses rate limits and bot detection that affect cookie-based approaches like bird CLI.",
-    "type": "social",
-    "source": "workspace",
-    "usageCount": 6
-  },
-  {
-    "id": "chirp",
-    "name": "chirp",
-    "description": "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying, or searching. Alternative to bird CLI for environments without Homebrew.",
-    "type": "social",
-    "source": "workspace",
-    "usageCount": 5
   },
   {
     "id": "percy-visual-testing",
