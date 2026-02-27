@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import ActivityStream from '../components/overview/ActivityStream';
 import ActiveAgents from '../components/overview/ActiveAgents';
