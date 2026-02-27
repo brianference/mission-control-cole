@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 435,
-    "totalRequests": 14045
+    "totalSessions": 432,
+    "totalRequests": 13926
   },
   "daily": [
     {
@@ -86,23 +86,23 @@
     },
     {
       "date": "2026-02-26",
-      "cost": 30.65989845,
-      "tokens": 38534742,
-      "requests": 587
+      "cost": 29.960085300000003,
+      "tokens": 36988756,
+      "requests": 542
     },
     {
       "date": "2026-02-27",
-      "cost": 37.524340500000044,
-      "tokens": 51941454,
-      "requests": 883
+      "cost": 31.15546635000003,
+      "tokens": 45473596,
+      "requests": 809
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 297.4253590999998,
-      "tokens": 390730105,
-      "requests": 4749
+      "cost": 290.3566718,
+      "tokens": 382716261,
+      "requests": 4630
     },
     {
       "name": "Other",
@@ -126,9 +126,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 125.28258134999977,
-      "tokens": 170545811,
-      "requests": 2493
+      "cost": 118.21389404999985,
+      "tokens": 162531967,
+      "requests": 2374
     },
     {
       "name": "minimax/minimax-m2.1",
@@ -194,9 +194,9 @@
     },
     {
       "name": "general",
-      "cost": 123.22336826930535,
-      "tokens": 171924683,
-      "requests": 2500
+      "cost": 116.1546809693054,
+      "tokens": 163910839,
+      "requests": 2381
     },
     {
       "name": "coding",
@@ -211,5 +211,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-27T16:14:56.508Z"
+  "lastUpdated": "2026-02-27T17:14:58.215Z"
 }
