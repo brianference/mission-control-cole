@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 435,
-    "totalRequests": 13922
+    "totalSessions": 433,
+    "totalRequests": 13908
   },
   "daily": [
     {
@@ -86,29 +86,29 @@
     },
     {
       "date": "2026-02-26",
-      "cost": 38.75765550000005,
-      "tokens": 55062429,
-      "requests": 1005
+      "cost": 38.157862950000045,
+      "tokens": 53775786,
+      "requests": 962
     },
     {
       "date": "2026-02-27",
-      "cost": 16.323535799999988,
-      "tokens": 22823910,
-      "requests": 342
+      "cost": 17.342061149999992,
+      "tokens": 24048364,
+      "requests": 371
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 284.3223114500001,
-      "tokens": 378140248,
-      "requests": 4637
+      "cost": 284.7410442500001,
+      "tokens": 378078059,
+      "requests": 4621
     },
     {
       "name": "Other",
       "cost": 54.82027238401348,
       "tokens": 714868134,
-      "requests": 8744
+      "requests": 8746
     },
     {
       "name": "OpenAI",
@@ -126,9 +126,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 112.17953369999988,
-      "tokens": 157955954,
-      "requests": 2381
+      "cost": 112.59826649999985,
+      "tokens": 157893765,
+      "requests": 2365
     },
     {
       "name": "minimax/minimax-m2.1",
@@ -164,7 +164,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 190
+      "requests": 192
     },
     {
       "name": "gateway-injected",
@@ -194,9 +194,9 @@
     },
     {
       "name": "general",
-      "cost": 110.12032061930549,
-      "tokens": 159334826,
-      "requests": 2377
+      "cost": 110.53905341930543,
+      "tokens": 159272637,
+      "requests": 2363
     },
     {
       "name": "coding",
@@ -211,5 +211,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-27T06:14:44.919Z"
+  "lastUpdated": "2026-02-27T07:14:44.866Z"
 }
