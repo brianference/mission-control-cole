@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 425,
-    "totalRequests": 14632
+    "totalSessions": 426,
+    "totalRequests": 14684
   },
   "daily": [
     {
@@ -92,29 +92,29 @@
     },
     {
       "date": "2026-02-27",
-      "cost": 34.188099600000044,
-      "tokens": 48471264,
-      "requests": 704
+      "cost": 32.46223110000002,
+      "tokens": 44716804,
+      "requests": 654
     },
     {
       "date": "2026-02-28",
-      "cost": 55.3307026,
-      "tokens": 64895682,
-      "requests": 1109
+      "cost": 61.03694019999998,
+      "tokens": 72152054,
+      "requests": 1211
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 342.5367415999998,
-      "tokens": 437734423,
-      "requests": 5213
+      "cost": 346.5171106999996,
+      "tokens": 441236335,
+      "requests": 5260
     },
     {
       "name": "Other",
       "cost": 55.14266058401347,
       "tokens": 715450393,
-      "requests": 8878
+      "requests": 8883
     },
     {
       "name": "OpenAI",
@@ -125,16 +125,16 @@
   ],
   "models": [
     {
+      "name": "Claude Sonnet 4.5",
+      "cost": 174.37433294999997,
+      "tokens": 221052041,
+      "requests": 3004
+    },
+    {
       "name": "claude-opus-4-5",
       "cost": 171.55132649999942,
       "tokens": 219610363,
       "requests": 2244
-    },
-    {
-      "name": "Claude Sonnet 4.5",
-      "cost": 170.39396385,
-      "tokens": 217550129,
-      "requests": 2957
     },
     {
       "name": "minimax/minimax-m2.1",
@@ -176,7 +176,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 316
+      "requests": 321
     },
     {
       "name": "gateway-injected",
@@ -206,9 +206,9 @@
     },
     {
       "name": "general",
-      "cost": 168.65713896930563,
-      "tokens": 219511260,
-      "requests": 3087
+      "cost": 172.63750806930574,
+      "tokens": 223013172,
+      "requests": 3139
     },
     {
       "name": "coding",
@@ -223,5 +223,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-02-28T17:18:05.336Z"
+  "lastUpdated": "2026-02-28T18:18:24.298Z"
 }
