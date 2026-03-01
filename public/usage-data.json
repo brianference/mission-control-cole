@@ -3,7 +3,7 @@
     "weekTotal": 0,
     "monthTotal": 0,
     "totalSessions": 432,
-    "totalRequests": 14983
+    "totalRequests": 14984
   },
   "daily": [
     {
@@ -98,23 +98,23 @@
     },
     {
       "date": "2026-02-28",
-      "cost": 60.00072579999997,
-      "tokens": 73118191,
-      "requests": 1147
+      "cost": 59.80079769999996,
+      "tokens": 72678225,
+      "requests": 1132
     },
     {
       "date": "2026-03-01",
-      "cost": 19.914045749999985,
-      "tokens": 31712390,
-      "requests": 477
+      "cost": 20.345685899999978,
+      "tokens": 32273867,
+      "requests": 493
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 362.832782,
-      "tokens": 469151261,
-      "requests": 5548
+      "cost": 363.06449405,
+      "tokens": 469272772,
+      "requests": 5549
     },
     {
       "name": "Other",
@@ -132,9 +132,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 190.69000425000016,
-      "tokens": 248966967,
-      "requests": 3292
+      "cost": 190.9217163000002,
+      "tokens": 249088478,
+      "requests": 3293
     },
     {
       "name": "claude-opus-4-5",
@@ -212,9 +212,9 @@
     },
     {
       "name": "general",
-      "cost": 188.9531793693059,
-      "tokens": 250928098,
-      "requests": 3438
+      "cost": 189.1848914193059,
+      "tokens": 251049609,
+      "requests": 3439
     },
     {
       "name": "coding",
@@ -229,5 +229,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-01T11:18:43.106Z"
+  "lastUpdated": "2026-03-01T12:18:37.037Z"
 }
