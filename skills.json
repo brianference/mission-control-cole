@@ -1,6 +1,6 @@
 {
-  "generated": "2026-02-25T21:40:36.532Z",
-  "count": 122,
+  "generated": "2026-03-01T10:03:31.142Z",
+  "count": 127,
   "skills": [
     {
       "id": "accessibility-toolkit",
@@ -581,6 +581,15 @@
       "metadata": {}
     },
     {
+      "id": "multi-agent-code-review",
+      "name": "multi-agent-code-review",
+      "description": "**Spawn 3 specialized agents on every PR: Security, Performance, Style**",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/multi-agent-code-review",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
       "id": "no-bs-debugging",
       "name": "no-bs-debugging",
       "description": "Stop making excuses. Fix it properly. Test like the user. Prove it works. MANDATORY: Test with Playwright BEFORE deploying any new feature. No excuses. No \"works on my machine.\" Test it. Prove it. Then deploy.",
@@ -764,6 +773,24 @@
       "metadata": {}
     },
     {
+      "id": "reservation-fallback",
+      "name": "reservation-fallback",
+      "description": "3-tier restaurant reservation system with automatic fallback - browser relay → phone → manual alert. Logs success rates per method.",
+      "emoji": "🍽️",
+      "path": "/root/.openclaw/workspace/skills/reservation-fallback",
+      "homepage": null,
+      "metadata": {
+        "clawdbot": {
+          "emoji": "🍽️",
+          "requires": {
+            "env": [
+              "BLAND_API_KEY"
+            ]
+          }
+        }
+      }
+    },
+    {
       "id": "restaurant-lookup",
       "name": "restaurant-lookup",
       "description": "Comprehensive restaurant search and recommendation system combining Google Places API (primary), TripAdvisor Content API v1 (reviews/ratings/photos), and SerpApi Google Images (food photos). For international locations, automatically enriches results with full TripAdvisor details, reviews, photos, and rankings. Use when: (1) Finding restaurants with detailed information, (2) Generating multi-source recommendations with ratings from multiple platforms, (3) Getting food photos and user reviews, (4) Creating Telegram-ready restaurant recommendations, (5) International restaurant research where TripAdvisor data is critical.",
@@ -910,6 +937,15 @@
       "metadata": {}
     },
     {
+      "id": "self-improving-ideas",
+      "name": "self-improving-ideas",
+      "description": "**Version:** 1.0.0",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/self-improving-ideas",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
       "id": "senior-devops",
       "name": "senior-devops",
       "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementing monitoring, or optimizing deployment processes.",
@@ -1016,6 +1052,27 @@
       "path": "/root/.openclaw/workspace/skills/supermemory-integration",
       "homepage": null,
       "metadata": {}
+    },
+    {
+      "id": "swordtruth-automation",
+      "name": "swordtruth-automation",
+      "description": "Automated TikTok → X pipeline for @swordtruth. Finds TPUSA-critical videos, downloads, generates captions, queues for approval, one-click publish.",
+      "emoji": "🗡️",
+      "path": "/root/.openclaw/workspace/skills/swordtruth-automation",
+      "homepage": null,
+      "metadata": {
+        "clawdbot": {
+          "emoji": "🗡️",
+          "requires": {
+            "env": [
+              "X_API_KEY",
+              "X_API_SECRET",
+              "X_ACCESS_TOKEN",
+              "X_ACCESS_SECRET"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "telegram-config",
@@ -1216,6 +1273,15 @@
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/x-publisher",
       "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "x-ai",
+      "name": "xai",
+      "description": "Chat with Grok models via xAI API. Supports Grok-3, Grok-3-mini, vision, and more.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/x-ai",
+      "homepage": "https://docs.x.ai",
       "metadata": {}
     },
     {

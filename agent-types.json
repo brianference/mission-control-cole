@@ -1,6 +1,6 @@
 {
-  "generated": "2026-02-25T21:40:41.880Z",
-  "count": 9,
+  "generated": "2026-03-01T10:03:31.258Z",
+  "count": 10,
   "agents": [
     {
       "id": "candi",
@@ -23,6 +23,17 @@
       "status": "✅ Implementation complete, ready for testing",
       "purpose": "You are the Architect, the implementation agent. Your job is to read specs, write clean code, and commit your changes with clear messages. You are spawned once per task, implement the feature, then auto-cleanup.",
       "path": "/root/.openclaw/workspace/agents/coder"
+    },
+    {
+      "id": "designer-agent",
+      "name": "Designer Agent — Autonomous UI/UX Specialist",
+      "emoji": "🎨",
+      "label": "",
+      "model": "",
+      "timeout": "",
+      "status": "✅ All checks pass | ⚠️ Needs review | ❌ Security concerns",
+      "purpose": "",
+      "path": "/root/.openclaw/workspace/agents/designer-agent"
     },
     {
       "id": "designer",
