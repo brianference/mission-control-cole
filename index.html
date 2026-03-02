@@ -18,6 +18,8 @@
   --primary-bg: rgba(255, 149, 0, 0.1);
   --accent: #5856D6;
   --success: #34C759;
+  --error: #FF3B30;
+  --warning: #FF9500;
   --bg: #000000;
   --surface: #1C1C1E;
   --surface2: #2C2C2E;
@@ -74,6 +76,172 @@ body {
   justify-content: center;
   cursor: pointer;
   font-size: 20px;
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--error);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Notifications Panel */
+.notifications-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--surface);
+  box-shadow: -2px 0 20px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.notifications-panel.open {
+  right: 0;
+}
+
+.notifications-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notifications-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.close-notifications {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 24px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-notifications:hover {
+  background: var(--surface2);
+}
+
+.notifications-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.notification-item {
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-left: 4px solid transparent;
+}
+
+.notification-item.unread {
+  background: rgba(255, 149, 0, 0.1);
+  border-left-color: var(--primary);
+}
+
+.notification-item.error {
+  border-left-color: var(--error);
+}
+
+.notification-item.warning {
+  border-left-color: var(--warning);
+}
+
+.notification-item.success {
+  border-left-color: var(--success);
+}
+
+.notification-item:hover {
+  background: var(--border);
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
+.notification-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.notification-title {
+  font-weight: 600;
+  font-size: 14px;
+  flex: 1;
+}
+
+.notification-time {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.notification-message {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.notifications-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.notifications-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.notifications-empty-text {
+  font-size: 16px;
+}
+
+.notifications-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+}
+
+.notifications-overlay.active {
+  display: block;
 }
 
 .welcome {
@@ -298,9 +466,30 @@ body {
     --border: #D1D1D6;
   }
 }
+
+@media (max-width: 600px) {
+  .notifications-panel {
+    width: 100vw;
+    right: -100vw;
+  }
+}
 </style>
 </head>
 <body>
+
+<!-- Notifications Overlay -->
+<div class="notifications-overlay" id="notificationsOverlay"></div>
+
+<!-- Notifications Panel -->
+<div class="notifications-panel" id="notificationsPanel">
+  <div class="notifications-header">
+    <div class="notifications-title">🔔 Notifications</div>
+    <button class="close-notifications" id="closeNotifications">×</button>
+  </div>
+  <div class="notifications-body" id="notificationsBody">
+    <div class="loading">Loading notifications...</div>
+  </div>
+</div>
 
 <div class="header">
   <div class="header-left">
@@ -308,7 +497,10 @@ body {
     <div class="header-title">Mission Control</div>
   </div>
   <div class="header-right">
-    <button class="icon-button" id="notificationBtn">🔔</button>
+    <button class="icon-button" id="notificationBtn">
+      🔔
+      <span class="notification-badge" id="notificationBadge" style="display: none;">0</span>
+    </button>
     <button class="icon-button" id="settingsBtn">⚙️</button>
     <button class="icon-button" id="userBtn" style="background: var(--accent);">B</button>
   </div>
@@ -437,6 +629,10 @@ let usageData = {
   monthly: 0
 };
 
+// Notifications state
+let notifications = [];
+const STORAGE_KEY = 'mc_notifications_read';
+
 // Update date display
 function updateDate() {
   const now = new Date();
@@ -557,6 +753,248 @@ function clearError() {
   document.getElementById('errorContainer').innerHTML = '';
 }
 
+// =========================
+// NOTIFICATIONS SYSTEM
+// =========================
+
+async function fetchNotifications() {
+  try {
+    const [sessionsRes, cronsRes] = await Promise.all([
+      fetch('/active-sessions.json').catch(() => ({ ok: false })),
+      fetch('/crons.json').catch(() => ({ ok: false }))
+    ]);
+
+    notifications = [];
+
+    // Parse agent sessions
+    if (sessionsRes.ok) {
+      const sessionsData = await sessionsRes.json();
+      const sessions = sessionsData.sessions || [];
+      
+      sessions.forEach(session => {
+        // High token usage warning
+        if (session.totalTokens > 150000) {
+          notifications.push({
+            id: `session-tokens-${session.sessionKey}`,
+            type: 'warning',
+            icon: '⚠️',
+            title: 'High Token Usage',
+            message: `Agent ${session.displayName} using ${(session.totalTokens/1000).toFixed(0)}K tokens`,
+            timestamp: session.updatedAt || Date.now(),
+            link: 'agents.html'
+          });
+        }
+
+        // Context limit warning (>80%)
+        const contextUsage = (session.totalTokens / session.contextLimit) * 100;
+        if (contextUsage > 80) {
+          notifications.push({
+            id: `session-context-${session.sessionKey}`,
+            type: 'error',
+            icon: '🚨',
+            title: 'Context Limit Warning',
+            message: `Agent ${session.displayName} at ${contextUsage.toFixed(0)}% context capacity`,
+            timestamp: session.updatedAt || Date.now(),
+            link: 'agents.html'
+          });
+        }
+
+        // Agent errors
+        if (session.status === 'error') {
+          notifications.push({
+            id: `session-error-${session.sessionKey}`,
+            type: 'error',
+            icon: '❌',
+            title: 'Agent Error',
+            message: `Agent ${session.displayName} encountered an error`,
+            timestamp: session.updatedAt || Date.now(),
+            link: 'agents.html'
+          });
+        }
+      });
+    }
+
+    // Parse cron jobs
+    if (cronsRes.ok) {
+      const cronsData = await cronsRes.json();
+      const crons = cronsData.crons || [];
+      
+      crons.forEach(cron => {
+        // Failed cron jobs
+        if (cron.lastRunStatus === 'error') {
+          notifications.push({
+            id: `cron-error-${cron.id}`,
+            type: 'error',
+            icon: '⏰',
+            title: 'Cron Job Failed',
+            message: `"${cron.name}" failed to execute`,
+            timestamp: cron.lastRunTime || Date.now(),
+            link: 'crons.html'
+          });
+        }
+
+        // Expensive cron warnings
+        if (cron.estimatedCost > 1.0) {
+          notifications.push({
+            id: `cron-cost-${cron.id}`,
+            type: 'warning',
+            icon: '💰',
+            title: 'Expensive Cron Job',
+            message: `"${cron.name}" costs $${cron.estimatedCost.toFixed(2)}/run`,
+            timestamp: Date.now(),
+            link: 'crons.html'
+          });
+        }
+      });
+    }
+
+    // Budget threshold warnings
+    const weeklyUsage = usageData.weekly;
+    const weeklyLimit = BUDGETS.weekly;
+    const weeklyPercent = (weeklyUsage / weeklyLimit) * 100;
+
+    if (weeklyPercent > 90) {
+      notifications.push({
+        id: 'budget-critical',
+        type: 'error',
+        icon: '💸',
+        title: 'Budget Alert',
+        message: `Weekly spending at ${weeklyPercent.toFixed(0)}% of limit`,
+        timestamp: Date.now(),
+        link: '#'
+      });
+    } else if (weeklyPercent > 75) {
+      notifications.push({
+        id: 'budget-warning',
+        type: 'warning',
+        icon: '💰',
+        title: 'Budget Warning',
+        message: `Weekly spending at ${weeklyPercent.toFixed(0)}% of limit`,
+        timestamp: Date.now(),
+        link: '#'
+      });
+    }
+
+    // Sort by timestamp (newest first)
+    notifications.sort((a, b) => b.timestamp - a.timestamp);
+
+    renderNotifications();
+    updateNotificationBadge();
+
+  } catch (error) {
+    console.error('Failed to fetch notifications:', error);
+    renderNotificationsError();
+  }
+}
+
+function renderNotifications() {
+  const container = document.getElementById('notificationsBody');
+  const readIds = getReadNotifications();
+
+  if (notifications.length === 0) {
+    container.innerHTML = `
+      <div class="notifications-empty">
+        <div class="notifications-empty-icon">✨</div>
+        <div class="notifications-empty-text">No new notifications</div>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = notifications.map(notif => {
+    const isRead = readIds.includes(notif.id);
+    const readClass = isRead ? '' : 'unread';
+    const typeClass = notif.type || '';
+    const timeAgo = formatTimeAgo(notif.timestamp);
+
+    return `
+      <div class="notification-item ${readClass} ${typeClass}" data-id="${notif.id}" data-link="${notif.link || '#'}">
+        <div class="notification-header">
+          <div style="display: flex; align-items: start; flex: 1;">
+            <span class="notification-icon">${notif.icon}</span>
+            <span class="notification-title">${notif.title}</span>
+          </div>
+          <span class="notification-time">${timeAgo}</span>
+        </div>
+        <div class="notification-message">${notif.message}</div>
+      </div>
+    `;
+  }).join('');
+
+  // Add click handlers
+  document.querySelectorAll('.notification-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const id = item.dataset.id;
+      const link = item.dataset.link;
+      markAsRead(id);
+      if (link && link !== '#') {
+        window.location.href = link;
+      }
+    });
+  });
+}
+
+function renderNotificationsError() {
+  const container = document.getElementById('notificationsBody');
+  container.innerHTML = `
+    <div class="notifications-empty">
+      <div class="notifications-empty-icon">⚠️</div>
+      <div class="notifications-empty-text">Unable to load notifications</div>
+    </div>
+  `;
+}
+
+function formatTimeAgo(timestamp) {
+  const now = Date.now();
+  const diff = now - timestamp;
+  const minutes = Math.floor(diff / 60000);
+  const hours = Math.floor(diff / 3600000);
+  const days = Math.floor(diff / 86400000);
+
+  if (minutes < 1) return 'Just now';
+  if (minutes < 60) return `${minutes}m ago`;
+  if (hours < 24) return `${hours}h ago`;
+  return `${days}d ago`;
+}
+
+function getReadNotifications() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
+
+function markAsRead(id) {
+  const readIds = getReadNotifications();
+  if (!readIds.includes(id)) {
+    readIds.push(id);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(readIds));
+    updateNotificationBadge();
+    renderNotifications();
+  }
+}
+
+function updateNotificationBadge() {
+  const readIds = getReadNotifications();
+  const unreadCount = notifications.filter(n => !readIds.includes(n.id)).length;
+  
+  const badge = document.getElementById('notificationBadge');
+  if (unreadCount > 0) {
+    badge.textContent = unreadCount > 99 ? '99+' : unreadCount;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function openNotificationsPanel() {
+  document.getElementById('notificationsPanel').classList.add('open');
+  document.getElementById('notificationsOverlay').classList.add('active');
+}
+
+function closeNotificationsPanel() {
+  document.getElementById('notificationsPanel').classList.remove('open');
+  document.getElementById('notificationsOverlay').classList.remove('active');
+}
+
 // Tab switching
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -570,13 +1008,17 @@ document.querySelectorAll('.tab').forEach(tab => {
 // Refresh button
 document.getElementById('refreshBtn').addEventListener('click', () => {
   fetchUsage();
+  fetchNotifications();
 });
 
-// Icon button actions
-document.getElementById('notificationBtn').addEventListener('click', () => {
-  alert('Notifications: No new alerts');
-});
+// Notifications button
+document.getElementById('notificationBtn').addEventListener('click', openNotificationsPanel);
 
+// Close notifications
+document.getElementById('closeNotifications').addEventListener('click', closeNotificationsPanel);
+document.getElementById('notificationsOverlay').addEventListener('click', closeNotificationsPanel);
+
+// Settings button
 document.getElementById('settingsBtn').addEventListener('click', () => {
   alert('Settings: Budget limits can be configured here');
 });
@@ -592,9 +1034,13 @@ document.getElementById('budgetSettings').addEventListener('click', () => {
 // Initialize
 updateDate();
 fetchUsage();
+fetchNotifications();
 
 // Auto-refresh every 5 minutes
-setInterval(fetchUsage, 5 * 60 * 1000);
+setInterval(() => {
+  fetchUsage();
+  fetchNotifications();
+}, 5 * 60 * 1000);
 </script>
 
 </body>
