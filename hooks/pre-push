@@ -1,0 +1,18 @@
+#!/bin/bash
+# Git Pre-Push Hook: Smoke Tests
+# Blocks push if smoke tests fail
+
+echo "🔥 Running smoke tests before push..."
+
+# Run smoke tests
+if ! ./tests/run-smoke.sh; then
+    echo ""
+    echo "❌ PUSH BLOCKED: Smoke tests failed"
+    echo ""
+    echo "Fix the issues above before pushing."
+    echo "To bypass (NOT RECOMMENDED): git push --no-verify"
+    exit 1
+fi
+
+echo "✅ Smoke tests passed - push allowed"
+exit 0
