@@ -1,0 +1,152 @@
+{
+  "generated": "2026-03-02T17:59:08.447Z",
+  "count": 10,
+  "agents": [
+    {
+      "id": "candi",
+      "name": "candi",
+      "description": "**You are Candi, Brian's personal assistant for restaurant reservations.**",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/candi",
+      "capabilities": [
+        "AGENT",
+        "SOUL"
+      ],
+      "lastModified": "2026-02-16T03:31:37.030Z"
+    },
+    {
+      "id": "coder",
+      "name": "coder",
+      "description": "**Label:** `coder-<task-id>`",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/coder",
+      "capabilities": [
+        "AGENT",
+        "MEMORY-SCOPE"
+      ],
+      "lastModified": "2026-02-15T02:31:32.052Z"
+    },
+    {
+      "id": "designer",
+      "name": "designer",
+      "description": "**Label:** `designer-<task-id>`",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/designer",
+      "capabilities": [
+        "AGENT",
+        "MEMORY-SCOPE"
+      ],
+      "lastModified": "2026-02-13T11:54:30.893Z"
+    },
+    {
+      "id": "designer-agent",
+      "name": "designer-agent",
+      "description": "You are the Designer Agent, a senior autonomous UI/UX specialist operating within the Ralph Loop — an autonomous multi-agent development cycle in the OpenClaw system. You are the mandatory gate for al",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/designer-agent",
+      "capabilities": [
+        "ACCESSIBILITY-NOTES",
+        "AGENT",
+        "CLAUDE-TEAM-SETUP",
+        "CURRENT-TASK",
+        "DAILY-AUDIT-2026-03-01",
+        "DESIGN-REFERENCES",
+        "DESIGN-SPEC",
+        "ENFORCEMENT",
+        "MORPHEUS-STUCK-EXPLANATION",
+        "TEST-CASES",
+        "UX-RATIONALE",
+        "audit-enforcement",
+        "claim-design-complete",
+        "install-hooks",
+        "launch-designer",
+        "launch-morpheus-proper",
+        "launch-morpheus-sonnet",
+        "validate-design-spec"
+      ],
+      "lastModified": "2026-03-01T18:10:17.226Z"
+    },
+    {
+      "id": "idea-agent",
+      "name": "idea-agent",
+      "description": "The Idea Agent is the **autonomous product intelligence engine** for OpenClaw. It continuously monitors signal sources (Telegram, Ralph Loop outputs, memory files, external signals) to capture, enrich",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/idea-agent",
+      "capabilities": [
+        "AGENT",
+        "BACKLOG",
+        "DIGEST",
+        "NEXT-UP",
+        "launch-idea-agent"
+      ],
+      "lastModified": "2026-02-13T19:56:25.353Z"
+    },
+    {
+      "id": "pm-orchestrator",
+      "name": "pm-orchestrator",
+      "description": "**Autonomous Product Manager & Ralph Loop Controller**",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/pm-orchestrator",
+      "capabilities": [
+        "AGENT",
+        "BRIAN-SCREENSHOT-DIRECTIVE",
+        "CURRENT-TASK",
+        "STATUS-REPORT-2026-02-08-1300",
+        "launch-pm-tmux",
+        "launch-pm"
+      ],
+      "lastModified": "2026-02-12T00:31:11.364Z"
+    },
+    {
+      "id": "scholarship-agent",
+      "name": "scholarship-agent",
+      "description": "**Purpose:** Autonomously research and deliver new scholarships for Lena every week",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/scholarship-agent",
+      "capabilities": [
+        "2026-02-08-scholarships",
+        "AGENT",
+        "launch-scholarship-agent",
+        "previously-sent"
+      ],
+      "lastModified": "2026-02-13T19:56:25.353Z"
+    },
+    {
+      "id": "test-case-writer",
+      "name": "test-case-writer",
+      "description": "**Ralph Loop Position:** Step 4 of 6",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/test-case-writer",
+      "capabilities": [
+        "AGENT",
+        "launch-test-case-writer",
+        "launch-test-writer"
+      ],
+      "lastModified": "2026-02-13T19:56:25.307Z"
+    },
+    {
+      "id": "validator",
+      "name": "validator",
+      "description": "**Label:** `validator-<task-id>`",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/validator",
+      "capabilities": [
+        "AGENT"
+      ],
+      "lastModified": "2026-02-10T02:00:14.865Z"
+    },
+    {
+      "id": "visual-test-agent",
+      "name": "visual-test-agent",
+      "description": "**AI-powered visual regression testing with dual-method validation**",
+      "emoji": "🤖",
+      "path": "/root/.openclaw/workspace/agents/visual-test-agent",
+      "capabilities": [
+        "AGENT",
+        "INTEGRATION",
+        "launch-visual-test"
+      ],
+      "lastModified": "2026-02-13T19:56:25.303Z"
+    }
+  ]
+}

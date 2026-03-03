@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-01T10:03:31.142Z",
-  "count": 127,
+  "generated": "2026-03-03T01:59:41.910Z",
+  "count": 128,
   "skills": [
     {
       "id": "accessibility-toolkit",
@@ -238,7 +238,7 @@
     {
       "id": "cloudflare-pages-deploy",
       "name": "cloudflare-pages-deploy",
-      "description": "Deploy static sites to Cloudflare Pages. Three fallback methods - API trigger, git push, wrangler CLI. NEVER say \"can't deploy\" until all 3 methods fail.",
+      "description": "**Status:** ✅ Active - Use project-specific deploy.sh scripts ONLY",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/cloudflare-pages-deploy",
       "homepage": null,
@@ -297,6 +297,15 @@
       "description": "Multi-step deployment agent for full-stack apps. Build → Test → GitHub → Cloudflare Pages with human approval at each step.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/deploy-agent",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "deployment-method-check",
+      "name": "deployment-method-check",
+      "description": "**Purpose:** Prevent assuming deployment method - ALWAYS check how a project deploys before attempting deployment.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/deployment-method-check",
       "homepage": null,
       "metadata": {}
     },
