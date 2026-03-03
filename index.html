@@ -512,6 +512,92 @@ body {
   </div>
 </div>
 
+<!-- Settings Panel -->
+<div class="notifications-panel" id="settingsPanel" style="width: 500px; max-width: 100vw;">
+  <div class="notifications-header">
+    <div class="notifications-title">⚙️ Settings</div>
+    <button class="close-notifications" id="closeSettings">×</button>
+  </div>
+  <div class="notifications-body" style="padding: 20px;">
+    
+    <!-- Auto-Refresh Settings -->
+    <div style="margin-bottom: 24px;">
+      <div style="font-weight: 600; margin-bottom: 12px; font-size: 15px;">🔄 Auto-Refresh</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+        <label style="font-size: 14px; color: var(--text-dim);">Dashboard data refresh interval</label>
+      </div>
+      <select id="refreshInterval" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 8px; font-size: 14px;">
+        <option value="60000">1 minute</option>
+        <option value="300000" selected>5 minutes (recommended)</option>
+        <option value="600000">10 minutes</option>
+        <option value="1800000">30 minutes</option>
+        <option value="0">Disabled</option>
+      </select>
+    </div>
+
+    <!-- Budget Thresholds -->
+    <div style="margin-bottom: 24px;">
+      <div style="font-weight: 600; margin-bottom: 12px; font-size: 15px;">💰 Budget Alerts</div>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 14px; color: var(--text-dim); display: block; margin-bottom: 6px;">Daily budget limit ($)</label>
+        <input type="number" id="dailyBudget" placeholder="50" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 8px; font-size: 14px;" />
+      </div>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 14px; color: var(--text-dim); display: block; margin-bottom: 6px;">Warning threshold (%)</label>
+        <input type="number" id="budgetWarning" value="75" min="1" max="100" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 8px; font-size: 14px;" />
+      </div>
+    </div>
+
+    <!-- Display Preferences -->
+    <div style="margin-bottom: 24px;">
+      <div style="font-weight: 600; margin-bottom: 12px; font-size: 15px;">🎨 Display</div>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 14px; color: var(--text-dim); display: block; margin-bottom: 6px;">Cost decimal places</label>
+        <select id="costDecimals" style="width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px; border-radius: 8px; font-size: 14px;">
+          <option value="2" selected>2 ($0.00)</option>
+          <option value="3">3 ($0.000)</option>
+          <option value="4">4 ($0.0000)</option>
+        </select>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0;">
+        <label style="font-size: 14px; color: var(--text-dim);">Compact view</label>
+        <input type="checkbox" id="compactView" style="width: 20px; height: 20px;" />
+      </div>
+    </div>
+
+    <!-- Notification Preferences -->
+    <div style="margin-bottom: 24px;">
+      <div style="font-weight: 600; margin-bottom: 12px; font-size: 15px;">🔔 Notifications</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+        <label style="font-size: 14px; color: var(--text-dim);">Agent errors</label>
+        <input type="checkbox" id="notifyErrors" checked style="width: 20px; height: 20px;" />
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+        <label style="font-size: 14px; color: var(--text-dim);">Budget warnings</label>
+        <input type="checkbox" id="notifyBudget" checked style="width: 20px; height: 20px;" />
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+        <label style="font-size: 14px; color: var(--text-dim);">High token usage</label>
+        <input type="checkbox" id="notifyTokens" checked style="width: 20px; height: 20px;" />
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0;">
+        <label style="font-size: 14px; color: var(--text-dim);">Cron failures</label>
+        <input type="checkbox" id="notifyCrons" checked style="width: 20px; height: 20px;" />
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="display: flex; gap: 8px; justify-content: flex-end; padding-top: 12px; border-top: 1px solid var(--border);">
+      <button onclick="resetSettings()" style="background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px;">Reset to Defaults</button>
+      <button onclick="saveSettings()" style="background: var(--primary); border: none; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;">Save Changes</button>
+    </div>
+    
+    <div style="margin-top: 12px; font-size: 12px; color: var(--text-muted); text-align: center;">
+      Changes saved to localStorage • Last saved: <span id="settingsLastSaved">Never</span>
+    </div>
+  </div>
+</div>
+
 <div class="header">
   <div class="header-left">
     <div class="icon">🚀</div>
@@ -1070,9 +1156,135 @@ document.getElementById('closeNotifications').addEventListener('click', closeNot
 document.getElementById('notificationsOverlay').addEventListener('click', closeNotificationsPanel);
 
 // Settings button
-document.getElementById('settingsBtn').addEventListener('click', () => {
-  alert('Settings: Budget limits can be configured here');
-});
+// Settings Panel Management
+const SETTINGS_STORAGE_KEY = 'mc_settings';
+const DEFAULT_SETTINGS = {
+  refreshInterval: 300000, // 5 minutes
+  dailyBudget: 50,
+  budgetWarning: 75,
+  costDecimals: 2,
+  compactView: false,
+  notifyErrors: true,
+  notifyBudget: true,
+  notifyTokens: true,
+  notifyCrons: true
+};
+
+let currentSettings = { ...DEFAULT_SETTINGS };
+
+function loadSettings() {
+  const saved = localStorage.getItem(SETTINGS_STORAGE_KEY);
+  if (saved) {
+    try {
+      currentSettings = { ...DEFAULT_SETTINGS, ...JSON.parse(saved) };
+    } catch (e) {
+      console.error('Failed to load settings:', e);
+    }
+  }
+  
+  // Apply settings to UI
+  document.getElementById('refreshInterval').value = currentSettings.refreshInterval;
+  document.getElementById('dailyBudget').value = currentSettings.dailyBudget;
+  document.getElementById('budgetWarning').value = currentSettings.budgetWarning;
+  document.getElementById('costDecimals').value = currentSettings.costDecimals;
+  document.getElementById('compactView').checked = currentSettings.compactView;
+  document.getElementById('notifyErrors').checked = currentSettings.notifyErrors;
+  document.getElementById('notifyBudget').checked = currentSettings.notifyBudget;
+  document.getElementById('notifyTokens').checked = currentSettings.notifyTokens;
+  document.getElementById('notifyCrons').checked = currentSettings.notifyCrons;
+  
+  const savedData = JSON.parse(localStorage.getItem(SETTINGS_STORAGE_KEY) || '{}');
+  if (savedData.timestamp) {
+    const date = new Date(savedData.timestamp);
+    document.getElementById('settingsLastSaved').textContent = date.toLocaleString();
+  }
+}
+
+function saveSettings() {
+  // Collect settings from UI
+  currentSettings = {
+    refreshInterval: parseInt(document.getElementById('refreshInterval').value),
+    dailyBudget: parseFloat(document.getElementById('dailyBudget').value) || 50,
+    budgetWarning: parseInt(document.getElementById('budgetWarning').value),
+    costDecimals: parseInt(document.getElementById('costDecimals').value),
+    compactView: document.getElementById('compactView').checked,
+    notifyErrors: document.getElementById('notifyErrors').checked,
+    notifyBudget: document.getElementById('notifyBudget').checked,
+    notifyTokens: document.getElementById('notifyTokens').checked,
+    notifyCrons: document.getElementById('notifyCrons').checked
+  };
+  
+  // Save to localStorage
+  const dataToSave = {
+    ...currentSettings,
+    timestamp: Date.now()
+  };
+  
+  try {
+    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(dataToSave));
+    const date = new Date(dataToSave.timestamp);
+    document.getElementById('settingsLastSaved').textContent = date.toLocaleString();
+    
+    // Show success feedback
+    const saveBtn = event.target;
+    const originalText = saveBtn.textContent;
+    saveBtn.textContent = '✓ Saved!';
+    saveBtn.style.background = 'var(--success)';
+    
+    setTimeout(() => {
+      saveBtn.textContent = originalText;
+      saveBtn.style.background = 'var(--primary)';
+    }, 2000);
+    
+    // Apply refresh interval change
+    applyRefreshInterval();
+    
+  } catch (e) {
+    console.error('Failed to save settings:', e);
+    alert('Failed to save settings. Please try again.');
+  }
+}
+
+function resetSettings() {
+  if (confirm('Reset all settings to defaults? This cannot be undone.')) {
+    currentSettings = { ...DEFAULT_SETTINGS };
+    loadSettings();
+    saveSettings();
+  }
+}
+
+function openSettingsPanel() {
+  loadSettings();
+  document.getElementById('settingsPanel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSettingsPanel() {
+  document.getElementById('settingsPanel').classList.remove('open');
+  document.body.style.overflow = 'auto';
+}
+
+// Auto-refresh management
+let refreshIntervalId = null;
+
+function applyRefreshInterval() {
+  // Clear existing interval
+  if (refreshIntervalId) {
+    clearInterval(refreshIntervalId);
+  }
+  
+  // Set new interval if not disabled
+  if (currentSettings.refreshInterval > 0) {
+    refreshIntervalId = setInterval(() => {
+      fetchUsage();
+      fetchNotifications();
+    }, currentSettings.refreshInterval);
+  }
+}
+
+// Event Listeners
+document.getElementById('settingsBtn').addEventListener('click', openSettingsPanel);
+document.getElementById('closeSettings').addEventListener('click', closeSettingsPanel);
 
 document.getElementById('budgetSettings').addEventListener('click', () => {
   const newLimit = prompt(`Set ${currentPeriod} budget limit:`, BUDGETS[currentPeriod]);
@@ -1087,12 +1299,10 @@ updateDate();
 fetchUsage();
 fetchNotifications();
 loadTasks();
+loadSettings();
 
-// Auto-refresh every 5 minutes
-setInterval(() => {
-  fetchUsage();
-  fetchNotifications();
-}, 5 * 60 * 1000);
+// Initial auto-refresh setup
+applyRefreshInterval();
 
 // Tasks Notepad Functions
 const TASKS_STORAGE_KEY = 'mc_quick_tasks';
