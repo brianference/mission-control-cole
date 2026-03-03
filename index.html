@@ -479,6 +479,7 @@ body {
 
 <!-- Notifications Overlay -->
 <div class="notifications-overlay" id="notificationsOverlay"></div>
+<div class="notifications-overlay" id="tasksOverlay"></div>
 
 <!-- Notifications Panel -->
 <div class="notifications-panel" id="notificationsPanel">
@@ -488,6 +489,26 @@ body {
   </div>
   <div class="notifications-body" id="notificationsBody">
     <div class="loading">Loading notifications...</div>
+  </div>
+</div>
+
+<!-- Tasks Notepad Modal -->
+<div class="notifications-panel" id="tasksPanel" style="width: 500px; max-width: 100vw;">
+  <div class="notifications-header">
+    <div class="notifications-title">📋 Quick Tasks</div>
+    <button class="close-notifications" id="closeTasks">×</button>
+  </div>
+  <div class="notifications-body" style="padding: 20px;">
+    <div style="margin-bottom: 12px;">
+      <textarea id="tasksTextarea" placeholder="Quick notes, to-dos, reminders..." style="width: 100%; min-height: 400px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', monospace; font-size: 14px; line-height: 1.6; resize: vertical;"></textarea>
+    </div>
+    <div style="display: flex; gap: 8px; justify-content: flex-end;">
+      <button onclick="clearTasks()" style="background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;">Clear</button>
+      <button onclick="saveTasks()" style="background: var(--primary); border: none; color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600;">Save</button>
+    </div>
+    <div style="margin-top: 12px; font-size: 12px; color: var(--text-muted);">
+      Auto-saves to localStorage • Last saved: <span id="lastSaved">Never</span>
+    </div>
   </div>
 </div>
 
@@ -559,6 +580,36 @@ body {
       <div>
         <div style="font-weight: 600; font-size: 16px;">Content Dashboard</div>
         <div style="font-size: 13px; color: var(--text-dim);">Manage drafts, posts & scheduled content</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="https://secret-vault-9r3.pages.dev" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 280px; text-decoration: none;">
+    <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid #FF3B30; display: flex; align-items: center; gap: 12px; color: var(--text);">
+      <div style="font-size: 32px;">🔐</div>
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">Secret Vault</div>
+        <div style="font-size: 13px; color: var(--text-dim);">Secure password & secrets manager</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="https://tokyo-one.pages.dev" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 280px; text-decoration: none;">
+    <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid #00C7BE; display: flex; align-items: center; gap: 12px; color: var(--text);">
+      <div style="font-size: 32px;">🗺️</div>
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">Trip Itinerary</div>
+        <div style="font-size: 13px; color: var(--text-dim);">Tokyo & Osaka trip • May 2026</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="#" onclick="openTasksNotepad(event)" style="flex: 1; min-width: 280px; text-decoration: none;">
+    <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid #AF52DE; display: flex; align-items: center; gap: 12px; color: var(--text);">
+      <div style="font-size: 32px;">📋</div>
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">Quick Tasks</div>
+        <div style="font-size: 13px; color: var(--text-dim);">Simple notepad for quick notes</div>
       </div>
     </div>
   </a>
@@ -1035,12 +1086,97 @@ document.getElementById('budgetSettings').addEventListener('click', () => {
 updateDate();
 fetchUsage();
 fetchNotifications();
+loadTasks();
 
 // Auto-refresh every 5 minutes
 setInterval(() => {
   fetchUsage();
   fetchNotifications();
 }, 5 * 60 * 1000);
+
+// Tasks Notepad Functions
+const TASKS_STORAGE_KEY = 'mc_quick_tasks';
+
+function openTasksNotepad(event) {
+  event.preventDefault();
+  document.getElementById('tasksPanel').classList.add('open');
+  document.getElementById('tasksOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  loadTasks();
+}
+
+function closeTasksPanel() {
+  document.getElementById('tasksPanel').classList.remove('open');
+  document.getElementById('tasksOverlay').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function loadTasks() {
+  const saved = localStorage.getItem(TASKS_STORAGE_KEY);
+  if (saved) {
+    try {
+      const data = JSON.parse(saved);
+      document.getElementById('tasksTextarea').value = data.content || '';
+      if (data.timestamp) {
+        const date = new Date(data.timestamp);
+        document.getElementById('lastSaved').textContent = date.toLocaleString();
+      }
+    } catch (e) {
+      console.error('Failed to load tasks:', e);
+    }
+  }
+}
+
+function saveTasks() {
+  const content = document.getElementById('tasksTextarea').value;
+  const data = {
+    content: content,
+    timestamp: new Date().toISOString()
+  };
+  localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(data));
+  const date = new Date(data.timestamp);
+  document.getElementById('lastSaved').textContent = date.toLocaleString();
+  
+  // Show success feedback
+  const btn = event.target;
+  const originalText = btn.textContent;
+  btn.textContent = '✓ Saved';
+  setTimeout(() => {
+    btn.textContent = originalText;
+  }, 1500);
+}
+
+function clearTasks() {
+  if (confirm('Clear all tasks? This cannot be undone.')) {
+    document.getElementById('tasksTextarea').value = '';
+    localStorage.removeItem(TASKS_STORAGE_KEY);
+    document.getElementById('lastSaved').textContent = 'Never';
+  }
+}
+
+// Auto-save on blur
+document.getElementById('tasksTextarea')?.addEventListener('blur', () => {
+  const content = document.getElementById('tasksTextarea').value;
+  if (content.trim()) {
+    saveTasks();
+  }
+});
+
+// Close tasks panel
+document.getElementById('closeTasks')?.addEventListener('click', closeTasksPanel);
+document.getElementById('tasksOverlay')?.addEventListener('click', closeTasksPanel);
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('tasksPanel').classList.contains('open')) {
+      closeTasksPanel();
+    }
+    if (document.getElementById('notificationsPanel').classList.contains('open')) {
+      closeNotificationsPanel();
+    }
+  }
+});
 </script>
 
 </body>
