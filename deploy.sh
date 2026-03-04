@@ -3,6 +3,7 @@ set -e
 
 PROJECT_NAME="mission-control-dashboard"
 REPO_NAME="mission-control"
+PROD_URL="https://mission-control-dashboard.pages.dev"
 
 echo "🚀 Deploying Mission Control Dashboard to Cloudflare Pages..."
 
@@ -25,16 +26,12 @@ echo "💾 Committing changes..."
 git add -A
 git commit -m "Update Mission Control Dashboard - $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
 
-# Push to GitHub
+# Push to GitHub (triggers Cloudflare Pages auto-deploy)
 echo "📤 Pushing to GitHub..."
-git push -u origin main --force
+git push origin main
 
-# Deploy to Cloudflare Pages
-echo "☁️ Deploying to Cloudflare Pages..."
-npx wrangler pages deploy . \
-  --project-name="$PROJECT_NAME" \
-  --branch=main \
-  --commit-dirty=true
-
-echo "✅ Deployment complete!"
-echo "🔗 URL: https://$PROJECT_NAME.pages.dev"
+echo ""
+echo "✅ Deployment triggered via git push!"
+echo "🔗 Production URL: $PROD_URL"
+echo "⏳ Cloudflare Pages will auto-deploy from GitHub in ~30-60 seconds"
+echo ""
