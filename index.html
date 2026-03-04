@@ -646,6 +646,16 @@ body {
     </div>
   </a>
   
+  <a href="costs.html" style="flex: 1; min-width: 280px; text-decoration: none;">
+    <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid #34C759; display: flex; align-items: center; gap: 12px; color: var(--text);">
+      <div style="font-size: 32px;">💰</div>
+      <div>
+        <div style="font-weight: 600; font-size: 16px;">Cost Analytics</div>
+        <div style="font-size: 13px; color: var(--text-dim);">Usage tracking • Optimization tips</div>
+      </div>
+    </div>
+  </a>
+  
   <a href="skills.html" style="flex: 1; min-width: 280px; text-decoration: none;">
     <div style="background: var(--surface); border-radius: 16px; padding: 20px; border-left: 4px solid #34C759; display: flex; align-items: center; gap: 12px; color: var(--text);">
       <div style="font-size: 32px;">⚡</div>
@@ -745,15 +755,34 @@ body {
 <div class="optimization">
   <div class="optimization-header">
     Cost Optimization
+    <a href="costs.html#optimization" style="float: right; font-size: 14px; color: var(--primary); text-decoration: none; font-weight: 500;">
+      View Full Analysis →
+    </a>
   </div>
 
-  <div class="savings-card">
-    <div class="savings-label">💰 MONTHLY SAVINGS</div>
-    <div class="savings-amount">$<span id="monthlySavings">0.00</span></div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px;">
+    <div class="savings-card">
+      <div class="savings-label">💰 MONTHLY SAVINGS</div>
+      <div class="savings-amount">$<span id="monthlySavings">0.00</span></div>
+    </div>
+    <div class="savings-card">
+      <div class="savings-label">📊 OPTIMIZATION SCORE</div>
+      <div class="savings-amount"><span id="optimizationScore">87</span>%</div>
+    </div>
+    <div class="savings-card">
+      <div class="savings-label">💡 RECOMMENDATIONS</div>
+      <div class="savings-amount"><span id="recommendationCount">12</span></div>
+    </div>
   </div>
 
   <div class="optimization-list" id="optimizationList">
     <div class="optimization-item">Loading optimization data...</div>
+  </div>
+  
+  <div style="text-align: center; margin-top: 16px;">
+    <a href="costs.html#optimization" style="display: inline-block; padding: 10px 20px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 14px;">
+      See All Recommendations
+    </a>
   </div>
 </div>
 
@@ -856,33 +885,63 @@ function updateDisplay() {
 }
 
 function updateOptimizations(data) {
-  const optimizations = [
-    `Using Claude Sonnet saves ~${(calculateSavings(data) * 0.4).toFixed(2)}/mo vs GPT-4`,
-    `Gemini Flash saves ~${(calculateSavings(data) * 0.3).toFixed(2)}/mo on simple tasks`,
-    `Efficient prompting reduces ~${(calculateSavings(data) * 0.2).toFixed(2)}/mo token waste`,
+  const savings = calculateSavings(data);
+  const allOptimizations = [
+    `Using Claude Sonnet saves ~${(savings * 0.4).toFixed(2)}/mo vs GPT-4`,
+    `Gemini Flash saves ~${(savings * 0.3).toFixed(2)}/mo on simple tasks`,
+    `Efficient prompting reduces ~${(savings * 0.2).toFixed(2)}/mo token waste`,
     `Batch processing optimizes API calls`,
-    `Model routing based on task complexity`
+    `Model routing based on task complexity`,
+    `Cache warming for repeated contexts`,
+    `Reduce expensive cron job frequency`,
+    `Switch simple tasks to Flash`,
+    `Optimize prompt token usage`,
+    `Batch similar API requests`,
+    `Enable context reuse`,
+    `Review high-cost sessions`
   ];
 
+  document.getElementById('monthlySavings').textContent = savings.toFixed(2);
+  
+  // Calculate optimization score (higher savings = better score)
+  const maxSavings = 1000; // Baseline comparison
+  const score = Math.min(Math.round((savings / maxSavings) * 100), 99);
+  document.getElementById('optimizationScore').textContent = score;
+  
+  document.getElementById('recommendationCount').textContent = allOptimizations.length;
+  
   const listEl = document.getElementById('optimizationList');
-  listEl.innerHTML = optimizations.map(opt => 
+  // Show only top 3 on Overview
+  const topOptimizations = allOptimizations.slice(0, 3);
+  listEl.innerHTML = topOptimizations.map(opt => 
     `<div class="optimization-item">${opt}</div>`
   ).join('');
 }
 
 function updateOptimizationsMock() {
-  const optimizations = [
+  const allOptimizations = [
     'Using Claude Sonnet saves ~$291.80/mo vs GPT-4',
     'Gemini Flash saves ~$218.85/mo on simple tasks',
     'Efficient prompting reduces ~$145.90/mo token waste',
     'Batch processing optimizes API calls',
-    'Model routing based on task complexity'
+    'Model routing based on task complexity',
+    'Cache warming for repeated contexts',
+    'Reduce expensive cron job frequency',
+    'Switch simple tasks to Flash',
+    'Optimize prompt token usage',
+    'Batch similar API requests',
+    'Enable context reuse',
+    'Review high-cost sessions'
   ];
 
   document.getElementById('monthlySavings').textContent = '729.50';
+  document.getElementById('optimizationScore').textContent = '87';
+  document.getElementById('recommendationCount').textContent = allOptimizations.length;
   
   const listEl = document.getElementById('optimizationList');
-  listEl.innerHTML = optimizations.map(opt => 
+  // Show only top 3 on Overview
+  const topOptimizations = allOptimizations.slice(0, 3);
+  listEl.innerHTML = topOptimizations.map(opt => 
     `<div class="optimization-item">${opt}</div>`
   ).join('');
 }

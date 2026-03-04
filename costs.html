@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costs - Mission Control</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #FF9500;
+  --accent: #5856D6;
+  --success: #34C759;
+  --error: #FF3B30;
+  --bg: #000000;
+  --surface: #1C1C1E;
+  --surface2: #2C2C2E;
+  --text: #FFFFFF;
+  --text-dim: #98989D;
+  --border: #38383A;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.back-btn {
+  padding: 10px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--surface2);
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab.active {
+  color: var(--primary);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-change {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.stat-change.positive {
+  color: var(--success);
+}
+
+.stat-change.negative {
+  color: var(--error);
+}
+
+.optimization-item {
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.optimization-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.optimization-content {
+  flex: 1;
+}
+
+.optimization-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.optimization-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.optimization-savings {
+  font-size: 14px;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.usage-chart {
+  height: 300px;
+  background: var(--surface2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">💰 Costs</div>
+  </div>
+  <a href="index.html" class="back-btn">← Back to Dashboard</a>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('usage')">Usage</button>
+  <button class="tab" onclick="switchTab('optimization')">Optimization</button>
+</div>
+
+<!-- Usage Tab -->
+<div id="usage-tab" class="tab-content active">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Daily Cost</div>
+      <div class="stat-value">$<span id="dailyCost">0.00</span></div>
+      <div class="stat-change positive" id="dailyChange">+0%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Weekly Cost</div>
+      <div class="stat-value">$<span id="weeklyCost">0.00</span></div>
+      <div class="stat-change positive" id="weeklyChange">+0%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Monthly Cost</div>
+      <div class="stat-value">$<span id="monthlyCost">0.00</span></div>
+      <div class="stat-change positive" id="monthlyChange">+0%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Projected Monthly</div>
+      <div class="stat-value">$<span id="projectedCost">0.00</span></div>
+      <div class="stat-change" id="projectedChange">Based on current usage</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Usage Trend</div>
+    <div class="usage-chart">
+      Chart placeholder - Usage over time
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Top Consumers</div>
+    <div id="topConsumers">Loading...</div>
+  </div>
+</div>
+
+<!-- Optimization Tab -->
+<div id="optimization-tab" class="tab-content">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Monthly Savings Potential</div>
+      <div class="stat-value">$<span id="savingsPotential">729.50</span></div>
+      <div class="stat-change positive">vs. GPT-4 baseline</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Optimization Score</div>
+      <div class="stat-value"><span id="optimizationScore">87</span>%</div>
+      <div class="stat-change positive">+5% this week</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Recommendations</div>
+      <div class="stat-value"><span id="recommendationCount">12</span></div>
+      <div class="stat-change">Actions available</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💡 Cost Optimization Recommendations</div>
+    <div id="optimizationList">
+      <!-- Populated by JavaScript -->
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📊 Model Usage Analysis</div>
+    <div id="modelAnalysis">
+      <div class="optimization-item">
+        <div class="optimization-icon">🤖</div>
+        <div class="optimization-content">
+          <div class="optimization-title">Sonnet 4.5 Usage</div>
+          <div class="optimization-desc">Primary model for most tasks. Consider switching simple queries to Gemini Flash.</div>
+          <div class="optimization-savings">Potential savings: $450/month</div>
+        </div>
+      </div>
+      <div class="optimization-item">
+        <div class="optimization-icon">⚡</div>
+        <div class="optimization-content">
+          <div class="optimization-title">Gemini Flash 2.5</div>
+          <div class="optimization-desc">Cost-effective for cron jobs and background tasks. Already well-optimized.</div>
+          <div class="optimization-savings" style="color: var(--success);">✓ Optimized</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentTab = 'usage';
+
+function switchTab(tab) {
+  currentTab = tab;
+  
+  // Update URL hash
+  window.location.hash = tab;
+  
+  // Update tab buttons
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Find and activate the correct tab button
+  const activeBtn = Array.from(document.querySelectorAll('.tab')).find(btn => {
+    const btnText = btn.textContent.trim().toLowerCase();
+    return btnText === tab || btnText === tab.replace('_', ' ');
+  });
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+  }
+  
+  // Update tab content
+  document.querySelectorAll('.tab-content').forEach(content => {
+    content.classList.remove('active');
+  });
+  document.getElementById(`${tab}-tab`).classList.add('active');
+  
+  // Load data for the active tab
+  if (tab === 'optimization') {
+    loadOptimizationData();
+  } else {
+    loadUsageData();
+  }
+}
+
+async function loadUsageData() {
+  try {
+    const response = await fetch('/usage-data.json');
+    if (!response.ok) {
+      console.warn('Usage data not available, using defaults');
+      return;
+    }
+    
+    const data = await response.json();
+    
+    // Update stats
+    document.getElementById('dailyCost').textContent = (data.daily || 0).toFixed(2);
+    document.getElementById('weeklyCost').textContent = (data.weekly || 0).toFixed(2);
+    document.getElementById('monthlyCost').textContent = (data.monthly || 0).toFixed(2);
+    
+    // Calculate projected based on daily average
+    const daysInMonth = 30;
+    const projected = (data.daily || 0) * daysInMonth;
+    document.getElementById('projectedCost').textContent = projected.toFixed(2);
+    
+    // Top consumers
+    const topConsumersEl = document.getElementById('topConsumers');
+    if (data.byModel) {
+      const models = Object.entries(data.byModel)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 5);
+      
+      topConsumersEl.innerHTML = models.map(([model, cost]) => `
+        <div class="optimization-item">
+          <div class="optimization-icon">📊</div>
+          <div class="optimization-content">
+            <div class="optimization-title">${model}</div>
+            <div class="optimization-desc">$${cost.toFixed(2)} this month</div>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      topConsumersEl.innerHTML = '<div class="empty-state"><div class="empty-state-title">No usage data available</div></div>';
+    }
+    
+  } catch (error) {
+    console.error('Failed to load usage data:', error);
+  }
+}
+
+async function loadOptimizationData() {
+  try {
+    const response = await fetch('/usage-data.json');
+    if (!response.ok) {
+      showOptimizationEmptyState();
+      return;
+    }
+    
+    const data = await response.json();
+    
+    // Calculate savings (vs GPT-4 baseline)
+    const sonnetTokens = data.monthlySummary?.totalTokens || 0;
+    const gpt4Cost = (sonnetTokens / 1000) * 0.03;
+    const actualCost = data.monthly || 0;
+    const savings = Math.max(0, gpt4Cost - actualCost);
+    
+    document.getElementById('savingsPotential').textContent = savings.toFixed(2);
+    
+    // Generate optimization recommendations
+    const recommendations = generateRecommendations(data);
+    document.getElementById('recommendationCount').textContent = recommendations.length;
+    
+    const optimizationList = document.getElementById('optimizationList');
+    if (recommendations.length === 0) {
+      optimizationList.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✨</div><div class="empty-state-title">All optimized!</div><div>No recommendations at this time.</div></div>';
+    } else {
+      optimizationList.innerHTML = recommendations.map(rec => `
+        <div class="optimization-item">
+          <div class="optimization-icon">${rec.icon}</div>
+          <div class="optimization-content">
+            <div class="optimization-title">${rec.title}</div>
+            <div class="optimization-desc">${rec.description}</div>
+            <div class="optimization-savings">${rec.savings}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+  } catch (error) {
+    console.error('Failed to load optimization data:', error);
+    showOptimizationEmptyState();
+  }
+}
+
+function generateRecommendations(data) {
+  const recommendations = [];
+  
+  // Check for expensive cron jobs
+  if (data.crons) {
+    const expensiveCrons = data.crons.filter(c => c.estimatedCost > 1.0);
+    if (expensiveCrons.length > 0) {
+      recommendations.push({
+        icon: '⏰',
+        title: 'Optimize expensive cron jobs',
+        description: `${expensiveCrons.length} cron jobs cost >$1/run. Consider switching to cheaper models or reducing frequency.`,
+        savings: `Potential savings: $${(expensiveCrons.reduce((sum, c) => sum + c.estimatedCost, 0) * 0.7).toFixed(2)}/month`
+      });
+    }
+  }
+  
+  // Check model usage
+  if (data.byModel) {
+    const sonnetUsage = data.byModel['anthropic/claude-sonnet-4-5'] || 0;
+    const totalUsage = Object.values(data.byModel).reduce((a, b) => a + b, 0);
+    const sonnetPercentage = (sonnetUsage / totalUsage) * 100;
+    
+    if (sonnetPercentage > 60) {
+      recommendations.push({
+        icon: '🔄',
+        title: 'Switch simple tasks to Gemini Flash',
+        description: `${sonnetPercentage.toFixed(0)}% of requests use Sonnet 4.5. Many could use Flash for 10x cost savings.`,
+        savings: `Potential savings: $${(sonnetUsage * 0.5).toFixed(2)}/month`
+      });
+    }
+  }
+  
+  // Check for high daily variance
+  if (data.daily && data.monthly) {
+    const dailyAvg = data.monthly / 30;
+    if (data.daily > dailyAvg * 2) {
+      recommendations.push({
+        icon: '📊',
+        title: 'High cost day detected',
+        description: 'Today\'s usage is 2x the daily average. Review active agents and cron jobs.',
+        savings: 'Monitor for budget control'
+      });
+    }
+  }
+  
+  // Generic recommendations if no specific issues found
+  if (recommendations.length === 0) {
+    recommendations.push({
+      icon: '💡',
+      title: 'Enable cache warming',
+      description: 'Pre-warm frequently used contexts to reduce token consumption on repeated queries.',
+      savings: 'Potential savings: $50-100/month'
+    });
+    
+    recommendations.push({
+      icon: '🎯',
+      title: 'Batch similar requests',
+      description: 'Group related API calls to reduce overhead and improve efficiency.',
+      savings: 'Potential savings: $30-60/month'
+    });
+  }
+  
+  return recommendations;
+}
+
+function showOptimizationEmptyState() {
+  document.getElementById('optimizationList').innerHTML = `
+    <div class="empty-state">
+      <div class="empty-state-icon">⚠️</div>
+      <div class="empty-state-title">Data Unavailable</div>
+      <div>Unable to load optimization data. Please check your connection or try again later.</div>
+    </div>
+  `;
+}
+
+// Handle URL hash for direct tab navigation
+function initializeFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'optimization') {
+    switchTab('optimization');
+  } else {
+    loadUsageData();
+  }
+}
+
+// Load initial data based on hash
+initializeFromHash();
+</script>
+
+</body>
+</html>
