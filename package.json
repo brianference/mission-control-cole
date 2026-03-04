@@ -1,0 +1,22 @@
+{
+  "name": "mission-control-dashboard",
+  "version": "2.0.0",
+  "description": "Real-time multi-agent control center with budget tracking and agent management",
+  "main": "api/agents.js",
+  "scripts": {
+    "api": "node api/agents.js",
+    "dev": "python3 -m http.server 8080 & node api/agents.js",
+    "start": "npm run api"
+  },
+  "keywords": [
+    "openclaw",
+    "agents",
+    "dashboard",
+    "monitoring"
+  ],
+  "author": "Brian",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
