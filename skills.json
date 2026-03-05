@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-03T01:59:41.910Z",
-  "count": 128,
+  "generated": "2026-03-05T06:00:19.208Z",
+  "count": 133,
   "skills": [
     {
       "id": "accessibility-toolkit",
@@ -8,6 +8,24 @@
       "description": "Friction-reduction patterns for agents helping humans with disabilities. Voice-first workflows, smart home templates, efficiency automation.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/accessibility-toolkit",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "agent-browser",
+      "name": "agent-browser",
+      "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/agent-browser",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "agent-control-center",
+      "name": "agent-control-center",
+      "description": "Real-time dashboard for monitoring and controlling OpenClaw agents.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/agent-control-center",
       "homepage": null,
       "metadata": {}
     },
@@ -312,7 +330,7 @@
     {
       "id": "deployment-proof",
       "name": "deployment-proof",
-      "description": ">",
+      "description": "**COMMANDMENT #36: Never claim \"deployed\" without Percy + screenshots on all 3 platforms.**",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/deployment-proof",
       "homepage": null,
@@ -592,7 +610,7 @@
     {
       "id": "multi-agent-code-review",
       "name": "multi-agent-code-review",
-      "description": "**Spawn 3 specialized agents on every PR: Security, Performance, Style**",
+      "description": "**Purpose:** Block git push if critical security, performance, or accessibility issues are found.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/multi-agent-code-review",
       "homepage": null,
@@ -820,6 +838,15 @@
       }
     },
     {
+      "id": "restaurant-reservation-agent-browser",
+      "name": "restaurant-reservation-agent-browser",
+      "description": "**Purpose:** Make restaurant reservations using agent-browser as primary method, with phone fallback.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/restaurant-reservation-agent-browser",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
       "id": "safe-diagnostics",
       "name": "safe-diagnostics",
       "description": "Debug config and API issues WITHOUT exposing credentials in chat. Use safe patterns to check API keys, verify configs, and diagnose problems without leaking secrets. Trigger words: debug API, check key, diagnose config, API not working, credentials safe, debug without exposing, safe debug.",
@@ -834,6 +861,15 @@
       "description": "Browser automation for scholarship research — navigates scholarship portals, verifies eligibility criteria, extracts deadlines, confirms no-fee status, and takes screenshots. Use when finding scholarships for students (especially accounting/finance). Trigger words: scholarship, scholarship search, find scholarship, scholarship browser, scholarship research, AICPA scholarship.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/scholarship-browser-agent",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "scholarship-deadlines",
+      "name": "scholarship-deadlines",
+      "description": "**Purpose:** Track scholarship deadlines for Lena (ASU accounting/finance major) and alert 2 weeks before due dates.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/scholarship-deadlines",
       "homepage": null,
       "metadata": {}
     },
@@ -1005,6 +1041,15 @@
       "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/skill-creator-2",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "skill-integration-testing",
+      "name": "skill-integration-testing",
+      "description": "**Purpose:** Catch breaking changes in skills BEFORE you need them.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/skill-integration-testing",
       "homepage": null,
       "metadata": {}
     },
