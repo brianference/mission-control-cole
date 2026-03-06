@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 595,
-    "totalRequests": 16572
+    "totalSessions": 593,
+    "totalRequests": 16569
   },
   "daily": [
     {
@@ -128,29 +128,29 @@
     },
     {
       "date": "2026-03-05",
-      "cost": 11.569489800000003,
-      "tokens": 18815221,
-      "requests": 301
+      "cost": 11.255973150000004,
+      "tokens": 18086191,
+      "requests": 276
     },
     {
       "date": "2026-03-06",
-      "cost": 38.09152489999999,
-      "tokens": 43953932,
-      "requests": 1081
+      "cost": 39.08192434999999,
+      "tokens": 44713097,
+      "requests": 1103
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 408.01419574999943,
-      "tokens": 545080349,
-      "requests": 7034
+      "cost": 408.69107854999953,
+      "tokens": 545110484,
+      "requests": 7029
     },
     {
       "name": "Other",
       "cost": 55.35996533401348,
       "tokens": 715852033,
-      "requests": 8997
+      "requests": 8999
     },
     {
       "name": "OpenAI",
@@ -162,9 +162,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 235.87141799999952,
-      "tokens": 324896055,
-      "requests": 4778
+      "cost": 236.54830079999962,
+      "tokens": 324926190,
+      "requests": 4773
     },
     {
       "name": "claude-opus-4-5",
@@ -212,7 +212,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 430
+      "requests": 432
     },
     {
       "name": "gateway-injected",
@@ -242,9 +242,9 @@
     },
     {
       "name": "general",
-      "cost": 234.3518978693052,
-      "tokens": 327258826,
-      "requests": 5027
+      "cost": 235.0287806693052,
+      "tokens": 327288961,
+      "requests": 5024
     },
     {
       "name": "coding",
@@ -259,5 +259,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-06T19:43:25.644Z"
+  "lastUpdated": "2026-03-06T20:43:24.912Z"
 }
