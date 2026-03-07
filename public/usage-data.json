@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 605,
-    "totalRequests": 16588
+    "totalSessions": 594,
+    "totalRequests": 16561
   },
   "daily": [
     {
@@ -128,29 +128,35 @@
     },
     {
       "date": "2026-03-05",
-      "cost": 7.9635151500000045,
-      "tokens": 11759529,
-      "requests": 173
+      "cost": 7.941178500000005,
+      "tokens": 11702777,
+      "requests": 171
     },
     {
       "date": "2026-03-06",
-      "cost": 45.03056585000006,
-      "tokens": 49289563,
-      "requests": 1225
+      "cost": 44.40444815000007,
+      "tokens": 48011893,
+      "requests": 1183
+    },
+    {
+      "date": "2026-03-07",
+      "cost": 1.01452125,
+      "tokens": 688732,
+      "requests": 17
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 411.34726204999964,
-      "tokens": 543360288,
-      "requests": 7035
+      "cost": 411.71332894999966,
+      "tokens": 542714598,
+      "requests": 7005
     },
     {
       "name": "Other",
       "cost": 55.35996533401348,
       "tokens": 715852033,
-      "requests": 9012
+      "requests": 9015
     },
     {
       "name": "OpenAI",
@@ -162,9 +168,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 239.20448429999973,
-      "tokens": 323175994,
-      "requests": 4779
+      "cost": 239.5705511999997,
+      "tokens": 322530304,
+      "requests": 4749
     },
     {
       "name": "claude-opus-4-5",
@@ -212,7 +218,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 445
+      "requests": 448
     },
     {
       "name": "gateway-injected",
@@ -242,9 +248,9 @@
     },
     {
       "name": "general",
-      "cost": 237.68496416930526,
-      "tokens": 325538765,
-      "requests": 5043
+      "cost": 238.05103106930525,
+      "tokens": 324893075,
+      "requests": 5016
     },
     {
       "name": "coding",
@@ -259,5 +265,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-06T23:43:28.245Z"
+  "lastUpdated": "2026-03-07T00:43:30.411Z"
 }
