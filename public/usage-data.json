@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 604,
-    "totalRequests": 16620
+    "totalSessions": 630,
+    "totalRequests": 16705
   },
   "daily": [
     {
@@ -134,29 +134,29 @@
     },
     {
       "date": "2026-03-06",
-      "cost": 38.82586550000003,
-      "tokens": 37426199,
-      "requests": 974
+      "cost": 38.694699500000034,
+      "tokens": 37137835,
+      "requests": 964
     },
     {
       "date": "2026-03-07",
-      "cost": 14.337932549999993,
-      "tokens": 14837079,
-      "requests": 285
+      "cost": 17.680145549999985,
+      "tokens": 18217907,
+      "requests": 380
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 419.45815759999977,
-      "tokens": 546277251,
-      "requests": 7044
+      "cost": 422.6692045999999,
+      "tokens": 549369715,
+      "requests": 7126
     },
     {
       "name": "Other",
       "cost": 55.35996533401348,
       "tokens": 715852033,
-      "requests": 9035
+      "requests": 9038
     },
     {
       "name": "OpenAI",
@@ -168,9 +168,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 247.3153798499998,
-      "tokens": 326092957,
-      "requests": 4788
+      "cost": 250.5264268499998,
+      "tokens": 329185421,
+      "requests": 4870
     },
     {
       "name": "claude-opus-4-5",
@@ -218,7 +218,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 468
+      "requests": 471
     },
     {
       "name": "gateway-injected",
@@ -241,16 +241,16 @@
   ],
   "taskTypes": [
     {
+      "name": "general",
+      "cost": 249.00690671930536,
+      "tokens": 331548192,
+      "requests": 5160
+    },
+    {
       "name": "planning",
       "cost": 248.09501151562827,
       "tokens": 986490469,
       "requests": 11488
-    },
-    {
-      "name": "general",
-      "cost": 245.79585971930544,
-      "tokens": 328455728,
-      "requests": 5075
     },
     {
       "name": "coding",
@@ -265,5 +265,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-07T06:43:35.988Z"
+  "lastUpdated": "2026-03-07T07:43:39.815Z"
 }
