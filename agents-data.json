@@ -1,18 +1,18 @@
 {
   "success": true,
-  "timestamp": 1772877447018,
-  "generated": "2026-03-07T09:57:27.018Z",
+  "timestamp": 1772949760695,
+  "generated": "2026-03-08T06:02:40.695Z",
   "agents": [
     {
-      "sessionId": "9409a3a3-5cf1-4cae-acfe-82ed9908f9a5",
+      "sessionId": "39208497-e4e7-40b4-a5c1-65433444033f",
       "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607",
       "displayName": "Cron: Agent Dashboard Auto-Update",
       "model": "claude-sonnet-4-5",
-      "totalTokens": 30805,
-      "inputTokens": 21564,
-      "outputTokens": 9241,
+      "totalTokens": 30896,
+      "inputTokens": 21627,
+      "outputTokens": 9269,
       "contextTokens": 200000,
-      "updatedAt": 1772877447018,
+      "updatedAt": 1772949760695,
       "ageMs": 0,
       "kind": "other",
       "channel": "unknown",
@@ -24,6 +24,6 @@
     "active": 1,
     "idle": 0,
     "totalCost": 0.20,
-    "avgBurnRate": 0.20
+    "avgBurnRate": 0
   }
 }

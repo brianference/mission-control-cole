@@ -1,0 +1,16 @@
+{
+  "dailyBudget": 10.00,
+  "monthlyBudget": 300.00,
+  "alertThresholds": [50, 75, 90],
+  "perSessionLimit": 5.00,
+  "expensiveSessionThreshold": 2.00,
+  "tokenBurnRateThreshold": 1.00,
+  "cronJobCostThreshold": 0.50,
+  "notificationChannels": {
+    "telegram": true,
+    "email": false,
+    "dashboard": true
+  },
+  "emergencyKillSwitch": false,
+  "description": "Cost alert configuration for Mission Control. Edit thresholds to customize alerts."
+}
