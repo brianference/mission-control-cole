@@ -261,7 +261,62 @@ body {
 .date {
   font-size: 16px;
   color: var(--text-dim);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.summary-card-action {
+  cursor: pointer;
+}
+
+.summary-card-action:hover {
+  background: var(--surface2);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.summary-icon {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.summary-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.summary-value-small {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
 }
 
 .section {
@@ -779,6 +834,38 @@ body {
 
 <div id="errorContainer"></div>
 
+<!-- Compact Summary Row -->
+<div class="summary-row">
+  <div class="summary-card">
+    <div class="summary-icon">💰</div>
+    <div>
+      <div class="summary-label">Cost Today</div>
+      <div class="summary-value">$<span id="summaryTodayCost">0.00</span></div>
+    </div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-icon">🤖</div>
+    <div>
+      <div class="summary-label">Active Agents</div>
+      <div class="summary-value"><span id="summaryActiveAgents">0</span></div>
+    </div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-icon">📊</div>
+    <div>
+      <div class="summary-label">Sessions Today</div>
+      <div class="summary-value"><span id="summarySessionsToday">0</span></div>
+    </div>
+  </div>
+  <div class="summary-card summary-card-action" onclick="document.getElementById('quickCommandsBtn').click()">
+    <div class="summary-icon">⚡</div>
+    <div>
+      <div class="summary-label">Quick Actions</div>
+      <div class="summary-value-small">Click to open</div>
+    </div>
+  </div>
+</div>
+
 <!-- Quick Links -->
 <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
   <a href="agents.html" style="flex: 1; min-width: 280px; text-decoration: none;">
@@ -967,6 +1054,45 @@ function updateDate() {
   document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
 }
 
+// Fetch and update summary row stats
+async function updateSummaryRow() {
+  try {
+    // Fetch active sessions
+    const sessionsRes = await fetch('/active-sessions.json');
+    const sessions = sessionsRes.ok ? await sessionsRes.json() : [];
+    
+    // Count active agents and today's sessions
+    const now = new Date();
+    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    
+    let activeAgents = 0;
+    let sessionsToday = 0;
+    
+    sessions.forEach(session => {
+      if (session.status === 'active' || session.status === 'idle') {
+        activeAgents++;
+      }
+      const sessionStart = new Date(session.createdAt || session.startTime).getTime();
+      if (sessionStart >= todayStart) {
+        sessionsToday++;
+      }
+    });
+    
+    document.getElementById('summaryActiveAgents').textContent = activeAgents;
+    document.getElementById('summarySessionsToday').textContent = sessionsToday;
+    
+    // Update today's cost from usage data
+    document.getElementById('summaryTodayCost').textContent = usageData.daily.toFixed(2);
+    
+  } catch (error) {
+    console.error('Failed to update summary row:', error);
+    // Use fallback demo data
+    document.getElementById('summaryActiveAgents').textContent = '3';
+    document.getElementById('summarySessionsToday').textContent = '7';
+    document.getElementById('summaryTodayCost').textContent = usageData.daily.toFixed(2);
+  }
+}
+
 // Fetch usage from OpenClaw API
 async function fetchUsage() {
   try {
@@ -995,6 +1121,7 @@ async function fetchUsage() {
 
     updateDisplay();
     updateOptimizations(data);
+    updateSummaryRow();
     clearError();
   } catch (error) {
     console.error('Failed to fetch usage:', error);
@@ -1007,6 +1134,7 @@ async function fetchUsage() {
     };
     updateDisplay();
     updateOptimizationsMock();
+    updateSummaryRow();
   }
 }
 
@@ -1517,6 +1645,7 @@ document.getElementById('budgetSettings').addEventListener('click', () => {
 // Initialize
 updateDate();
 fetchUsage();
+updateSummaryRow();
 fetchNotifications();
 loadTasks();
 loadSettings();
