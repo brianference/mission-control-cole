@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 562,
-    "totalRequests": 17335
+    "totalSessions": 593,
+    "totalRequests": 17342
   },
   "daily": [
     {
@@ -158,29 +158,35 @@
     },
     {
       "date": "2026-03-10",
-      "cost": 8.190476100000001,
-      "tokens": 7940454,
-      "requests": 114
+      "cost": 5.17992405,
+      "tokens": 4180045,
+      "requests": 56
     },
     {
       "date": "2026-03-11",
-      "cost": 27.726938749979254,
-      "tokens": 32467521,
-      "requests": 773
+      "cost": 27.27385919999999,
+      "tokens": 30782834,
+      "requests": 772
+    },
+    {
+      "date": "2026-03-12",
+      "cost": 3.0813528,
+      "tokens": 2318632,
+      "requests": 66
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 484.1127686000007,
-      "tokens": 597182696,
-      "requests": 7546
+      "cost": 483.85274495000095,
+      "tokens": 594392058,
+      "requests": 7565
     },
     {
       "name": "Other",
-      "cost": 57.8148719236772,
-      "tokens": 721461424,
-      "requests": 9248
+      "cost": 57.69261677369795,
+      "tokens": 721125598,
+      "requests": 9236
     },
     {
       "name": "OpenAI",
@@ -192,9 +198,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 311.9699908500009,
-      "tokens": 376998402,
-      "requests": 5290
+      "cost": 311.70996720000113,
+      "tokens": 374207764,
+      "requests": 5309
     },
     {
       "name": "claude-opus-4-5",
@@ -204,9 +210,9 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 33.33343564867736,
-      "tokens": 682794832,
-      "requests": 8109
+      "cost": 33.3047156486981,
+      "tokens": 682628792,
+      "requests": 8103
     },
     {
       "name": "gpt-5.2",
@@ -228,9 +234,9 @@
     },
     {
       "name": "gemini-3-flash-preview",
-      "cost": 2.902282299999999,
-      "tokens": 5270526,
-      "requests": 67
+      "cost": 2.808747149999999,
+      "tokens": 5100740,
+      "requests": 61
     },
     {
       "name": "claude-opus-4-6",
@@ -266,9 +272,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 312.90537730897023,
-      "tokens": 384970564,
-      "requests": 5790
+      "cost": 312.52309850899127,
+      "tokens": 381844100,
+      "requests": 5797
     },
     {
       "name": "planning",
@@ -289,5 +295,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-11T21:49:02.965Z"
+  "lastUpdated": "2026-03-12T03:49:04.748Z"
 }
