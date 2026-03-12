@@ -1,18 +1,7 @@
 {
   "logs": [
     {
-      "timestamp": "2026-03-05T22:06:09.607Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:main",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:57:30.177Z",
+      "timestamp": "2026-03-12T06:29:07.277Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
@@ -23,106 +12,18 @@
       }
     },
     {
-      "timestamp": "2026-03-05T21:57:27.165Z",
+      "timestamp": "2026-03-12T06:26:19.859Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:6c779973-959a-4891-8682-a4c8d6410983:run:75f9bcb5-2490-46d7-8cd9-2827177da2de",
+        "sessionKey": "agent:main:cron:6c779973-959a-4891-8682-a4c8d6410983:run:6efc9da4-ea6b-4aa0-87dd-041c18f10264",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T21:41:27.017Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:36ecd0d0-b6a0-4ca2-867b-2be81fde0882",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:41:27.017Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:36ecd0d0-b6a0-4ca2-867b-2be81fde0882:run:4ee176a4-cdbb-4560-912f-32dba29b7972",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:38:42.125Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:ec7bc86c-81a4-4603-a790-bbe129509e1c",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:38:42.125Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:ec7bc86c-81a4-4603-a790-bbe129509e1c:run:2a8be754-2130-4d75-bcf2-a89d33951ece",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:23:47.712Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:23:47.712Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4:run:103eca5f-6e25-4220-99ef-2bbe0c75c176",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:21:10.052Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:21:10.052Z",
-      "level": "info",
-      "source": "agent",
-      "agentId": "main",
-      "message": "Agent active: main",
-      "metadata": {
-        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607:run:3255b25e-a4a4-469f-bfe7-7a81c21b4143",
-        "model": "claude-sonnet-4-5"
-      }
-    },
-    {
-      "timestamp": "2026-03-05T21:15:12.829Z",
+      "timestamp": "2026-03-12T06:14:38.934Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
@@ -133,98 +34,109 @@
       }
     },
     {
-      "timestamp": "2026-03-05T21:15:12.829Z",
+      "timestamp": "2026-03-12T06:14:37.068Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:2f5ee94a-d320-4757-9cac-0ee80e0d96cf:run:a10e3e44-1ab2-49a2-be1e-db39dcbfcbde",
+        "sessionKey": "agent:main:cron:2f5ee94a-d320-4757-9cac-0ee80e0d96cf:run:db4c7f97-31ee-4b44-a896-11cc3fdf7e73",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T21:00:03.066Z",
+      "timestamp": "2026-03-12T06:01:41.012Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:ac3b300b-90a6-4ae2-b9b5-85d9a35c8d9f",
+        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T21:00:03.066Z",
+      "timestamp": "2026-03-12T06:01:38.957Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:ac3b300b-90a6-4ae2-b9b5-85d9a35c8d9f:run:ccc0d122-599f-4332-8054-6fef3d35ea55",
+        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607:run:e69fa4f4-f5bd-41c0-b92a-be4ae4098370",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T20:41:26.472Z",
+      "timestamp": "2026-03-12T06:00:04.102Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:36ecd0d0-b6a0-4ca2-867b-2be81fde0882:run:2d84ad54-d009-4195-a597-7cc213161b78",
+        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T20:38:38.245Z",
+      "timestamp": "2026-03-12T06:00:04.102Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:ec7bc86c-81a4-4603-a790-bbe129509e1c:run:98efc406-dcaa-4196-ace5-293f0c379a33",
+        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4:run:ce2aec19-1d33-40f4-94d4-057eceededdc",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T20:23:45.100Z",
+      "timestamp": "2026-03-12T05:36:41.521Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4:run:3dec4aa2-059b-43c9-8474-0729fa14f08e",
+        "sessionKey": "agent:main:main",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T20:20:33.722Z",
+      "timestamp": "2026-03-12T05:14:37.383Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607:run:f6e193b9-b2c5-41cc-b97e-159fbde70c23",
+        "sessionKey": "agent:main:cron:2f5ee94a-d320-4757-9cac-0ee80e0d96cf:run:27089e61-ae82-44df-aa40-b544f610c998",
         "model": "claude-sonnet-4-5"
       }
     },
     {
-      "timestamp": "2026-03-05T20:15:11.554Z",
+      "timestamp": "2026-03-12T05:01:08.678Z",
       "level": "info",
       "source": "agent",
       "agentId": "main",
       "message": "Agent active: main",
       "metadata": {
-        "sessionKey": "agent:main:cron:2f5ee94a-d320-4757-9cac-0ee80e0d96cf:run:0baaf035-0d96-411c-9ce2-c7c4a844a8b7",
+        "sessionKey": "agent:main:cron:705f3d46-f29f-4cb1-952b-c2dfeee25607:run:d4df74fc-3c0d-4d18-ae15-aa5839e4de2f",
+        "model": "claude-sonnet-4-5"
+      }
+    },
+    {
+      "timestamp": "2026-03-12T05:00:19.438Z",
+      "level": "info",
+      "source": "agent",
+      "agentId": "main",
+      "message": "Agent active: main",
+      "metadata": {
+        "sessionKey": "agent:main:cron:1899e1df-8b45-4893-b57d-7b1d8ca60cb4:run:25a6086c-3d5b-4d40-878d-0f9f98905f0b",
         "model": "claude-sonnet-4-5"
       }
     }
   ],
-  "generatedAt": "2026-03-05T22:06:56.641Z",
-  "totalLogs": 20,
+  "generatedAt": "2026-03-12T06:30:47.965Z",
+  "totalLogs": 12,
   "sources": {
-    "agents": 20,
+    "agents": 12,
     "crons": 0,
     "gateway": 0,
     "workspace": 0
@@ -232,7 +144,7 @@
   "levels": {
     "error": 0,
     "warn": 0,
-    "info": 20,
+    "info": 12,
     "debug": 0
   }
 }
