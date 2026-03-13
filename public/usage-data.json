@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 518,
-    "totalRequests": 17229
+    "totalSessions": 542,
+    "totalRequests": 17321
   },
   "daily": [
     {
@@ -152,9 +152,9 @@
     },
     {
       "date": "2026-03-09",
-      "cost": 20.41457114999999,
-      "tokens": 16314042,
-      "requests": 266
+      "cost": 19.849993499999986,
+      "tokens": 15392403,
+      "requests": 248
     },
     {
       "date": "2026-03-10",
@@ -170,29 +170,29 @@
     },
     {
       "date": "2026-03-12",
-      "cost": 10.799738099999995,
-      "tokens": 14224464,
-      "requests": 267
+      "cost": 3.9883630500000007,
+      "tokens": 5793171,
+      "requests": 103
     },
     {
       "date": "2026-03-13",
-      "cost": 17.818225200000025,
-      "tokens": 18352547,
-      "requests": 430
+      "cost": 28.531958550000034,
+      "tokens": 32315495,
+      "requests": 704
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 483.36196145000054,
-      "tokens": 595326115,
-      "requests": 7452
+      "cost": 486.6997421000008,
+      "tokens": 599936131,
+      "requests": 7543
     },
     {
       "name": "Other",
       "cost": 57.69261677369795,
       "tokens": 721125598,
-      "requests": 9236
+      "requests": 9237
     },
     {
       "name": "OpenAI",
@@ -204,9 +204,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 311.2191837000007,
-      "tokens": 375141821,
-      "requests": 5196
+      "cost": 314.55696435000095,
+      "tokens": 379751837,
+      "requests": 5287
     },
     {
       "name": "claude-opus-4-5",
@@ -254,7 +254,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 609
+      "requests": 610
     },
     {
       "name": "gateway-injected",
@@ -278,9 +278,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 312.03231500899085,
-      "tokens": 382778157,
-      "requests": 5684
+      "cost": 315.370095658991,
+      "tokens": 387388173,
+      "requests": 5776
     },
     {
       "name": "planning",
@@ -301,5 +301,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-13T15:49:33.308Z"
+  "lastUpdated": "2026-03-13T21:49:12.729Z"
 }
