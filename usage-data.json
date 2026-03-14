@@ -1,0 +1,255 @@
+{
+  "timestamp": "2026-03-14T14:42:44.065Z",
+  "daily": 10.209422400000001,
+  "weekly": 20.418844800000002,
+  "monthly": 30.628267200000003,
+  "total_tokens": 12761778,
+  "byModel": {
+    "claude-sonnet-4-5": 23.441301999999993,
+    "gemini-3-flash-preview": 2.082254
+  },
+  "byAgent": {
+    "main": 25.523556000000003
+  },
+  "crons": [
+    {
+      "id": "6c779973-959a-4891-8682-a4c8d6410983",
+      "name": "PM Orchestrator - Simplified (Direct Execution)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "2f5648fa-63f8-458a-b7f5-ef70bbe4356f",
+      "name": "Intel Monitor - TPUSA Surveillance",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "e49d1ba0-1d49-4053-bf1e-6fd7cc33fe91",
+      "name": "Morning Briefing",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "deafff93-117b-46db-a74d-cc33511633c1",
+      "name": "Morning Task Generator - Daily Goals",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "c6d4b153-f0aa-4b05-a6af-2121bd6c316f",
+      "name": "PM Status Report (2-hour)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "1899e1df-8b45-4893-b57d-7b1d8ca60cb4",
+      "name": "Update Kanban Agent Status - Every 30min",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "2f5ee94a-d320-4757-9cac-0ee80e0d96cf",
+      "name": "gateway-watchdog",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "705f3d46-f29f-4cb1-952b-c2dfeee25607",
+      "name": "Agent Dashboard Auto-Update",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "27724064-30c8-46b8-a7a3-cb7f75784468",
+      "name": "uptime-monitor-5min",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "ec7bc86c-81a4-4603-a790-bbe129509e1c",
+      "name": "Mission Control Usage Auto-Update",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "36ecd0d0-b6a0-4ca2-867b-2be81fde0882",
+      "name": "gateway-connection-monitor",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "4d812a5e-1380-4981-b40b-f49e1d086f0e",
+      "name": "Innovation Scout",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "83412932-04bc-4e4c-b5e2-63357f070528",
+      "name": "Budget Alert Check - Daily",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "9e0350ce-c037-4d91-a6f4-a35dd8fb7e79",
+      "name": "Daily File Review & Improvement Proposals",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "aa6e2abb-ff20-45e8-9a53-2d4c476b52b6",
+      "name": "Daily Documentation Audit - 9am MST",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "cf3cce21-28ec-4b17-bffc-602e6eaed104",
+      "name": "Second Brain - 5 New Ideas Daily",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "0af07bbc-8fbf-4b69-9eb3-f4c401f6d470",
+      "name": "Notification Batch - Critical (Hourly)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "1b2f6f8c-20ed-4076-8b33-2c6acce10786",
+      "name": "Constant Improvement - Morning Scan",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "52efbce4-462f-436c-8378-b7d767b6f93a",
+      "name": "Designer Agent - Daily Features Audit",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "2d9345c6-8582-4e90-9919-ed68167658c2",
+      "name": "Notification Batch - Medium (3-Hour)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "aacac1f3-fc87-40a3-b667-88b744e92c56",
+      "name": "Content Factory - xAI X Search",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "005a2756-8046-41e2-969c-5c9202872086",
+      "name": "swordtruth-content-monitoring",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "82437791-903d-4b76-a38d-e8ab8a7614c1",
+      "name": "dependency-maintenance",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "9ea9593d-0c9f-497d-b1a7-a7aa3ad4fe24",
+      "name": "Daily Memory Review - Sub-Agent",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "f2a9edea-ca94-4b7c-8fb3-db1e0d31804a",
+      "name": "Supermemory Backup - Midnight",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "aa32504a-8035-4b01-ba73-1d694710486b",
+      "name": "Daily Log Analysis",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "75fb07e6-e645-4fc0-9e6e-c0f309d31c35",
+      "name": "Memory Optimization - Daily 2AM",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "adcf85d3-e8b0-4ec1-b408-bc5128b7b1c4",
+      "name": "Nightly Skill Integration Testing",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "ba0246dd-8e03-41ca-af5c-6042f46ef0cb",
+      "name": "Workspace Backup - Daily",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "b9adf3d7-ef42-4e77-844a-6d1860432b37",
+      "name": "Security Sentinel Scan - Nightly",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "bb2f15fa-f007-49b5-8bcb-96a99a6b7b28",
+      "name": "Memory Consistency Audit",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "fbb2908d-7f52-4084-9c93-6f1a23bc6948",
+      "name": "Daily OpenClaw Config Backup",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "0d2f1f5f-3a82-4e9e-9e84-82d302ae0abb",
+      "name": "Security Council",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "36455b64-4345-4369-9e20-c17f751799df",
+      "name": "Platform Health Council",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "596172a5-f51c-401a-b862-30d6fe4c187e",
+      "name": "Supermemory Backup - 6am",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "c34ebcd3-66d0-4f4d-91ce-9b40d0006dde",
+      "name": "Secret Vault Cloud Sync - Daily",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "4e85fa0e-9eee-4908-a406-312ff6276de5",
+      "name": "Morning Brief",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "9530c24e-4415-4799-b0df-1aaf0cceb19b",
+      "name": "Scholarship Deadline Monitor — Lena",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "a8914fbe-e3be-4aa7-b97b-40db0985bf6b",
+      "name": "Weekly Memory File Hygiene - Sunday",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "96179ecc-5d81-4aa8-ad1c-e593bb9467da",
+      "name": "Weekly Consolidation (Second Brain)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "9555db29-4860-459a-85d7-9658bc1895de",
+      "name": "Learning Consolidation - Weekly",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "f58d6de0-756e-4191-8eb2-f09439c3650c",
+      "name": "OpenClaw Release Monitor",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "85be3ca1-550d-4fed-a84e-7dc142dd8a7a",
+      "name": "Designer Agent - Weekly Deep Dive",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "0af74d98-ce94-4e2e-be55-ea38d52edea0",
+      "name": "Monthly Deployment Audit",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "0817c541-b0c7-48c7-bdc2-25364cb1aa2b",
+      "name": "Monthly Consolidation (Second Brain)",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "4f1407aa-e0fe-41f1-bb44-886f30e9fde2",
+      "name": "Designer Agent Enforcement Audit - Monthly",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "f01486e5-3741-490e-84fa-2cd78676831c",
+      "name": "X Algorithm Repo Monitor",
+      "estimatedCost": 0.05
+    }
+  ],
+  "monthlySummary": {
+    "totalTokens": 19142667,
+    "totalCost": 38.285334000000006
+  }
+}

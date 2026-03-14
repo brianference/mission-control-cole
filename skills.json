@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-05T06:00:19.208Z",
-  "count": 133,
+  "generated": "2026-03-14T14:42:18.515Z",
+  "count": 136,
   "skills": [
     {
       "id": "accessibility-toolkit",
@@ -346,6 +346,15 @@
       "metadata": {}
     },
     {
+      "id": "dogfooding-insights",
+      "name": "dogfooding-insights",
+      "description": "**Purpose:** Automatically extract lessons learned from project commits, test failures, and deployment issues into structured markdown files.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/dogfooding-insights",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
       "id": "email-daily-summary",
       "name": "email-daily-summary",
       "description": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.",
@@ -447,6 +456,15 @@
       "description": "|",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/humanizer",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "hybrid-team-simulator",
+      "name": "hybrid-team-simulator",
+      "description": "|",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/hybrid-team-simulator",
       "homepage": null,
       "metadata": {}
     },
@@ -1050,6 +1068,15 @@
       "description": "**Purpose:** Catch breaking changes in skills BEFORE you need them.",
       "emoji": "📦",
       "path": "/root/.openclaw/workspace/skills/skill-integration-testing",
+      "homepage": null,
+      "metadata": {}
+    },
+    {
+      "id": "skill-of-the-week",
+      "name": "skill-of-the-week",
+      "description": "Weekly automated post to X/LinkedIn highlighting the best new OpenClaw skill from ClawHub with usage stats, creator interview, and demo video. Runs every Monday at 9 AM MST.",
+      "emoji": "📦",
+      "path": "/root/.openclaw/workspace/skills/skill-of-the-week",
       "homepage": null,
       "metadata": {}
     },
