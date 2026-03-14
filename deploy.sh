@@ -14,6 +14,8 @@ node api/gen-agent-types.js || echo "Warning: Failed to generate agent-types.jso
 node api/gen-sessions.js || echo "Warning: Failed to generate active-sessions.json"
 node api/gen-crons.js || echo "Warning: Failed to generate crons.json"
 node api/gen-logs.js || echo "Warning: Failed to generate logs.json"
+node api/gen-docs.js || echo "Warning: Failed to generate docs.json"
+node api/gen-usage.js || echo "Warning: Failed to generate usage-data.json"
 
 # Check if git repo exists
 if [ ! -d ".git" ]; then
