@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 466,
-    "totalRequests": 18063
+    "totalSessions": 496,
+    "totalRequests": 18096
   },
   "daily": [
     {
@@ -176,29 +176,29 @@
     },
     {
       "date": "2026-03-14",
-      "cost": 7.740406200000001,
-      "tokens": 13952358,
-      "requests": 434
+      "cost": 2.2696769,
+      "tokens": 4115059,
+      "requests": 102
     },
     {
       "date": "2026-03-15",
-      "cost": 17.040770637629514,
-      "tokens": 37354234,
-      "requests": 1100
+      "cost": 21.40935357478756,
+      "tokens": 44331438,
+      "requests": 1465
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 454.8557436500003,
-      "tokens": 562378127,
-      "requests": 7412
+      "cost": 459.03018965000047,
+      "tokens": 567202192,
+      "requests": 7491
     },
     {
       "name": "Other",
-      "cost": 82.35627611132759,
-      "tokens": 772401243,
-      "requests": 10110
+      "cost": 77.07968374848521,
+      "tokens": 764717083,
+      "requests": 10064
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 282.7129659000005,
-      "tokens": 342193833,
-      "requests": 5156
+      "cost": 286.88741190000064,
+      "tokens": 347017898,
+      "requests": 5235
     },
     {
       "name": "claude-opus-4-5",
@@ -222,15 +222,15 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 33.795778236327614,
-      "tokens": 690223562,
-      "requests": 8265
+      "cost": 33.989915173485656,
+      "tokens": 692376701,
+      "requests": 8332
     },
     {
       "name": "gemini-3-flash-preview",
-      "cost": 26.981343900000002,
-      "tokens": 48781615,
-      "requests": 771
+      "cost": 21.510614600000007,
+      "tokens": 38944316,
+      "requests": 658
     },
     {
       "name": "gpt-5.2",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 308.1897565466204,
-      "tokens": 401105814,
-      "requests": 6518
+      "cost": 307.08761018377845,
+      "tokens": 398245719,
+      "requests": 6551
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-15T15:50:24.290Z"
+  "lastUpdated": "2026-03-15T21:49:18.851Z"
 }
