@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 504,
-    "totalRequests": 17920
+    "totalSessions": 466,
+    "totalRequests": 18053
   },
   "daily": [
     {
@@ -176,29 +176,29 @@
     },
     {
       "date": "2026-03-14",
-      "cost": 29.778300075216805,
-      "tokens": 48580913,
-      "requests": 1133
+      "cost": 23.738678025216796,
+      "tokens": 41384527,
+      "requests": 955
     },
     {
       "date": "2026-03-15",
-      "cost": 9.068219783287137,
-      "tokens": 16763786,
-      "requests": 258
+      "cost": 16.078196436569367,
+      "tokens": 30042978,
+      "requests": 569
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 463.85181665000044,
-      "tokens": 573076546,
-      "requests": 7545
+      "cost": 457.8121946000003,
+      "tokens": 565880160,
+      "requests": 7523
     },
     {
       "name": "Other",
-      "cost": 87.425546132202,
-      "tokens": 775740931,
-      "requests": 9834
+      "cost": 94.43552278548398,
+      "tokens": 789020123,
+      "requests": 9989
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 291.7090389000006,
-      "tokens": 352892252,
-      "requests": 5289
+      "cost": 285.66941685000046,
+      "tokens": 345695866,
+      "requests": 5267
     },
     {
       "name": "claude-opus-4-5",
@@ -221,16 +221,16 @@
       "requests": 2244
     },
     {
-      "name": "minimax/minimax-m2.1",
-      "cost": 33.361418607202054,
-      "tokens": 683469247,
-      "requests": 8125
+      "name": "gemini-3-flash-preview",
+      "cost": 39.425451449999976,
+      "tokens": 71565525,
+      "requests": 775
     },
     {
-      "name": "gemini-3-flash-preview",
-      "cost": 32.48497354999999,
-      "tokens": 58875618,
-      "requests": 632
+      "name": "minimax/minimax-m2.1",
+      "cost": 33.43091736048429,
+      "tokens": 684058532,
+      "requests": 8137
     },
     {
       "name": "gpt-5.2",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 322.25509956749556,
-      "tokens": 415143921,
-      "requests": 6375
+      "cost": 323.2254541707775,
+      "tokens": 421226727,
+      "requests": 6508
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-15T03:49:37.401Z"
+  "lastUpdated": "2026-03-15T09:50:12.785Z"
 }
