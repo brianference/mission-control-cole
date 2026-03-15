@@ -3,7 +3,7 @@
     "weekTotal": 0,
     "monthTotal": 0,
     "totalSessions": 466,
-    "totalRequests": 18053
+    "totalRequests": 18063
   },
   "daily": [
     {
@@ -176,29 +176,29 @@
     },
     {
       "date": "2026-03-14",
-      "cost": 23.738678025216796,
-      "tokens": 41384527,
-      "requests": 955
+      "cost": 7.740406200000001,
+      "tokens": 13952358,
+      "requests": 434
     },
     {
       "date": "2026-03-15",
-      "cost": 16.078196436569367,
-      "tokens": 30042978,
-      "requests": 569
+      "cost": 17.040770637629514,
+      "tokens": 37354234,
+      "requests": 1100
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 457.8121946000003,
-      "tokens": 565880160,
-      "requests": 7523
+      "cost": 454.8557436500003,
+      "tokens": 562378127,
+      "requests": 7412
     },
     {
       "name": "Other",
-      "cost": 94.43552278548398,
-      "tokens": 789020123,
-      "requests": 9989
+      "cost": 82.35627611132759,
+      "tokens": 772401243,
+      "requests": 10110
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 285.66941685000046,
-      "tokens": 345695866,
-      "requests": 5267
+      "cost": 282.7129659000005,
+      "tokens": 342193833,
+      "requests": 5156
     },
     {
       "name": "claude-opus-4-5",
@@ -221,16 +221,16 @@
       "requests": 2244
     },
     {
-      "name": "gemini-3-flash-preview",
-      "cost": 39.425451449999976,
-      "tokens": 71565525,
-      "requests": 775
+      "name": "minimax/minimax-m2.1",
+      "cost": 33.795778236327614,
+      "tokens": 690223562,
+      "requests": 8265
     },
     {
-      "name": "minimax/minimax-m2.1",
-      "cost": 33.43091736048429,
-      "tokens": 684058532,
-      "requests": 8137
+      "name": "gemini-3-flash-preview",
+      "cost": 26.981343900000002,
+      "tokens": 48781615,
+      "requests": 771
     },
     {
       "name": "gpt-5.2",
@@ -260,7 +260,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 614
+      "requests": 611
     },
     {
       "name": "gateway-injected",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 323.2254541707775,
-      "tokens": 421226727,
-      "requests": 6508
+      "cost": 308.1897565466204,
+      "tokens": 401105814,
+      "requests": 6518
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-15T09:50:12.785Z"
+  "lastUpdated": "2026-03-15T15:50:24.290Z"
 }
