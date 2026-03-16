@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 496,
-    "totalRequests": 18096
+    "totalSessions": 507,
+    "totalRequests": 18009
   },
   "daily": [
     {
@@ -175,30 +175,30 @@
       "requests": 2
     },
     {
-      "date": "2026-03-14",
-      "cost": 2.2696769,
-      "tokens": 4115059,
-      "requests": 102
+      "date": "2026-03-15",
+      "cost": 17.277622741500423,
+      "tokens": 38131970,
+      "requests": 1367
     },
     {
-      "date": "2026-03-15",
-      "cost": 21.40935357478756,
-      "tokens": 44331438,
-      "requests": 1465
+      "date": "2026-03-16",
+      "cost": 4.195274550000001,
+      "tokens": 4741290,
+      "requests": 113
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 459.03018965000047,
-      "tokens": 567202192,
-      "requests": 7491
+      "cost": 467.2261704500003,
+      "tokens": 580765341,
+      "requests": 7603
     },
     {
       "name": "Other",
-      "cost": 77.07968374848521,
-      "tokens": 764717083,
-      "requests": 10064
+      "cost": 66.6775697651983,
+      "tokens": 745580697,
+      "requests": 9865
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 286.88741190000064,
-      "tokens": 347017898,
-      "requests": 5235
+      "cost": 295.0833927000005,
+      "tokens": 360581047,
+      "requests": 5347
     },
     {
       "name": "claude-opus-4-5",
@@ -222,15 +222,9 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 33.989915173485656,
-      "tokens": 692376701,
-      "requests": 8332
-    },
-    {
-      "name": "gemini-3-flash-preview",
-      "cost": 21.510614600000007,
-      "tokens": 38944316,
-      "requests": 658
+      "cost": 33.955718740198506,
+      "tokens": 691890744,
+      "requests": 8319
     },
     {
       "name": "gpt-5.2",
@@ -243,6 +237,12 @@
       "cost": 11.484468,
       "tokens": 4904275,
       "requests": 118
+    },
+    {
+      "name": "gemini-3-flash-preview",
+      "cost": 11.142697050000004,
+      "tokens": 20293887,
+      "requests": 472
     },
     {
       "name": "gemini-2.5-flash",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 307.08761018377845,
-      "tokens": 398245719,
-      "requests": 6551
+      "cost": 304.88147700049143,
+      "tokens": 392672482,
+      "requests": 6464
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-15T21:49:18.851Z"
+  "lastUpdated": "2026-03-16T03:49:15.800Z"
 }
