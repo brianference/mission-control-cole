@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 488,
-    "totalRequests": 17218
+    "totalSessions": 480,
+    "totalRequests": 17233
   },
   "daily": [
     {
@@ -104,9 +104,9 @@
     },
     {
       "date": "2026-03-03",
-      "cost": 8.3350926,
-      "tokens": 12257927,
-      "requests": 230
+      "cost": 8.1810195,
+      "tokens": 12176904,
+      "requests": 227
     },
     {
       "date": "2026-03-04",
@@ -176,29 +176,29 @@
     },
     {
       "date": "2026-03-16",
-      "cost": 9.168600149999994,
-      "tokens": 10456491,
-      "requests": 229
+      "cost": 3.8443326000000004,
+      "tokens": 4609896,
+      "requests": 85
     },
     {
       "date": "2026-03-17",
-      "cost": 15.011690549999999,
-      "tokens": 18911074,
-      "requests": 428
+      "cost": 21.315031500000003,
+      "tokens": 25660550,
+      "requests": 590
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 478.91851685000074,
-      "tokens": 591714745,
-      "requests": 7425
+      "cost": 479.7435171500008,
+      "tokens": 592536603,
+      "requests": 7438
     },
     {
       "name": "Other",
       "cost": 57.73116872684322,
       "tokens": 721444925,
-      "requests": 9252
+      "requests": 9254
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 306.7757391000009,
-      "tokens": 371530451,
-      "requests": 5169
+      "cost": 307.600739400001,
+      "tokens": 372352309,
+      "requests": 5182
     },
     {
       "name": "claude-opus-4-5",
@@ -260,7 +260,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 610
+      "requests": 612
     },
     {
       "name": "gateway-injected",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 307.627422362136,
-      "tokens": 379486114,
-      "requests": 5673
+      "cost": 308.4524226621362,
+      "tokens": 380307972,
+      "requests": 5688
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-17T15:49:58.016Z"
+  "lastUpdated": "2026-03-17T21:49:56.932Z"
 }
