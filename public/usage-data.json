@@ -2,16 +2,10 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 480,
-    "totalRequests": 17233
+    "totalSessions": 520,
+    "totalRequests": 17358
   },
   "daily": [
-    {
-      "date": "2026-02-14",
-      "cost": 21.214717398156203,
-      "tokens": 22277658,
-      "requests": 473
-    },
     {
       "date": "2026-02-15",
       "cost": 87.83629637584123,
@@ -140,21 +134,21 @@
     },
     {
       "date": "2026-03-09",
-      "cost": 19.849993499999986,
-      "tokens": 15392403,
-      "requests": 248
+      "cost": 18.497661599999986,
+      "tokens": 13887695,
+      "requests": 216
     },
     {
       "date": "2026-03-10",
-      "cost": 5.17992405,
-      "tokens": 4180045,
-      "requests": 56
+      "cost": 4.566864,
+      "tokens": 3192078,
+      "requests": 40
     },
     {
       "date": "2026-03-11",
-      "cost": 1.2464652,
-      "tokens": 1458512,
-      "requests": 28
+      "cost": 0.7193982,
+      "tokens": 1073048,
+      "requests": 19
     },
     {
       "date": "2026-03-12",
@@ -176,29 +170,35 @@
     },
     {
       "date": "2026-03-16",
-      "cost": 3.8443326000000004,
-      "tokens": 4609896,
-      "requests": 85
+      "cost": 1.2625871999999998,
+      "tokens": 1281742,
+      "requests": 26
     },
     {
       "date": "2026-03-17",
-      "cost": 21.315031500000003,
-      "tokens": 25660550,
-      "requests": 590
+      "cost": 20.63717925,
+      "tokens": 25335249,
+      "requests": 607
+    },
+    {
+      "date": "2026-03-18",
+      "cost": 8.614934100000003,
+      "tokens": 12726772,
+      "requests": 224
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 479.7435171500008,
-      "tokens": 592536603,
-      "requests": 7438
+      "cost": 482.60639465000077,
+      "tokens": 598731781,
+      "requests": 7558
     },
     {
       "name": "Other",
       "cost": 57.73116872684322,
       "tokens": 721444925,
-      "requests": 9254
+      "requests": 9259
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 307.600739400001,
-      "tokens": 372352309,
-      "requests": 5182
+      "cost": 310.46361690000094,
+      "tokens": 378547487,
+      "requests": 5302
     },
     {
       "name": "claude-opus-4-5",
@@ -260,7 +260,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 612
+      "requests": 617
     },
     {
       "name": "gateway-injected",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 308.4524226621362,
-      "tokens": 380307972,
-      "requests": 5688
+      "cost": 311.31530016213634,
+      "tokens": 386503150,
+      "requests": 5813
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-17T21:49:56.932Z"
+  "lastUpdated": "2026-03-18T03:49:20.966Z"
 }
