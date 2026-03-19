@@ -2,10 +2,16 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 495,
-    "totalRequests": 17234
+    "totalSessions": 529,
+    "totalRequests": 17406
   },
   "daily": [
+    {
+      "date": "2026-02-14",
+      "cost": 21.214717398156203,
+      "tokens": 22277658,
+      "requests": 473
+    },
     {
       "date": "2026-02-15",
       "cost": 87.83629637584123,
@@ -157,16 +163,10 @@
       "requests": 13
     },
     {
-      "date": "2026-03-13",
-      "cost": 0.18467295,
-      "tokens": 87161,
-      "requests": 2
-    },
-    {
       "date": "2026-03-15",
       "cost": 0.038551953145275895,
       "tokens": 319327,
-      "requests": 32
+      "requests": 31
     },
     {
       "date": "2026-03-16",
@@ -176,29 +176,29 @@
     },
     {
       "date": "2026-03-18",
-      "cost": 10.858907549999998,
-      "tokens": 13744384,
-      "requests": 268
+      "cost": 2.8687054499999993,
+      "tokens": 3386586,
+      "requests": 78
     },
     {
       "date": "2026-03-19",
-      "cost": 16.34069835,
-      "tokens": 18319021,
-      "requests": 439
+      "cost": 29.07623474999999,
+      "tokens": 35483290,
+      "requests": 804
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 480.55388720000064,
-      "tokens": 592733165,
-      "requests": 7435
+      "cost": 485.1145485500008,
+      "tokens": 599452475,
+      "requests": 7604
     },
     {
       "name": "Other",
       "cost": 57.73116872684322,
       "tokens": 721444925,
-      "requests": 9258
+      "requests": 9261
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 308.4111094500008,
-      "tokens": 372548871,
-      "requests": 5179
+      "cost": 312.97177080000097,
+      "tokens": 379268181,
+      "requests": 5348
     },
     {
       "name": "claude-opus-4-5",
@@ -260,7 +260,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 616
+      "requests": 619
     },
     {
       "name": "gateway-injected",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 309.262792712136,
-      "tokens": 380504534,
-      "requests": 5689
+      "cost": 313.8234540621362,
+      "tokens": 387223844,
+      "requests": 5861
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-19T15:51:32.965Z"
+  "lastUpdated": "2026-03-19T21:52:10.658Z"
 }
