@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 533,
-    "totalRequests": 17284
+    "totalSessions": 496,
+    "totalRequests": 17218
   },
   "daily": [
     {
@@ -175,30 +175,30 @@
       "requests": 26
     },
     {
-      "date": "2026-03-17",
-      "cost": 3.4985629499999993,
-      "tokens": 4805057,
-      "requests": 127
+      "date": "2026-03-18",
+      "cost": 23.469855750000015,
+      "tokens": 27215146,
+      "requests": 597
     },
     {
-      "date": "2026-03-18",
-      "cost": 24.51825105000001,
-      "tokens": 28050911,
-      "requests": 630
+      "date": "2026-03-19",
+      "cost": 3.4991133000000003,
+      "tokens": 4012707,
+      "requests": 94
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 481.3710953000006,
-      "tokens": 593525728,
-      "requests": 7490
+      "cost": 480.3232503500004,
+      "tokens": 591897613,
+      "requests": 7422
     },
     {
       "name": "Other",
       "cost": 57.73116872684322,
       "tokens": 721444925,
-      "requests": 9253
+      "requests": 9255
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
   "models": [
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 309.2283175500008,
-      "tokens": 373341434,
-      "requests": 5234
+      "cost": 308.1804726000006,
+      "tokens": 371713319,
+      "requests": 5166
     },
     {
       "name": "claude-opus-4-5",
@@ -260,7 +260,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 611
+      "requests": 613
     },
     {
       "name": "gateway-injected",
@@ -284,9 +284,9 @@
   "taskTypes": [
     {
       "name": "general",
-      "cost": 310.0800008121361,
-      "tokens": 381297097,
-      "requests": 5739
+      "cost": 309.0321558621359,
+      "tokens": 379668982,
+      "requests": 5673
     },
     {
       "name": "planning",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-18T21:51:39.914Z"
+  "lastUpdated": "2026-03-19T03:51:20.313Z"
 }
