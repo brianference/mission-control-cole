@@ -2,10 +2,34 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 568,
-    "totalRequests": 17844
+    "totalSessions": 914,
+    "totalRequests": 14081
   },
   "daily": [
+    {
+      "date": "2026-02-12",
+      "cost": 1.7987815499999995,
+      "tokens": 3537625,
+      "requests": 61
+    },
+    {
+      "date": "2026-02-13",
+      "cost": 0.6350908500000001,
+      "tokens": 495069,
+      "requests": 13
+    },
+    {
+      "date": "2026-02-14",
+      "cost": 21.214717398156203,
+      "tokens": 22277658,
+      "requests": 473
+    },
+    {
+      "date": "2026-02-15",
+      "cost": 87.83629637584123,
+      "tokens": 694988083,
+      "requests": 8040
+    },
     {
       "date": "2026-02-16",
       "cost": 130.1177505362988,
@@ -20,9 +44,9 @@
     },
     {
       "date": "2026-02-18",
-      "cost": 1.7783188593896917,
-      "tokens": 6958398,
-      "requests": 97
+      "cost": 0,
+      "tokens": 0,
+      "requests": 1
     },
     {
       "date": "2026-02-20",
@@ -50,105 +74,57 @@
     },
     {
       "date": "2026-02-24",
-      "cost": 15.103276500000002,
-      "tokens": 26974121,
-      "requests": 318
+      "cost": 0.017754600000000002,
+      "tokens": 34009,
+      "requests": 23
     },
     {
       "date": "2026-02-25",
-      "cost": 17.417455200000003,
-      "tokens": 19215421,
-      "requests": 180
-    },
-    {
-      "date": "2026-02-26",
-      "cost": 6.168917850000003,
-      "tokens": 6454200,
-      "requests": 107
+      "cost": 0,
+      "tokens": 0,
+      "requests": 3
     },
     {
       "date": "2026-02-27",
-      "cost": 20.206307699999993,
-      "tokens": 26248189,
-      "requests": 385
-    },
-    {
-      "date": "2026-02-28",
-      "cost": 45.26807754999997,
-      "tokens": 53708803,
-      "requests": 809
+      "cost": 0,
+      "tokens": 0,
+      "requests": 3
     },
     {
       "date": "2026-03-01",
-      "cost": 18.439072349999996,
-      "tokens": 24177288,
-      "requests": 314
-    },
-    {
-      "date": "2026-03-02",
-      "cost": 22.52784585000002,
-      "tokens": 47540108,
-      "requests": 505
+      "cost": 0.8814061499999999,
+      "tokens": 930234,
+      "requests": 23
     },
     {
       "date": "2026-03-03",
-      "cost": 8.1810195,
-      "tokens": 12176904,
-      "requests": 227
+      "cost": 0.1623402,
+      "tokens": 83262,
+      "requests": 3
     },
     {
       "date": "2026-03-04",
-      "cost": 21.12808664999999,
-      "tokens": 29903738,
-      "requests": 424
-    },
-    {
-      "date": "2026-03-05",
-      "cost": 7.941178500000005,
-      "tokens": 11702777,
-      "requests": 171
-    },
-    {
-      "date": "2026-03-06",
-      "cost": 16.76739574999999,
-      "tokens": 14199108,
-      "requests": 293
-    },
-    {
-      "date": "2026-03-07",
-      "cost": 24.205532039684485,
-      "tokens": 20131671,
-      "requests": 309
+      "cost": 1.1990615999999998,
+      "tokens": 1555326,
+      "requests": 28
     },
     {
       "date": "2026-03-08",
-      "cost": 22.968401850000006,
-      "tokens": 17725318,
-      "requests": 219
+      "cost": 0.37854735,
+      "tokens": 255806,
+      "requests": 7
     },
     {
       "date": "2026-03-09",
-      "cost": 18.497661599999986,
-      "tokens": 13887695,
-      "requests": 216
-    },
-    {
-      "date": "2026-03-10",
-      "cost": 4.566864,
-      "tokens": 3192078,
-      "requests": 40
+      "cost": 0.39589305,
+      "tokens": 316428,
+      "requests": 8
     },
     {
       "date": "2026-03-11",
       "cost": 0.7193982,
       "tokens": 1073048,
       "requests": 19
-    },
-    {
-      "date": "2026-03-12",
-      "cost": 0.3741327,
-      "tokens": 432554,
-      "requests": 13
     },
     {
       "date": "2026-03-15",
@@ -158,47 +134,53 @@
     },
     {
       "date": "2026-03-16",
-      "cost": 1.2625871999999998,
-      "tokens": 1281742,
-      "requests": 26
+      "cost": 0.6173166,
+      "tokens": 731883,
+      "requests": 15
     },
     {
       "date": "2026-03-18",
-      "cost": 0.8061573,
-      "tokens": 898223,
-      "requests": 23
+      "cost": 0.6620579999999999,
+      "tokens": 805413,
+      "requests": 20
     },
     {
       "date": "2026-03-19",
-      "cost": 12.65183640000001,
-      "tokens": 21431916,
-      "requests": 343
+      "cost": 3.0081226500000002,
+      "tokens": 5057792,
+      "requests": 85
     },
     {
       "date": "2026-03-20",
-      "cost": 22.38844604999999,
-      "tokens": 31934037,
-      "requests": 282
+      "cost": 0.7044485999999999,
+      "tokens": 1040776,
+      "requests": 15
     },
     {
       "date": "2026-03-21",
-      "cost": 14.372636550000003,
-      "tokens": 23541416,
-      "requests": 672
+      "cost": 19.697270850000024,
+      "tokens": 38482878,
+      "requests": 1196
+    },
+    {
+      "date": "2026-03-22",
+      "cost": 15.390019199999996,
+      "tokens": 27191921,
+      "requests": 780
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 503.2055781500006,
-      "tokens": 638051909,
-      "requests": 8019
+      "cost": 228.13237879999923,
+      "tokens": 314374076,
+      "requests": 4934
     },
     {
       "name": "Other",
-      "cost": 57.91427522684323,
-      "tokens": 721781207,
-      "requests": 9284
+      "cost": 53.08050547776904,
+      "tokens": 708229063,
+      "requests": 8606
     },
     {
       "name": "OpenAI",
@@ -209,22 +191,22 @@
   ],
   "models": [
     {
-      "name": "Claude Sonnet 4.5",
-      "cost": 331.06280040000075,
-      "tokens": 417867615,
-      "requests": 5763
-    },
-    {
       "name": "claude-opus-4-5",
       "cost": 171.55132649999942,
       "tokens": 219610363,
       "requests": 2244
     },
     {
+      "name": "Claude Sonnet 4.5",
+      "cost": 52.92612659999979,
+      "tokens": 90161206,
+      "requests": 2609
+    },
+    {
       "name": "minimax/minimax-m2.1",
-      "cost": 33.34326760184338,
-      "tokens": 682948119,
-      "requests": 8110
+      "cost": 33.0708270027692,
+      "tokens": 679231143,
+      "requests": 8078
     },
     {
       "name": "gpt-5.2",
@@ -240,15 +222,15 @@
     },
     {
       "name": "gemini-2.5-flash",
-      "cost": 10.094685975000003,
-      "tokens": 28120689,
-      "requests": 333
+      "cost": 8.525210475,
+      "tokens": 23722543,
+      "requests": 258
     },
     {
-      "name": "gemini-3-flash-preview",
-      "cost": 2.991853649999999,
-      "tokens": 5437022,
-      "requests": 74
+      "name": "claude-sonnet-4-6",
+      "cost": 3.0634744499999997,
+      "tokens": 4028576,
+      "requests": 69
     },
     {
       "name": "claude-opus-4-6",
@@ -260,19 +242,19 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 637
-    },
-    {
-      "name": "gateway-injected",
-      "cost": 0,
-      "tokens": 0,
-      "requests": 1
+      "requests": 133
     },
     {
       "name": "qwen2.5-coder:7b",
       "cost": 0,
       "tokens": 4225,
       "requests": 1
+    },
+    {
+      "name": "gemini-3-flash-preview",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 8
     },
     {
       "name": "moonshotai/kimi-k2.5",
@@ -283,16 +265,16 @@
   ],
   "taskTypes": [
     {
-      "name": "general",
-      "cost": 332.09759016213644,
-      "tokens": 426159560,
-      "requests": 6299
-    },
-    {
       "name": "planning",
       "cost": 248.09501151562827,
       "tokens": 986490469,
       "requests": 11488
+    },
+    {
+      "name": "general",
+      "cost": 52.19062106306097,
+      "tokens": 88929583,
+      "requests": 2536
     },
     {
       "name": "coding",
@@ -307,5 +289,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-21T22:21:17.417Z"
+  "lastUpdated": "2026-03-22T04:21:14.369Z"
 }
