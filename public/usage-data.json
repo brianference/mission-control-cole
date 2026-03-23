@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 401,
-    "totalRequests": 12730
+    "totalSessions": 409,
+    "totalRequests": 12793
   },
   "daily": [
     {
@@ -140,29 +140,29 @@
     },
     {
       "date": "2026-03-22",
-      "cost": 15.367906260040996,
-      "tokens": 17856346,
-      "requests": 393
+      "cost": 10.419355710040989,
+      "tokens": 12822533,
+      "requests": 285
     },
     {
       "date": "2026-03-23",
-      "cost": 13.321228199999988,
-      "tokens": 18703962,
-      "requests": 336
+      "cost": 20.966810849999984,
+      "tokens": 27266485,
+      "requests": 507
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 217.85518804999924,
-      "tokens": 278652990,
-      "requests": 3556
+      "cost": 220.5522201499993,
+      "tokens": 282181700,
+      "requests": 3620
     },
     {
       "name": "Other",
       "cost": 53.22874753781001,
       "tokens": 708818270,
-      "requests": 8633
+      "requests": 8632
     },
     {
       "name": "OpenAI",
@@ -186,9 +186,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 30.121293149999985,
-      "tokens": 37398986,
-      "requests": 929
+      "cost": 30.986954549999993,
+      "tokens": 39395828,
+      "requests": 956
     },
     {
       "name": "gpt-5.2",
@@ -198,9 +198,9 @@
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 15.591117149999983,
-      "tokens": 21069710,
-      "requests": 371
+      "cost": 17.42248784999999,
+      "tokens": 22601578,
+      "requests": 408
     },
     {
       "name": "gemini-3-pro-preview",
@@ -224,7 +224,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 143
+      "requests": 142
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -254,9 +254,9 @@
     },
     {
       "name": "general",
-      "cost": 42.061672373102134,
-      "tokens": 53797704,
-      "requests": 1185
+      "cost": 44.758704473102156,
+      "tokens": 57326414,
+      "requests": 1248
     },
     {
       "name": "coding",
@@ -271,5 +271,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-23T10:21:09.908Z"
+  "lastUpdated": "2026-03-23T16:21:53.838Z"
 }
