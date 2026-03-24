@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 403,
-    "totalRequests": 12717
+    "totalSessions": 424,
+    "totalRequests": 12919
   },
   "daily": [
     {
@@ -140,29 +140,35 @@
     },
     {
       "date": "2026-03-22",
-      "cost": 4.272463560040982,
-      "tokens": 6508010,
-      "requests": 138
+      "cost": 3.010673910040984,
+      "tokens": 4748837,
+      "requests": 104
     },
     {
       "date": "2026-03-23",
-      "cost": 23.518741950000003,
-      "tokens": 27382675,
-      "requests": 578
+      "cost": 25.74355125000001,
+      "tokens": 35399309,
+      "requests": 668
+    },
+    {
+      "date": "2026-03-24",
+      "cost": 6.000745050000002,
+      "tokens": 8218961,
+      "requests": 146
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 216.9572590999992,
-      "tokens": 275983367,
-      "requests": 3547
+      "cost": 223.92102379999943,
+      "tokens": 290459789,
+      "requests": 3739
     },
     {
       "name": "Other",
       "cost": 53.22874753781001,
       "tokens": 708818270,
-      "requests": 8629
+      "requests": 8639
     },
     {
       "name": "OpenAI",
@@ -186,21 +192,21 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 31.008039749999988,
-      "tokens": 39582065,
-      "requests": 953
+      "cost": 31.075866150000003,
+      "tokens": 39763393,
+      "requests": 954
+    },
+    {
+      "name": "claude-sonnet-4-6",
+      "cost": 20.702379899999983,
+      "tokens": 30512102,
+      "requests": 529
     },
     {
       "name": "gpt-5.2",
       "cost": 19.209560299999982,
       "tokens": 56016353,
       "requests": 541
-    },
-    {
-      "name": "claude-sonnet-4-6",
-      "cost": 13.806441599999987,
-      "tokens": 16217008,
-      "requests": 338
     },
     {
       "name": "gemini-3-pro-preview",
@@ -224,7 +230,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 139
+      "requests": 149
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -254,9 +260,9 @@
     },
     {
       "name": "general",
-      "cost": 41.163743423102154,
-      "tokens": 51128081,
-      "requests": 1172
+      "cost": 48.127508123102224,
+      "tokens": 65604503,
+      "requests": 1374
     },
     {
       "name": "coding",
@@ -271,5 +277,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-23T22:21:53.885Z"
+  "lastUpdated": "2026-03-24T04:21:49.949Z"
 }
