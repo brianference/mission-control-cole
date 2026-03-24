@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 424,
-    "totalRequests": 12919
+    "totalSessions": 430,
+    "totalRequests": 12950
   },
   "daily": [
     {
@@ -146,29 +146,29 @@
     },
     {
       "date": "2026-03-23",
-      "cost": 25.74355125000001,
-      "tokens": 35399309,
-      "requests": 668
+      "cost": 21.151739700000004,
+      "tokens": 30485561,
+      "requests": 554
     },
     {
       "date": "2026-03-24",
-      "cost": 6.000745050000002,
-      "tokens": 8218961,
-      "requests": 146
+      "cost": 12.173058299999997,
+      "tokens": 13904710,
+      "requests": 291
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 223.92102379999943,
-      "tokens": 290459789,
-      "requests": 3739
+      "cost": 225.50152549999933,
+      "tokens": 291231790,
+      "requests": 3767
     },
     {
       "name": "Other",
       "cost": 53.22874753781001,
       "tokens": 708818270,
-      "requests": 8639
+      "requests": 8642
     },
     {
       "name": "OpenAI",
@@ -192,15 +192,15 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 31.075866150000003,
-      "tokens": 39763393,
-      "requests": 954
+      "cost": 30.849208500000003,
+      "tokens": 38966555,
+      "requests": 957
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 20.702379899999983,
-      "tokens": 30512102,
-      "requests": 529
+      "cost": 22.509539249999992,
+      "tokens": 32080941,
+      "requests": 554
     },
     {
       "name": "gpt-5.2",
@@ -230,7 +230,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 149
+      "requests": 152
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -260,9 +260,9 @@
     },
     {
       "name": "general",
-      "cost": 48.127508123102224,
-      "tokens": 65604503,
-      "requests": 1374
+      "cost": 49.708009823102245,
+      "tokens": 66376504,
+      "requests": 1405
     },
     {
       "name": "coding",
@@ -277,5 +277,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-24T04:21:49.949Z"
+  "lastUpdated": "2026-03-24T10:27:58.793Z"
 }
