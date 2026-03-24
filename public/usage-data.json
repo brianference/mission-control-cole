@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 430,
-    "totalRequests": 12950
+    "totalSessions": 428,
+    "totalRequests": 12850
   },
   "daily": [
     {
@@ -146,29 +146,29 @@
     },
     {
       "date": "2026-03-23",
-      "cost": 21.151739700000004,
-      "tokens": 30485561,
-      "requests": 554
+      "cost": 11.517302399999997,
+      "tokens": 17914948,
+      "requests": 317
     },
     {
       "date": "2026-03-24",
-      "cost": 12.173058299999997,
-      "tokens": 13904710,
-      "requests": 291
+      "cost": 18.07222335,
+      "tokens": 19396793,
+      "requests": 428
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 225.50152549999933,
-      "tokens": 291231790,
-      "requests": 3767
+      "cost": 221.7662532499993,
+      "tokens": 284153260,
+      "requests": 3669
     },
     {
       "name": "Other",
       "cost": 53.22874753781001,
       "tokens": 708818270,
-      "requests": 8642
+      "requests": 8640
     },
     {
       "name": "OpenAI",
@@ -192,15 +192,15 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 30.849208500000003,
-      "tokens": 38966555,
-      "requests": 957
+      "cost": 30.01242480000002,
+      "tokens": 36230598,
+      "requests": 931
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 22.509539249999992,
-      "tokens": 32080941,
-      "requests": 554
+      "cost": 19.61105069999998,
+      "tokens": 27738368,
+      "requests": 482
     },
     {
       "name": "gpt-5.2",
@@ -230,7 +230,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 152
+      "requests": 150
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -260,9 +260,9 @@
     },
     {
       "name": "general",
-      "cost": 49.708009823102245,
-      "tokens": 66376504,
-      "requests": 1405
+      "cost": 45.9727375731022,
+      "tokens": 59297974,
+      "requests": 1305
     },
     {
       "name": "coding",
@@ -277,5 +277,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-24T10:27:58.793Z"
+  "lastUpdated": "2026-03-24T16:28:51.596Z"
 }
