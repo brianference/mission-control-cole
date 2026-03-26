@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 432,
-    "totalRequests": 13120
+    "totalSessions": 434,
+    "totalRequests": 12735
   },
   "daily": [
     {
@@ -152,29 +152,29 @@
     },
     {
       "date": "2026-03-25",
-      "cost": 40.04083336605647,
-      "tokens": 68759892,
-      "requests": 937
+      "cost": 7.033562850000004,
+      "tokens": 6272258,
+      "requests": 161
     },
     {
       "date": "2026-03-26",
-      "cost": 3.069805199999999,
-      "tokens": 2381861,
-      "requests": 67
+      "cost": 17.222073149999986,
+      "tokens": 18968511,
+      "requests": 458
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 230.0233231999993,
-      "tokens": 305395344,
-      "requests": 3840
+      "cost": 216.5739012499991,
+      "tokens": 272448371,
+      "requests": 3570
     },
     {
       "name": "Other",
-      "cost": 58.63432815386655,
-      "tokens": 721772281,
-      "requests": 8739
+      "cost": 53.22874753781001,
+      "tokens": 708818270,
+      "requests": 8624
     },
     {
       "name": "OpenAI",
@@ -192,27 +192,27 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 33.6127621288667,
-      "tokens": 683870825,
-      "requests": 8130
+      "cost": 33.219069062810206,
+      "tokens": 679820350,
+      "requests": 8095
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 29.940096300000015,
-      "tokens": 38647452,
-      "requests": 969
-    },
-    {
-      "name": "claude-sonnet-4-6",
-      "cost": 27.940449149999992,
-      "tokens": 46563598,
-      "requests": 615
+      "cost": 27.657898200000012,
+      "tokens": 31365341,
+      "requests": 886
     },
     {
       "name": "gpt-5.2",
       "cost": 19.209560299999982,
       "tokens": 56016353,
       "requests": 541
+    },
+    {
+      "name": "claude-sonnet-4-6",
+      "cost": 16.773225299999986,
+      "tokens": 20898736,
+      "requests": 428
     },
     {
       "name": "gemini-3-pro-preview",
@@ -227,12 +227,6 @@
       "requests": 258
     },
     {
-      "name": "gemini-3-flash-preview",
-      "cost": 5.011887549999998,
-      "tokens": 8903536,
-      "requests": 87
-    },
-    {
       "name": "claude-opus-4-6",
       "cost": 0.59145125,
       "tokens": 573931,
@@ -242,13 +236,19 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 135
+      "requests": 134
     },
     {
       "name": "qwen2.5-coder:7b",
       "cost": 0,
       "tokens": 4225,
       "requests": 1
+    },
+    {
+      "name": "gemini-3-flash-preview",
+      "cost": 0,
+      "tokens": 0,
+      "requests": 8
     },
     {
       "name": "moonshotai/kimi-k2.5",
@@ -266,9 +266,9 @@
     },
     {
       "name": "general",
-      "cost": 59.63538813915857,
-      "tokens": 93494069,
-      "requests": 1575
+      "cost": 40.78038557310212,
+      "tokens": 47593085,
+      "requests": 1190
     },
     {
       "name": "coding",
@@ -283,5 +283,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-26T04:27:57.371Z"
+  "lastUpdated": "2026-03-26T16:21:03.688Z"
 }
