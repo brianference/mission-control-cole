@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 430,
-    "totalRequests": 12707
+    "totalSessions": 404,
+    "totalRequests": 12641
   },
   "daily": [
     {
@@ -158,29 +158,29 @@
     },
     {
       "date": "2026-03-26",
-      "cost": 19.910218799999985,
-      "tokens": 19552140,
-      "requests": 505
+      "cost": 14.218203449999994,
+      "tokens": 13140861,
+      "requests": 316
     },
     {
       "date": "2026-03-27",
-      "cost": 3.5242910999999997,
-      "tokens": 3322018,
-      "requests": 76
+      "cost": 8.5800824,
+      "tokens": 7601151,
+      "requests": 199
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 216.78657799999917,
-      "tokens": 271144529,
-      "requests": 3544
+      "cost": 215.66087434999918,
+      "tokens": 268119231,
+      "requests": 3461
     },
     {
       "name": "Other",
-      "cost": 53.22874753781001,
-      "tokens": 708818270,
-      "requests": 8622
+      "cost": 53.71822713781002,
+      "tokens": 709711422,
+      "requests": 8639
     },
     {
       "name": "OpenAI",
@@ -204,9 +204,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 28.033546499999986,
-      "tokens": 31874847,
-      "requests": 884
+      "cost": 27.949059299999988,
+      "tokens": 30688648,
+      "requests": 841
     },
     {
       "name": "gpt-5.2",
@@ -216,9 +216,9 @@
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 16.61025374999999,
-      "tokens": 19085388,
-      "requests": 404
+      "cost": 15.569037299999989,
+      "tokens": 17246289,
+      "requests": 364
     },
     {
       "name": "gemini-3-pro-preview",
@@ -239,22 +239,22 @@
       "requests": 12
     },
     {
+      "name": "gemini-3-flash-preview",
+      "cost": 0.4894795999999999,
+      "tokens": 893152,
+      "requests": 24
+    },
+    {
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 132
+      "requests": 133
     },
     {
       "name": "qwen2.5-coder:7b",
       "cost": 0,
       "tokens": 4225,
       "requests": 1
-    },
-    {
-      "name": "gemini-3-flash-preview",
-      "cost": 0,
-      "tokens": 0,
-      "requests": 8
     },
     {
       "name": "moonshotai/kimi-k2.5",
@@ -272,9 +272,9 @@
     },
     {
       "name": "general",
-      "cost": 40.99306232310216,
-      "tokens": 46289243,
-      "requests": 1162
+      "cost": 40.356838273102206,
+      "tokens": 44157097,
+      "requests": 1096
     },
     {
       "name": "coding",
@@ -289,5 +289,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-27T04:21:12.033Z"
+  "lastUpdated": "2026-03-27T10:21:25.801Z"
 }
