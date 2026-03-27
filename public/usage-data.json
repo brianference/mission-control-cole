@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 439,
-    "totalRequests": 12718
+    "totalSessions": 430,
+    "totalRequests": 12707
   },
   "daily": [
     {
@@ -152,23 +152,29 @@
     },
     {
       "date": "2026-03-25",
-      "cost": 2.5356291000000004,
-      "tokens": 2509054,
-      "requests": 56
+      "cost": 1.03380285,
+      "tokens": 1062769,
+      "requests": 10
     },
     {
       "date": "2026-03-26",
-      "cost": 21.690069599999983,
-      "tokens": 21061517,
-      "requests": 546
+      "cost": 19.910218799999985,
+      "tokens": 19552140,
+      "requests": 505
+    },
+    {
+      "date": "2026-03-27",
+      "cost": 3.5242910999999997,
+      "tokens": 3322018,
+      "requests": 76
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 216.54396394999912,
-      "tokens": 270778173,
-      "requests": 3555
+      "cost": 216.78657799999917,
+      "tokens": 271144529,
+      "requests": 3544
     },
     {
       "name": "Other",
@@ -198,9 +204,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 27.446641800000002,
-      "tokens": 30883345,
-      "requests": 873
+      "cost": 28.033546499999986,
+      "tokens": 31874847,
+      "requests": 884
     },
     {
       "name": "gpt-5.2",
@@ -210,9 +216,9 @@
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 16.954544399999985,
-      "tokens": 19710534,
-      "requests": 426
+      "cost": 16.61025374999999,
+      "tokens": 19085388,
+      "requests": 404
     },
     {
       "name": "gemini-3-pro-preview",
@@ -266,9 +272,9 @@
     },
     {
       "name": "general",
-      "cost": 40.75044827310215,
-      "tokens": 45922887,
-      "requests": 1173
+      "cost": 40.99306232310216,
+      "tokens": 46289243,
+      "requests": 1162
     },
     {
       "name": "coding",
@@ -283,5 +289,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-26T22:20:51.662Z"
+  "lastUpdated": "2026-03-27T04:21:12.033Z"
 }
