@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 444,
-    "totalRequests": 12700
+    "totalSessions": 454,
+    "totalRequests": 12749
   },
   "daily": [
     {
@@ -164,29 +164,29 @@
     },
     {
       "date": "2026-03-27",
-      "cost": 5.837577899999999,
-      "tokens": 4770261,
-      "requests": 144
+      "cost": 1.40126205,
+      "tokens": 1296464,
+      "requests": 42
     },
     {
       "date": "2026-03-28",
-      "cost": 15.455426700000015,
-      "tokens": 12625543,
-      "requests": 359
+      "cost": 20.904285300000023,
+      "tokens": 17626888,
+      "requests": 510
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 217.4194623499992,
-      "tokens": 270085766,
-      "requests": 3534
+      "cost": 218.43200509999923,
+      "tokens": 271613314,
+      "requests": 3581
     },
     {
       "name": "Other",
       "cost": 53.22874753781001,
       "tokens": 708818270,
-      "requests": 8625
+      "requests": 8627
     },
     {
       "name": "OpenAI",
@@ -210,9 +210,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 27.783996600000016,
-      "tokens": 29771132,
-      "requests": 836
+      "cost": 27.976657650000007,
+      "tokens": 30072868,
+      "requests": 846
     },
     {
       "name": "gpt-5.2",
@@ -222,9 +222,9 @@
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 17.492687999999994,
-      "tokens": 20130340,
-      "requests": 442
+      "cost": 18.312569700000005,
+      "tokens": 21356152,
+      "requests": 479
     },
     {
       "name": "gemini-3-pro-preview",
@@ -248,7 +248,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 135
+      "requests": 137
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -278,9 +278,9 @@
     },
     {
       "name": "general",
-      "cost": 41.625946673102185,
-      "tokens": 45230480,
-      "requests": 1155
+      "cost": 42.63848942310215,
+      "tokens": 46758028,
+      "requests": 1204
     },
     {
       "name": "coding",
@@ -295,5 +295,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-28T16:25:41.874Z"
+  "lastUpdated": "2026-03-28T22:25:23.475Z"
 }
