@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 454,
-    "totalRequests": 12749
+    "totalSessions": 452,
+    "totalRequests": 12755
   },
   "daily": [
     {
@@ -164,23 +164,29 @@
     },
     {
       "date": "2026-03-27",
-      "cost": 1.40126205,
-      "tokens": 1296464,
-      "requests": 42
+      "cost": 0,
+      "tokens": 0,
+      "requests": 2
     },
     {
       "date": "2026-03-28",
-      "cost": 20.904285300000023,
-      "tokens": 17626888,
-      "requests": 510
+      "cost": 19.055703450000017,
+      "tokens": 16612602,
+      "requests": 483
+    },
+    {
+      "date": "2026-03-29",
+      "cost": 3.5018780999999994,
+      "tokens": 2450262,
+      "requests": 73
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 218.43200509999923,
-      "tokens": 271613314,
-      "requests": 3581
+      "cost": 218.6840392999992,
+      "tokens": 271752826,
+      "requests": 3587
     },
     {
       "name": "Other",
@@ -210,9 +216,9 @@
     },
     {
       "name": "Claude Sonnet 4.5",
-      "cost": 27.976657650000007,
-      "tokens": 30072868,
-      "requests": 846
+      "cost": 28.163086050000004,
+      "tokens": 30272862,
+      "requests": 855
     },
     {
       "name": "gpt-5.2",
@@ -222,9 +228,9 @@
     },
     {
       "name": "claude-sonnet-4-6",
-      "cost": 18.312569700000005,
-      "tokens": 21356152,
-      "requests": 479
+      "cost": 18.3781755,
+      "tokens": 21295670,
+      "requests": 476
     },
     {
       "name": "gemini-3-pro-preview",
@@ -278,9 +284,9 @@
     },
     {
       "name": "general",
-      "cost": 42.63848942310215,
-      "tokens": 46758028,
-      "requests": 1204
+      "cost": 42.89052362310215,
+      "tokens": 46897540,
+      "requests": 1210
     },
     {
       "name": "coding",
@@ -295,5 +301,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-28T22:25:23.475Z"
+  "lastUpdated": "2026-03-29T04:25:46.348Z"
 }
