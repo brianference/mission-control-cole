@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 416,
-    "totalRequests": 12969
+    "totalSessions": 430,
+    "totalRequests": 12811
   },
   "daily": [
     {
@@ -158,29 +158,29 @@
     },
     {
       "date": "2026-03-29",
-      "cost": 22.846394518156895,
-      "tokens": 34953777,
-      "requests": 489
+      "cost": 6.64261286815688,
+      "tokens": 7457693,
+      "requests": 112
     },
     {
       "date": "2026-03-30",
-      "cost": 15.692376749999989,
-      "tokens": 12634661,
-      "requests": 354
+      "cost": 23.377037249999987,
+      "tokens": 22041760,
+      "requests": 573
     }
   ],
   "providers": [
     {
       "name": "Anthropic",
-      "cost": 231.86911909999947,
-      "tokens": 295586503,
-      "requests": 3776
+      "cost": 223.34999794999936,
+      "tokens": 277497518,
+      "requests": 3633
     },
     {
       "name": "Other",
       "cost": 53.25046780596689,
       "tokens": 709090576,
-      "requests": 8652
+      "requests": 8637
     },
     {
       "name": "OpenAI",
@@ -203,16 +203,16 @@
       "requests": 8102
     },
     {
-      "name": "claude-sonnet-4-6",
-      "cost": 29.877161850000007,
-      "tokens": 42853483,
-      "requests": 612
+      "name": "Claude Sonnet 4.5",
+      "cost": 30.397619550000016,
+      "tokens": 33120304,
+      "requests": 917
     },
     {
-      "name": "Claude Sonnet 4.5",
-      "cost": 29.849179500000012,
-      "tokens": 32548726,
-      "requests": 908
+      "name": "claude-sonnet-4-6",
+      "cost": 20.809600649999993,
+      "tokens": 24192920,
+      "requests": 460
     },
     {
       "name": "gpt-5.2",
@@ -242,7 +242,7 @@
       "name": "delivery-mirror",
       "cost": 0,
       "tokens": 0,
-      "requests": 155
+      "requests": 140
     },
     {
       "name": "qwen2.5-coder:7b",
@@ -272,9 +272,9 @@
     },
     {
       "name": "general",
-      "cost": 56.09732369125907,
-      "tokens": 71003523,
-      "requests": 1424
+      "cost": 47.57820254125905,
+      "tokens": 52914538,
+      "requests": 1266
     },
     {
       "name": "coding",
@@ -289,5 +289,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-03-30T16:25:52.779Z"
+  "lastUpdated": "2026-03-30T22:25:49.294Z"
 }
