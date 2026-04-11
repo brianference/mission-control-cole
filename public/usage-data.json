@@ -2,16 +2,10 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 355,
-    "totalRequests": 13951
+    "totalSessions": 351,
+    "totalRequests": 13817
   },
   "daily": [
-    {
-      "date": "2026-02-12",
-      "cost": 1.7987815499999995,
-      "tokens": 3537625,
-      "requests": 61
-    },
     {
       "date": "2026-02-13",
       "cost": 0.6350908500000001,
@@ -176,15 +170,21 @@
     },
     {
       "date": "2026-04-09",
-      "cost": 1.024537531561518,
-      "tokens": 6844164,
-      "requests": 272
+      "cost": 0.6680963835614397,
+      "tokens": 4539763,
+      "requests": 191
     },
     {
       "date": "2026-04-10",
-      "cost": 5.428382902086764,
-      "tokens": 54337898,
-      "requests": 550
+      "cost": 2.8476164587003923,
+      "tokens": 22587190,
+      "requests": 291
+    },
+    {
+      "date": "2026-04-11",
+      "cost": 2.8206009499999998,
+      "tokens": 39047938,
+      "requests": 206
     }
   ],
   "providers": [
@@ -192,13 +192,13 @@
       "name": "Anthropic",
       "cost": 194.89195009999935,
       "tokens": 248219277,
-      "requests": 3179
+      "requests": 3172
     },
     {
       "name": "Other",
-      "cost": 63.677570358608165,
-      "tokens": 801880300,
-      "requests": 10231
+      "cost": 63.560963717221725,
+      "tokens": 806873129,
+      "requests": 10104
     },
     {
       "name": "OpenAI",
@@ -216,9 +216,9 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 36.62164258360828,
-      "tokens": 709593536,
-      "requests": 8680
+      "cost": 36.35136909222186,
+      "tokens": 706871522,
+      "requests": 8629
     },
     {
       "name": "gpt-5.2",
@@ -248,19 +248,19 @@
       "name": "claude-sonnet-4-6",
       "cost": 7.488539849999998,
       "tokens": 8150842,
-      "requests": 251
+      "requests": 240
     },
     {
       "name": "gemini-3-flash-preview",
-      "cost": 7.0462493,
-      "tokens": 63288844,
-      "requests": 1028
+      "cost": 7.199916150000002,
+      "tokens": 71003687,
+      "requests": 952
     },
     {
       "name": "claude-opus-4-6",
       "cost": 0.59145125,
       "tokens": 573931,
-      "requests": 118
+      "requests": 122
     },
     {
       "name": "delivery-mirror",
@@ -290,9 +290,9 @@
     },
     {
       "name": "general",
-      "cost": 29.547257243900265,
-      "tokens": 116426021,
-      "requests": 2406
+      "cost": 29.430650602513822,
+      "tokens": 121418850,
+      "requests": 2272
     },
     {
       "name": "coding",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-04-10T22:35:00.155Z"
+  "lastUpdated": "2026-04-11T10:34:25.981Z"
 }
