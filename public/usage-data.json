@@ -2,8 +2,8 @@
   "summary": {
     "weekTotal": 0,
     "monthTotal": 0,
-    "totalSessions": 351,
-    "totalRequests": 13233
+    "totalSessions": 354,
+    "totalRequests": 13416
   },
   "daily": [
     {
@@ -176,15 +176,15 @@
     },
     {
       "date": "2026-04-11",
-      "cost": 0.5258332146744541,
-      "tokens": 2911504,
-      "requests": 125
+      "cost": 0.31311415667437575,
+      "tokens": 2003413,
+      "requests": 95
     },
     {
       "date": "2026-04-12",
-      "cost": 0.8044429599999999,
-      "tokens": 5699622,
-      "requests": 123
+      "cost": 1.967958592037105,
+      "tokens": 14899042,
+      "requests": 336
     }
   ],
   "providers": [
@@ -192,13 +192,13 @@
       "name": "Anthropic",
       "cost": 194.89195009999935,
       "tokens": 248219277,
-      "requests": 3076
+      "requests": 3089
     },
     {
       "name": "Other",
-      "cost": 58.03351129004099,
-      "tokens": 746392589,
-      "requests": 9616
+      "cost": 58.98430786407798,
+      "tokens": 754683918,
+      "requests": 9786
     },
     {
       "name": "OpenAI",
@@ -216,9 +216,9 @@
     },
     {
       "name": "minimax/minimax-m2.1",
-      "cost": 35.06863206504113,
-      "tokens": 698119011,
-      "requests": 8506
+      "cost": 35.103973189078154,
+      "tokens": 698295129,
+      "requests": 8513
     },
     {
       "name": "gpt-5.2",
@@ -248,19 +248,19 @@
       "name": "claude-sonnet-4-6",
       "cost": 7.488539849999998,
       "tokens": 8150842,
-      "requests": 243
+      "requests": 252
     },
     {
       "name": "gemini-3-flash-preview",
-      "cost": 2.9552007500000004,
-      "tokens": 19275658,
-      "requests": 585
+      "cost": 3.8706562000000013,
+      "tokens": 27390869,
+      "requests": 748
     },
     {
       "name": "claude-opus-4-6",
       "cost": 0.59145125,
       "tokens": 573931,
-      "requests": 23
+      "requests": 27
     },
     {
       "name": "delivery-mirror",
@@ -290,9 +290,9 @@
     },
     {
       "name": "general",
-      "cost": 23.903198175333085,
-      "tokens": 60938310,
-      "requests": 1688
+      "cost": 24.853994749370106,
+      "tokens": 69229639,
+      "requests": 1871
     },
     {
       "name": "coding",
@@ -307,5 +307,5 @@
       "requests": 1
     }
   ],
-  "lastUpdated": "2026-04-12T10:43:41.820Z"
+  "lastUpdated": "2026-04-12T22:42:57.533Z"
 }
